@@ -4,6 +4,7 @@ import { Container, CssBaseline, Step, Stepper, Typography } from '@mui/material
 import ProcessStep from './ProcessStep'
 import ResultsStep from './ResultsStep'
 import UploadStep from './UploadStep'
+import BarChart from './VisualisationStep'
 
 const App = () => {
   const [activeStep, setActiveStep] = useState<number>(0)
@@ -20,7 +21,7 @@ const App = () => {
     <>
       <CssBaseline />
       <Container maxWidth="lg" sx={{ m: 4 }}>
-        <Typography variant="h3">Reimagined Eureka</Typography>
+        <Typography variant="h3">Avastar PoC</Typography>
         <Typography variant="subtitle1">Avastar JS in-browser test</Typography>
         <Stepper activeStep={activeStep} orientation="vertical">
           <Step>
@@ -33,6 +34,7 @@ const App = () => {
             <ResultsStep results={results} />
           </Step>
         </Stepper>
+        <BarChart results={results} />
       </Container>
     </>
   )
