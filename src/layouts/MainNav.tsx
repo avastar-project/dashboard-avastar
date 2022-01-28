@@ -6,6 +6,7 @@ import FBIcon from '../assets/icons/facebook-nav-24.png';
 import GoogleIcon from '../assets/icons/google-nav-24.png';
 import HomeIcon from '../assets/icons/home-nav-24.png';
 import OverIcon from '../assets/icons/over-nav-24.png';
+import AvastarLogo from '../assets/logo.png';
 
 // Contains each page link infomations
 const navLinks = [
@@ -34,6 +35,7 @@ const navLinks = [
 export default function MainNav() {
   return (
     <nav>
+      <img src={AvastarLogo} alt="Avastar logo" />
       <ul>
         {/* Mapping navLinks array to display each element */}
         {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
