@@ -41,12 +41,16 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Architecture
 
-| src
-| -- `assets`
-| -- `components`
-| -- `layouts`
+| `public`
+| `src`
+| | -- `assets`
+| | -- `components`
+| | -- `layouts`
 | -- `pages`
 index.tsc
+
+`public` => Contains index.html file connected to React.js core, favicons, robtos.txt, DON'T ERASE IT !
+`src` => contains App react.js core...
 
 `assets` => contains media contents like icons, images, ...
 `components` => contains single components
