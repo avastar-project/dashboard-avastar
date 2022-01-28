@@ -3,12 +3,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
+import GlobalStyle from './utils/style/CreateGlobalStyle';
 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <BrowserRouter>
     <React.StrictMode>
+      <GlobalStyle />
       <App />
     </React.StrictMode>
   </BrowserRouter>,
