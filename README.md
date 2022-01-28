@@ -57,6 +57,10 @@ index.tsc
 `layouts` => contains reusable components as navbar, left side bar,...
 `pages` => contains pages components, 1 file per page (Homepage, Overview, Facebook,...)
 
+## Dependencies documentation
+
+- [React-Router-Dom v.6](https://reactrouter.com/) - Used for routing internal links of the app
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
