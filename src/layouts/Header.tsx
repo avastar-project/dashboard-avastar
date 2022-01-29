@@ -15,7 +15,8 @@ const StyledHeader = styled.header`
   align-items: center;
   height: 4rem;
   padding: 0 1rem;
-  background-color: white;
+  background-color: var(--clr-lightest);
+  border: var(--bor-light);
 
   & > img {
     margin-left: 1rem;

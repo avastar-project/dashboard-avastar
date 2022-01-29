@@ -57,13 +57,14 @@ const NavList = styled.ul`
 
 const NavItem = styled.li`
   margin: 0.5rem 0.25rem;
-  /* border: solid 1px red; */
   border-radius: 0.5rem;
   padding: 0.35rem 0.25rem;
+  font-weight: 400;
   transition: 0.5s all ease;
 
   &:hover {
     background-color: var(--clr-light);
+    font-weight: 500;
     transition: 0.5s all ease;
   }
 `;
@@ -72,14 +73,9 @@ const NavLink = styled(Link)`
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  text-decoration: none;
 
   & > img {
     margin-right: 0.5rem;
-  }
-
-  &:visited {
-    color: var(--clr-dark);
   }
 `;
 

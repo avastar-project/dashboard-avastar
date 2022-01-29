@@ -28,11 +28,19 @@ const StyledGlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         margin: 0;
         padding: 0;
+        font-family: 'Roboto', sans-serif;
     }
 
     /* Body CSS Rule */
     body {
         background-color: var(--clr-lighter);
+    }
+
+    a {
+        text-decoration: none;
+        &:visited {
+            color: var(--clr-darkest);
+        }
     }
 `;
 
