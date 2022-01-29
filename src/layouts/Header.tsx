@@ -1,5 +1,5 @@
 // Components
-import { Link } from 'react-router-dom';
+import ButtonLink from '../components/ButtonLink';
 
 // Utils
 import styled from 'styled-components';
@@ -27,7 +27,7 @@ const StyledHeader = styled.header`
 export default function Header() {
   return (
     <StyledHeader>
-      <Link to="/">Upload Data</Link>
+      <ButtonLink link="/" content="+ Upload data" />
       <img src={UserIcon} alt="" />
     </StyledHeader>
   );
