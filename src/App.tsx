@@ -17,7 +17,7 @@ const Container = styled.div`
 `;
 
 const Main = styled.main`
-  width: 84%;
+  width: 85%;
 `;
 
 export default function App() {

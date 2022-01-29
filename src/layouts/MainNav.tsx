@@ -39,41 +39,66 @@ const navLinks = [
 const StyledNav = styled.nav`
   height: 100vh;
   width: 15%;
-  background-color: white;
+  background-color: var(--clr-lightest);
+  padding: 0.5rem 1rem;
+  border: var(--bor-light);
 `;
 
-const StyledList = styled.ul`
+const BrandLogo = styled.img`
+  width: 4rem;
+`;
+
+const NavList = styled.ul`
   display: flex;
   flex-flow: column wrap;
   list-style-type: none;
+  margin-top: 2rem;
+`;
 
-  & > li {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
+const NavItem = styled.li`
+  margin: 0.5rem 0.25rem;
+  /* border: solid 1px red; */
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.25rem;
+  transition: 0.5s all ease;
+
+  &:hover {
+    background-color: var(--clr-light);
+    transition: 0.5s all ease;
+  }
+`;
+
+const NavLink = styled(Link)`
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  text-decoration: none;
+
+  & > img {
+    margin-right: 0.5rem;
   }
 
-  & > li img {
-    margin-right: 0.25rem;
+  &:visited {
+    color: var(--clr-dark);
   }
 `;
 
 export default function MainNav() {
   return (
     <StyledNav>
-      <img src={AvastarLogo} alt="Avastar logo" />
-      <StyledList>
+      <BrandLogo src={AvastarLogo} alt="Avastar logo" />
+      <NavList>
         {/* Mapping navLinks array to display each element */}
         {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
         {navLinks.map((elt, index) => (
-          <li key={index}>
-            <Link to={elt.link}>
+          <NavItem key={index}>
+            <NavLink to={elt.link}>
               <img src={elt.icon} alt={`${elt.name}-icon`} />
               {elt.name}
-            </Link>
-          </li>
+            </NavLink>
+          </NavItem>
         ))}
-      </StyledList>
+      </NavList>
     </StyledNav>
   );
 }
