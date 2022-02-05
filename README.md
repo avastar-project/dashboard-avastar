@@ -41,17 +41,40 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Architecture
 
-| src
-| -- `assets`
-| -- `components`
-| -- `layouts`
-| -- `pages`
-index.tsc
+- `public`
+- `src`
+  - `assets`
+  - `components`
+  - `layouts`
+  - `pages`
+  - index.tsc
+
+`public` => Contains index.html file connected to React.js core, favicons, robtos.txt, DON'T ERASE IT !
+`src` => contains App react.js core...
 
 `assets` => contains media contents like icons, images, ...
 `components` => contains single components
 `layouts` => contains reusable components as navbar, left side bar,...
 `pages` => contains pages components, 1 file per page (Homepage, Overview, Facebook,...)
+
+## Documentation
+
+- [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/) - Uses and good practices for typing React.js app
+- [Create-React-App](https://create-react-app.dev/docs/getting-started/) - Used for create this app
+- [React-Router-Dom v.6](https://reactrouter.com/) - Used for routing internal links of the app
+- [Styled-components](https://styled-components.com/) - Used for creating style directly on components
+
+## Extensions
+
+### VS Code
+
+- [Styled-Components extension](https://marketplace.visualstudio.com/items?itemName=styled-components.vscode-styled-components) - Syntax highlighting for styled-components
+- [Prettier Extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - Code formatter using prettier
+- [React ES7 Extension](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets) - Extensions for React, React-Native and Redux in JS/TS with ES7+ syntax. Customizable. Built-in integration with prettier.
+
+### Browser
+
+- [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi/related) - Useful extension for Chrome browser to see components tree structure on dev's console
 
 ## Project color codes
 
@@ -60,6 +83,7 @@ index.tsc
 - ![#CFC5FB](https://via.placeholder.com/15/CFC5FB/000000?text=+) `#CFC5FB`
 - ![#C4E8FA](https://via.placeholder.com/15/C4E8FA/000000?text=+) `#C4E8FA`
 - ![#C5E6D2](https://via.placeholder.com/15/C5E6D2/000000?text=+) `#C5E6D2`
+
 
 ## Learn More
 

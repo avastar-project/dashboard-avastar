@@ -1,22 +1,17 @@
+// Components
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Homepage from './pages/Homepage';
-import Overview from './pages/Overview';
-import Facebook from './pages/Facebook';
-import Google from './pages/Google';
-import reportWebVitals from './reportWebVitals';
+import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+import GlobalStyle from './utils/style/CreateGlobalStyle';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <BrowserRouter>
     <React.StrictMode>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/overview" element={<Overview />} />
-        <Route path="/facebook" element={<Facebook />} />
-        <Route path="/google" element={<Google />} />
-      </Routes>
+      <GlobalStyle />
+      <App />
     </React.StrictMode>
   </BrowserRouter>,
   document.getElementById('root')
