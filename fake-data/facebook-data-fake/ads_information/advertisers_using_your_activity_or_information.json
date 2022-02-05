@@ -1,0 +1,16 @@
+{
+  "custom_audiences_all_types_v2": [
+    {
+      "advertiser_name": "Atlassian",
+      "has_data_file_custom_audience": true,
+      "has_remarketing_custom_audience": true,
+      "has_in_person_store_visit": false
+    },
+    {
+      "advertiser_name": "SNCF Connect",
+      "has_data_file_custom_audience": true,
+      "has_remarketing_custom_audience": false,
+      "has_in_person_store_visit": false
+    },
+  ]
+}

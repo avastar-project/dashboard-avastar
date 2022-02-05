@@ -1,0 +1,37 @@
+{
+  "group_posts_v2": [
+    {
+      "timestamp": 1417021665,
+      "attachments": [
+        {
+          "data": [
+            {
+              "media": {
+                "uri": "photos_and_videos/your_posts/XXXX.jpg",
+                "creation_timestamp": 1417021663,
+                "media_metadata": {
+                  "photo_metadata": {
+                    "exif_data": [
+                      {
+                        "upload_ip": "XXX.XXX.XXX.XXX",
+                        "taken_timestamp": 1417021586
+                      }
+                    ]
+                  }
+                },
+                "title": "",
+                "description": "XXXX"
+              }
+            }
+          ]
+        }
+      ],
+      "data": [
+        {
+          "post": "XXXX"
+        }
+      ],
+      "title": "XXXX"
+    }
+  ]
+}

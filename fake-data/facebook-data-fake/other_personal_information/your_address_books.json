@@ -1,0 +1,16 @@
+{
+  "address_book_v2": {
+    "address_book": [
+      {
+        "name": "YYY",
+        "details": [
+          {
+            "contact_point": "+XXXXXXXXXXX"
+          }
+        ],
+        "created_timestamp": 1629060522,
+        "updated_timestamp": 1629060522
+      },
+    ]
+  }
+}

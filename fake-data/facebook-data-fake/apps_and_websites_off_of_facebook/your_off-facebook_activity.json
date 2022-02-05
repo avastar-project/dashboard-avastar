@@ -1,0 +1,44 @@
+{
+  "off_facebook_activity_v2": [
+    {
+      "name": "francetvinfo.fr",
+      "events": [
+        {
+          "id": 1407895342825011,
+          "type": "PAGE_VIEW",
+          "timestamp": 1626817140
+        },
+        {
+          "id": 1407895342825011,
+          "type": "PAGE_VIEW",
+          "timestamp": 1626408360
+        },
+        {
+          "id": 1407895342825011,
+          "type": "PAGE_VIEW",
+          "timestamp": 1626406560
+        },
+        {
+          "id": 1407895342825011,
+          "type": "PAGE_VIEW",
+          "timestamp": 1626086760
+        },
+        {
+          "id": 1407895342825011,
+          "type": "PAGE_VIEW",
+          "timestamp": 1623969360
+        },
+        {
+          "id": 882125681855230,
+          "type": "PAGE_VIEW",
+          "timestamp": 1613991720
+        },
+        {
+          "id": 882125681855230,
+          "type": "PAGE_VIEW",
+          "timestamp": 1609062360
+        }
+      ]
+    }
+  ]
+}

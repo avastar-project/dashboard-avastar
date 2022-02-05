@@ -1,0 +1,15 @@
+{
+  "account_activity_v2": [
+    {
+      "action": "Session updated",
+      "timestamp": 1643746559,
+      "ip_address": "XXXXXXXXXX",
+      "user_agent": "YYY",
+      "datr_cookie": "X*****",
+      "city": "XXX",
+      "region": "XXX",
+      "country": "FR",
+      "site_name": "www.facebook.com"
+    }
+  ]
+}
