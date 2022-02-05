@@ -76,6 +76,15 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi/related) - Useful extension for Chrome browser to see components tree structure on dev's console
 
+## Project color codes
+
+- ![#2567FF](https://via.placeholder.com/15/2567FF/000000?text=+) `#2567FF`
+- ![#F3C7A9](https://via.placeholder.com/15/F3C7A9/000000?text=+) `#F3C7A9`
+- ![#CFC5FB](https://via.placeholder.com/15/CFC5FB/000000?text=+) `#CFC5FB`
+- ![#C4E8FA](https://via.placeholder.com/15/C4E8FA/000000?text=+) `#C4E8FA`
+- ![#C5E6D2](https://via.placeholder.com/15/C5E6D2/000000?text=+) `#C5E6D2`
+
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
