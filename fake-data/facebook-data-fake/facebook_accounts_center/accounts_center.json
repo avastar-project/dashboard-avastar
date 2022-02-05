@@ -1,0 +1,20 @@
+{
+  "accounts_center_v2": [
+    {
+      "service_name": "XXXX",
+      "native_app_id": 14341,
+      "username": "XXX",
+      "email": "XXX@XXX.XX,
+      "phone_number": "+XXXXXXXXXXX",
+      "name": "XXX XXX"
+    },
+    {
+      "service_name": "XXX",
+      "native_app_id": 43142,
+      "username": "",
+      "email": "XXX@XXX.XX,
+      "phone_number": "+XXXXXXXXXXX",
+      "name": "XXX XXX"
+    }
+  ]
+}
