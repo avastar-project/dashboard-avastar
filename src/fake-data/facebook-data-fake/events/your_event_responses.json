@@ -1,0 +1,11 @@
+{
+  "event_responses_v2": {
+    "events_joined": [
+      {
+        "name": "30 ans XXX",
+        "start_timestamp": 1641502800,
+        "end_timestamp": 1641744000
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "visited_things_v2": [
+    {
+      "name": "Visites de profil",
+      "description": "Personnes dont vous avez consult\u00c3\u00a9 le profil",
+      "entries": [
+        {
+          "timestamp": 1643581061,
+          "data": {
+            "name": "XXXX",
+            "uri": "https://www.facebook.com/profile.php?id=XXX"
+          }
+        },
+        {
+          "timestamp": 1643536705,
+          "data": {
+            "name": "YYY",
+            "uri": "https://www.facebook.com/profile.php?id=YYY"
+          }
+        }
+      ]
+    }
+  ]
+}

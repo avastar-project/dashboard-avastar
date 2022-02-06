@@ -1,0 +1,39 @@
+{
+  "devices_v2": [
+    {
+      "type": "XXX",
+      "os": "XXX",
+      "update_time": 1643750664,
+      "redact_tokens": [
+        "3714********************",
+        "5815********************",
+        "e4d6********************",
+        "1934********************"
+      ],
+      "push_tokens": [
+        {
+          "disabled": false,
+          "client_update_time": 1643750663,
+          "creation_time": 1635887508,
+          "app_version": "XXX",
+          "locale": "fr_FR",
+          "os_version": "XXX",
+          "token": "3714********************",
+          "device_id": "XXX"
+        },
+        {
+          "disabled": false,
+          "client_update_time": 1643750663,
+          "creation_time": 1635887508,
+          "app_version": "XXX",
+          "locale": "fr_FR",
+          "os_version": "XXX",
+          "token": "5815********************",
+          "device_id": "XXX"
+        }
+      ],
+      "family_device_id": "XXX",
+      "device_locale": "fr"
+    }
+  ]
+}

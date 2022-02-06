@@ -1,0 +1,19 @@
+{
+  "login_protection_data_v2": [
+    {
+      "name": "XXX",
+      "session": {
+        "created_timestamp": 1631036459,
+        "updated_timestamp": 1643746559,
+        "ip_address": "XXX"
+      }
+    },
+    {
+      "name": "XXX",
+      "session": {
+        "created_timestamp": 1643746559,
+        "ip_address": "XXX"
+      }
+    }
+  ]
+}

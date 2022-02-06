@@ -1,0 +1,21 @@
+{
+  "name": "Photos de couverture",
+  "photos": [
+    {
+      "uri": "photos_and_videos/Photosdecouverture_B0tCyEO-Dw/XXX.jpg",
+      "creation_timestamp": 1402947595,
+      "media_metadata": {
+        "photo_metadata": {
+          "exif_data": [
+            {
+              "upload_ip": "XXX.XXX.XXX.XX",
+              "taken_timestamp": 1402947597
+            }
+          ]
+        }
+      },
+      "title": "Photos de couverture",
+      "description": "XXXX"
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+    "Apps": [
+        {
+            "app_launch_ordinal": "t",
+            "extension": {
+                        "incognito_enabled": true,
+                        "remote_install": false,
+                        "disable_reasons": 0,
+                        "update_url": "",
+                        "id": "XXXX",
+                        "version": "0.2",
+                        "enabled": true
+            },
+            "page_ordinal": "n"
+}
+    ],
+    "App Settings": [],
+    "Preferences": [
+        {
+            "name": "profile.content_settings.exceptions.images",
+            "value": "{}"
+},
+        {
+            "name": "profile.content_settings.exceptions.flash_data",
+            "value": "{}"
+},
+        {
+            "name": "translate_allowlists",
+            "value": "{}"
+},
+        {
+            "name": "translate_whitelists",
+            "value": "{}"
+},
+        {
+            "name": "translate_too_often_denied_for_language",
+            "value": "{\"en\":true}"
+},
+        {
+            "name": "profile.content_settings.exceptions.popups",
+            "value": "{}"
+},
+        {
+            "name": "net.easter_egg_high_score",
+            "value": "2252"
+},
+        {
+            "name": "translate_site_blacklist",
+            "value": "[]"
+},
+        {
+            "name": "profile.content_settings.exceptions.font_access",
+            "value": "{}"
+},
+        {
+            "name": "translate_ignored_count_for_language",
+            "value": "{\"en\":182,\"es\":1,\"mt\":1,\"nl\":9}"
+},
+        {
+            "name": "browser.clear_data.cookies_basic",
+            "value": "true"
+},
+        {
+            "name": "profile.content_settings.exceptions.cookies",
+            "value": "{}"
+},
+        {
+            "name": "ntp.app_page_names",
+            "value": "[\"Applications\"]"
+},
+        {
+            "name": "browser.show_fullscreen_toolbar",
+            "value": "true"
+},
+        {
+            "name": "translate_recent_target",
+            "value": "\"fr\""
+},
+        {
+            "name": "translate_site_blacklist_with_time",
+            "value": "{}"
+},
+        {
+            "name": "browser.clear_data.time_period_basic",
+            "value": "4"
+},
+        {
+            "name": "extensions.pinned_extensions",
+            "value": "[\"kbfnbcaeplbcioakkpcpgfkobkghlhen\",\"aeblfdkhhhdcdjpifhhbdiojplfjncoa\",\"acehfjhnmhbmgkedjmjlobpgdicnhkbp\"]"
+},
+        {
+            "name": "translate_accepted_count",
+            "value": "{\"en\":0,\"nl\":0}"
+},
+        {
+            "name": "intl.selected_languages",
+            "value": "\"fr-FR,fr,en-US,en\""
+},
+        {
+            "name": "sharing.vapid_key",
+            "value": "{\"vapid_creation_timestamp\":\"13224090512761106\",\"vapid_private_key\":\"MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgyzSejUf22MHFn9rQpPTgyoP6hNcQ6kC8BRYQo9BBYlehRANCAATvDM3xy7lX780oqvu5DogfWes90S47Q8atiSgxBNrEl4Ry4eRFuzuUcwMVQNwtPOJ9qyy7eGLnaRXFYwYCHLzH\"}"
+},
+        {
+            "name": "profile.content_settings.exceptions.javascript",
+            "value": "{}"
+},
+        {
+            "name": "extensions.toolbar",
+            "value": "[\"cjpalhdlnbpafiamejdnhcphjbkeiagm\",\"acehfjhnmhbmgkedjmjlobpgdicnhkbp\",\"pejbgeckhkmcjnijdhmpjgcbnogmmcef\",\"aomjjhallfgjeglblehebfpbcfeobpgk\",\"kbfnbcaeplbcioakkpcpgfkobkghlhen\",\"jlhmfgmfgeifomenelglieieghnjghma\",\"aeblfdkhhhdcdjpifhhbdiojplfjncoa\",\"jjbbcihejfopbmbbmjjmhkjjofkgkoog\"]"
+},
+        {
+            "name": "extensions.commands",
+            "value": "{\"mac:Command+Shift+L\":{\"command_name\":\"lock\",\"extension\":\"aeblfdkhhhdcdjpifhhbdiojplfjncoa\",\"global\":false},\"mac:Command+Shift+X\":{\"command_name\":\"_execute_browser_action\",\"extension\":\"aeblfdkhhhdcdjpifhhbdiojplfjncoa\",\"global\":false}}"
+},
+        {
+            "name": "bookmark_bar.show_on_all_tabs",
+            "value": "true"
+},
+        {
+            "name": "profile.content_settings.exceptions.storage_access",
+            "value": "{}"
+},
+        {
+            "name": "translate_denied_count_for_language",
+            "value": "{\"en\":20,\"nl\":1}"
+},
+        {
+            "name": "profile.content_settings.exceptions.automatic_downloads",
+            "value": "{}"
+},
+        {
+            "name": "profile.content_settings.exceptions.window_placement",
+            "value": "{}"
+},
+        {
+            "name": "sharing.synced_devices",
+            "value": "{\"Rb4oN6pZfmTQ9cITfqUDfA==\":{\"device_auth_secret\":\"DxLruWLHAxcdeQh2uQZH4g==\",\"device_capabilities\":2,\"device_fcm_token\":\"eGqfqaJmP24:APA91bGqw67jdHVwlg3Iz-vQbivL8wAlqvP-uk0Tz7WYO1qUZjYjluDt5V4pOYvgvzFKUgen6Eek5ZWdDhIgl0FgBH_ph15M-qPoyaG57jFNSKt6BJr9MxNn-lRdWkZ-kskjPZdDJd4Z\",\"device_p256dh\":\"BNVjWiFj4+FfVGHvelV4EnTnSXnplQQn0Ol8LEE2/zP37DqVK32WDunUWB77wrM4A0RkPCn/vkddotr3SvAeNW4=\"},\"fmgkGwBygkUeCy6XJavrWg==\":{\"device_auth_secret\":\"zOJaNA3PSWI4aJIob423dg==\",\"device_capabilities\":2,\"device_fcm_token\":\"fy5aRcVA9RI:APA91bHN3Y6V9ldbas1b0UXHF3SBfyrcznQYPVBEvImlra73cG6-NT6jdilM90s7ALriQpPjsO4ST0Fi8F4fjDDzmqcAECuqLZDzwaVxzudDywQFqz7JFxLAz8xcM2a3rBrJWo8A_eHA\",\"device_p256dh\":\"BN73Iuv0oW+dj9S5Ar5UEtbh+LQKrmQaOFmH52vZaWtnA23GksjKClGKBgUIQH+bc6RnXyTDTcavgMrg8lHPps8=\"}}"
+},
+        {
+            "name": "browser.clear_data.browsing_history_basic",
+            "value": "true"
+}
+    ],
+    "Themes": [
+        {
+            "autogenerated_theme": {"color": -13730510},
+            "use_system_theme_by_default": false,
+            "use_custom_theme": false
+}
+    ]
+}

@@ -1,0 +1,54 @@
+{
+  "language_and_locale_v2": [
+    {
+      "name": "Param\u00c3\u00a8tres de langue",
+      "description": "Vos param\u00c3\u00a8tres linguistiques favoris",
+      "children": [
+        {
+          "name": "Langue s\u00c3\u00a9lectionn\u00c3\u00a9e",
+          "description": "La langue que vous avez choisie pour votre exp\u00c3\u00a9rience avec Facebook",
+          "entries": [
+            {
+              "data": {
+                "value": "fr_FR"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Langue pr\u00c3\u00a9f\u00c3\u00a9r\u00c3\u00a9e pour les vid\u00c3\u00a9os",
+      "description": "Votre langue pr\u00c3\u00a9f\u00c3\u00a9r\u00c3\u00a9e pour les vid\u00c3\u00a9os, d\u00c3\u00a9termin\u00c3\u00a9e par les vid\u00c3\u00a9os que vous avez d\u00c3\u00a9j\u00c3\u00a0 regard\u00c3\u00a9es",
+      "entries": [
+        {
+          "data": {
+            "value": "fr"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Langues que vous connaissez peut-\u00c3\u00aatre",
+      "description": "Langues que vous connaissez peut-\u00c3\u00aatre d\u00e2\u0080\u0099apr\u00c3\u00a8s votre activit\u00c3\u00a9 sur Facebook",
+      "entries": [
+        {
+          "data": {
+            "value": "fr"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Langue pr\u00c3\u00a9f\u00c3\u00a9r\u00c3\u00a9e",
+      "description": "Vos langues pr\u00c3\u00a9f\u00c3\u00a9r\u00c3\u00a9es telles que d\u00c3\u00a9termin\u00c3\u00a9es par votre activit\u00c3\u00a9 sur Facebook",
+      "entries": [
+        {
+          "data": {
+            "value": "fr_XX"
+          }
+        }
+      ]
+    }
+  ]
+}

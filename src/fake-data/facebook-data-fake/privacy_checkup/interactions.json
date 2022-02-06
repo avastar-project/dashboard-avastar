@@ -1,0 +1,38 @@
+{
+  "privacy_checkup_interactions_v2": {
+    "privacy_checkup_topic": [
+      {
+        "name": "Qui peut voir ce que vous partagez",
+        "started_timestamp": 1623186596,
+        "completed_timestamp": 1623186601,
+        "updates_seen": [
+          
+        ]
+      },
+      {
+        "name": "Comment prot\u00c3\u00a9ger votre compte",
+        "started_timestamp": 1607636274,
+        "completed_timestamp": 1602416093,
+        "updates_seen": [
+          
+        ]
+      },
+      {
+        "name": "Comment il est possible de vous trouver sur Facebook",
+        "started_timestamp": 1602534139,
+        "completed_timestamp": 1602416132,
+        "updates_seen": [
+          "Search Engines module"
+        ]
+      },
+      {
+        "name": "Les param\u00c3\u00a8tres de vos donn\u00c3\u00a9es sur Facebook",
+        "started_timestamp": 1602534145,
+        "completed_timestamp": 1602534136,
+        "updates_seen": [
+          
+        ]
+      }
+    ]
+  }
+}

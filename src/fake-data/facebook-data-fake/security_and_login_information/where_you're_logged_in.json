@@ -1,0 +1,26 @@
+{
+  "active_sessions_v2": [
+    {
+      "created_timestamp": 1640604508,
+      "updated_timestamp": 1643753625,
+      "ip_address": "XXX.XXX.XXX.XX",
+      "user_agent": "XXX",
+      "datr_cookie": "UKPJ********************",
+      "device": "XXX",
+      "location": "Paris, France",
+      "app": "Chrome",
+      "session_type": "web"
+    },
+    {
+      "created_timestamp": 1635863426,
+      "updated_timestamp": 1643746559,
+      "ip_address": "XXX.XXX.XXX.XX",
+      "user_agent": "XXX",
+      "datr_cookie": "Xr90********************",
+      "device": "XXX",
+      "location": "Cergy-Pontoise, France",
+      "app": "Messenger pour iOS",
+      "session_type": "messenger_lite_for_ios"
+    }
+  ]
+}
