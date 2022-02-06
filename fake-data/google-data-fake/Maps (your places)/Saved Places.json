@@ -1,0 +1,58 @@
+{
+  "type" : "FeatureCollection",
+  "features" : [ {
+    "geometry" : {
+      "coordinates" : [ 114.1515737, 22.2833841 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "Google Maps URL" : "http://maps.google.com/?q=22.283384,114.151574",
+      "Location" : {
+        "Geo Coordinates" : {
+          "Latitude" : "22.2833841",
+          "Longitude" : "114.1515737"
+        }
+      },
+      "Published" : "2018-10-31T09:14:54Z",
+      "Title" : "22.283384,114.151574",
+      "Updated" : "2019-05-26T10:26:05Z"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 114.2053390, 22.3391690 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "Google Maps URL" : "http://maps.google.com/?q=22.339169,114.205339",
+      "Location" : {
+        "Geo Coordinates" : {
+          "Latitude" : "22.3391690",
+          "Longitude" : "114.2053390"
+        }
+      },
+      "Published" : "2018-10-31T09:05:43Z",
+      "Title" : "22.339169,114.205339",
+      "Updated" : "2019-05-26T10:26:01Z"
+    },
+    "type" : "Feature"
+  }, {
+    "geometry" : {
+      "coordinates" : [ 114.1768162, 22.2959688 ],
+      "type" : "Point"
+    },
+    "properties" : {
+      "Google Maps URL" : "http://maps.google.com/?q=22.295969,114.176816",
+      "Location" : {
+        "Geo Coordinates" : {
+          "Latitude" : "22.2959688",
+          "Longitude" : "114.1768162"
+        }
+      },
+      "Published" : "2018-10-31T09:19:35Z",
+      "Title" : "22.295969,114.176816",
+      "Updated" : "2019-05-26T10:25:37Z"
+    },
+    "type" : "Feature"
+  }]
+}
