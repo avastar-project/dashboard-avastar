@@ -1,0 +1,54 @@
+{
+  "group_comments_v2": [
+    {
+      "timestamp": 1317481097,
+      "data": [
+        {
+          "comment": {
+            "timestamp": 1317481097,
+            "comment": "XXX",
+            "author": "XXX XXX",
+            "group": "XXX"
+          }
+        }
+      ],
+      "title": "XXX a commenté la publication de XXX."
+    },
+    {
+      "timestamp": 1403961011,
+      "data": [
+        {
+          "comment": {
+            "timestamp": 1317481097,
+            "comment": "XXX",
+            "author": "XXX XXX",
+            "group": "XXX"
+          }
+        }
+      ],
+      "title": "XXX a commenté la publication de XXX."
+    },
+    {
+      "timestamp": 1406148875,
+      "title": "XXX a commenté la publication de XXX."
+    },
+    {
+      "timestamp": 1406371789,
+      "title": "XXX a commenté la publication de XXX."
+    },
+    {
+      "timestamp": 1410472010,
+      "data": [
+        {
+          "comment": {
+            "timestamp": 1317481097,
+            "comment": "XXX",
+            "author": "XXX XXX",
+            "group": "XXX"
+          }
+        }
+      ],
+      "title": "XXX a commenté la publication de XXX."
+    }
+  ]
+}
