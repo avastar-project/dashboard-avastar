@@ -2,16 +2,13 @@ import Plot from 'react-plotly.js';
 
 import data from '../fake-data/fake_data_agg.json'
 
-const CountLocation = data.data_classification.filter(data => data.data_type == 'Location').length
-const CountBehavioural = data.data_classification.filter(data => data.data_type == 'Behavioural').length
-const CountCommunication = data.data_classification.filter(data => data.data_type == 'Communication').length
-const CountTechnical = data.data_classification.filter(data => data.data_type == 'Technical').length
-const CountSocialRelationship = data.data_classification.filter(data => data.data_type == 'Social relationship').length
-const CountContact = data.data_classification.filter(data => data.data_type == 'Contact').length
-const CountTransactional = data.data_classification.filter(data => data.data_type == 'Transactional').length
-
-console.log(CountTransactional)
-
+const CountBehavioural = data.data_classification.filter(data => data.data_type === 'Behavioural').length
+const CountCommunication = data.data_classification.filter(data => data.data_type === 'Communication').length
+const CountContact = data.data_classification.filter(data => data.data_type === 'Contact').length
+const CountLocation = data.data_classification.filter(data => data.data_type === 'Location').length
+const CountSocialRelationship = data.data_classification.filter(data => data.data_type === 'Social relationship').length
+const CountTechnical = data.data_classification.filter(data => data.data_type === 'Technical').length
+const CountTransactional = data.data_classification.filter(data => data.data_type === 'Transactional').length
 
 const BarChart = () => {
 
