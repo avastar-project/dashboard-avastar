@@ -1,0 +1,78 @@
+{
+  "datamodel": {
+    "location/primary_location.json": {
+      "language": "en",
+      "comment": "This file contains the main location information of the user",
+      "primary_location_v2": {
+        "city_region_pairs": [
+          {
+            "action_type": "add primary location"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "location"
+          },
+          {
+            "platform": "facebook"
+          }
+        ],
+        "zip_code": [
+          {
+            "action_type": "add primary location"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "location"
+          },
+          {
+            "platform": "facebook"
+          }
+        ]
+      }
+    },
+    "location/primary_public_location.json": {
+      "language": "en",
+      "comment": "This file contains the main public location information of the user",
+      "primary_public_location_v2": {
+        "city": [
+          {
+            "action_type": "primary public location"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "location"
+          },
+          {
+            "platform": "facebook"
+          }
+        ]
+      }
+    },
+    "Profil/Profil.json": {
+      "language": "en",
+      "comment": "This file contains the user name",
+      "name": {
+        "givenName": [
+          {
+            "action_type": "primary public location"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "location"
+          },
+          {
+            "platform": "facebook"
+          }
+        ]
+      }
+    }
+  }
+}
