@@ -1,5 +1,5 @@
 import Plot from 'react-plotly.js';
-import { isConstructorDeclaration } from 'typescript';
+// import { isConstructorDeclaration } from 'typescript';
 
 import JsonData from '../fake-data/facebook-data-fake/location/primary_location.json'
 import DataModel from '../utils/DataModel.json'
@@ -28,7 +28,7 @@ const ParsedFilePath = "location/primary_location.json"
 const listFileNames = Object.keys(DataModel.datamodel)
 
 // (3) Print the list of file paths supported in the datamodel
-console.log(listFileNames)
+// console.log(listFileNames)
 
 // (4) Check if hardcoded file path exists in the datamodel list of files 
 let parse = (x: string) => {
@@ -41,7 +41,7 @@ let parse = (x: string) => {
   return console.log(result);
 }
 
-parse(ParsedFilePath)
+// parse(ParsedFilePath)
 
 
 // CHALLENGE 2 - Fetch dynamically the #hardcoded properties of the file objects in the DataModel based on retrieved nested_array_name and list of nested_object_keys
@@ -49,26 +49,47 @@ parse(ParsedFilePath)
 
 // (1) Get nested_array_name from parsed file
 const nestedArrayName = String(Object.keys(JsonData))
+// console.log(nestedArrayName)
 
 
-// (2) Get list of nested_object_keys from parsed file [Blocked because I get a TS error even if it works in pure JS]
-// const listNestedObjectKeys = Object.keys(JsonData[nestedArrayName]
-console.log(Object.keys((JsonData as any)[nestedArrayName])) 
-// You get output in console but app fails to compile because of nestedArrayName type (TypeScript error)
-// This version is working : console.log(Object.keys(JsonData['primary_location_v2']))
-// If you do : const test = 'primary_location_v2' and then console.log(Object.keys(JsonData[test])), it works as well
-// How to fix the type of nestedArrayName to make it work ?? 
-// When checking types of both variables : console.log(typeof nestedArrayName) and console.log(typeof test), the output is the same...
+// (2) Get list of nested_object_keys from parsed file 
+const listNestedObjectKeys = Object.keys((JsonData as any)[nestedArrayName])
+// console.log(listNestedObjectKeys[0]) 
 
 
-// (3) Read content of datamodel based on nested object keys from the file
+// (3) Create list with names of hardcoded properties in dataModel
+const propertiesName = ['action_type', 'data_origin', 'data_type', 'platform']
+
+// (4) Read content of datamodel based on nested object keys from the file
 // Hardcoded path
-console.log(DataModel.datamodel['location/primary_location.json'].primary_location_v2.city_region_pairs[0].action_type) 
-// Dynamic path
-console.log((DataModel.datamodel as any)[ParsedFilePath][nestedArrayName]) //.city_region_pairs[0].action_type)
-// Failing because of the same type error as described in (2)
+//console.log(DataModel.datamodel['location/primary_location.json'].primary_location_v2.city_region_pairs[0].action_type) 
 
-// Challenge 2 output : print action_type, data_origin, data_type and platform from dynamic paths
+// Dynamic path
+// console.log((DataModel.datamodel as any)[ParsedFilePath][nestedArrayName][listNestedObjectKeys[0]][1][propertiesName[1]]) // iteratation --> [i][propertiesName[i]]
+
+// Print action_type, data_origin, data_type and platform from dynamic paths 
+parse = (fileName) => {
+  for (let i = 0; i < propertiesName.length; i++) {
+    var result = (DataModel.datamodel as any)[fileName][nestedArrayName][listNestedObjectKeys[0]][i][propertiesName[i]];
+    // console.log(result)
+  }
+  return result;
+}
+
+parse(ParsedFilePath)
+
+// WIP - Nested for loop to iterate on the list of NestedObjectKeys contained in the file
+// parse = (file) => {
+//  for (let i = 0; i < listNestedObjectKeys.length; i++) {
+//    for (let j = 0; j < propertiesName.length; j++) {
+//      var nestedObjectKey = listNestedObjectKeys[i];
+//      console.log(propertiesName[i])
+//      // console.log((DataModel.datamodel as any)[file][nestedObjectKey][i][0]);
+//      // var result = (DataModel.datamodel as any)[file][nestedArrayName][listNestedObjectKeys[i]][j][propertiesName[j]];
+//    }
+//  }
+  //return result;
+//}
 
 
 // CHALLENGE 3 - Write a function that iterates on the Json objects and print for each of the entries of nestedObjectKeys : action_type, data_origin, data_type and platform
@@ -85,6 +106,6 @@ console.log((DataModel.datamodel as any)[ParsedFilePath][nestedArrayName]) //.ci
 // Fetch nestedObjectKeys in jsonData based on nestedArrayName. Store in variable (list)
 // For each entries of nestedObjectKeys[0] : (a) print(action_type, data_origin, data_type, platform) and (b) print(interaction_date, details)
 
-// NOTE : modify DataModel as interaction_date and details properties are missing.
+
 
 export default BarChart
