@@ -21,7 +21,7 @@ const BarChart = () => {
 
 // CHALLENGE 1 - Check if the file exists in DataModel
 
-// (1) Declare file path (hardcoded for now)
+// (1) Declare file path (hardcoded for now, will be dynamic when we'll have the upload component ~ list of strings representing paths)
 const ParsedFilePath = "location/primary_location.json"
 
 // (2) Declare all file paths available in the datamodel
@@ -45,6 +45,7 @@ parse(ParsedFilePath)
 
 
 // CHALLENGE 2 - Fetch dynamically the #hardcoded properties of the file objects in the DataModel based on retrieved nested_array_name and list of nested_object_keys
+// To be retrieved in parsed file : primary_location_v2 ; ['city_region_pairs', 'zipcode']
 
 // (1) Get nested_array_name from parsed file
 const nestedArrayName = String(Object.keys(JsonData))
@@ -52,19 +53,38 @@ const nestedArrayName = String(Object.keys(JsonData))
 
 // (2) Get list of nested_object_keys from parsed file [Blocked because I get a TS error even if it works in pure JS]
 // const listNestedObjectKeys = Object.keys(JsonData[nestedArrayName]
-console.log(Object.keys(JsonData[nestedArrayName])) 
-// You get output in console but app fails to compile because of nestedArrayName type. 
-// This version is working console.log(Object.keys(JsonData['primary_location_v2']))
+console.log(Object.keys((JsonData as any)[nestedArrayName])) 
+// You get output in console but app fails to compile because of nestedArrayName type (TypeScript error)
+// This version is working : console.log(Object.keys(JsonData['primary_location_v2']))
 // If you do : const test = 'primary_location_v2' and then console.log(Object.keys(JsonData[test])), it works as well
 // How to fix the type of nestedArrayName to make it work ?? 
-// When checking types of both variable : console.log(typeof nestedArrayName) and console.log(typeof test), the output is the same...
+// When checking types of both variables : console.log(typeof nestedArrayName) and console.log(typeof test), the output is the same...
 
 
 // (3) Read content of datamodel based on nested object keys from the file
 // Hardcoded path
 console.log(DataModel.datamodel['location/primary_location.json'].primary_location_v2.city_region_pairs[0].action_type) 
 // Dynamic path
-console.log(DataModel.datamodel[ParsedFilePath][nestedArrayName]) //.city_region_pairs[0].action_type)
+console.log((DataModel.datamodel as any)[ParsedFilePath][nestedArrayName]) //.city_region_pairs[0].action_type)
 // Failing because of the same type error as described in (2)
+
+// Challenge 2 output : print action_type, data_origin, data_type and platform from dynamic paths
+
+
+// CHALLENGE 3 - Write a function that iterates on the Json objects and print for each of the entries of nestedObjectKeys : action_type, data_origin, data_type and platform
+// INPUTS :
+// jsonData
+// dataModel
+// parsedFilePath (string) -> Upload component
+// nestedArrayName (string) -> dataModel
+// nestedObjectKeys (list) -> jsonData
+
+// STEPS
+// Read the jsonData file
+// Fetch nestedArrayName in dataModel based on parsedFilePath. Store in variable (string)
+// Fetch nestedObjectKeys in jsonData based on nestedArrayName. Store in variable (list)
+// For each entries of nestedObjectKeys[0] : (a) print(action_type, data_origin, data_type, platform) and (b) print(interaction_date, details)
+
+// NOTE : modify DataModel as interaction_date and details properties are missing.
 
 export default BarChart
