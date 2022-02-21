@@ -16,6 +16,12 @@
           },
           {
             "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
           }
         ],
         "zip_code": [
@@ -30,6 +36,12 @@
           },
           {
             "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "city_region_pairs"
           }
         ]
       }
@@ -50,6 +62,12 @@
           },
           {
             "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
           }
         ]
       }
@@ -70,6 +88,12 @@
           },
           {
             "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
           }
         ]
       }
