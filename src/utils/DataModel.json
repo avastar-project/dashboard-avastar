@@ -24,7 +24,7 @@
             "details": ""
           }
         ],
-        "zip_code": [
+        "zipcode": [
           {
             "action_type": "add primary location"
           },
