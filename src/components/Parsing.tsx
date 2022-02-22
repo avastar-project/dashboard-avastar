@@ -54,7 +54,6 @@ const nestedArrayName = String(Object.keys(JsonData))
 
 // (2) Get list of nested_object_keys from parsed file 
 const listNestedObjectKeys = Object.keys((JsonData as any)[nestedArrayName])
-// console.log(listNestedObjectKeys[0]) 
 
 
 // (3) Create list with names of hardcoded properties in dataModel
@@ -67,30 +66,20 @@ const propertiesName = ['action_type', 'data_origin', 'data_type', 'platform']
 // Dynamic path
 // console.log((DataModel.datamodel as any)[ParsedFilePath][nestedArrayName][listNestedObjectKeys[0]][1][propertiesName[1]]) // iteratation --> [i][propertiesName[i]]
 
-// Print action_type, data_origin, data_type and platform from dynamic paths 
 parse = (fileName) => {
-  for (let i = 0; i < propertiesName.length; i++) {
-    var result = (DataModel.datamodel as any)[fileName][nestedArrayName][listNestedObjectKeys[0]][i][propertiesName[i]];
-    // console.log(result)
+  const aggArray = []
+  for (let i = 0; i < listNestedObjectKeys.length; i++) {
+    const indivArray = []
+    for (let j = 0; j < propertiesName.length; j++) {
+      indivArray.push((DataModel.datamodel as any)[fileName][nestedArrayName][listNestedObjectKeys[i]][j][propertiesName[j]])
+    }
+    aggArray.push(indivArray)
+    console.log(aggArray)
   }
-  return result;
+  return aggArray;
 }
 
 parse(ParsedFilePath)
-
-// WIP - Nested for loop to iterate on the list of NestedObjectKeys contained in the file
-// parse = (file) => {
-//  for (let i = 0; i < listNestedObjectKeys.length; i++) {
-//    for (let j = 0; j < propertiesName.length; j++) {
-//      var nestedObjectKey = listNestedObjectKeys[i];
-//      console.log(propertiesName[i])
-//      // console.log((DataModel.datamodel as any)[file][nestedObjectKey][i][0]);
-//      // var result = (DataModel.datamodel as any)[file][nestedArrayName][listNestedObjectKeys[i]][j][propertiesName[j]];
-//    }
-//  }
-  //return result;
-//}
-
 
 // CHALLENGE 3 - Write a function that iterates on the Json objects and print for each of the entries of nestedObjectKeys : action_type, data_origin, data_type and platform
 // INPUTS :
@@ -99,13 +88,24 @@ parse(ParsedFilePath)
 // parsedFilePath (string) -> Upload component
 // nestedArrayName (string) -> dataModel
 // nestedObjectKeys (list) -> jsonData
+parse = (fileName) => {
+  const aggArray = []
+  for (let i = 0; i < listNestedObjectKeys.length; i++) {
+    const indivArray = []
+    for (let j = 0; j < propertiesName.length; j++) {
+      indivArray.push((DataModel.datamodel as any)[fileName][nestedArrayName][listNestedObjectKeys[i]][j][propertiesName[j]])
+    }
+    aggArray.push(indivArray)
+    console.log(aggArray)
+  }
+  return aggArray;
+}
 
-// STEPS
-// Read the jsonData file
-// Fetch nestedArrayName in dataModel based on parsedFilePath. Store in variable (string)
-// Fetch nestedObjectKeys in jsonData based on nestedArrayName. Store in variable (list)
-// For each entries of nestedObjectKeys[0] : (a) print(action_type, data_origin, data_type, platform) and (b) print(interaction_date, details)
+parse(ParsedFilePath)
 
+// Next steps : 
+// (1) Make the inputs of the function dynamic. Make sure it works on all test files.
+// (2) Get the timestamp and details properties from JsonData dynamically.
 
 
 export default BarChart
