@@ -1,7 +1,11 @@
 import Plot from 'react-plotly.js';
 // import { isConstructorDeclaration } from 'typescript';
 
-import JsonData from '../fake-data/facebook-data-fake/location/primary_location.json'
+import PrimaryLocation from '../fake-data/facebook-data-fake/location/primary_location.json'
+import PrimaryPublicLocation from '../fake-data/facebook-data-fake/location/primary_public_location.json'
+import groupInteractions from '../fake-data/facebook-data-fake/activity_messages/group_interactions.json'
+import offFacebookActivity from '../fake-data/facebook-data-fake/apps_and_websites_off_of_facebook/your_off-facebook_activity.json'
+import advertisersUsingYourInfos from '../fake-data/facebook-data-fake/ads_information/advertisers_using_your_activity_or_information.json'
 import DataModel from '../utils/DataModel.json'
 
 // create a plot to see the console.log
@@ -22,24 +26,24 @@ const BarChart = () => {
 // CHALLENGE 1 - Check if the file exists in DataModel
 
 // (1) Declare file path (hardcoded for now, will be dynamic when we'll have the upload component ~ list of strings representing paths)
-const ParsedFilePath = "location/primary_location.json"
+// const ParsedFilePath = "location/primary_location.json"
 
 // (2) Declare all file paths available in the datamodel
-const listFileNames = Object.keys(DataModel.datamodel)
+// const listFileNames = Object.keys(DataModel.datamodel)
 
 // (3) Print the list of file paths supported in the datamodel
 // console.log(listFileNames)
 
 // (4) Check if hardcoded file path exists in the datamodel list of files 
-let parse = (x: string) => {
-  let result;
-  if (listFileNames.includes(x) === true) {
-    result = 'exists';
-  } else {
-    result = 'NOT exists'
-  }
-  return console.log(result);
-}
+// let parse = (x: string) => {
+//   let result;
+//   if (listFileNames.includes(x) === true) {
+//     result = 'exists';
+//   } else {
+//     result = 'NOT exists'
+//   }
+//   return console.log(result);
+// }
 
 // parse(ParsedFilePath)
 
@@ -48,12 +52,12 @@ let parse = (x: string) => {
 // To be retrieved in parsed file : primary_location_v2 ; ['city_region_pairs', 'zipcode']
 
 // (1) Get nested_array_name from parsed file
-const nestedArrayName = String(Object.keys(JsonData))
+// const nestedArrayName = String(Object.keys(PrimaryLocation))
 // console.log(nestedArrayName)
 
 
 // (2) Get list of nested_object_keys from parsed file 
-const listNestedObjectKeys = Object.keys((JsonData as any)[nestedArrayName])
+// const listNestedObjectKeys = Object.keys((PrimaryLocation as any)[nestedArrayName])
 
 
 // (3) Create list with names of hardcoded properties in dataModel
@@ -66,20 +70,19 @@ const propertiesName = ['action_type', 'data_origin', 'data_type', 'platform']
 // Dynamic path
 // console.log((DataModel.datamodel as any)[ParsedFilePath][nestedArrayName][listNestedObjectKeys[0]][1][propertiesName[1]]) // iteratation --> [i][propertiesName[i]]
 
-parse = (fileName) => {
-  const aggArray = []
-  for (let i = 0; i < listNestedObjectKeys.length; i++) {
-    const indivArray = []
-    for (let j = 0; j < propertiesName.length; j++) {
-      indivArray.push((DataModel.datamodel as any)[fileName][nestedArrayName][listNestedObjectKeys[i]][j][propertiesName[j]])
-    }
-    aggArray.push(indivArray)
-    console.log(aggArray)
-  }
-  return aggArray;
-}
+// parse = (fileName) => {
+//   const aggArray = []
+//   for (let i = 0; i < listNestedObjectKeys.length; i++) {
+//     const indivArray = []
+//     for (let j = 0; j < propertiesName.length; j++) {
+//       indivArray.push((DataModel.datamodel as any)[fileName][nestedArrayName][listNestedObjectKeys[i]][j][propertiesName[j]])
+//     }
+//     aggArray.push(indivArray)
+//   }
+//   return aggArray;
+// }
 
-parse(ParsedFilePath)
+// parse(ParsedFilePath)
 
 // CHALLENGE 3 - Write a function that iterates on the Json objects and print for each of the entries of nestedObjectKeys : action_type, data_origin, data_type and platform
 // INPUTS :
@@ -88,24 +91,204 @@ parse(ParsedFilePath)
 // parsedFilePath (string) -> Upload component
 // nestedArrayName (string) -> dataModel
 // nestedObjectKeys (list) -> jsonData
-parse = (fileName) => {
-  const aggArray = []
-  for (let i = 0; i < listNestedObjectKeys.length; i++) {
-    const indivArray = []
-    for (let j = 0; j < propertiesName.length; j++) {
-      indivArray.push((DataModel.datamodel as any)[fileName][nestedArrayName][listNestedObjectKeys[i]][j][propertiesName[j]])
-    }
-    aggArray.push(indivArray)
-    console.log(aggArray)
-  }
-  return aggArray;
-}
 
-parse(ParsedFilePath)
+// Function inputs : 
+// Json file list received from the datauploader (will be a list of filepaths to open from a function)
+// Data Model
+
+// START AGAIN HERE
+
+// INPUT 1 : Create fake list of files we would receive from the datauploader component output 
+const uploadedFiles = ["location/primary_location.json", "location/primary_public_location.json", 'activity_messages/group_interactions.json', 'apps_and_websites_off_of_facebook/your_off-facebook_activity.json', 'ads_information/advertisers_using_your_activity_or_information.json']
+
+// INPUT 2 : Create fake list of objects that contain the content of files uploaded
+const contentFiles = [PrimaryLocation, PrimaryPublicLocation, groupInteractions, offFacebookActivity, advertisersUsingYourInfos]
+
+// INPUT 3 : dataModel
+
+// INPUT 4 : propertiesName
+
+// FUNCTION
+// let parsing = (filesList: any, filesContent: any, dataMapping: Object, properties: any) => {
+
+  // (A) For each file that is read proceed to the following manipulations
+  
+  // Get file name manually (will be possible to get dynamically from uploaded file with JS Zip) 
+  // const fileName = filesList[1]
+  
+  // Get the content of the uploaded files
+  // const fileContent = filesContent[1]
+
+  // Get nestedArrayName of the file read
+  // const nestedArrayName = String(Object.keys(fileContent)) 
+
+  // Get listNestedObjectKeys from the file read
+  // const listNestedObjectKeys = Object.keys((fileContent as any)[nestedArrayName])
+
+  // (B) Label entries for each entries of the scanned file
+
+  // Define empty aggregated array in which will be stored the properties of all entries in the scanned files
+//   const aggArray = []
+//   for (let i = 0; i < listNestedObjectKeys.length; i++) {
+//     // Define empty array to store the 4 properties for each entries of the nestedArray
+//     const indivArray = []
+//     for (let j = 0; j < propertiesName.length; j++) {
+//       indivArray.push((DataModel.datamodel as any)[fileName][nestedArrayName][listNestedObjectKeys[i]][j][propertiesName[j]])
+//     }
+//     aggArray.push(indivArray)
+//   }
+//   return console.log(aggArray);
+// }
+
+// parsing(uploadedFiles, contentFiles, DataModel, propertiesName)
 
 // Next steps : 
-// (1) Make the inputs of the function dynamic. Make sure it works on all test files.
-// (2) Get the timestamp and details properties from JsonData dynamically.
+// (0) Study the different kind of JSON files structure and manage use cases. Identify all the patterns and group files that could serve as examples
+// (1) Add the examples of each group in the data model file
+// (2) Deal with each group of file structure one by one
+// (3) Get the timestamp and details properties from JsonData dynamically for each element (in indivArray).
 
+// Parsing - JSON Files patterns : https://docs.google.com/spreadsheets/d/1OvL82okiswHBD-EUN2_KR1TkTsLkyiR2qBID2COBJEI/edit?usp=sharing
+
+// Pattern Group (1)
+let parsingGroup1 = (filesList: any, selectedFile: any,filesContent: any, dataMapping: Object, properties: any) => {
+
+  // (A) For each file that is read proceed to the following manipulations
+  
+  // Get file name manually (will be possible to get dynamically from uploaded file with JS Zip) 
+  const fileName = filesList[selectedFile]
+  
+  // Get the content of the uploaded file
+  const fileContent = filesContent[selectedFile]
+
+  // Get nestedArrayName of the file read
+  const nestedArrayName = String(Object.keys(fileContent))
+  
+  // Get timestamp selector from data model
+  const timestampSelector = ((DataModel.datamodel as any)[fileName][nestedArrayName]['entries'][4]['timestamp'])
+
+  // Get details selector from data model
+  const detailsSelector = (DataModel.datamodel as any)[fileName][nestedArrayName]['entries'][5]['details']
+
+  // (B) Label entries for each entries of the scanned file
+
+  // Define empty aggregated array in which will be stored the properties of all entries in the scanned files
+  const aggArray = []
+
+  // console.log(fileContent[nestedArrayName][0]['entries'][0]['data']['name']) -- Get details from Group 1
+  // console.log(fileContent[nestedArrayName][0]['events'][0]['timestamp'])
+
+  for (let i = 0; i < fileContent[nestedArrayName].length; i++) {
+    for (let j = 0; j < fileContent[nestedArrayName][i]['entries'].length; j++) { // ['entries'] is specific to the test file (not dynamic for now)
+      const indivArray = []
+      // Get details property
+      indivArray.push(fileContent[nestedArrayName][i]['entries'][j]['data'][detailsSelector]) // ['data'] is specific to the test file (not dynamic for now)
+      // Get timestamp property
+      indivArray.push("") // hardcoded for now because no timestamp in the parsed file (to be adapated)
+      for (let k = 0; k < propertiesName.length; k++) {
+        // Get the rest of properties
+        indivArray.push((DataModel.datamodel as any)[fileName][nestedArrayName]['entries'][k][propertiesName[k]])
+      }
+    aggArray.push(indivArray)
+    }
+  }
+  return console.log(aggArray)
+}
+
+parsingGroup1(uploadedFiles, 2, contentFiles, DataModel, propertiesName)
+
+// Things to be improved : 
+// ... is not dynamic
+
+// Pattern Group (2)
+
+let parsingGroup2 = (filesList: any, selectedFile: any,filesContent: any, dataMapping: Object, properties: any) => {
+
+  // (A) For each file that is read proceed to the following manipulations
+  
+  // Get file name manually (will be possible to get dynamically from uploaded file with JS Zip) 
+  const fileName = filesList[selectedFile]
+  
+  // Get the content of the uploaded file
+  const fileContent = filesContent[selectedFile]
+
+  // Get nestedArrayName of the file read
+  const nestedArrayName = String(Object.keys(fileContent)) 
+
+  // Get timestamp selector from data model
+  const timestampSelector = ((DataModel.datamodel as any)[fileName][nestedArrayName]['entries'][4]['timestamp'])
+
+  // Get details selector from data model
+  const detailsSelector = (DataModel.datamodel as any)[fileName][nestedArrayName]['entries'][5]['details']
+
+  // (B) Label entries for each entries of the scanned file
+
+  // Define empty aggregated array in which will be stored the properties of all entries in the scanned files
+  const aggArray = []
+
+  for (let i = 0; i < fileContent[nestedArrayName].length; i++) {
+    const indivArray = []
+    // Get details property
+    indivArray.push(fileContent[nestedArrayName][i][detailsSelector])
+    // Get timestamp property
+    indivArray.push("") // hardcoded for now because no timestamp in the parsed file (to be adapated)
+    for (let j = 0; j < propertiesName.length; j++) {
+      // Get the rest of properties
+      indivArray.push((DataModel.datamodel as any)[fileName][nestedArrayName]['entries'][j][propertiesName[j]])
+    }
+  aggArray.push(indivArray)
+  }
+  return console.log(aggArray)
+}
+
+parsingGroup2(uploadedFiles, 4, contentFiles, DataModel, propertiesName)
+
+
+// Pattern Group (3)
+let parsingGroup3 = (filesList: any, selectedFile: any,filesContent: any, dataMapping: Object, properties: any) => {
+
+  // (A) For each file that is read proceed to the following manipulations
+  
+  // Get file name manually (will be possible to get dynamically from uploaded file with JS Zip) 
+  const fileName = filesList[selectedFile]
+  
+  // Get the content of the uploaded file
+  const fileContent = filesContent[selectedFile]
+
+  // Get nestedArrayName of the file read
+  const nestedArrayName = String(Object.keys(fileContent)) 
+
+  // Get timestamp selector from data model
+  const timestampSelector = ((DataModel.datamodel as any)[fileName][nestedArrayName]['entries'][4]['timestamp'])
+
+  // Get details selector from data model
+  const detailsSelector = (DataModel.datamodel as any)[fileName][nestedArrayName]['entries'][5]['details']
+
+  // (B) Label entries for each entries of the scanned file
+
+  // Define empty aggregated array in which will be stored the properties of all entries in the scanned files
+  const aggArray = []
+
+  for (let i = 0; i < fileContent[nestedArrayName].length; i++) {
+    for (let j = 0; j < fileContent[nestedArrayName][i]['events'].length; j++) { // ['events'] is specific to the test file (not dynamic for now)
+      const indivArray = []
+      // Get details property
+      indivArray.push(fileContent[nestedArrayName][i][detailsSelector])
+      // Get timestamp property
+      indivArray.push(fileContent[nestedArrayName][i]['events'][j][timestampSelector])
+      for (let k = 0; k < propertiesName.length; k++) {
+        // Get the rest of properties
+        indivArray.push((DataModel.datamodel as any)[fileName][nestedArrayName]['entries'][k][propertiesName[k]])
+      }
+    aggArray.push(indivArray)
+    }
+  }
+  return console.log(aggArray)
+}
+
+parsingGroup3(uploadedFiles, 3, contentFiles, DataModel, propertiesName)
+
+// Things to be improved : 
+// ... is not dynamic
 
 export default BarChart

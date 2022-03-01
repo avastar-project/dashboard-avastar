@@ -97,6 +97,84 @@
           }
         ]
       }
+    },
+    "activity_messages/group_interactions.json": {
+      "language": "en",
+      "comment": "User interactions in Facebook groups",
+      "group_interactions_v2": {
+        "entries": [
+          {
+            "action_type": "Interact with Facebook group"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "name"
+          }
+        ]
+      }
+    },
+    "apps_and_websites_off_of_facebook/your_off-facebook_activity.json": {
+      "language": "en",
+      "comment": "User actions recorded outside of Facebook app",
+      "off_facebook_activity_v2": {
+        "entries": [
+          {
+            "action_type": "Interact with website/app outside of Facebook app"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": "timestamp"
+          },
+          {
+            "details": "name"
+          }
+        ]
+      }
+    },
+    "ads_information/advertisers_using_your_activity_or_information.json": {
+      "language": "en",
+      "comment": "Advertisers using data about user activity and his personal information",
+      "custom_audiences_all_types_v2": {
+        "entries": [
+          {
+            "action_type": "Use personal data and user activity information for advertising purposes"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "advertiser_name"
+          }
+        ]
+      }
     }
   }
 }
