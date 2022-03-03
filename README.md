@@ -84,9 +84,34 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 - ![#C4E8FA](https://via.placeholder.com/15/C4E8FA/000000?text=+) `#C4E8FA`
 - ![#C5E6D2](https://via.placeholder.com/15/C5E6D2/000000?text=+) `#C5E6D2`
 
-
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Issues
+
+### How to fix JS heap out of memory error ?
+
+Based on issue from : [react-plotly.js git repo](https://github.com/plotly/react-plotly.js/issues/135)
+Documentation : [Customizing the `plotly.js` bundle](https://github.com/plotly/react-plotly.js#customizing-the-plotlyjs-bundle)
+
+The [React-plotly example](https://plotly.com/javascript/react/#quick-start) on official documentation seems to have a problem when team wants to try react-plotly component on app. The terminal returns an error when we use `npm start` to launch development server because of a saturated memory error.
+
+To fix this, we have to :
+
+- add '@types/plotly.js-basic-dist' TS dependency from npm (`npm i --save-dev @types/plotly.js-basic-dist`)
+- change how to create a react-plotly component by this method :
+
+```ts
+// former documentation example (❌ doesn't work)
+import Plot from 'react-plotly.js';
+
+// Updated method (✅ works fine)
+import Plotly from 'plotly.js-basic-dist';
+import createPlotlyComponent from 'react-plotly.js/factory';
+const Plot = createPlotlyComponent(Plotly);
+```
+
+For explanate above example, we will calling Plotly from `plotly.js basic-dist` then we call a method from `react-plotly` to create a component. On separate these opeartions, we avoid memory errors.
