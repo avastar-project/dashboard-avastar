@@ -45,5 +45,5 @@ const StyledGlobalStyle = createGlobalStyle`
 `;
 
 export default function GlobalStyle() {
-  return <StyledGlobalStyle />;
+  return <StyledGlobalStyle />
 }
