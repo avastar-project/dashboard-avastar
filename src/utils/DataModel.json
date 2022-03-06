@@ -4,27 +4,7 @@
       "language": "en",
       "comment": "This file contains the main location information of the user",
       "primary_location_v2": {
-        "city_region_pairs": [
-          {
-            "action_type": "add primary location"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "location"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "zipcode": [
+        "entries": [
           {
             "action_type": "add primary location"
           },
@@ -50,9 +30,9 @@
       "language": "en",
       "comment": "This file contains the main public location information of the user",
       "primary_public_location_v2": {
-        "city": [
+        "entries": [
           {
-            "action_type": "primary public location"
+            "action_type": "add primary public location"
           },
           {
             "data_origin": "observed"
@@ -67,7 +47,7 @@
             "timestamp": ""
           },
           {
-            "details": ""
+            "details": "city"
           }
         ]
       }
@@ -175,6 +155,270 @@
           }
         ]
       }
+    },
+    "other_logged_information/friend_peer_group.json": {
+      "language": "en",
+      "comment": "Current stage of life inferred by Facebook",
+      "friend_peer_group_v2": {
+        "entries": [
+          {
+            "action_type": "Current stage of life inferred by Facebook"
+          },
+          {
+            "data_origin": "inferred"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ]
+      }  
+    },
+    "other_logged_information/ads_interests.json": {
+      "language": "en",
+      "comment": "Avertising areas of interest inferred by Facebook",
+      "topics_v2": {
+        "entries": [
+          {
+            "action_type": "Avertising areas of interest inferred by Facebook"
+          },
+          {
+            "data_origin": "inferred"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ]
+      }  
+    },
+    "posts/your_posts_1.json": {
+      "language": "en",
+      "comment": "Publications posted by the user",
+      "None": {
+        "entries": [
+          {
+            "action_type": "Content you posted on Facebook"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": "timestamp"
+          },
+          {
+            "details": "title"
+          }
+        ]
+      }  
+    },
+    "your_interactions_on_facebook/recently_viewed.json": {
+      "language": "en",
+      "comment": "Content recently viewed by the user",
+      "recently_viewed": {
+        "Vid\u00c3\u00a9os et programmes de Facebook Watch": [
+          {
+            "action_type": "Videos you have seen on Facebook"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ],
+        "Publications qui ont \u00c3\u00a9t\u00c3\u00a9 affich\u00c3\u00a9es dans votre fil d\u00e2\u0080\u0099actualit\u00c3\u00a9.": [
+          {
+            "action_type": "Posts that you have seen on your Facebook feed"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ],
+        "Vid\u00c3\u00a9os que vous avez regard\u00c3\u00a9es": [
+          {
+            "action_type": "Videos that you have watched on your Facebook feed"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ],
+        "Pages web que vous avez consult\u00c3\u00a9es en dehors de Facebook": [
+          {
+            "action_type": "Web pages you have consulted off of Facebook"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ],
+        "Personnes": [
+          {
+            "action_type": "Profiles you have seen after being suggested new friends connexions"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ],
+        "Interactions Marketplace": [
+          {
+            "action_type": "Interactions with articles on Facebook marketplace"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ],
+        "Recherches Marketplace": [
+          {
+            "action_type": "Searches made on Facebook Marletplace"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ],
+        "Rappels des publications enregistr\u00c3\u00a9es": [
+          {
+            "action_type": "Content you have saved on Facebook"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ],
+        "Publicit\u00c3\u00a9s": [
+          {
+            "action_type": "Ads you have seen"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ]
+      }  
     }
   }
 }
