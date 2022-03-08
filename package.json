@@ -52,13 +52,11 @@
     ]
   },
   "devDependencies": {
-    "@craco/craco": "^6.4.3",
     "@open-wc/webpack-import-meta-loader": "^0.4.7",
     "@types/lodash": "^4.14.175",
     "@types/plotly.js-basic-dist": "^1.54.0",
     "@types/react-plotly.js": "^2.5.0",
     "@types/styled-components": "^5.1.24",
-    "craco-alias": "^3.0.1",
     "prettier": "^2.4.1",
     "worker-loader": "^3.0.8"
   }
