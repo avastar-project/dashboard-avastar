@@ -1,12 +1,12 @@
 import { Tooltip, IconButton } from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
 import styled from '@emotion/styled';
-import TrackedChart from './Plotly/TrackedChart';
 
 // Typescript Props
 type PlotlyContainerProps = {
   title: string;
   tooltip: string;
+  plotlyComponent: React.ReactNode;
 };
 
 // Styled-components
@@ -27,6 +27,7 @@ const Header = styled.div`
 export default function PlotlyContainer({
   title,
   tooltip,
+  plotlyComponent,
 }: PlotlyContainerProps) {
   return (
     <Article>
@@ -38,7 +39,8 @@ export default function PlotlyContainer({
           </IconButton>
         </Tooltip>
       </Header>
-      <TrackedChart />
+      {/* Receive an unknown Plotly component */}
+      {plotlyComponent}
     </Article>
   );
 }

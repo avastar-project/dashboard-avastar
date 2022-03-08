@@ -1,5 +1,8 @@
 import PlotlyContainer from '../components/Overview/PlotlyContainer';
 import styled from '@emotion/styled';
+// Calling Plotly Charts for integration on Overview page
+import TrackedChart from '../components/Overview/PlotlyCharts/TrackedChart';
+import DataCollectedChart from '../components/Overview/PlotlyCharts/DataCollectedChart';
 
 // MUI components
 import { Box, Grid } from '@mui/material';
@@ -14,9 +17,7 @@ const Header = styled.header`
   border: solid 1px red;
 `;
 
-const Main = styled.main`
-  border: solid 1px blue;
-`;
+const Main = styled.main``;
 
 const Aside = styled.aside`
   border: solid 1px green;
@@ -32,14 +33,31 @@ export default function Overview() {
         <Grid item xs={12} md={9}>
           <Main>
             {/* Contains each stat view */}
-            <PlotlyContainer title="Overview" tooltip="Global stats" />
-            <PlotlyContainer title="What is being tracked ?" tooltip="about" />
+            <PlotlyContainer
+              title="Overview"
+              tooltip="Global stats"
+              plotlyComponent={<TrackedChart />}
+            />
+            <PlotlyContainer
+              title="What is being tracked ?"
+              tooltip="about"
+              plotlyComponent={<TrackedChart />}
+            />
             <PlotlyContainer
               title="How my data is collected ?"
               tooltip="about"
+              plotlyComponent={<DataCollectedChart />}
             />
-            <PlotlyContainer title="WHo has my data ?" tooltip="about" />
-            <PlotlyContainer title="Search my data" tooltip="about" />
+            <PlotlyContainer
+              title="Who has my data ?"
+              tooltip="about"
+              plotlyComponent={<TrackedChart />}
+            />
+            <PlotlyContainer
+              title="Search my data"
+              tooltip="about"
+              plotlyComponent={<TrackedChart />}
+            />
           </Main>
         </Grid>
         <Grid item xs={12} md={3}>
