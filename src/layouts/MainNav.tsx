@@ -74,6 +74,10 @@ const NavLink = styled(Link)`
   flex-flow: row nowrap;
   align-items: center;
 
+  &:visited {
+    color: var(--clr-darkest);
+  }
+
   & > img {
     margin-right: 0.5rem;
   }
