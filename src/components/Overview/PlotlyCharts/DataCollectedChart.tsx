@@ -18,6 +18,7 @@ export default function DataCollectedChart() {
       ]}
       // Doc link for layout references : https://plotly.com/javascript/reference/#layout
       layout={{ autosize: true, title: 'Volume of data points' }}
+      config={{ responsive: true }}
     />
   );
 }

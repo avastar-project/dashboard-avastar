@@ -1,4 +1,9 @@
-import { Tooltip, IconButton } from '@mui/material';
+/**
+ * PlotlyContainer component represent a container
+ * who receives a Plotly Chart on Overview Page.
+ */
+
+import { Tooltip, IconButton, TextField } from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
 import styled from '@emotion/styled';
 
@@ -7,6 +12,7 @@ type PlotlyContainerProps = {
   title: string;
   tooltip: string;
   plotlyComponent: React.ReactNode;
+  isSearch: boolean;
 };
 
 // Styled-components
@@ -28,16 +34,22 @@ export default function PlotlyContainer({
   title,
   tooltip,
   plotlyComponent,
+  isSearch,
 }: PlotlyContainerProps) {
   return (
     <Article>
       <Header>
         <h2>{title}</h2>
-        <Tooltip title={tooltip}>
-          <IconButton>
-            <InfoIcon />
-          </IconButton>
-        </Tooltip>
+        <div>
+          {isSearch && (
+            <TextField id="search-bar" label="Search" variant="outlined" />
+          )}
+          <Tooltip title={tooltip}>
+            <IconButton>
+              <InfoIcon />
+            </IconButton>
+          </Tooltip>
+        </div>
       </Header>
       {/* Receive an unknown Plotly component */}
       {plotlyComponent}
