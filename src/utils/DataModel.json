@@ -419,6 +419,84 @@
           }
         ]
       }  
+    },
+    "Hangouts/Hangouts.json": {
+      "language": "en",
+      "comment": "Messages sent in Hangouts",
+      "None": {
+        "entries": [
+          {
+            "action_type": "Message sent in Hangouts"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "google"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ]
+      }  
+    },
+    "Application Google Home/HomeApp.json": {
+      "language": "en",
+      "comment": "Action taken with Google Home",
+      "None": {
+        "entries": [
+          {
+            "action_type": "Action taken with Google Home"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "google"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ]
+      }  
+    },
+    "Application Google Home/HomeHistory.json": {
+      "language": "en",
+      "comment": "Usage history of Google Home",
+      "None": {
+        "entries": [
+          {
+            "action_type": "Action taken with Google Home"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "google"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ]
+      }  
     }
   }
 }

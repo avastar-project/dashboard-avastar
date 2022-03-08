@@ -10,6 +10,9 @@ import adsInterests from '../fake-data/facebook-data-fake/other_logged_informati
 import friendsPeerGroup from '../fake-data/facebook-data-fake/other_logged_information/friend_peer_group.json'
 import userPosts from '../fake-data/facebook-data-fake/posts/your_posts_1.json'
 import recentlyViewed from '../fake-data/facebook-data-fake/your_interactions_on_facebook/recently_viewed.json'
+import hangoutsConversations from '../fake-data/google-data-fake/Hangouts/Hangouts.json'
+import homeAppData from '../fake-data/google-data-fake/Application Google Home/HomeApp.json'
+import homeAppHistory from '../fake-data/google-data-fake/Application Google Home/HomeHistory.json'
 import DataModel from '../utils/DataModel.json'
 
 // create a plot to see the console.log
@@ -103,10 +106,10 @@ const propertiesName = ['action_type', 'data_origin', 'data_type', 'platform']
 // START AGAIN HERE
 
 // INPUT 1 : Create fake list of files we would receive from the datauploader component output 
-const uploadedFiles = ["location/primary_location.json", "location/primary_public_location.json", 'activity_messages/group_interactions.json', 'apps_and_websites_off_of_facebook/your_off-facebook_activity.json', 'ads_information/advertisers_using_your_activity_or_information.json', 'other_logged_information/ads_interests.json', 'other_logged_information/friend_peer_group.json', 'posts/your_posts_1.json', 'your_interactions_on_facebook/recently_viewed.json']
+const uploadedFiles = ["location/primary_location.json", "location/primary_public_location.json", 'activity_messages/group_interactions.json', 'apps_and_websites_off_of_facebook/your_off-facebook_activity.json', 'ads_information/advertisers_using_your_activity_or_information.json', 'other_logged_information/ads_interests.json', 'other_logged_information/friend_peer_group.json', 'posts/your_posts_1.json', 'your_interactions_on_facebook/recently_viewed.json', 'Hangouts/Hangouts.json', 'Application Google Home/HomeApp.json', 'Application Google Home/HomeHistory.json']
 
 // INPUT 2 : Create fake list of objects that contain the content of files uploaded
-const contentFiles = [PrimaryLocation, PrimaryPublicLocation, groupInteractions, offFacebookActivity, advertisersUsingYourInfos, adsInterests, friendsPeerGroup, userPosts, recentlyViewed]
+const contentFiles = [PrimaryLocation, PrimaryPublicLocation, groupInteractions, offFacebookActivity, advertisersUsingYourInfos, adsInterests, friendsPeerGroup, userPosts, recentlyViewed, hangoutsConversations, homeAppData, homeAppHistory]
 
 // INPUT 3 : dataModel
 
@@ -496,7 +499,7 @@ let parsingGroup10 = (filesList: any, selectedFile: any,filesContent: any, dataM
     if (result === true) {
       for (let j = 0; j < fileContent[nestedArrayName][i]['entries'].length; j++) {
         indivArray.push(fileContent[nestedArrayName][i]['entries'][j]['timestamp'])
-        indivArray.push(fileContent[nestedArrayName][i]['entries'][j]['data']['name'])
+        indivArray.push(fileContent[nestedArrayName][i]['entries'][j]['data']['name']) // make this part dynamic
         for (let k = 0; k < propertiesName.length; k++) {
           indivArray.push((DataModel.datamodel as any)[fileName][nestedArrayName][selector][k][propertiesName[k]])
         }
@@ -505,7 +508,7 @@ let parsingGroup10 = (filesList: any, selectedFile: any,filesContent: any, dataM
       for (let j = 0; j < fileContent[nestedArrayName][i]['children'].length; j++) {
         for (let k = 0; k < fileContent[nestedArrayName][i]['children'][j]['entries'].length; k++) {
           indivArray.push(fileContent[nestedArrayName][i]['children'][j]['entries'][k]['timestamp'])
-          indivArray.push(fileContent[nestedArrayName][i]['children'][j]['entries'][k]['data']['name'])
+          indivArray.push(fileContent[nestedArrayName][i]['children'][j]['entries'][k]['data']['name']) // make this part dynamic
           for (let l = 0; l < propertiesName.length; l++) {
             indivArray.push((DataModel.datamodel as any)[fileName][nestedArrayName][selector][l][propertiesName[l]])
           }
@@ -514,8 +517,53 @@ let parsingGroup10 = (filesList: any, selectedFile: any,filesContent: any, dataM
     }
     aggArray.push(indivArray) // to be optimised as arrays are not separated in the right way
   }
-return console.log(aggArray)
+// return console.log(aggArray)
 }
 parsingGroup10(uploadedFiles, 8, contentFiles, DataModel, propertiesName)
+
+let parsingGroup11 = (filesList: any, selectedFile: any,filesContent: any, dataMapping: Object, properties: any) => {
+
+  // (A) For each file that is read proceed to the following manipulations
+  
+  // Get file name manually (will be possible to get dynamically from uploaded file with JS Zip) 
+  const fileName = filesList[selectedFile]
+  
+  // Get the content of the uploaded file
+  const fileContent = filesContent[selectedFile]
+
+  // Get nestedArrayName of the file read
+  const nestedArrayName = String(Object.keys(fileContent)) 
+
+  // if (nestedArrayName !== "") { // check if JSON is empty
+  //   console.log(fileContent)
+  // }
+
+  // console.log(fileContent[nestedArrayName].length) // check if empty for a file with nestedArray (works for use case 11)
+
+  const value = fileContent[nestedArrayName][0]
+
+  console.log(value)
+
+  if(value && Object.entries(value).length === 0){ // check if empty for an object that contains empty brackets (works for use case 12)
+    console.log('Object is empty');
+  }
+  else console.log('Object is not empty')
+
+
+  // console.log(Object.keys(fileContent).length) // check if empty for a file without nestedArray (works for use case 13)
+  
+  // Get timestamp selector from data model
+
+  // Get details selector from data model
+
+  
+  // (B) Label entries for each entries of the scanned file
+
+  // Define empty aggregated array in which will be stored the properties of all entries in the scanned files
+  const aggArray = []
+
+// return console.log(aggArray)
+}
+parsingGroup11(uploadedFiles, 10, contentFiles, DataModel, propertiesName)
 
 export default BarChart
