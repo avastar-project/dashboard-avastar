@@ -3,6 +3,7 @@
     "location/primary_location.json": {
       "language": "en",
       "comment": "This file contains the main location information of the user",
+      "depth": 1,
       "primary_location_v2": {
         "entries": [
           {
@@ -29,6 +30,7 @@
     "location/primary_public_location.json": {
       "language": "en",
       "comment": "This file contains the main public location information of the user",
+      "depth": 1,
       "primary_public_location_v2": {
         "entries": [
           {
@@ -81,6 +83,7 @@
     "activity_messages/group_interactions.json": {
       "language": "en",
       "comment": "User interactions in Facebook groups",
+      "depth": 3,
       "group_interactions_v2": {
         "entries": [
           {
@@ -107,6 +110,7 @@
     "apps_and_websites_off_of_facebook/your_off-facebook_activity.json": {
       "language": "en",
       "comment": "User actions recorded outside of Facebook app",
+      "depth": 3,
       "off_facebook_activity_v2": {
         "entries": [
           {
@@ -133,6 +137,7 @@
     "ads_information/advertisers_using_your_activity_or_information.json": {
       "language": "en",
       "comment": "Advertisers using data about user activity and his personal information",
+      "depth": 1,
       "custom_audiences_all_types_v2": {
         "entries": [
           {
@@ -159,6 +164,7 @@
     "other_logged_information/friend_peer_group.json": {
       "language": "en",
       "comment": "Current stage of life inferred by Facebook",
+      "depth": 1,
       "friend_peer_group_v2": {
         "entries": [
           {
@@ -185,6 +191,7 @@
     "other_logged_information/ads_interests.json": {
       "language": "en",
       "comment": "Avertising areas of interest inferred by Facebook",
+      "depth": 1,
       "topics_v2": {
         "entries": [
           {
@@ -211,6 +218,7 @@
     "posts/your_posts_1.json": {
       "language": "en",
       "comment": "Publications posted by the user",
+      "depth": 0,
       "None": {
         "entries": [
           {
@@ -237,6 +245,7 @@
     "your_interactions_on_facebook/recently_viewed.json": {
       "language": "en",
       "comment": "Content recently viewed by the user",
+      "depth": 4,
       "recently_viewed": {
         "Vid\u00c3\u00a9os et programmes de Facebook Watch": [
           {
