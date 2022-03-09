@@ -3,15 +3,7 @@ import { Container, CssBaseline, Step, Stepper, Typography } from '@mui/material
 
 import UploadStep from './UploadStep';
 
-const Home = () => {
-  const [activeStep, setActiveStep] = useState<number>(0)
-  const [uploadedFile, setUploadedFile] = useState<File>()
-
-  useEffect(() => {
-    if (activeStep === 0 && uploadedFile !== undefined) setActiveStep(1)
-    if (activeStep === 1 && results !== undefined) setActiveStep(2)
-  }, [activeStep, uploadedFile])
-
+// On supprime le doublon Home()
 
 export default function Homepage() {
 // Pour qu'un composant React fonctionne, on ajoute les functions / hooks avant le return()
