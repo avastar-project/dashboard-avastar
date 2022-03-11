@@ -440,7 +440,7 @@ let parsingGroup6 = (
       ]
     );
   }
-  // return console.log(aggArray)
+  // return console.log(aggArray);
 };
 
 parsingGroup6(uploadedFiles, 0, contentFiles, DataModel, propertiesName);
@@ -487,7 +487,7 @@ let parsingGroup5 = (
       ]
     );
   }
-  // return console.log(aggArray)
+  // return console.log(aggArray);
 };
 
 parsingGroup5(uploadedFiles, 1, contentFiles, DataModel, propertiesName);
@@ -759,6 +759,7 @@ let parsingGroup11 = (
 parsingGroup11(uploadedFiles, 10, contentFiles, DataModel, propertiesName);
 
 let parserGlobal = (
+  // START OF GLOBAL FUNCTION (WIP)
   filesList: any,
   selectedFile: any,
   filesContent: any,
@@ -802,13 +803,15 @@ let parserGlobal = (
   // console printer for tests
   console.log(fileName);
 
-  const fileDepth = (DataModel.datamodel as any)[fileName]['depth'];
+  const fileDepth = (DataModel.datamodel as any)[fileName][
+    'file_structure_properties'
+  ]['depth'];
 
   const aggArray = [];
 
   if (fileDepth === 0) {
-    // Files : 7
-    const nestedArrayName = 'None';
+    // File(s) : 7
+    const nestedArrayName = 'None'; // If the depth === 0 then necessarily, there is no nested array name to get the data points of interest
 
     for (let i = 0; i < fileContent.length; i++) {
       const indivArray = [];
@@ -822,30 +825,102 @@ let parserGlobal = (
       aggArray.push(indivArray);
     }
   } else if (fileDepth === 1) {
-    // Files : 0, 1, 4, 5, 6
+    // File(s) : 4, 5, 6
     const nestedArrayName = String(Object.keys(fileContent));
 
-    for (let i = 0; i < fileContent[nestedArrayName].length; i++) {
-      const indivArray = [];
+    if (typeof fileContent[nestedArrayName] === 'string') {
+      // Check the type of the element that comes right after the nested array name (string vs object)
       for (let j = 0; j < propertiesName.length; j++) {
-        indivArray.push(
+        aggArray.push(
           (DataModel.datamodel as any)[fileName][nestedArrayName]['entries'][j][
             propertiesName[j]
           ]
         );
       }
-      aggArray.push(indivArray);
+    } else {
+      for (let i = 0; i < fileContent[nestedArrayName].length; i++) {
+        const indivArray = [];
+        for (let j = 0; j < propertiesName.length; j++) {
+          indivArray.push(
+            (DataModel.datamodel as any)[fileName][nestedArrayName]['entries'][
+              j
+            ][propertiesName[j]]
+          );
+        }
+        aggArray.push(indivArray);
+      }
     }
   } else if (fileDepth === 2) {
+    // File(s) : 0, 1, 2
+
+    const nestedArrayName = String(Object.keys(fileContent));
+
+    if (
+      (DataModel.datamodel as any)[fileName]['file_structure_properties'][
+        'has_single_data_point'
+      ] === true
+    ) {
+      // check if the file has only one data point of interest
+      for (let i = 0; i < propertiesName.length; i++) {
+        aggArray.push(
+          (DataModel.datamodel as any)[fileName][nestedArrayName]['entries'][i][
+            propertiesName[i]
+          ]
+        );
+      }
+    } else {
+      for (let i = 0; i < fileContent[nestedArrayName].length; i++) {
+        for (
+          let j = 0;
+          j < fileContent[nestedArrayName][i]['entries'].length;
+          j++
+        ) {
+          const indivArray = [];
+
+          for (let k = 0; k < propertiesName.length; k++) {
+            indivArray.push(
+              (DataModel.datamodel as any)[fileName][nestedArrayName][
+                'entries'
+              ][k][propertiesName[k]]
+            );
+          }
+          aggArray.push(indivArray);
+        }
+      }
+    }
   } else if (fileDepth === 3) {
+    // File(s) : 3, 8
+
+    const nestedArrayName = String(Object.keys(fileContent));
+
+    const nestedDataSelector = (DataModel.datamodel as any)[fileName][
+      'file_structure_properties'
+    ]['nested_data_point_selector'];
+
+    for (let i = 0; i < fileContent[nestedArrayName].length; i++) {
+      for (
+        let j = 0;
+        j < fileContent[nestedArrayName][i][nestedDataSelector].length;
+        j++
+      ) {
+        const indivArray = [];
+        for (let k = 0; k < propertiesName.length; k++) {
+          indivArray.push(
+            (DataModel.datamodel as any)[fileName][nestedArrayName]['entries'][
+              k
+            ][propertiesName[k]]
+          );
+        }
+        aggArray.push(indivArray);
+      }
+    }
   } else if (fileDepth === 4) {
   }
   return console.log(aggArray);
 };
-parserGlobal(uploadedFiles, 1, contentFiles, DataModel, propertiesName);
+parserGlobal(uploadedFiles, 3, contentFiles, DataModel, propertiesName);
 
 // Next steps :
-// Trouver une méthode qui permet de gérer les différentes "depths" des fichiers pour savoir comment construire les boucles for (chemin vers les objets finaux <==> nb de steps)
 // Implémenter la sélection des infos "details" et timestamp
 // Imbriquer tous les checks les uns dans les autres chronologiquement
 
