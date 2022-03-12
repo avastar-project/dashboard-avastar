@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Container, CssBaseline, Step, Stepper, Typography } from '@mui/material'
 
-import UploadStep from './UploadStep';
+import UploadStep from '../uploadStep';
 
 export default function Homepage() {
 const [activeStep, setActiveStep] = useState<number>(0)
@@ -9,7 +9,6 @@ const [activeStep, setActiveStep] = useState<number>(0)
 
   useEffect(() => {
     if (activeStep === 0 && uploadedFile !== undefined) setActiveStep(1)
-    if (activeStep === 1 && results !== undefined) setActiveStep(2)
   }, [activeStep, uploadedFile])
   return (
     <>
@@ -18,9 +17,6 @@ const [activeStep, setActiveStep] = useState<number>(0)
         <Stepper activeStep={activeStep} orientation="vertical">
           <Step>
             <UploadStep setUploadedFile={setUploadedFile} />
-          </Step>
-          <Step>
-            <ProcessStep uploadedFile={uploadedFile} />
           </Step>
         </Stepper>
       </Container>
