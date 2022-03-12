@@ -889,7 +889,7 @@ let parserGlobal = (
       }
     }
   } else if (fileDepth === 3) {
-    // File(s) : 3, 8
+    // File(s) : 3
 
     const nestedArrayName = String(Object.keys(fileContent));
 
@@ -915,6 +915,7 @@ let parserGlobal = (
       }
     }
   } else if (fileDepth === 4) {
+    // File(s) : 8
   }
   return console.log(aggArray);
 };
