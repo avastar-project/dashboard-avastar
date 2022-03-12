@@ -18,6 +18,7 @@
     "@zip.js/zip.js": "^2.4.5",
     "lodash": "^4.17.21",
     "plotly.js": "^2.8.3",
+    "plotly.js-basic-dist": "^2.9.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-dropzone": "^11.4.2",
@@ -56,6 +57,7 @@
   "devDependencies": {
     "@open-wc/webpack-import-meta-loader": "^0.4.7",
     "@types/lodash": "^4.14.175",
+    "@types/plotly.js-basic-dist": "^1.54.0",
     "@types/react-plotly.js": "^2.5.0",
     "prettier": "^2.4.1",
     "worker-loader": "^3.0.8"
