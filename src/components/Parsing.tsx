@@ -916,10 +916,59 @@ let parserGlobal = (
     }
   } else if (fileDepth === 4) {
     // File(s) : 8
+    const nestedArrayName = String(Object.keys(fileContent));
+
+    for (let i = 0; i < fileContent[nestedArrayName].length; i++) {
+      let categorySelector = fileContent[nestedArrayName][i]['name'];
+
+      let hasPropertyEntries =
+        fileContent[nestedArrayName][i].hasOwnProperty('entries');
+
+      if (hasPropertyEntries === true) {
+        for (
+          let j = 0;
+          j < fileContent[nestedArrayName][i]['entries'].length;
+          j++
+        ) {
+          const indivArray = [];
+          for (let k = 0; k < propertiesName.length; k++) {
+            indivArray.push(
+              (DataModel.datamodel as any)[fileName][nestedArrayName][
+                categorySelector
+              ][k][propertiesName[k]]
+            );
+          }
+          aggArray.push(indivArray);
+        }
+      } else {
+        for (
+          let j = 0;
+          j < fileContent[nestedArrayName][i]['children'].length;
+          j++
+        ) {
+          for (
+            let k = 0;
+            k <
+            fileContent[nestedArrayName][i]['children'][j]['entries'].length;
+            k++
+          ) {
+            const indivArray = [];
+            for (let l = 0; l < propertiesName.length; l++) {
+              indivArray.push(
+                (DataModel.datamodel as any)[fileName][nestedArrayName][
+                  categorySelector
+                ][l][propertiesName[l]]
+              );
+            }
+            aggArray.push(indivArray);
+          }
+        }
+      }
+    }
   }
   return console.log(aggArray);
 };
-parserGlobal(uploadedFiles, 3, contentFiles, DataModel, propertiesName);
+parserGlobal(uploadedFiles, 9, contentFiles, DataModel, propertiesName);
 
 // Next steps :
 // Implémenter la sélection des infos "details" et timestamp
