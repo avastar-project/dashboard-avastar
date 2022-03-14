@@ -1,6 +1,7 @@
 import React, {useCallback} from 'react'
-// import { BlobReader, TextWriter, ZipReader } from '@zip.js/zip.js'
 import {useDropzone} from 'react-dropzone'
+import JSZip from 'jszip';
+// import { BlobReader, TextWriter, ZipReader } from '@zip.js/zip.js'
 
 export default function DropzoneMultiplefiles() {
   const onDrop = useCallback((acceptedFiles) => {
@@ -8,14 +9,22 @@ export default function DropzoneMultiplefiles() {
       const reader = new FileReader()
       reader.onabort = () => console.log('file reading was aborted')
       reader.onerror = () => console.log('file reading has failed')
-      reader.onload = () => {
-
+      reader.onload = e => {
       // Do whatever you want with the file contents
         const binaryStr = reader.result
         console.log(binaryStr)
       }
-      reader.readAsArrayBuffer(file)
-    })
+      console.log(reader)
+
+      //const zipper = new JSZip();
+      //const unzippedFiles = zipper.loadAsync(reader);
+      //return Promise.resolve(unzippedFiles).then(unzipped => {
+      //  if (!Object.keys(unzipped.files).length) {
+      //    return Promise.reject('No file was found');
+      //  }
+      //  return unzipped.files[Object.keys(unzipped.files)[0]];
+      //}).then(unzippedFile => zipper.file(unzippedFile.name).async('string'));
+      })
 
   }, [])
   const {getRootProps, getInputProps} = useDropzone({onDrop})
