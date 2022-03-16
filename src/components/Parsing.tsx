@@ -13,6 +13,16 @@ import recentlyViewed from '../fake-data/facebook-data-fake/your_interactions_on
 import hangoutsConversations from '../fake-data/google-data-fake/Hangouts/Hangouts.json';
 import homeAppData from '../fake-data/google-data-fake/Application Google Home/HomeApp.json';
 import homeAppHistory from '../fake-data/google-data-fake/Application Google Home/HomeHistory.json';
+import peopleInteractions from '../fake-data/facebook-data-fake/activity_messages/people_and_friends.json';
+import advertisersYouInteractedWith from "../fake-data/facebook-data-fake/ads_information/advertisers_you've_interacted_with.json";
+import commentsPosted from '../fake-data/facebook-data-fake/comments_and_reactions/comments.json';
+import recentlyVisited from '../fake-data/facebook-data-fake/your_interactions_on_facebook/recently_visited.json';
+import eventResponses from '../fake-data/facebook-data-fake/events/your_event_responses.json';
+import accountsCenter from '../fake-data/facebook-data-fake/facebook_accounts_center/accounts_center.json';
+import PostsGroups from '../fake-data/facebook-data-fake/groups/your_posts_in_groups.json';
+import photosPosted from '../fake-data/facebook-data-fake/posts/album/0.json';
+import profileInformation from '../fake-data/facebook-data-fake/profile_information/profile_information.json';
+
 import DataModel from '../utils/DataModel.json';
 
 // create a plot to see the console.log
@@ -144,6 +154,15 @@ const uploadedFiles = [
   'Hangouts/Hangouts.json',
   'Application Google Home/HomeApp.json',
   'Application Google Home/HomeHistory.json',
+  'activity_messages/people_and_friends.json',
+  "ads_information/advertisers_you've_interacted_with.json",
+  'comments_and_reactions/comments.json',
+  'your_interactions_on_facebook/recently_visited.json',
+  'events/your_event_responses.json',
+  'facebook_accounts_center/accounts_center.json',
+  'groups/your_posts_in_groups.json',
+  'posts/album/0.json',
+  'profile_information/profile_information.json',
 ];
 
 // INPUT 2 : Create fake list of objects that contain the content of files uploaded
@@ -160,6 +179,15 @@ const contentFiles = [
   hangoutsConversations,
   homeAppData,
   homeAppHistory,
+  peopleInteractions,
+  advertisersYouInteractedWith,
+  commentsPosted,
+  recentlyVisited,
+  eventResponses,
+  accountsCenter,
+  PostsGroups,
+  photosPosted,
+  profileInformation,
 ];
 
 // INPUT 3 : dataModel
@@ -758,6 +786,60 @@ let parsingGroup11 = (
 };
 parsingGroup11(uploadedFiles, 10, contentFiles, DataModel, propertiesName);
 
+let parsingGroup12 = (
+  // Parsing of your_event_responses
+  filesList: any,
+  selectedFile: any,
+  filesContent: any,
+  dataMapping: Object,
+  properties: any
+) => {
+  // (A) For each file that is read proceed to the following manipulations
+
+  // Get file name manually (will be possible to get dynamically from uploaded file with JS Zip)
+  const fileName = filesList[selectedFile];
+
+  // Get the content of the uploaded file
+  const fileContent = filesContent[selectedFile];
+
+  // Get nestedArrayName of the file read
+  const nestedArrayName = String(Object.keys(fileContent));
+
+  console.log(fileName);
+
+  console.log(Array.isArray(fileContent[nestedArrayName])); // check if {} or [] is displayed after nestedArrayName (false for your_event_responses while true for group_interactions)
+
+  console.log(String(Object.keys(fileContent[nestedArrayName]).length)); // If false, method to count length
+
+  const aggArray = [];
+
+  Object.entries(fileContent[nestedArrayName]).forEach(function (item, index) {
+    let categorySelector = item[0];
+    for (
+      let i = 0;
+      i < fileContent[nestedArrayName][categorySelector].length;
+      i++
+    ) {
+      const indivArray = [];
+      for (let j = 0; j < propertiesName.length; j++) {
+        indivArray.push(
+          (DataModel.datamodel as any)[fileName][nestedArrayName][
+            categorySelector
+          ][j][propertiesName[j]]
+        );
+      }
+      aggArray.push(indivArray);
+    }
+  });
+
+  // (B) Label entries for each entries of the scanned file
+
+  // Define empty aggregated array in which will be stored the properties of all entries in the scanned files
+
+  // return console.log(aggArray)
+};
+parsingGroup12(uploadedFiles, 16, contentFiles, DataModel, propertiesName);
+
 let parserGlobal = (
   // START OF GLOBAL FUNCTION (WIP)
   filesList: any,
@@ -851,7 +933,7 @@ let parserGlobal = (
       }
     }
   } else if (fileDepth === 2) {
-    // File(s) : 0, 1, 2
+    // File(s) : 0, 1, 2, 16
 
     const nestedArrayName = String(Object.keys(fileContent));
 
@@ -869,22 +951,47 @@ let parserGlobal = (
         );
       }
     } else {
-      for (let i = 0; i < fileContent[nestedArrayName].length; i++) {
-        for (
-          let j = 0;
-          j < fileContent[nestedArrayName][i]['entries'].length;
-          j++
+      if (Array.isArray(fileContent[nestedArrayName]) == false) {
+        // check type of object by detecting if {} or [] is displayed after nestedArrayName
+        Object.entries(fileContent[nestedArrayName]).forEach(function (
+          item,
+          index
         ) {
-          const indivArray = [];
-
-          for (let k = 0; k < propertiesName.length; k++) {
-            indivArray.push(
-              (DataModel.datamodel as any)[fileName][nestedArrayName][
-                'entries'
-              ][k][propertiesName[k]]
-            );
+          let categorySelector = item[0];
+          for (
+            let i = 0;
+            i < fileContent[nestedArrayName][categorySelector].length;
+            i++
+          ) {
+            const indivArray = [];
+            for (let j = 0; j < propertiesName.length; j++) {
+              indivArray.push(
+                (DataModel.datamodel as any)[fileName][nestedArrayName][
+                  categorySelector
+                ][j][propertiesName[j]]
+              );
+            }
+            aggArray.push(indivArray);
           }
-          aggArray.push(indivArray);
+        });
+      } else {
+        for (let i = 0; i < fileContent[nestedArrayName].length; i++) {
+          for (
+            let j = 0;
+            j < fileContent[nestedArrayName][i]['entries'].length;
+            j++
+          ) {
+            const indivArray = [];
+
+            for (let k = 0; k < propertiesName.length; k++) {
+              indivArray.push(
+                (DataModel.datamodel as any)[fileName][nestedArrayName][
+                  'entries'
+                ][k][propertiesName[k]]
+              );
+            }
+            aggArray.push(indivArray);
+          }
         }
       }
     }
@@ -915,7 +1022,7 @@ let parserGlobal = (
       }
     }
   } else if (fileDepth === 4) {
-    // File(s) : 8
+    // File(s) : 8, 15
     const nestedArrayName = String(Object.keys(fileContent));
 
     for (let i = 0; i < fileContent[nestedArrayName].length; i++) {
@@ -968,10 +1075,12 @@ let parserGlobal = (
   }
   return console.log(aggArray);
 };
-parserGlobal(uploadedFiles, 9, contentFiles, DataModel, propertiesName);
+parserGlobal(uploadedFiles, 16, contentFiles, DataModel, propertiesName);
 
 // Next steps :
+// Fix issues with file 'your_event_responses' (16), '0.json' (19), 'profile_information.json' (20)
 // Implémenter la sélection des infos "details" et timestamp
 // Imbriquer tous les checks les uns dans les autres chronologiquement
+// Cleaner fichier, documenter au maximum la fonction et push une MR
 
 export default BarChart;

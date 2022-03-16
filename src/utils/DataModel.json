@@ -122,6 +122,38 @@
         ]
       }
     },
+    "activity_messages/people_and_friends.json": {
+      "language": "en",
+      "comment": "???",
+      "file_structure_properties":{
+        "depth": 2,
+        "has_single_data_point": false,
+        "data_point_selector": "",
+        "nested_data_point_selector": ""
+      },
+      "people_interactions_v2": {
+        "entries": [
+          {
+            "action_type": "Interact with people"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "name"
+          }
+        ]
+      }
+    },
     "apps_and_websites_off_of_facebook/your_off-facebook_activity.json": {
       "language": "en",
       "comment": "User actions recorded outside of Facebook app",
@@ -182,6 +214,38 @@
           },
           {
             "details": "advertiser_name"
+          }
+        ]
+      }
+    },
+    "ads_information/advertisers_you've_interacted_with.json": {
+      "language": "en",
+      "comment": "Ads the user clicked on and name of advertisers",
+      "file_structure_properties":{
+        "depth": 1,
+        "has_single_data_point": false,
+        "data_point_selector": "",
+        "nested_data_point_selector": ""
+      },
+      "history_v2": {
+        "entries": [
+          {
+            "action_type": "Ads you clicked on"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": "timestamp"
+          },
+          {
+            "details": "title"
           }
         ]
       }
@@ -263,6 +327,38 @@
         "entries": [
           {
             "action_type": "Content you posted on Facebook"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": "timestamp"
+          },
+          {
+            "details": "title"
+          }
+        ]
+      }  
+    },
+    "comments_and_reactions/comments.json": {
+      "language": "en",
+      "comment": "Comments posted by the user",
+      "file_structure_properties":{
+        "depth": 1,
+        "has_single_data_point": false,
+        "data_point_selector": "",
+        "nested_data_point_selector": ""
+      },
+      "comments_v2": {
+        "entries": [
+          {
+            "action_type": "Comment you posted on Facebook"
           },
           {
             "data_origin": "Volunteered"
@@ -551,6 +647,438 @@
           }
         ]
       }  
+    },
+    "your_interactions_on_facebook/recently_visited.json": {
+      "language": "en",
+      "comment": "Facebook profiles, pages and events consulted.",
+      "file_structure_properties":{
+        "depth": 4,
+        "has_single_data_point": false,
+        "data_point_selector": "",
+        "nested_data_point_selector": ""
+      },
+      "visited_things_v2": {
+        "Visites de profil": [
+          {
+            "action_type": "Facebook profile you visited"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ],
+        "Visites sur la Page": [
+          {
+            "action_type": "Facebook pages you have visited"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ],
+        "\u00c3\u0089v\u00c3\u00a8nements consult\u00c3\u00a9s": [
+          {
+            "action_type": "Facebook events you have visited"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ],
+        "Visites Marketplace": [
+          {
+            "action_type": "Visit made on Facebook Marketplace"
+          },
+          {
+            "data_origin": "observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ]
+      }    
+    },
+    "events/your_event_responses.json": {
+      "language": "en",
+      "comment": "Facebook Events invites joined and declined",
+      "file_structure_properties":{
+        "depth": 2,
+        "has_single_data_point": false,
+        "data_point_selector": "",
+        "nested_data_point_selector": ""
+      },
+      "event_responses_v2": {
+        "events_joined": [
+          {
+            "action_type": "Accepted Facebook Event invite"
+          },
+          {
+            "data_origin": "Observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ],
+        "events_declined": [
+          {
+            "action_type": "Declined Facebook Event invite"
+          },
+          {
+            "data_origin": "Observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ],
+        "events_interested": [
+          {
+            "action_type": "Showed interest to Facebook Event invite"
+          },
+          {
+            "data_origin": "Observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ]
+      }  
+    },
+    "facebook_accounts_center/accounts_center.json": {
+      "language": "en",
+      "comment": "Facebook Events invites joined and declined",
+      "file_structure_properties":{
+        "depth": 1,
+        "has_single_data_point": false,
+        "data_point_selector": "",
+        "nested_data_point_selector": ""
+      },
+      "accounts_center_v2": {
+        "entries": [
+          {
+            "action_type": "Account linked to your Facebook profile"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "service_name"
+          }
+        ]
+      }  
+    },
+    "groups/your_posts_in_groups.json": {
+      "language": "en",
+      "comment": "Content posted in Facebook groups",
+      "file_structure_properties":{
+        "depth": 1,
+        "has_single_data_point": false,
+        "data_point_selector": "",
+        "nested_data_point_selector": ""
+      },
+      "group_posts_v2": {
+        "entries": [
+          {
+            "action_type": "Content posted in Facebook groups"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "title"
+          }
+        ]
+      }
+    },  
+    "posts/album/0.json": {
+      "language": "en",
+      "comment": "Cover photos posted on Facebook",
+      "file_structure_properties":{
+        "depth": 1,
+        "has_single_data_point": false,
+        "data_point_selector": "",
+        "nested_data_point_selector": ""
+      },
+      "photos": {
+        "entries": [
+          {
+            "action_type": "Cover photo posted on Facebook"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "title"
+          }
+        ]
+      }
+    },
+    "profile_information/profile_information.json": {
+      "language": "en",
+      "comment": "Information about the user profile",
+      "file_structure_properties":{
+        "depth": 2,
+        "has_single_data_point": false,
+        "data_point_selector": "",
+        "nested_data_point_selector": ""
+      },
+      "profile_v2": {
+        "emails": [
+          {
+            "action_type": "Provide email at account creation"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "emails"
+          }
+        ]
+      },
+      "gender": [
+        {
+          "action_type": "Specify your gender"
+        },
+        {
+          "data_origin": "Volunteered"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "gender_option"
+        }
+      ],
+      "current_city": [
+        {
+          "action_type": "Specify your current city"
+        },
+        {
+          "data_origin": "Volunteered"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "name"
+        }
+      ],
+      "education_experiences": [
+        {
+          "action_type": "Specify your education experience"
+        },
+        {
+          "data_origin": "Volunteered"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "name"
+        }
+      ],
+      "work_experiences": [
+        {
+          "action_type": "Specify your education experience"
+        },
+        {
+          "data_origin": "Volunteered"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "name"
+        }
+      ],
+      "blood_info": [
+        {
+          "action_type": "Specify your blood donner info"
+        },
+        {
+          "data_origin": "Volunteered"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "name"
+        }
+      ],
+      "phone_numbers": [
+        {
+          "action_type": "Specify your phone number"
+        },
+        {
+          "data_origin": "Volunteered"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "registration_timestamp": [
+        {
+          "action_type": "Facebook account creation date"
+        },
+        {
+          "data_origin": "Observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
     }
   }
 }

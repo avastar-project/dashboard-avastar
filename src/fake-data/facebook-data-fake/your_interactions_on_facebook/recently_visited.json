@@ -19,6 +19,27 @@
           }
         }
       ]
+    },
+    {
+      "name": "Visites sur la Page",
+      "description": "Pages que vous avez consult\u00c3\u00a9es",
+      "entries": [
+        {
+          "timestamp": 1643240141,
+          "data": {
+            "name": "Team Elite 38",
+            "uri": "https://www.facebook.com/Team-Elite-38-507743573084127/"
+          }
+        },
+        {
+          "timestamp": 1643186449,
+          "data": {
+            "name": "RCF Badminton",
+            "uri": "https://www.facebook.com/RCF-Badminton-514072125393836/"
+          }
+        }
+      ]
     }
   ]
 }
+  
