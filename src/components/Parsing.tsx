@@ -805,11 +805,11 @@ let parsingGroup12 = (
   // Get nestedArrayName of the file read
   const nestedArrayName = String(Object.keys(fileContent));
 
-  console.log(fileName);
+  // console.log(fileName);
 
-  console.log(Array.isArray(fileContent[nestedArrayName])); // check if {} or [] is displayed after nestedArrayName (false for your_event_responses while true for group_interactions)
+  // console.log(Array.isArray(fileContent[nestedArrayName])); // check if {} or [] is displayed after nestedArrayName (false for your_event_responses while true for group_interactions)
 
-  console.log(String(Object.keys(fileContent[nestedArrayName]).length)); // If false, method to count length
+  // console.log(String(Object.keys(fileContent[nestedArrayName]).length)); // If false, method to count length
 
   const aggArray = [];
 
@@ -839,6 +839,56 @@ let parsingGroup12 = (
   // return console.log(aggArray)
 };
 parsingGroup12(uploadedFiles, 16, contentFiles, DataModel, propertiesName);
+
+let parsingGroup13 = (
+  // Parsing of your_event_responses
+  filesList: any,
+  selectedFile: any,
+  filesContent: any,
+  dataMapping: Object,
+  properties: any
+) => {
+  // (A) For each file that is read proceed to the following manipulations
+
+  // Get file name manually (will be possible to get dynamically from uploaded file with JS Zip)
+  const fileName = filesList[selectedFile];
+
+  // Get the content of the uploaded file
+  const fileContent = filesContent[selectedFile];
+
+  // Get nestedArrayName of the file read
+  const nestedArrayName = String(Object.keys(fileContent));
+
+  // console.log(fileName);
+
+  // console.log(Array.isArray(fileContent[nestedArrayName])); // check if {} or [] is displayed after nestedArrayName (false for your_event_responses while true for group_interactions)
+
+  // console.log(String(Object.keys(fileContent[nestedArrayName]).length)); // If false, method to count length
+
+  const aggArray = [];
+
+  Object.entries(fileContent[nestedArrayName]).forEach(function (item, index) {
+    let categorySelector = item[0];
+    console.log(categorySelector);
+    console.log(
+      (DataModel.datamodel as any)[fileName][nestedArrayName][categorySelector]
+    );
+    // for (let i = 0; i < propertiesName.length; i++) {
+    //   console.log(
+    //     (DataModel.datamodel as any)[fileName][nestedArrayName][
+    //       categorySelector
+    //     ][propertiesName[i]]
+    //   );
+    // }
+  });
+
+  // (B) Label entries for each entries of the scanned file
+
+  // Define empty aggregated array in which will be stored the properties of all entries in the scanned files
+
+  // return console.log(aggArray)
+};
+parsingGroup13(uploadedFiles, 20, contentFiles, DataModel, propertiesName);
 
 let parserGlobal = (
   // START OF GLOBAL FUNCTION (WIP)
@@ -907,7 +957,7 @@ let parserGlobal = (
       aggArray.push(indivArray);
     }
   } else if (fileDepth === 1) {
-    // File(s) : 4, 5, 6
+    // File(s) : 4, 5, 6, 19
     const nestedArrayName = String(Object.keys(fileContent));
 
     if (typeof fileContent[nestedArrayName] === 'string') {
@@ -920,16 +970,39 @@ let parserGlobal = (
         );
       }
     } else {
-      for (let i = 0; i < fileContent[nestedArrayName].length; i++) {
-        const indivArray = [];
-        for (let j = 0; j < propertiesName.length; j++) {
-          indivArray.push(
-            (DataModel.datamodel as any)[fileName][nestedArrayName]['entries'][
-              j
-            ][propertiesName[j]]
-          );
+      if (
+        (DataModel.datamodel as any)[fileName]['file_structure_properties'][
+          'nested_data_point_selector'
+        ] !== ''
+      ) {
+        // Check if the file has a nestedDataSelector (or check if the file has multiple nestedArrayName)
+        const nestedDataSelector = (DataModel.datamodel as any)[fileName][
+          'file_structure_properties'
+        ]['nested_data_point_selector'];
+
+        for (let i = 0; i < fileContent[nestedDataSelector].length; i++) {
+          const indivArray = [];
+          for (let j = 0; j < propertiesName.length; j++) {
+            indivArray.push(
+              (DataModel.datamodel as any)[fileName][nestedDataSelector][
+                'entries'
+              ][j][propertiesName[j]]
+            );
+          }
+          aggArray.push(indivArray);
         }
-        aggArray.push(indivArray);
+      } else {
+        for (let i = 0; i < fileContent[nestedArrayName].length; i++) {
+          const indivArray = [];
+          for (let j = 0; j < propertiesName.length; j++) {
+            indivArray.push(
+              (DataModel.datamodel as any)[fileName][nestedArrayName][
+                'entries'
+              ][j][propertiesName[j]]
+            );
+          }
+          aggArray.push(indivArray);
+        }
       }
     }
   } else if (fileDepth === 2) {
@@ -952,7 +1025,7 @@ let parserGlobal = (
       }
     } else {
       if (Array.isArray(fileContent[nestedArrayName]) == false) {
-        // check type of object by detecting if {} or [] is displayed after nestedArrayName
+        // check type of object by detecting if {} or [] is displayed after nestedArrayName (file 16 - your_event_responses, close to profile_information)
         Object.entries(fileContent[nestedArrayName]).forEach(function (
           item,
           index
@@ -1073,14 +1146,14 @@ let parserGlobal = (
       }
     }
   }
-  return console.log(aggArray);
+  // return console.log(aggArray);
 };
 parserGlobal(uploadedFiles, 16, contentFiles, DataModel, propertiesName);
 
 // Next steps :
-// Fix issues with file 'your_event_responses' (16), '0.json' (19), 'profile_information.json' (20)
-// Implémenter la sélection des infos "details" et timestamp
+// Fix issues with file : 'profile_information.json' (20)
 // Imbriquer tous les checks les uns dans les autres chronologiquement
 // Cleaner fichier, documenter au maximum la fonction et push une MR
+// Implémenter la sélection des infos "details" et "timestamp"
 
 export default BarChart;

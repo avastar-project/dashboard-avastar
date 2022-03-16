@@ -883,7 +883,7 @@
         "depth": 1,
         "has_single_data_point": false,
         "data_point_selector": "",
-        "nested_data_point_selector": ""
+        "nested_data_point_selector": "photos"
       },
       "photos": {
         "entries": [
@@ -937,148 +937,148 @@
           {
             "details": "emails"
           }
+        ],
+        "gender": [
+          {
+            "action_type": "Specify your gender"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "gender_option"
+          }
+        ],
+        "current_city": [
+          {
+            "action_type": "Specify your current city"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "name"
+          }
+        ],
+        "education_experiences": [
+          {
+            "action_type": "Specify your education experience"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "name"
+          }
+        ],
+        "work_experiences": [
+          {
+            "action_type": "Specify your education experience"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "name"
+          }
+        ],
+        "blood_info": [
+          {
+            "action_type": "Specify your blood donner info"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "name"
+          }
+        ],
+        "phone_numbers": [
+          {
+            "action_type": "Specify your phone number"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
+        ],
+        "registration_timestamp": [
+          {
+            "action_type": "Facebook account creation date"
+          },
+          {
+            "data_origin": "Observed"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": ""
+          }
         ]
-      },
-      "gender": [
-        {
-          "action_type": "Specify your gender"
-        },
-        {
-          "data_origin": "Volunteered"
-        },
-        {
-          "data_type": "behavioural"
-        },
-        {
-          "platform": "facebook"
-        },
-        {
-          "timestamp": ""
-        },
-        {
-          "details": "gender_option"
-        }
-      ],
-      "current_city": [
-        {
-          "action_type": "Specify your current city"
-        },
-        {
-          "data_origin": "Volunteered"
-        },
-        {
-          "data_type": "behavioural"
-        },
-        {
-          "platform": "facebook"
-        },
-        {
-          "timestamp": ""
-        },
-        {
-          "details": "name"
-        }
-      ],
-      "education_experiences": [
-        {
-          "action_type": "Specify your education experience"
-        },
-        {
-          "data_origin": "Volunteered"
-        },
-        {
-          "data_type": "behavioural"
-        },
-        {
-          "platform": "facebook"
-        },
-        {
-          "timestamp": ""
-        },
-        {
-          "details": "name"
-        }
-      ],
-      "work_experiences": [
-        {
-          "action_type": "Specify your education experience"
-        },
-        {
-          "data_origin": "Volunteered"
-        },
-        {
-          "data_type": "behavioural"
-        },
-        {
-          "platform": "facebook"
-        },
-        {
-          "timestamp": ""
-        },
-        {
-          "details": "name"
-        }
-      ],
-      "blood_info": [
-        {
-          "action_type": "Specify your blood donner info"
-        },
-        {
-          "data_origin": "Volunteered"
-        },
-        {
-          "data_type": "behavioural"
-        },
-        {
-          "platform": "facebook"
-        },
-        {
-          "timestamp": ""
-        },
-        {
-          "details": "name"
-        }
-      ],
-      "phone_numbers": [
-        {
-          "action_type": "Specify your phone number"
-        },
-        {
-          "data_origin": "Volunteered"
-        },
-        {
-          "data_type": "behavioural"
-        },
-        {
-          "platform": "facebook"
-        },
-        {
-          "timestamp": ""
-        },
-        {
-          "details": ""
-        }
-      ],
-      "registration_timestamp": [
-        {
-          "action_type": "Facebook account creation date"
-        },
-        {
-          "data_origin": "Observed"
-        },
-        {
-          "data_type": "behavioural"
-        },
-        {
-          "platform": "facebook"
-        },
-        {
-          "timestamp": ""
-        },
-        {
-          "details": ""
-        }
-      ]
+      }
     }
   }
 }
