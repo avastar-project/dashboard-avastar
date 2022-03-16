@@ -6,14 +6,16 @@ import JSZip from 'jszip';
 export default function DropzoneMultiplefiles() {
   const onDrop = useCallback((acceptedFiles) => {
     acceptedFiles.forEach((file : any) => {
-      let json = JSON.stringify(file)
-      const blob = new Blob([json], {type:"application/json"})
       const reader = new FileReader()
-      reader.onload = e => {
-        const binaryStr = reader.result as string
-        console.log(JSON.parse(binaryStr))
+      reader.onabort = () => console.log('file reading was aborted')
+      reader.onerror = () => console.log('file reading has failed')
+      reader.onload = () => {
+
+      // Do whatever you want with the file contents
+        const binaryStr = reader.result
+        console.log(binaryStr)
       }
-      console.log(reader.readAsText(blob))
+      reader.readAsArrayBuffer(file)
 
       // BELOW CODE FOR ZIP FILE
       //const zipper = new JSZip();
