@@ -868,18 +868,58 @@ let parsingGroup13 = (
   const aggArray = [];
 
   Object.entries(fileContent[nestedArrayName]).forEach(function (item, index) {
+    // working version for file profile_information (20)
     let categorySelector = item[0];
-    console.log(categorySelector);
-    console.log(
-      (DataModel.datamodel as any)[fileName][nestedArrayName][categorySelector]
-    );
-    // for (let i = 0; i < propertiesName.length; i++) {
-    //   console.log(
-    //     (DataModel.datamodel as any)[fileName][nestedArrayName][
-    //       categorySelector
-    //     ][propertiesName[i]]
-    //   );
-    // }
+    if (
+      Object.keys(fileContent[nestedArrayName][categorySelector]).length === 0
+    ) {
+      // check if the content of the element scanned is not empty
+      // console.log('empty');
+    } else {
+      // console.log(
+      // (DataModel.datamodel as any)[fileName][nestedArrayName][
+      //   categorySelector
+      // ].slice(0, 4)
+      // );
+      // console.log(fileContent[nestedArrayName][categorySelector]); // Get the details of every element
+    }
+    // for (
+    //   let i = 0;
+    //   i < fileContent[nestedArrayName][categorySelector].length;
+    //   i++
+    // ) {
+    //   const indivArray = [];
+    //   for (let j = 0; j < propertiesName.length; j++) {
+    //     indivArray.push(
+    //       (DataModel.datamodel as any)[fileName][nestedArrayName][
+    //         categorySelector
+    //       ][j][propertiesName[j]]
+    //     );
+    //   }
+    //   aggArray.push(indivArray);
+    // } // Add all the types of data available in the file in the data model + a way to count only the ones that are not empty
+
+    // Object.entries(fileContent[nestedArrayName]).forEach(function (
+    //   item,
+    //   index
+    // ) {
+    //   let categorySelector = item[0];
+    //   for (
+    //     let i = 0;
+    //     i < fileContent[nestedArrayName][categorySelector].length;
+    //     i++
+    //   ) {
+    //     const indivArray = [];
+    //     for (let j = 0; j < propertiesName.length; j++) {
+    //       indivArray.push(
+    //         (DataModel.datamodel as any)[fileName][nestedArrayName][
+    //           categorySelector
+    //         ][j][propertiesName[j]]
+    //       );
+    //     }
+    //     aggArray.push(indivArray);
+    //   }
+    // });
   });
 
   // (B) Label entries for each entries of the scanned file
@@ -933,7 +973,7 @@ let parserGlobal = (
   // 4) Access the data points and print their properties
 
   // console printer for tests
-  console.log(fileName);
+  // console.log(fileName);
 
   const fileDepth = (DataModel.datamodel as any)[fileName][
     'file_structure_properties'
@@ -1151,7 +1191,7 @@ let parserGlobal = (
 parserGlobal(uploadedFiles, 16, contentFiles, DataModel, propertiesName);
 
 // Next steps :
-// Fix issues with file : 'profile_information.json' (20)
+// Fix issues with file : 'profile_information.json' (20) --> WIP in parsingGroup13 (to be integrated to the parsing with condition, to be done during the cleaning phase of the function)
 // Imbriquer tous les checks les uns dans les autres chronologiquement
 // Cleaner fichier, documenter au maximum la fonction et push une MR
 // Implémenter la sélection des infos "details" et "timestamp"

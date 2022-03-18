@@ -918,9 +918,49 @@
         "nested_data_point_selector": ""
       },
       "profile_v2": {
+        "name": [
+          {
+            "action_type": "Provide name at account creation"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "emails"
+          }
+        ],
         "emails": [
           {
             "action_type": "Provide email at account creation"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "emails"
+          }
+        ],
+        "birthday": [
+          {
+            "action_type": "Provide birth date at account creation"
           },
           {
             "data_origin": "Volunteered"
@@ -958,9 +998,69 @@
             "details": "gender_option"
           }
         ],
+        "previous_names": [
+          {
+            "action_type": "Previous names you used on Facebook"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "emails"
+          }
+        ],
+        "other_names": [
+          {
+            "action_type": "Other names you used on Facebook"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "emails"
+          }
+        ],
         "current_city": [
           {
             "action_type": "Specify your current city"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "name"
+          }
+        ],
+        "hometown": [
+          {
+            "action_type": "Specify your hometown"
           },
           {
             "data_origin": "Volunteered"
@@ -1018,9 +1118,49 @@
             "details": "name"
           }
         ],
+        "interested_in": [
+          {
+            "action_type": "Specify your sex orientation"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "name"
+          }
+        ],
         "blood_info": [
           {
             "action_type": "Specify your blood donner info"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "name"
+          }
+        ],
+        "websites": [
+          {
+            "action_type": "Inform websites associated to you"
           },
           {
             "data_origin": "Volunteered"
@@ -1076,6 +1216,26 @@
           },
           {
             "details": ""
+          }
+        ],
+        "profile_uri": [
+          {
+            "action_type": "Unique identifier of your facebook profile"
+          },
+          {
+            "data_origin": "Volunteered"
+          },
+          {
+            "data_type": "behavioural"
+          },
+          {
+            "platform": "facebook"
+          },
+          {
+            "timestamp": ""
+          },
+          {
+            "details": "name"
           }
         ]
       }
