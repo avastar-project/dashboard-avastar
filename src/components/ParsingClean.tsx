@@ -1,11 +1,11 @@
 /**
- * @name hash
- * @description Random hashing algorithm I found on Stack Overflow.
- * @param {string} str
- * @param {boolean} asString
- * @param {*} seed
- *
- * @returns {object} array with the properties of all the data points scanned in the personal data files uploaded by the user
+ * @name SmartParser
+ * @description Function to read, parse and categorise the personal data files uploaded by the user.
+ * @param {array} FilesUploaded names of the files uploaded.
+ * @param {array} FilesContent variables that store the content of the files uploaded.
+ * @param {array} DataModel mapping of the data points properties contained in each file
+ * @param {array} ObjectPropertiesName list of the properties used to describe a data point
+ * @returns {array} array with the properties of all the data points scanned in the personal data files uploaded by the user.
  */
 
 // Import necessary packages
@@ -152,18 +152,16 @@ let SmartParser = (
   // Iterate on the list of files uploaded
   // With the data uploader it will be easier to retrieve the content of the files/file names (properties of the object). For now, it relies on the fact that the objects in FilesUploaded and FilesContent have the same order.
   for (let i = 0; i < FileContent.length; i++) {
-    // Define the array that will contain the properties of all the file scanned
+    // Define the array that will store the properties describing all the data points scanned
     const aggArray = [];
     // Check the type of file uploaded (.csv, .xlsx, .json, etc.)
     // For now we focus only on JSON files uploaded from Facebook platform
     if (FileUploaded[i].split('.')[1] === 'json') {
-      // console.log(FileUploaded[i]);
-      // console.log(FileContent[i]);
       // Check if the file is empty
       if (Object.keys(FileContent[i]).length === 0) {
         console.log('empty');
       } else {
-        // Get depth of the file scanned. The depth is defined manually from the maximum number of steps it takes to get to the desired object
+        // Get depth of the file scanned. The depth is defined manually (cf. DataModel) from the maximum number of steps it takes to get to the desired object
         const fileDepth = (DataModel.datamodel as any)[FileUploaded[i]][
           'file_structure_properties'
         ]['depth'];
@@ -200,7 +198,7 @@ let SmartParser = (
                 'file_structure_properties'
               ]['nested_data_point_selector'] !== ''
             ) {
-              // Check if the file has multiple nested array names and select the right one with nestedDataSelector property
+              // Check if the file has multiple nested array names and select the right one with nestedDataSelector property (cc. DataModel)
               const nestedDataSelector = (DataModel.datamodel as any)[
                 FileUploaded[i]
               ]['file_structure_properties']['nested_data_point_selector'];
@@ -374,6 +372,7 @@ let SmartParser = (
     } else {
       console.log('csv file');
     }
+    // Print the output of the function in the console
     console.log(aggArray);
   }
 };

@@ -64,32 +64,6 @@
         ]
       }
     },
-    "Profil/Profil.json": {
-      "language": "en",
-      "comment": "This file contains the user name",
-      "name": {
-        "givenName": [
-          {
-            "action_type": "primary public location"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "location"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
     "activity_messages/group_interactions.json": {
       "language": "en",
       "comment": "User interactions in Facebook groups",
@@ -124,7 +98,7 @@
     },
     "activity_messages/people_and_friends.json": {
       "language": "en",
-      "comment": "???",
+      "comment": "Need to dig further in the understanding of the file content",
       "file_structure_properties":{
         "depth": 2,
         "has_single_data_point": false,
