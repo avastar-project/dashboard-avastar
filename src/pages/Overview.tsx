@@ -1,4 +1,4 @@
-import BarChart1 from '../components/ParsingClean';
+import BarChart1 from '../components/Parsing';
 
 export default function Overview() {
   return (
