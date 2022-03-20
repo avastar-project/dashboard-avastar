@@ -573,6 +573,12 @@
     "Hangouts/Hangouts.json": {
       "language": "en",
       "comment": "Messages sent in Hangouts",
+      "file_structure_properties":{
+        "depth": 1,
+        "has_single_data_point": false,
+        "data_point_selector": "",
+        "nested_data_point_selector": ""
+      },
       "None": {
         "entries": [
           {
@@ -599,7 +605,13 @@
     "Application Google Home/HomeApp.json": {
       "language": "en",
       "comment": "Action taken with Google Home",
-      "None": {
+      "file_structure_properties":{
+        "depth": 1,
+        "has_single_data_point": false,
+        "data_point_selector": "",
+        "nested_data_point_selector": ""
+      },
+      "Home App Data": {
         "entries": [
           {
             "action_type": "Action taken with Google Home"
@@ -625,6 +637,12 @@
     "Application Google Home/HomeHistory.json": {
       "language": "en",
       "comment": "Usage history of Google Home",
+      "file_structure_properties":{
+        "depth": 1,
+        "has_single_data_point": false,
+        "data_point_selector": "",
+        "nested_data_point_selector": ""
+      },
       "None": {
         "entries": [
           {
