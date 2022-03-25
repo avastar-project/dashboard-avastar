@@ -14,7 +14,7 @@ import Plot from 'react-plotly.js';
 // Import data model to map the properties of the scanned data points in the user personal data files
 import DataModel from '../utils/DataModel.json';
 
-// Import personal data files from fake-data folder (temporary approach). In production, the files will be retrieved from the datauploader component output
+// Import facebook personal data files from fake-data folder (temporary approach). In production, the files will be retrieved from the datauploader component output
 import AccountsCenter from '../fake-data/facebook-data-fake/facebook_accounts_center/accounts_center.json';
 import AdsInterests from '../fake-data/facebook-data-fake/other_logged_information/ads_interests.json';
 import AdvertisersUsingYourInfos from '../fake-data/facebook-data-fake/ads_information/advertisers_using_your_activity_or_information.json';
