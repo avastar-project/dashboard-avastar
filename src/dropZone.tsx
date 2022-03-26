@@ -1,40 +1,25 @@
-import React, {useCallback} from 'react'
+import React, { useState } from "react";
 import {useDropzone} from 'react-dropzone'
 import JSZip from 'jszip';
 // import { BlobReader, TextWriter, ZipReader } from '@zip.js/zip.js'
 
 export default function DropzoneMultiplefiles() {
-  const onDrop = useCallback((acceptedFiles) => {
-    acceptedFiles.forEach((file : any) => {
-      const reader = new FileReader()
-      reader.onabort = () => console.log('file reading was aborted')
-      reader.onerror = () => console.log('file reading has failed')
-      reader.onload = () => {
-
-      // Do whatever you want with the file contents
-        const binaryStr = reader.result
-        console.log(binaryStr)
-      }
-      reader.readAsArrayBuffer(file)
-
-      // BELOW CODE FOR ZIP FILE
-      //const zipper = new JSZip();
-      //const unzippedFiles = zipper.loadAsync(reader);
-      //return Promise.resolve(unzippedFiles).then(unzipped => {
-      //  if (!Object.keys(unzipped.files).length) {
-      //    return Promise.reject('No file was found');
-      //  }
-      //  return unzipped.files[Object.keys(unzipped.files)[0]];
-      //}).then(unzippedFile => zipper.file(unzippedFile.name).async('string'));
-      })
-
-  }, [])
-  const {getRootProps, getInputProps} = useDropzone({onDrop})
-
+  const [files, setFiles] = useState("");
+  const handleChange = (e:any) => {
+    const fileReader = new FileReader();
+    fileReader.readAsText(e.target.files[0], "UTF-8");
+    fileReader.onload = (e:any) => {
+      console.log("e.target.result", e.target.result);
+      setFiles(e.target.result);
+    };
+  };
   return (
-    <div {...getRootProps()}>
-      <input {...getInputProps()} />
-      <p>Drag 'n' drop some files here, or click to select files</p>
-    </div>
-  )
+    <>
+      <h1> Upload your file & I'll print the content (JSON or CSV)</h1>
+
+      <input type="file" onChange={handleChange} />
+      <br />
+      {"The content of the file will be print here --> " + files}
+    </>
+  );
 }
