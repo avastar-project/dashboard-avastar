@@ -59,6 +59,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Documentation
 
+- [Typescript tooling](https://www.typescriptlang.org/docs/handbook/typescript-tooling-in-5-minutes.html) - Add TS tools to your environment
 - [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/) - Uses and good practices for typing React.js app
 - [Create-React-App](https://create-react-app.dev/docs/getting-started/) - Used for create this app
 - [React-Router-Dom v.6](https://reactrouter.com/) - Used for routing internal links of the app
