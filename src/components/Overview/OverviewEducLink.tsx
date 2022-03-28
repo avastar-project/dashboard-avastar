@@ -7,7 +7,6 @@ import DeleteDataPic from '../../assets/img/sara-kurfess-6lcT2kRPvnI-unsplash.jp
 
 //utils
 import styled from 'styled-components';
-import { Grid } from '@mui/material';
 
 // Contains each link infomations
 const educLinks = [
