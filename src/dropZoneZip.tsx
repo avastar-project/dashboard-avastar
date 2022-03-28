@@ -4,19 +4,18 @@ import * as JSZip from "jszip";
 export default function DropzoneZipfiles() {
   const [files, setFiles] = useState("");
   const handleChange = (e:any) => {
-    const fileReader = new FileReader();
-    fileReader.readAsText(e.target.files[0], "UTF-8");
-    fileReader.onload = function(e:any) {
+    var fileReader = new FileReader();
+    fileReader.readAsArrayBuffer(e.target.files[0]);
+    fileReader.onload = (e:any) => {
         JSZip.loadAsync(e.target.result).then(function(zip:any) {
-            console.log(zip)
-        }).catch(function(err:any) {
-            console.error("Failed to open as ZIP file");
+            console.log(zip.files)
         })
     };
     fileReader.onerror = function(err:any) {
         console.error("Failed to read file", err);
     }
   };
+
   return (
     <>
       <br />
