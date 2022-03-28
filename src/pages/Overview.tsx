@@ -9,6 +9,7 @@ import OverviewEducLink from '../components/Overview/OverviewEducLink'
 
 // MUI components
 import { Box, Grid } from '@mui/material';
+import SeeMoreData from '../components/Overview/SeeMoreData';
 
 // Styled-components
 const Container = styled(Grid)`
@@ -64,6 +65,7 @@ export default function Overview() {
               // isSearch on true to see the associated search bar
               isSearch={true}
             />
+            <SeeMoreData/>
           </Main>
         </Grid>
         <Grid item xs={12} md={3}>
