@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { BlobReader, TextWriter, ZipReader } from '@zip.js/zip.js'
 
 export default function DropzoneMultiplefiles() {
   const [files, setFiles] = useState("");
@@ -20,5 +19,3 @@ export default function DropzoneMultiplefiles() {
     </>
   );
 }
-
-// next step dezip zip file
