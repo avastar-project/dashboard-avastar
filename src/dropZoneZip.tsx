@@ -8,8 +8,30 @@ export default function DropzoneZipfiles() {
     fileReader.readAsArrayBuffer(e.target.files[0]);
     fileReader.onload = (e:any) => {
         JSZip.loadAsync(e.target.result).then(function(zip:any) {
-            console.log(zip.files)
-        })
+            Object.keys(zip.files).forEach(function (filename) {
+                const directoryList = [] as any
+                const contentList = [] as any
+                if (filename.split('.')[1] === 'json') {
+                    // show filename
+                    directoryList.push(filename);
+                    zip.files[filename].async('string').then(function (fileData:any) {
+                    // show filecontent
+                    contentList.push(fileData);
+                    })
+                } else if (filename.split('.')[1] === 'csv') {
+                    // show filename
+                    directoryList.push(filename);
+                    zip.files[filename].async('string').then(function (fileData:any) {
+                    // show filecontent
+                    contentList.push(fileData);
+                    })
+                } else if (filename.split('.').length === 1 ) {
+                    console.log('directory')
+                } else {
+                    console.log('unknown file type')
+                }
+              })
+      });
     };
     fileReader.onerror = function(err:any) {
         console.error("Failed to read file", err);
