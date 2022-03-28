@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import {useDropzone} from 'react-dropzone'
-import JSZip from 'jszip';
 // import { BlobReader, TextWriter, ZipReader } from '@zip.js/zip.js'
 
 export default function DropzoneMultiplefiles() {
@@ -15,11 +13,12 @@ export default function DropzoneMultiplefiles() {
   };
   return (
     <>
-      <h1> Upload your file & I'll print the content (JSON or CSV)</h1>
-
+      <br />
       <input type="file" onChange={handleChange} />
       <br />
-      {"The content of the file will be print here --> " + files}
+      {files}
     </>
   );
 }
+
+// next step dezip zip file
