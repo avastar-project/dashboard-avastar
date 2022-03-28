@@ -7,6 +7,7 @@ import { Button } from '@mui/material';
 // Styled-components
 const StyledMoreData = styled.section`
   background-color: var(--clr-lightest);
+  margin-bottom:2rem;
   padding: 0.5rem 1rem;
   border-radius:0.5rem;
 
@@ -17,7 +18,8 @@ const StyledMoreData = styled.section`
   `;
 
   const ButtonWrapper = styled.div`
-  padding: 20px;
+  
+  padding: 1.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +40,7 @@ const StyledMoreData = styled.section`
   `;
 
   
-export default function SeeMoreData() {
+export default function OverviewMoreData() {
   return (
     <StyledMoreData>
     <h2>See more data!</h2>

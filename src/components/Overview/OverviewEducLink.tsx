@@ -13,27 +13,27 @@ const educLinks = [
   {
     img: DownloadDataPic,
     title: 'How to download my data ?',
-    link:'https://webapp-personal-data.herokuapp.com/'
+    link:'#'
   },
   {
     img: DataBrokersPic,
     title: 'How to remove access to Data Brokers ?',
-    link:'https://webapp-personal-data.herokuapp.com/'
+    link:'#'
   },
   {
     img: InferredDataPic,
     title: 'What is inferred data ?',
-    link:'https://webapp-personal-data.herokuapp.com/'
+    link:'#'
   },
   {
     img: RiskLocDataPic,
     title: 'What is the risk of sharing locational data ?',
-    link:'https://webapp-personal-data.herokuapp.com/'
+    link:'#'
   },
   {
     img:DeleteDataPic,
     title:'How to delete data from my applications ?',
-    link:'https://webapp-personal-data.herokuapp.com/'
+    link:'#'
   }
 ];
 
