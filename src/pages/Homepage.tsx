@@ -1,8 +1,11 @@
+import HeaderHome from '../components/Home/HeaderHome';
+
 //utils
 import styled from '@emotion/styled';
 
 // MUI components
 import { Box, Grid } from '@mui/material';
+
 
 const BoxContainer = styled(Box)`
 position:absolute;
@@ -19,8 +22,8 @@ const Container = styled(Grid)`
   width: calc(100% - 1rem);
 `;
 
-const HeaderHome = styled.header`
-  border: solid 1px red;
+const Header = styled.section`
+ 
 `;
 
 const SecIntro = styled.section`
@@ -54,7 +57,9 @@ export default function Homepage() {
     <Box sx={{ flexGrow: 1 }}>
      <Container container spacing={2}>
        <Grid item xs={12}>
-         <HeaderHome>Header</HeaderHome>
+         <Header>
+        <HeaderHome/>
+         </Header>
          <Main>
          <SecIntro>How to get started</SecIntro>
          <SecServicesResumed>
