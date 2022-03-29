@@ -1,5 +1,5 @@
 //img
-import AvastarLogo from '../../assets/logo.png';
+import AvastarLogo from '../../assets/logo-no-bg.png';
 
 //utils
 import styled from 'styled-components';
@@ -13,7 +13,7 @@ grid-template-row:1fr 1fr 1fr;
 margin:4rem;
 max-width:100%;
 height:30rem;
-
+color:var(--clr-lightest);
 & > span {
   grid-row:3;
 }`;
@@ -26,7 +26,7 @@ width: 4rem;
 
 const MainContent = styled.main`
 display:grid;
-grid-template-columns:70% 30%;
+grid-template-columns:75% 25%;
 align-items: center;
 justify-content:center;
 margin-top:4rem;

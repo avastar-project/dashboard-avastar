@@ -11,13 +11,14 @@ const BoxContainer = styled(Box)`
 position:absolute;
 top:0;
 left:0;
-background-color:white;
+background-color:var(--clr-darkest);
 width:100%;
 height:100vh;
 z-index:1;
 `;
 
 const Container = styled(Grid)`
+  
   margin: 0;
   width: calc(100% - 1rem);
 `;
