@@ -265,6 +265,36 @@ const BarChart = () => {
   );
 };
 
+let TestFunction = (
+  // Training function to parse files with errors (currently : profile_information)
+  FilesUploaded: any,
+  FilesContent: any,
+  DataModel: any,
+  ObjectPropertiesName: any
+) => {
+  const FileUploaded = FilesUploaded.slice(20, 21); // 57 is the max length (all files between 0 and 20 have been tested)
+  const FileContent = FilesContent.slice(20, 21);
+
+  const nestedArrayName = String(Object.keys(FileContent));
+
+  Object.entries(FileContent[nestedArrayName]['profile_v2']).forEach(function (
+    item,
+    index
+  ) {
+    let categorySelector = item[0];
+    // console.log(categorySelector);
+    for (let k = 0; k < ObjectPropertiesName.length; k++) {
+      // console.log(
+      //   (DataModel.datamodel as any)[FileUploaded]['profile_v2'][
+      //     categorySelector
+      //   ][k][ObjectPropertiesName[k]]
+      // );
+    }
+  });
+};
+
+TestFunction(FilesUploaded, FilesContent, DataModel, ObjectPropertiesName);
+
 // Definition of the main function that will be used to parse the content of the files uploaded by the user.
 let SmartParser = (
   FilesUploaded: any,
@@ -273,10 +303,10 @@ let SmartParser = (
   ObjectPropertiesName: any
 ) => {
   // Pre-select the files for test purposes (to be removed once I'm done building/testing the function)
-  const FileUploaded = FilesUploaded.slice(55, 57); // 57 is the max length (all files between 0 and 20 have been tested)
-  const FileContent = FilesContent.slice(55, 57);
+  const FileUploaded = FilesUploaded.slice(56, 57); // 57 is the max length (all files between 0 and 20 have been tested)
+  const FileContent = FilesContent.slice(56, 57);
 
-  // solve issues with profile_information/profile_information.json file (20 - 21), events/event_invitations (25 - 26), other_personal_information/your_address_books.json (37 - 38), posts/your_videos.json (45 - 46), privacy_checkup/interactions.json (46 - 47), security_and_login_information/authorized_logins.json (50 - 51), security_and_login_information/browser_cookies.json (51 - 52), security_and_login_information/login_protection_data.json (53 - 54), security_and_login_information/logins_and_logouts.json (54 - 55)
+  // solve issues with th following files (10) : profile_information/profile_information.json file (20 - 21), security_and_login_information/browser_cookies.json (51 - 52)
 
   // Iterate on the list of files uploaded
   // With the data uploader it will be easier to retrieve the content of the files/file names (properties of the object). For now, it relies on the fact that the objects in FilesUploaded and FilesContent have the same order.

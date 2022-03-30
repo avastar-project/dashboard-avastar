@@ -1369,7 +1369,7 @@
         "data_point_selector": "",
         "nested_data_point_selector": ""
       },
-      "events_invited_v2": {
+      "events_invited": {
         "entries": [
           {
             "action_type": "Invitation received for a Facebook event"
@@ -1783,10 +1783,10 @@
         "depth": 2,
         "has_single_data_point": false,
         "data_point_selector": "",
-        "nested_data_point_selector": "address_book"
+        "nested_data_point_selector": ""
       },
       "address_book_v2": {
-        "entries": [
+        "address_book": [
           {
             "action_type": "Phone contact of your personal address books collected by Facebook"
           },
@@ -2039,7 +2039,7 @@
         "depth": 1,
         "has_single_data_point": false,
         "data_point_selector": "",
-        "nested_data_point_selector": "photos"
+        "nested_data_point_selector": ""
       },
       "videos_v2": {
         "entries": [
@@ -2071,10 +2071,10 @@
         "depth": 2,
         "has_single_data_point": false,
         "data_point_selector": "",
-        "nested_data_point_selector": "privacy_checkup_topic"
+        "nested_data_point_selector": ""
       },
       "privacy_checkup_interactions_v2": {
-        "entries": [
+        "privacy_checkup_topic": [
           {
             "action_type": "Interaction with Facebook Privacy Checkup"
           },
@@ -2201,7 +2201,7 @@
         "data_point_selector": "",
         "nested_data_point_selector": ""
       },
-      "recognized_devices_v2": {
+      "recognized_devices": {
         "entries": [
           {
             "action_type": "Devices linked to your Facebook account"
@@ -2297,7 +2297,7 @@
         "data_point_selector": "",
         "nested_data_point_selector": ""
       },
-      "used_ip_address_v2": {
+      "login_protection_data_v2": {
         "entries": [
           {
             "action_type": "IP addresses you have used with your Facebook acount"
@@ -2329,7 +2329,7 @@
         "data_point_selector": "",
         "nested_data_point_selector": ""
       },
-      "account_accesses_v2": {
+      "account_accesses": {
         "entries": [
           {
             "action_type": "Login/Logout of your Facebook account"
@@ -2393,7 +2393,7 @@
         "data_point_selector": "",
         "nested_data_point_selector": ""
       },
-      "devices_v2": {
+      "active_sessions_v2": {
         "entries": [
           {
             "action_type": "Geolocation of where you logged in to your Facebook account"
