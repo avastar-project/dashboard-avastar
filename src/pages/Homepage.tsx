@@ -1,6 +1,8 @@
 //components
 import HeaderHome from '../components/Home/HeaderHome';
 import SecIntro from '../components/Home/SecIntro';
+import SecBanner from '../components/Home/SecBanner';
+
 //utils
 import styled from '@emotion/styled';
 
@@ -20,10 +22,6 @@ const SecServicesResumed = styled.div`
 border: solid 1px blue;
 `;
 const SecStartBanner = styled.section``;
-
-const SecBanner= styled.section`
-border: solid 1px orange;
-`;
 
 const SecSchemaProcess = styled.section`
 border: solid 1px purple;`;
@@ -60,7 +58,7 @@ export default function Homepage() {
            <div>See your digital footprint</div>
            <div>take action on your data</div>
          </SecStepsProcess>
-         <SecBanner>Avastar is an open-source platform</SecBanner>
+         <SecBanner/>
          <SecUsersReview>What our users say</SecUsersReview>
          <Footer>Footer</Footer>
          </Main>
