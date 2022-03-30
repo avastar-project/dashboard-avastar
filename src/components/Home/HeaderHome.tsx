@@ -8,11 +8,12 @@ import styled from 'styled-components';
 import { Box, Grid } from '@mui/material';
 
 const StyledHeader = styled(Grid)`
+background-color:var(--clr-darkest);
 display:grid;
 grid-template-row:1fr 1fr 1fr;
-margin:4rem;
+padding:4rem;
 max-width:100%;
-height:30rem;
+height:auto;
 color:var(--clr-lightest);
 & > span {
   grid-row:3;
@@ -51,7 +52,7 @@ export default function HeaderHome() {
        <BrandLogo src={AvastarLogo} alt="Avastar logo" />
       <MainContent>
       <p>Get an immediate overview of your digital footprint & learn how to manage your online privacy.</p>
-      <Illustration alt="#Placeholder illustration"/>
+      <Illustration alt="Placeholder illustration"/>
       </MainContent>
        <span>Undersand what your favorite apps know about you and do with your data.</span>
     </Grid>

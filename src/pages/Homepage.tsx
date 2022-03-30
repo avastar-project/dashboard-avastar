@@ -1,38 +1,25 @@
+//components
 import HeaderHome from '../components/Home/HeaderHome';
-
+import SecIntro from '../components/Home/SecIntro';
 //utils
 import styled from '@emotion/styled';
 
 // MUI components
 import { Box, Grid } from '@mui/material';
 
-
-const BoxContainer = styled(Box)`
+const Container = styled(Grid)`
+background-color:var(--clr-lightest);
 position:absolute;
 top:0;
 left:0;
-background-color:var(--clr-darkest);
-width:100%;
-height:100vh;
 z-index:1;
-`;
 
-const Container = styled(Grid)`
-  
-  margin: 0;
-  width: calc(100% - 1rem);
 `;
-
-const Header = styled.section`
- 
-`;
-
-const SecIntro = styled.section`
-border: solid 1px green;`;
 
 const SecServicesResumed = styled.div`
 border: solid 1px blue;
 `;
+const SecStartBanner = styled.section``;
 
 const SecBanner= styled.section`
 border: solid 1px orange;
@@ -54,20 +41,18 @@ const Main = styled.main``;
 
 export default function Homepage() {
   return (
-    <BoxContainer>
+    
     <Box sx={{ flexGrow: 1 }}>
-     <Container container spacing={2}>
+     <Container>
        <Grid item xs={12}>
-         <Header>
         <HeaderHome/>
-         </Header>
          <Main>
-         <SecIntro>How to get started</SecIntro>
+         <SecIntro />
          <SecServicesResumed>
            <div>We give you back the transparency you deserve on the internet</div>
            <div>What you get</div>
          </SecServicesResumed>
-         <SecBanner>Ready to get started ?</SecBanner>
+         <SecStartBanner>Ready to get started ?</SecStartBanner>
          <SecSchemaProcess>What it takes</SecSchemaProcess>
          <SecStepsProcess>
            <div>Request your data</div>
@@ -82,6 +67,6 @@ export default function Homepage() {
        </Grid>
      </Container>
    </Box>
-    </BoxContainer>
+   
   );
 }
