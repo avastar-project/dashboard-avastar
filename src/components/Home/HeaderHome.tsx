@@ -38,7 +38,6 @@ margin-bottom:8rem;;
   grid-row:2;
   font-size:2.5rem;
   }
-
  `;
 
 const Illustration = styled.img`

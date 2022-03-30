@@ -1,6 +1,9 @@
 //components
 import HeaderHome from '../components/Home/HeaderHome';
 import SecIntro from '../components/Home/SecIntro';
+import SecServicesList from '../components/Home/SecServicesList';
+import SecServicesUtility from '../components/Home/SecServicesUtility';
+
 import SecBanner from '../components/Home/SecBanner';
 
 //utils
@@ -8,6 +11,7 @@ import styled from '@emotion/styled';
 
 // MUI components
 import { Box, Grid } from '@mui/material';
+
 
 const Container = styled(Grid)`
 background-color:var(--clr-lightest);
@@ -18,9 +22,6 @@ z-index:1;
 
 `;
 
-const SecServicesResumed = styled.div`
-border: solid 1px blue;
-`;
 const SecStartBanner = styled.section``;
 
 const SecSchemaProcess = styled.section`
@@ -46,10 +47,8 @@ export default function Homepage() {
         <HeaderHome/>
          <Main>
          <SecIntro />
-         <SecServicesResumed>
-           <div>We give you back the transparency you deserve on the internet</div>
-           <div>What you get</div>
-         </SecServicesResumed>
+         <SecServicesList/>
+         <SecServicesUtility />
          <SecStartBanner>Ready to get started ?</SecStartBanner>
          <SecSchemaProcess>What it takes</SecSchemaProcess>
          <SecStepsProcess>
