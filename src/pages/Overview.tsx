@@ -39,24 +39,28 @@ export default function Overview() {
             {/* Contains each stat view */}
             <PlotlyContainer
               title="What is being tracked ?"
+              color='#d1c5fd'
               tooltip="about"
               plotlyComponent={<TrackedChart />}
               isSearch={false}
             />
             <PlotlyContainer
               title="How my data is collected ?"
+              color='#BDE8D1'
               tooltip="about"
               plotlyComponent={<DataCollectedChart />}
               isSearch={false}
             />
             <PlotlyContainer
               title="Who has my data ?"
+              color='#BAE9FC'
               tooltip="about"
               plotlyComponent={<TrackedChart />}
               isSearch={false}
             />
             <PlotlyContainer
               title="Search my data"
+              color='#d1c5fd'
               tooltip="about"
               plotlyComponent={<DataTable />}
               // isSearch on true to see the associated search bar
