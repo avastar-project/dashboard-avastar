@@ -1,5 +1,6 @@
 // Components
-import ButtonLink from '../components/ButtonLink';
+//  Imported Button component from MUI
+import { Button } from '@mui/material';
 
 // Utils
 import styled from 'styled-components';
@@ -21,13 +22,20 @@ const StyledHeader = styled.header`
   & > img {
     margin-left: 1rem;
   }
+
+  & a {
+    color: white;
+  }
 `;
 
 // Component
 export default function Header() {
   return (
     <StyledHeader>
-      <ButtonLink link="/" content="+ Upload data" />
+      {/* Calling MUI Button component */}
+      <Button variant="contained" href="/">
+        Upload data
+      </Button>
       <img src={UserIcon} alt="" />
     </StyledHeader>
   );
