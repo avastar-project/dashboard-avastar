@@ -4,6 +4,8 @@ import SecIntro from '../components/Home/SecIntro';
 import SecServicesList from '../components/Home/SecServicesList';
 import SecServicesUtility from '../components/Home/SecServicesUtility';
 import SecStartBanner from '../components/Home/SecStartBanner';
+
+import SecDiagramProcess from '../components/Home/SecDiagramProcess';
 import SecBanner from '../components/Home/SecBanner';
 
 //utils
@@ -12,7 +14,6 @@ import styled from '@emotion/styled';
 // MUI components
 import { Box, Grid } from '@mui/material';
 
-
 const Container = styled(Grid)`
 background-color:var(--clr-lightest);
 position:absolute;
@@ -20,9 +21,6 @@ top:0;
 left:0;
 z-index:1;
 `;
-
-const SecSchemaProcess = styled.section`
-border: solid 1px purple;`;
 
 const SecStepsProcess = styled.section`
 border: solid 1px brown;`;
@@ -47,7 +45,7 @@ export default function Homepage() {
          <SecServicesList/>
          <SecServicesUtility />
          <SecStartBanner/>
-         <SecSchemaProcess>What it takes</SecSchemaProcess>
+         <SecDiagramProcess/>
          <SecStepsProcess>
            <div>Request your data</div>
            <div>Upload your data</div>
