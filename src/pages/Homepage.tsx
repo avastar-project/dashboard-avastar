@@ -3,7 +3,7 @@ import HeaderHome from '../components/Home/HeaderHome';
 import SecIntro from '../components/Home/SecIntro';
 import SecServicesList from '../components/Home/SecServicesList';
 import SecServicesUtility from '../components/Home/SecServicesUtility';
-
+import SecStartBanner from '../components/Home/SecStartBanner';
 import SecBanner from '../components/Home/SecBanner';
 
 //utils
@@ -19,10 +19,7 @@ position:absolute;
 top:0;
 left:0;
 z-index:1;
-
 `;
-
-const SecStartBanner = styled.section``;
 
 const SecSchemaProcess = styled.section`
 border: solid 1px purple;`;
@@ -46,10 +43,10 @@ export default function Homepage() {
        <Grid item xs={12}>
         <HeaderHome/>
          <Main>
-         <SecIntro />
+         <SecIntro/>
          <SecServicesList/>
          <SecServicesUtility />
-         <SecStartBanner>Ready to get started ?</SecStartBanner>
+         <SecStartBanner/>
          <SecSchemaProcess>What it takes</SecSchemaProcess>
          <SecStepsProcess>
            <div>Request your data</div>

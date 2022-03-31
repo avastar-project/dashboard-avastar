@@ -48,15 +48,15 @@ const ServiceList = styled.ul`
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:4rem;
-width:100%;
+width:95%;
 list-style:none;
 padding:2rem 0;
 `;
 
 const ServiceItem = styled.li`
 display:grid;
-grid-template-columns:60% 10%;
-grid-column-gap: 2rem;
+grid-template-columns:55% 10%;
+grid-column-gap: 1rem;
 
 & > h3 {
 grid-row:1;
@@ -74,8 +74,6 @@ grid-column:1;
 padding-top:3rem;
 line-height: 2rem;
 }
-
-
 `;
 
 export default function SecServicesUtility() {
