@@ -55,6 +55,7 @@
   "devDependencies": {
     "@open-wc/webpack-import-meta-loader": "^0.4.7",
     "@types/lodash": "^4.14.175",
+    "@types/plotly.js": "^1.54.20",
     "@types/plotly.js-basic-dist": "^1.54.0",
     "@types/react-plotly.js": "^2.5.0",
     "@types/styled-components": "^5.1.24",
