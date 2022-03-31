@@ -30,13 +30,9 @@ export default function LineChart() {
       marker: { cmin: 0, cmax: 255 }
     },
   ];
-  const layout = {
+  var layout = {
     autosize: true,
-    title: {
-      text: 'Volume of data points',
-      // yref: 'paper',
-      // y: 0.9,
-      }
+    yaxis: { title: 'Volume of data points'}
   }
 
 
