@@ -15,26 +15,18 @@ const process = [
       box:'Upload your data',
     },
     {
-      content: `Immediatly after you uploaded your files.
+      content: `Immediatly after, you uploaded your files.
       `,
       box:`View your footprint`
     },
   ];
 
   const StyledBox = styled(Box)`
-  position relative;
   background-color:var(--clr-darkest);
   padding:2rem 4rem;
       & > p {
       font-size:2.5rem;
       color:var(--clr-lightest);
-  }
-  & > div {
-    postion
-      border-bottom: 2px solid white;
-      z-index:-1;
-
-  }
   }
   `;
 
@@ -52,15 +44,31 @@ const process = [
   width:50%;
   flex-direction:column;
   justify-content:center;
-  align-item:center;
   row-gap: 2rem;
+  
+
+  & > div {
+  min-height:4rem;
+  }
 
   & > .MuiBox-root {
+      position: relative;
       text-align:center;
       border-radius:0.5rem;
       padding:1.5rem;
       color:var(--clr-lightest);
       background-color:#1C76D2;
+  }
+
+  & > .MuiBox-root:after {
+    content:"";
+    position:absolute;
+    top:50%;
+    left:100%;
+    width:18rem;
+    height:0.2rem;
+    margin-top:-0.1rem;
+    background:var(--clr-lightest);
     }
   `;
 
@@ -69,7 +77,6 @@ export default function SecDiagramProcess() {
 
         <StyledBox>
         <p>What it takes</p>
-        <div></div>
         <Grid>
         <ProcessList>
         {/* Mapping process array to display each element */}
