@@ -2,9 +2,9 @@
  * @name SmartParser
  * @description Function to read, parse and categorise the personal data files uploaded by the user.
  * @param {array} FilesUploaded names of the files uploaded.
- * @param {array} FilesContent variables that store the content of the files uploaded.
- * @param {array} DataModel mapping of the data points properties contained in each file
- * @param {array} ObjectPropertiesName list of the properties used to describe a data point
+ * @param {array} FilesContent variables that store the content of the files uploaded. Temporarily it is imported from the fake_data folder. When the datauploader component will be merged, it will take its output as an input.
+ * @param {array} DataModel mapping of the data points properties contained in each file stored in DataModel.json
+ * @param {array} ObjectPropertiesName list of the properties used to describe a data point. As of now, it is composed of action_type, data_origin, data_type and platform. In a second version of the parsing function, it will need to include timestamp and details as well.
  * @returns {array} array with the properties of all the data points scanned in the personal data files uploaded by the user.
  */
 
@@ -14,7 +14,7 @@ import Plot from 'react-plotly.js';
 // Import data model to map the properties of the scanned data points in the user personal data files
 import DataModel from '../utils/DataModel.json';
 
-// Import facebook personal data files from fake-data folder (temporary approach). In production, the files will be retrieved from the datauploader component output
+// Import facebook personal data files from fake-data folder. This is a temporary approach. Once the datauploader component is merged, the SmartParser function will take its output as an input.
 import AccountActivity from '../fake-data/facebook-data-fake/security_and_login_information/account_activity.json';
 import AccountsCenter from '../fake-data/facebook-data-fake/facebook_accounts_center/accounts_center.json';
 import AddressBooks from '../fake-data/facebook-data-fake/other_personal_information/your_address_books.json';
@@ -23,7 +23,6 @@ import AdvertisersUsingYourInfos from '../fake-data/facebook-data-fake/ads_infor
 import AdvertisersYouInteractedWith from "../fake-data/facebook-data-fake/ads_information/advertisers_you've_interacted_with.json";
 import AppsAndWebsites from '../fake-data/facebook-data-fake/apps_and_websites_off_of_facebook/apps_and_websites.json';
 import AuthorizedLogins from '../fake-data/facebook-data-fake/security_and_login_information/authorized_logins.json';
-import BrowserCookies from '../fake-data/facebook-data-fake/security_and_login_information/browser_cookies.json';
 import CommentsInGroups from '../fake-data/facebook-data-fake/groups/your_comments_in_groups.json';
 import CommentsPosted from '../fake-data/facebook-data-fake/comments_and_reactions/comments.json';
 import CoverPhotosPosted from '../fake-data/facebook-data-fake/posts/album/0.json';
@@ -73,26 +72,7 @@ import YourApps from '../fake-data/facebook-data-fake/apps_and_websites_off_of_f
 import YourGroups from '../fake-data/facebook-data-fake/groups/your_groups.json';
 import YourPages from '../fake-data/facebook-data-fake/pages/your_pages.json';
 
-// (WIP) Google files to add in the DataModel and test the function
-import Autofill from '../fake-data/google-data-fake/Chrome/Autofill.json';
-import BrowserHistory from '../fake-data/google-data-fake/Chrome/BrowserHistory.json';
-import Extensions from '../fake-data/google-data-fake/Chrome/Extensions.json';
-import PlayStoreLibrary from '../fake-data/google-data-fake/Google Play Store/Library.json';
-import Reviews from '../fake-data/google-data-fake/Maps (your places)/Reviews.json';
-import SavedPlaces from '../fake-data/google-data-fake/Maps (your places)/Saved Places.json'; // TBD
-import GoogleProfile from '../fake-data/google-data-fake/Profil/Profil.json'; // TBD
-// Geolocation history file ?
-
-// (WIP) Missing csv files to parse (x7)
-// ../fake-data/google-data-fake/Activité du journal des accès/Activités _ liste des services Google auxquels vos.csv
-// ../fake-data/google-data-fake/Activité du journal des accès/Appareils _ liste des appareils (par exemple, Nest.csv
-// ../fake-data/google-data-fake/Google Pay/Envois et demandes d_argent/Envois et demandes d_argent.csv
-// ../fake-data/google-data-fake/Saved/Adresses vendeurs.csv
-// ../fake-data/google-data-fake/Saved/Favourite places.csv
-// ../fake-data/google-data-fake/Saved/Want to go.csv
-// ../fake-data/google-data-fake/YouTube et YouTube Music/subscriptions/subscriptions.csv
-
-// Create list of filenames uploaded by the user (temporary approach). In production, the file names will be retrieved from the datauploader component output
+// Create list of filenames uploaded by the user. This is a temporary approach. Once the datauploader component is merged, the SmartParser function will take its output as an input.
 const FilesUploaded = [
   'location/primary_location.json',
   'location/primary_public_location.json',
@@ -152,7 +132,7 @@ const FilesUploaded = [
   "security_and_login_information/where_you're_logged_in.json",
 ];
 
-// Create list with the content of the files uploaded by the user (temporary approach). In production, the files content will be retrieved from the datauploader component output
+// Create list with the content of the files uploaded by the user. This is a temporary approach. Once the datauploader component is merged, the SmartParser function will take its output as an input.
 const FilesContent = [
   PrimaryLocation,
   PrimaryPublicLocation,
@@ -212,7 +192,7 @@ const FilesContent = [
   WhereYouLoggedIn,
 ];
 
-// Create a list with the name of properties used to describe a data point. It will be used to map the data points in the files streamed with the data model inputs.
+// Create a list with the names of properties that will be used to describe each data point retrieved in the files uploaded by the user, based on the DataModel.
 const ObjectPropertiesName = [
   'action_type',
   'data_origin',
@@ -263,41 +243,36 @@ const BarChart = () => {
   );
 };
 
-// Definition of the main function that will be used to parse the content of the files uploaded by the user.
+// Initiation of the main function that will be used to parse the content of the files uploaded by the user.
 let SmartParser = (
   FilesUploaded: any,
   FilesContent: any,
   DataModel: any,
   ObjectPropertiesName: any
 ) => {
-  // Pre-select the files for test purposes (to be removed once I'm done building/testing the function)
-  const FileUploaded = FilesUploaded.slice(0, 56); // 56 is the max length (all files between 0 and 20 have been tested)
+  // Pre-select the files for test purposes (step by step tests to debug specific files)
+  const FileUploaded = FilesUploaded.slice(0, 56); // 56 is the max length (all files have been tested)
   const FileContent = FilesContent.slice(0, 56);
 
-  // Define the array that will store the properties describing all the data points scanned
-  const aggArray = []; // solve issue with format (stored as individual items while they should be grouped in arrays) of location/primary_location.json ; location/primary_public_location.json ; other_logged_information/friend_peer_group.json
-
-  // solve issues with th following files (10) : profile_information/profile_information.json file (20 - 21), security_and_login_information/browser_cookies.json (51 - 52)
+  // Initiation of the array that will store the properties describing each the data point scanned. It will be the input of the data visualisations showed in the Overview page.
+  const aggArray = [];
 
   // Iterate on the list of files uploaded
-  // With the data uploader it will be easier to retrieve the content of the files/file names (properties of the object). For now, it relies on the fact that the objects in FilesUploaded and FilesContent have the same order.
+  // For now, the function relies on the fact that objects in FilesUploaded and FilesContent have the exact same order.
   for (let i = 0; i < FileContent.length; i++) {
-    console.log(FileUploaded[i]);
-
     // Check the type of file uploaded (.csv, .xlsx, .json, etc.)
-    // For now we focus only on JSON files uploaded from Facebook platform
     if (FileUploaded[i].split('.')[1] === 'json') {
-      // Check if the file is empty
+      // Check if the file is empty.
       if (Object.keys(FileContent[i]).length === 0) {
         console.log('empty');
       } else {
-        // Get depth of the file scanned. The depth is defined manually (cf. DataModel) from the maximum number of steps it takes to get to the desired object
+        // Get depth of the file scanned. The depth is defined manually (cf. DataModel) from the maximum number of steps it takes to get to the desired object.
         const fileDepth = (DataModel.datamodel as any)[FileUploaded[i]][
           'file_structure_properties'
         ]['depth'];
 
         if (fileDepth === 0) {
-          const nestedArrayName = 'None'; // If the depth === 0 then necessarily, there is no nested array name
+          const nestedArrayName = 'None'; // If the depth === 0 then necessarily, there is no nested array name.
 
           for (let j = 0; j < FileContent[i].length; j++) {
             const indivArray = [];
@@ -330,7 +305,7 @@ let SmartParser = (
                 'file_structure_properties'
               ]['nested_data_point_selector'] !== ''
             ) {
-              // Check if the file has multiple nested array names and select the right one with nestedDataSelector property (cc. DataModel)
+              // Check if the file has multiple nested array names. Select the right one with nestedDataSelector property defined in the DataModel.
               const nestedDataSelector = (DataModel.datamodel as any)[
                 FileUploaded[i]
               ]['file_structure_properties']['nested_data_point_selector'];
@@ -371,7 +346,7 @@ let SmartParser = (
               'file_structure_properties'
             ]['has_single_data_point'] === true
           ) {
-            // Check if the file has only one data point that we want to retrieve among all the others
+            // Check if the file contains only one data point that we want to retrieve among all the others.
             const indivArray = [];
             for (let j = 0; j < ObjectPropertiesName.length; j++) {
               indivArray.push(
@@ -383,15 +358,15 @@ let SmartParser = (
             aggArray.push(indivArray);
           } else {
             if (Array.isArray(FileContent[i][nestedArrayName]) === false) {
-              // Check type of object by detecting if {} or [] is displayed after nestedArrayName to apply the right methodology to parse the file
+              // Check type of the nestedArray name, being either an array ("[]") or an object ("{}") to apply the right methodology to parse the file.
               if (
                 (DataModel.datamodel as any)[FileUploaded[i]][
                   'file_structure_properties'
-                ]['has_multiple_nested_objects'] === true // check if the file has a structure similar to the one of profile_information/profile_information.json
+                ]['has_multiple_nested_objects'] === true // check if the file has multiple nested objects (cf. structure similar to profile_information/profile_information.json file).
               ) {
                 Object.entries(FileContent[i][nestedArrayName]).forEach(
                   function (item, index) {
-                    let categorySelector = item[0]; // Get the name of the arrays that are parsed to know which properties from the data model must be applied to it
+                    let categorySelector = item[0]; // Get the name of the arrays that are parsed to know which properties from the data model must be applied to it.
 
                     const indivArray = [];
                     for (let k = 0; k < ObjectPropertiesName.length; k++) {
@@ -453,7 +428,7 @@ let SmartParser = (
 
           const nestedDataSelector = (DataModel.datamodel as any)[
             FileUploaded[i]
-          ]['file_structure_properties']['nested_data_point_selector']; // Select the right nested array name with nestedDataSelector property to parse the object
+          ]['file_structure_properties']['nested_data_point_selector']; // Select the right nested array name with nestedDataSelector property to parse the object.
 
           for (let j = 0; j < FileContent[i][nestedArrayName].length; j++) {
             for (
@@ -479,7 +454,7 @@ let SmartParser = (
             let categorySelector = FileContent[i][nestedArrayName][j]['name'];
 
             let hasPropertyEntries =
-              FileContent[i][nestedArrayName][j].hasOwnProperty('entries'); // Check if the data point selector in the nested array is either children or entries
+              FileContent[i][nestedArrayName][j].hasOwnProperty('entries'); // Check if the data point selector in the nested array is either children or entries.
 
             if (hasPropertyEntries === true) {
               for (
