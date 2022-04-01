@@ -906,6 +906,7 @@
       "file_structure_properties":{
         "depth": 2,
         "has_single_data_point": false,
+        "has_multiple_nested_objects": true,
         "data_point_selector": "",
         "nested_data_point_selector": ""
       },
@@ -1238,6 +1239,7 @@
       "file_structure_properties":{
         "depth": 2,
         "has_single_data_point": false,
+        "has_multiple_nested_objects": false,
         "data_point_selector": "",
         "nested_data_point_selector": ""
       },
@@ -1782,6 +1784,7 @@
       "file_structure_properties":{
         "depth": 2,
         "has_single_data_point": false,
+        "has_multiple_nested_objects": false,
         "data_point_selector": "",
         "nested_data_point_selector": ""
       },
@@ -2070,6 +2073,7 @@
       "file_structure_properties":{
         "depth": 2,
         "has_single_data_point": false,
+        "has_multiple_nested_objects": true,
         "data_point_selector": "",
         "nested_data_point_selector": ""
       },

@@ -145,7 +145,6 @@ const FilesUploaded = [
   'search/your_search_history.json',
   'security_and_login_information/account_activity.json',
   'security_and_login_information/authorized_logins.json',
-  'security_and_login_information/browser_cookies.json',
   'security_and_login_information/ip_address_activity.json',
   'security_and_login_information/login_protection_data.json',
   'security_and_login_information/logins_and_logouts.json',
@@ -206,7 +205,6 @@ const FilesContent = [
   SearchHistory,
   AccountActivity,
   AuthorizedLogins,
-  BrowserCookies,
   IpAddressActivity,
   LoginProtectionData,
   LoginsLogouts,
@@ -265,36 +263,6 @@ const BarChart = () => {
   );
 };
 
-let TestFunction = (
-  // Training function to parse files with errors (currently : profile_information)
-  FilesUploaded: any,
-  FilesContent: any,
-  DataModel: any,
-  ObjectPropertiesName: any
-) => {
-  const FileUploaded = FilesUploaded.slice(20, 21); // 57 is the max length (all files between 0 and 20 have been tested)
-  const FileContent = FilesContent.slice(20, 21);
-
-  const nestedArrayName = String(Object.keys(FileContent));
-
-  Object.entries(FileContent[nestedArrayName]['profile_v2']).forEach(function (
-    item,
-    index
-  ) {
-    let categorySelector = item[0];
-    // console.log(categorySelector);
-    for (let k = 0; k < ObjectPropertiesName.length; k++) {
-      // console.log(
-      //   (DataModel.datamodel as any)[FileUploaded]['profile_v2'][
-      //     categorySelector
-      //   ][k][ObjectPropertiesName[k]]
-      // );
-    }
-  });
-};
-
-TestFunction(FilesUploaded, FilesContent, DataModel, ObjectPropertiesName);
-
 // Definition of the main function that will be used to parse the content of the files uploaded by the user.
 let SmartParser = (
   FilesUploaded: any,
@@ -303,17 +271,17 @@ let SmartParser = (
   ObjectPropertiesName: any
 ) => {
   // Pre-select the files for test purposes (to be removed once I'm done building/testing the function)
-  const FileUploaded = FilesUploaded.slice(56, 57); // 57 is the max length (all files between 0 and 20 have been tested)
-  const FileContent = FilesContent.slice(56, 57);
+  const FileUploaded = FilesUploaded.slice(0, 56); // 56 is the max length (all files between 0 and 20 have been tested)
+  const FileContent = FilesContent.slice(0, 56);
+
+  // Define the array that will store the properties describing all the data points scanned
+  const aggArray = []; // solve issue with format (stored as individual items while they should be grouped in arrays) of location/primary_location.json ; location/primary_public_location.json ; other_logged_information/friend_peer_group.json
 
   // solve issues with th following files (10) : profile_information/profile_information.json file (20 - 21), security_and_login_information/browser_cookies.json (51 - 52)
 
   // Iterate on the list of files uploaded
   // With the data uploader it will be easier to retrieve the content of the files/file names (properties of the object). For now, it relies on the fact that the objects in FilesUploaded and FilesContent have the same order.
   for (let i = 0; i < FileContent.length; i++) {
-    // Define the array that will store the properties describing all the data points scanned
-    const aggArray = [];
-
     console.log(FileUploaded[i]);
 
     // Check the type of file uploaded (.csv, .xlsx, .json, etc.)
@@ -347,13 +315,15 @@ let SmartParser = (
 
           if (typeof FileContent[i][nestedArrayName] === 'string') {
             // Check the type of the element that comes right after the nested array name (string vs object). If it's a string, then it means that there is only one single data point to parse.
+            const indivArray = [];
             for (let j = 0; j < ObjectPropertiesName.length; j++) {
-              aggArray.push(
+              indivArray.push(
                 (DataModel.datamodel as any)[FileUploaded[i]][nestedArrayName][
                   'entries'
                 ][j][ObjectPropertiesName[j]]
               );
             }
+            aggArray.push(indivArray);
           } else {
             if (
               (DataModel.datamodel as any)[FileUploaded[i]][
@@ -402,37 +372,61 @@ let SmartParser = (
             ]['has_single_data_point'] === true
           ) {
             // Check if the file has only one data point that we want to retrieve among all the others
+            const indivArray = [];
             for (let j = 0; j < ObjectPropertiesName.length; j++) {
-              aggArray.push(
+              indivArray.push(
                 (DataModel.datamodel as any)[FileUploaded[i]][nestedArrayName][
                   'entries'
                 ][j][ObjectPropertiesName[j]]
               );
             }
+            aggArray.push(indivArray);
           } else {
             if (Array.isArray(FileContent[i][nestedArrayName]) === false) {
               // Check type of object by detecting if {} or [] is displayed after nestedArrayName to apply the right methodology to parse the file
-              Object.entries(FileContent[i][nestedArrayName]).forEach(function (
-                item,
-                index
+              if (
+                (DataModel.datamodel as any)[FileUploaded[i]][
+                  'file_structure_properties'
+                ]['has_multiple_nested_objects'] === true // check if the file has a structure similar to the one of profile_information/profile_information.json
               ) {
-                let categorySelector = item[0]; // Get the name of the arrays that are parsed to know which properties from the data model must be applied to it
-                for (
-                  let j = 0;
-                  j < FileContent[i][nestedArrayName][categorySelector].length;
-                  j++
-                ) {
-                  const indivArray = [];
-                  for (let k = 0; k < ObjectPropertiesName.length; k++) {
-                    indivArray.push(
-                      (DataModel.datamodel as any)[FileUploaded[i]][
-                        nestedArrayName
-                      ][categorySelector][k][ObjectPropertiesName[k]]
-                    );
+                Object.entries(FileContent[i][nestedArrayName]).forEach(
+                  function (item, index) {
+                    let categorySelector = item[0]; // Get the name of the arrays that are parsed to know which properties from the data model must be applied to it
+
+                    const indivArray = [];
+                    for (let k = 0; k < ObjectPropertiesName.length; k++) {
+                      indivArray.push(
+                        (DataModel.datamodel as any)[FileUploaded[i]][
+                          nestedArrayName
+                        ][categorySelector][k][ObjectPropertiesName[k]]
+                      );
+                    }
+                    aggArray.push(indivArray);
                   }
-                  aggArray.push(indivArray);
-                }
-              });
+                );
+              } else {
+                Object.entries(FileContent[i][nestedArrayName]).forEach(
+                  function (item, index) {
+                    let categorySelector = item[0]; // Get the name of the arrays that are parsed to know which properties from the data model must be applied to it
+                    for (
+                      let j = 0;
+                      j <
+                      FileContent[i][nestedArrayName][categorySelector].length;
+                      j++
+                    ) {
+                      const indivArray = [];
+                      for (let k = 0; k < ObjectPropertiesName.length; k++) {
+                        indivArray.push(
+                          (DataModel.datamodel as any)[FileUploaded[i]][
+                            nestedArrayName
+                          ][categorySelector][k][ObjectPropertiesName[k]]
+                        );
+                      }
+                      aggArray.push(indivArray);
+                    }
+                  }
+                );
+              }
             } else {
               for (let j = 0; j < FileContent[i][nestedArrayName].length; j++) {
                 for (
