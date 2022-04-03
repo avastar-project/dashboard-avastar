@@ -5,6 +5,7 @@ import OverviewProfile from '../components/Overview/OverviewProfile';
 import TrackedChart from '../components/Overview/PlotlyCharts/TrackedChart';
 import DataCollectedChart from '../components/Overview/PlotlyCharts/DataCollectedChart';
 import DataTable from '../components/Overview/PlotlyCharts/DataTable';
+import BarChart from '../components/Overview/Parsing';
 
 // MUI components
 import { Box, Grid } from '@mui/material';
@@ -62,6 +63,7 @@ export default function Overview() {
               // isSearch on true to see the associated search bar
               isSearch={true}
             />
+            <BarChart />
           </Main>
         </Grid>
         <Grid item xs={12} md={3}>
