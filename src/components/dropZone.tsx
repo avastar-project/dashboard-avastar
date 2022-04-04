@@ -29,7 +29,7 @@ export default function DropzoneFiles() {
                     zip.files[filename].async('string').then(function (fileData:any) {
                     contentList.push(fileData);
                     })
-                    // if json file, path and content are added to the lists
+                    // if csv file, path and content are added to the lists
                 } else if (filename.split('.').length === 1 ) {
                     console.log('It\' not a file but a directory')
                 } else {
