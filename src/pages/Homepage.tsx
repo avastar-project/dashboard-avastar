@@ -4,8 +4,8 @@ import SecIntro from '../components/Home/SecIntro';
 import SecServicesList from '../components/Home/SecServicesList';
 import SecServicesUtility from '../components/Home/SecServicesUtility';
 import SecStartBanner from '../components/Home/SecStartBanner';
-
 import SecDiagramProcess from '../components/Home/SecDiagramProcess';
+import SecStepsProcess from '../components/Home/SecStepsProcess';
 import SecBanner from '../components/Home/SecBanner';
 
 //utils
@@ -21,9 +21,6 @@ top:0;
 left:0;
 z-index:1;
 `;
-
-const SecStepsProcess = styled.section`
-border: solid 1px brown;`;
 
 const SecUsersReview= styled.section`
 border: solid 1px pink;`;
@@ -46,12 +43,7 @@ export default function Homepage() {
          <SecServicesUtility />
          <SecStartBanner/>
          <SecDiagramProcess/>
-         <SecStepsProcess>
-           <div>Request your data</div>
-           <div>Upload your data</div>
-           <div>See your digital footprint</div>
-           <div>take action on your data</div>
-         </SecStepsProcess>
+         <SecStepsProcess/>
          <SecBanner/>
          <SecUsersReview>What our users say</SecUsersReview>
          <Footer>Footer</Footer>
