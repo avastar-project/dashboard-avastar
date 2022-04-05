@@ -8,6 +8,7 @@ import SecDiagramProcess from '../components/Home/SecDiagramProcess';
 import SecStepsProcess from '../components/Home/SecStepsProcess';
 import SecBanner from '../components/Home/SecBanner';
 import SecUsersReview from '../components/Home/SecUsersReview';
+import HomeFooter from '../components/Home/HomeFooter';
 //utils
 import styled from '@emotion/styled';
 
@@ -21,9 +22,6 @@ top:0;
 left:0;
 z-index:1;
 `;
-
-const Footer = styled.footer`
-border: solid 1px black;`
 
 const Main = styled.main``;
 
@@ -43,7 +41,7 @@ export default function Homepage() {
          <SecStepsProcess/>
          <SecBanner/>
          <SecUsersReview/>
-         <Footer>Footer</Footer>
+         <HomeFooter/>
          </Main>
        </Grid>
      </Container>
