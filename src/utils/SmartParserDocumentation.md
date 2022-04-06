@@ -11,12 +11,14 @@ Thanks to the metadata, we can establish several types of segmentations/aggregat
 The function takes 3 inputs:
 
 - The file paths contained in the Zip file uploaded by the user ;
-- The content of the files uploaded by the user ;
+- The content of the file uploaded by the user ;
 - The content of DataModel.json file contained in the project.
 
 ## Output
 
-The output of the function is an array which will be the source file of the visualisations showed in the Webapp. Below is the format of the function output, with one object to describe the properties of each data points identified in the files uploaded on the Webapp by the user.
+The output of the function is an array named smartData which will be the source file of the visualisations showed in the Webapp. It will be saved in the State of the app to make the data available to any component.
+
+Below is the format of the function output, with one object to describe the properties of each data points identified in the files uploaded on the Webapp by the user.
 
 ```
 {
@@ -55,7 +57,7 @@ The output of the function is an array which will be the source file of the visu
 
 ### JSON file structure
 
-Below is a classic structure of a JSON file that the SmartParser is able to handle. For every data point identified (e.g. the {object} between '--'), the function identifies its properties in the DataModel and injects them in the final array.
+Below is a classic structure of a JSON file that the SmartParser is able to handle. For every data point identified (e.g. the {object} between '--'), the function identifies its properties in the DataModel and injects them in the final array SmartData.
 
 ```
 {
