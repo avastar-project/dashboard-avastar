@@ -8,9 +8,6 @@
  * @returns {array} array with the properties of all the data points scanned in the personal data files uploaded by the user.
  */
 
-// Import necessary packages
-import Plot from 'react-plotly.js';
-
 // Import data model to map the properties of the scanned data points in the user personal data files
 import DataModel from '../../utils/DataModel.json';
 
@@ -201,46 +198,8 @@ const ObjectPropertiesName = [
 ];
 
 // Create a random plot to use console.log()
-const BarChart = () => {
-  return (
-    <Plot
-      data={[
-        {
-          type: 'bar',
-          x: [
-            'Location',
-            'Behavioural',
-            'Communication',
-            'Technical',
-            'Social relationship',
-            'Contact',
-            'Transactional',
-          ],
-          y: [1, 2, 3, 3, 2, 3, 1],
-          marker: {
-            color: [
-              '#636EFA',
-              '#EF553B',
-              '#00CC96',
-              '#AB63FA',
-              '#FFA15A',
-              '#19D3F3',
-              '#FF6692',
-            ],
-          },
-        },
-      ]}
-      layout={{
-        width: 800,
-        height: 450,
-        title: 'What is being tracked ?',
-        paper_bgcolor: 'rgba(0,0,0,0)',
-        plot_bgcolor: 'rgba(0,0,0,0)',
-        yaxis: { title: { text: 'Number of data points', font: { size: 13 } } },
-        xaxis: { categoryorder: 'total descending' },
-      }}
-    />
-  );
+const EmptyDiv = () => {
+  return <></>;
 };
 
 // Initiation of the main function that will be used to parse the content of the files uploaded by the user.
@@ -511,4 +470,4 @@ let SmartParser = (
 // Execution of the function with its parameters
 SmartParser(FilesUploaded, FilesContent, DataModel, ObjectPropertiesName);
 
-export default BarChart;
+export default EmptyDiv;
