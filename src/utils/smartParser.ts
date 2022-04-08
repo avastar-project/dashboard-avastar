@@ -1,5 +1,5 @@
 /**
- * @name SmartParser
+ * @name smartParser
  * @description Function to read, parse and categorise the personal data files uploaded by the user.
  * @param {array} FileUploaded name of the file uploaded.
  * @param {array} FileContent variable that store the content of the file uploaded. Temporarily it is imported from the fake_data folder. When the datauploader component will be merged, it will take its output as an input.
@@ -9,7 +9,7 @@
  */
 
 // Import data model to map the properties of the scanned data points in the user personal data files
-import DataModel from './DataModel.json';
+import dataModel from './dataModel.json';
 
 // Import facebook personal data files from fake-data folder. This is a temporary approach. Once the datauploader component is merged, the SmartParser function will take its output as an input.
 import AccountActivity from '../fake-data/facebook-data-fake/security_and_login_information/account_activity.json';
@@ -198,7 +198,7 @@ const ObjectPropertiesName = [
 ];
 
 // Initiation of the main function that will be used to parse the content of the files uploaded by the user.
-export const SmartParser = (
+export const smartParser = (
   FilesUploaded: any,
   FilesContent: any,
   DataModel: any,
@@ -458,4 +458,4 @@ export const SmartParser = (
 };
 
 // Execution of the function with its parameters
-SmartParser(FilesUploaded, FilesContent, DataModel, ObjectPropertiesName);
+smartParser(FilesUploaded, FilesContent, dataModel, ObjectPropertiesName);
