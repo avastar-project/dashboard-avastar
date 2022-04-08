@@ -3,7 +3,6 @@
  * @description Function to read, parse and categorise the personal data files uploaded by the user.
  * @param {array} FileUploaded name of the file uploaded.
  * @param {array} FileContent variable that store the content of the file uploaded. Temporarily it is imported from the fake_data folder. When the datauploader component will be merged, it will take its output as an input.
- * @param {array} DataModel mapping of the data points properties contained in each file stored in DataModel.json
  * @param {array} ObjectPropertiesName list of the properties used to describe a data point. As of now, it is composed of action_type, data_origin, data_type and platform. In a second version of the parsing function, it will need to include timestamp and details as well.
  * @returns {array} array with the properties of all the data points scanned in the personal data files uploaded by the user.
  */
@@ -201,7 +200,6 @@ const ObjectPropertiesName = [
 export const smartParser = (
   FilesUploaded: any,
   FilesContent: any,
-  DataModel: any,
   ObjectPropertiesName: any
 ) => {
   // Pre-select the files for test purposes (step by step tests to debug specific files)
@@ -220,7 +218,7 @@ export const smartParser = (
       console.log('empty');
     } else {
       // Get depth of the file scanned. The depth is defined manually (cf. DataModel) from the maximum number of steps it takes to get to the desired object.
-      const fileDepth = (DataModel.datamodel as any)[FileUploaded][
+      const fileDepth = (dataModel.datamodel as any)[FileUploaded][
         'file_structure_properties'
       ]['depth'];
 
@@ -231,7 +229,7 @@ export const smartParser = (
           const indivArray = [];
           for (let k = 0; k < ObjectPropertiesName.length; k++) {
             indivArray.push(
-              (DataModel.datamodel as any)[FileUploaded][nestedArrayName][
+              (dataModel.datamodel as any)[FileUploaded][nestedArrayName][
                 'entries'
               ][k][ObjectPropertiesName[k]]
             );
@@ -246,7 +244,7 @@ export const smartParser = (
           const indivArray = [];
           for (let j = 0; j < ObjectPropertiesName.length; j++) {
             indivArray.push(
-              (DataModel.datamodel as any)[FileUploaded][nestedArrayName][
+              (dataModel.datamodel as any)[FileUploaded][nestedArrayName][
                 'entries'
               ][j][ObjectPropertiesName[j]]
             );
@@ -254,19 +252,19 @@ export const smartParser = (
           smartData.push(indivArray);
         } else {
           if (
-            (DataModel.datamodel as any)[FileUploaded][
+            (dataModel.datamodel as any)[FileUploaded][
               'file_structure_properties'
             ]['nested_data_point_selector'] !== ''
           ) {
             // Check if the file has multiple nested array names. Select the right one with nestedDataSelector property defined in the DataModel.
-            const nestedDataSelector = (DataModel.datamodel as any)[
+            const nestedDataSelector = (dataModel.datamodel as any)[
               FileUploaded
             ]['file_structure_properties']['nested_data_point_selector'];
             for (let j = 0; j < FileContent[nestedDataSelector].length; j++) {
               const indivArray = [];
               for (let k = 0; k < ObjectPropertiesName.length; k++) {
                 indivArray.push(
-                  (DataModel.datamodel as any)[FileUploaded][
+                  (dataModel.datamodel as any)[FileUploaded][
                     nestedDataSelector
                   ]['entries'][k][ObjectPropertiesName[k]]
                 );
@@ -278,7 +276,7 @@ export const smartParser = (
               const indivArray = [];
               for (let k = 0; k < ObjectPropertiesName.length; k++) {
                 indivArray.push(
-                  (DataModel.datamodel as any)[FileUploaded][nestedArrayName][
+                  (dataModel.datamodel as any)[FileUploaded][nestedArrayName][
                     'entries'
                   ][k][ObjectPropertiesName[k]]
                 );
@@ -291,7 +289,7 @@ export const smartParser = (
         const nestedArrayName = String(Object.keys(FileContent));
 
         if (
-          (DataModel.datamodel as any)[FileUploaded][
+          (dataModel.datamodel as any)[FileUploaded][
             'file_structure_properties'
           ]['has_single_data_point'] === true
         ) {
@@ -299,7 +297,7 @@ export const smartParser = (
           const indivArray = [];
           for (let j = 0; j < ObjectPropertiesName.length; j++) {
             indivArray.push(
-              (DataModel.datamodel as any)[FileUploaded][nestedArrayName][
+              (dataModel.datamodel as any)[FileUploaded][nestedArrayName][
                 'entries'
               ][j][ObjectPropertiesName[j]]
             );
@@ -309,7 +307,7 @@ export const smartParser = (
           if (Array.isArray(FileContent[nestedArrayName]) === false) {
             // Check type of the nestedArray name, being either an array ("[]") or an object ("{}") to apply the right methodology to parse the file.
             if (
-              (DataModel.datamodel as any)[FileUploaded][
+              (dataModel.datamodel as any)[FileUploaded][
                 'file_structure_properties'
               ]['has_multiple_nested_objects'] === true // check if the file has multiple nested objects (cf. structure similar to profile_information/profile_information.json file).
             ) {
@@ -322,7 +320,7 @@ export const smartParser = (
                 const indivArray = [];
                 for (let k = 0; k < ObjectPropertiesName.length; k++) {
                   indivArray.push(
-                    (DataModel.datamodel as any)[FileUploaded][nestedArrayName][
+                    (dataModel.datamodel as any)[FileUploaded][nestedArrayName][
                       categorySelector
                     ][k][ObjectPropertiesName[k]]
                   );
@@ -343,7 +341,7 @@ export const smartParser = (
                   const indivArray = [];
                   for (let k = 0; k < ObjectPropertiesName.length; k++) {
                     indivArray.push(
-                      (DataModel.datamodel as any)[FileUploaded][
+                      (dataModel.datamodel as any)[FileUploaded][
                         nestedArrayName
                       ][categorySelector][k][ObjectPropertiesName[k]]
                     );
@@ -363,7 +361,7 @@ export const smartParser = (
 
                 for (let l = 0; l < ObjectPropertiesName.length; l++) {
                   indivArray.push(
-                    (DataModel.datamodel as any)[FileUploaded][nestedArrayName][
+                    (dataModel.datamodel as any)[FileUploaded][nestedArrayName][
                       'entries'
                     ][l][ObjectPropertiesName[l]]
                   );
@@ -376,7 +374,7 @@ export const smartParser = (
       } else if (fileDepth === 3) {
         const nestedArrayName = String(Object.keys(FileContent));
 
-        const nestedDataSelector = (DataModel.datamodel as any)[FileUploaded][
+        const nestedDataSelector = (dataModel.datamodel as any)[FileUploaded][
           'file_structure_properties'
         ]['nested_data_point_selector']; // Select the right nested array name with nestedDataSelector property to parse the object.
 
@@ -389,7 +387,7 @@ export const smartParser = (
             const indivArray = [];
             for (let l = 0; l < ObjectPropertiesName.length; l++) {
               indivArray.push(
-                (DataModel.datamodel as any)[FileUploaded][nestedArrayName][
+                (dataModel.datamodel as any)[FileUploaded][nestedArrayName][
                   'entries'
                 ][l][ObjectPropertiesName[l]]
               );
@@ -415,7 +413,7 @@ export const smartParser = (
               const indivArray = [];
               for (let l = 0; l < ObjectPropertiesName.length; l++) {
                 indivArray.push(
-                  (DataModel.datamodel as any)[FileUploaded][nestedArrayName][
+                  (dataModel.datamodel as any)[FileUploaded][nestedArrayName][
                     categorySelector
                   ][l][ObjectPropertiesName[l]]
                 );
@@ -438,7 +436,7 @@ export const smartParser = (
                 const indivArray = [];
                 for (let m = 0; m < ObjectPropertiesName.length; m++) {
                   indivArray.push(
-                    (DataModel.datamodel as any)[FileUploaded][nestedArrayName][
+                    (dataModel.datamodel as any)[FileUploaded][nestedArrayName][
                       categorySelector
                     ][m][ObjectPropertiesName[m]]
                   );
@@ -458,4 +456,4 @@ export const smartParser = (
 };
 
 // Execution of the function with its parameters
-smartParser(FilesUploaded, FilesContent, dataModel, ObjectPropertiesName);
+smartParser(FilesUploaded, FilesContent, ObjectPropertiesName);
