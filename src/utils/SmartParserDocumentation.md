@@ -1,18 +1,17 @@
 # Smart Parser
 
-SmartParser is a function built to parse the files **uploaded by the user** on the Webapp.
+smartParser is a function built to parse the files **uploaded by the user** on the Webapp.
 
-The function is based on the **DataModel**, built by Avastar, which makes it possible to associate each data points identified in the files with metadata to describe it.
+The function is based on the **parsingModel**, built by Avastar, which makes it possible to associate each data points identified in the files with metadata to describe it.
 
 Thanks to the metadata, we can establish several types of segmentations/aggregations of the user's data that will be visualised in the Webapp to improve its understanding of its digital identity.
 
 ## Inputs
 
-The function takes 3 inputs:
+The function takes 2 inputs:
 
-- The file paths contained in the Zip file uploaded by the user ;
-- The content of the file uploaded by the user ;
-- The content of DataModel.json file contained in the project.
+- The file path of the file that is streamed ;
+- The content of the file that is streamed ;
 
 ## Output
 
@@ -57,7 +56,7 @@ Below is the format of the function output, with one object to describe the prop
 
 ### JSON file structure
 
-Below is a classic structure of a JSON file that the SmartParser is able to handle. For every data point identified (e.g. the {object} between '--'), the function identifies its properties in the DataModel and injects them in the final array SmartData.
+Below is a classic structure of a JSON file that the smartParser is able to handle. For every data point identified (e.g. the {object} between '--'), the function identifies its properties in the DataModel and injects them in the final array smartData.
 
 ```
 {
@@ -101,7 +100,12 @@ In the function, we apply different methodologies to the file depending on the n
 - fileDepth: number of nested data structures until the data point of interest ;
 - ObjectPropertiesName: list of the metadata attributes used to describe each data point ;
 - indivArray: array in which are stored the metadata of each object ;
-- aggArray: array containing all the arrays describing each data points identified in files.
+- smartData: array containing all the arrays describing each data points identified in files.
+
+### Other terminologies
+
+- smartParser:
+- parsingModel:
 
 ## Function status
 

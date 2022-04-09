@@ -1,5 +1,5 @@
 {
-    "datamodel": {
+    "parsingmodel": {
       "location/primary_location.json": {
         "language": "en",
         "comment": "This file contains the main location of the user inferred by Facebook based on elements like the current city indicated on the user profile, the device's IP address used to connect to his Facebook account, or device localisation settings",
