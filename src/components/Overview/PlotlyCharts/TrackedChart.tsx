@@ -27,7 +27,17 @@ export default function LineChart() {
       x: Object.keys(data),
       y: Object.values(data),
       type: plotType,
-      marker: { cmin: 0, cmax: 255 }
+      marker: {
+        cmin: 0, cmax: 255, color:
+          [
+              '#636EFA',
+              '#EF553B',
+              '#00CC96',
+              '#AB63FA',
+              '#FFA15A',
+              '#19D3F3',
+              '#FF6692',
+            ],}
     },
   ];
   var layout = {
