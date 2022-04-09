@@ -195,13 +195,13 @@ const ObjectPropertiesName = [
   'platform',
 ];
 
-// Initiation of the main function that will be used to parse the content of the files uploaded by the user.
+// Initialisation of the main function that will be used to parse the content of the files uploaded by the user.
 export const smartParser = (
   filePath: string,
   fileContent: any,
 ) => {
 
-  // Initiation of the array that will store the properties describing each the data point scanned. It will be the input of the data visualisations showed in the Overview page.
+  // Initialisation of the array that will store the properties describing each the data point scanned. It will be the input of the data visualisations showed in the Overview page.
   const smartData = [];
 
   // Iterate on the list of files uploaded
@@ -210,7 +210,8 @@ export const smartParser = (
   if (filePath.split('.')[1] === 'json') {
     // Check if the file is empty.
     if (Object.keys(fileContent).length === 0) {
-      console.log('empty');
+      console.warn('empty');
+      return [];
     } else {
       // Get depth of the file scanned. The depth is defined manually (cf. DataModel) from the maximum number of steps it takes to get to the desired object.
       const fileDepth = (parsingModel.parsingmodel as any)[filePath][
@@ -448,4 +449,5 @@ export const smartParser = (
   }
   // Print the output of the function in the console
   console.log(smartData);
+  return smartData
 };
