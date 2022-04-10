@@ -264,6 +264,5 @@ export const smartParser = (filePath: string, fileContent: any) => {
       }
     }
   }
-  // Print the output of the function in the console
   return smartData;
 };
