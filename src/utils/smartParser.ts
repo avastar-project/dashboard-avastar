@@ -28,9 +28,7 @@ export const smartParser = (filePath: string, fileContent: any) => {
     const parsingModelfilePathModel = Object.keys(parsingModel.parsingmodel);
     for (let i = 0; i < parsingModelfilePathModel.length; i++) {
       if (filePath.endsWith(parsingModelfilePathModel[i])) {
-        
         const filePathModel = parsingModelfilePathModel[i];
-
         // Get depth of the file scanned. The depth is defined manually (cf. parsingModel) from the maximum number of steps it takes to get to the targeted object.
         const fileDepth = (parsingModel.parsingmodel as any)[filePathModel][
           'file_structure_properties'

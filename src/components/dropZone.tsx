@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 // useState is a Hook that lets you add React state to function components
 import * as JSZip from 'jszip';
 // JSZip is a javascript library for creating, reading and editing .zip files, with a lovely and simple API
@@ -32,12 +32,11 @@ export default function DropzoneFiles() {
                     if (Object.keys(fileContent).length > 0) {
                       smartDataBloc.push(smartParser(filename, fileContent)); // execute parsing function
                     } else {
-                      console.warn('FileEmpty');
+                      console.warn('The file is empty');
                     }
                   });
               }
             }
-            // if json file, path and content are added to the lists
           } else if (filename.split('.')[1] === 'csv') {
             console.log('csv file [WIP]');
           } else if (filename.split('.').length > 1) {
