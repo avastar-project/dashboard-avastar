@@ -13,7 +13,7 @@
         "primary_location_v2": {
           "entries": [
             {
-              "action_type": "facebook inferred the current main city you live in"
+              "action_type": "Facebook inferred the current main city you live in"
             },
             {
               "data_origin": "inferred"
@@ -46,7 +46,7 @@
         "primary_public_location_v2": {
           "entries": [
             {
-              "action_type": "facebook inferred the current main city you live in"
+              "action_type": "Facebook inferred the current main city you live in"
             },
             {
               "data_origin": "inferred"
@@ -79,7 +79,7 @@
         "group_interactions_v2": {
           "entries": [
             {
-              "action_type": "Posts and comments you shared in a Facebook group"
+              "action_type": "Post or comment you have shared in a Facebook group"
             },
             {
               "data_origin": "observed"
@@ -112,7 +112,7 @@
         "people_interactions_v2": {
           "entries": [
             {
-              "action_type": "Interactions (of any type) you had with other people on Facebook"
+              "action_type": "Interaction (of any type) you had with other people on Facebook"
             },
             {
               "data_origin": "observed"
@@ -277,7 +277,7 @@
         "topics_v2": {
           "entries": [
             {
-              "action_type": "Interest categories and other categories that Facebook associates with you based on the information he provided on Facebook and your activity"
+              "action_type": "Interest categories that Facebook associates with you based on the information he provided on Facebook and your activity"
             },
             {
               "data_origin": "inferred"
@@ -376,7 +376,7 @@
         "recently_viewed": {
           "Vid\u00c3\u00a9os et programmes de Facebook Watch": [
             {
-              "action_type": "Videos and Facebook Watch programmes you have seen"
+              "action_type": "Video you have seen on Facebook Watch"
             },
             {
               "data_origin": "observed"
@@ -396,7 +396,7 @@
           ],
           "Publications qui ont \u00c3\u00a9t\u00c3\u00a9 affich\u00c3\u00a9es dans votre fil d\u00e2\u0080\u0099actualit\u00c3\u00a9.": [
             {
-              "action_type": "Posts that you have seen on your Facebook feed"
+              "action_type": "Post that you have seen on your Facebook feed"
             },
             {
               "data_origin": "observed"
@@ -416,7 +416,7 @@
           ],
           "Vid\u00c3\u00a9os que vous avez regard\u00c3\u00a9es": [
             {
-              "action_type": "Videos that you have watched on your Facebook feed"
+              "action_type": "Video that you have watched on your Facebook feed"
             },
             {
               "data_origin": "observed"
@@ -436,7 +436,7 @@
           ],
           "Pages web que vous avez consult\u00c3\u00a9es en dehors de Facebook": [
             {
-              "action_type": "Web pages you have consulted off Facebook"
+              "action_type": "Web page you have consulted off Facebook"
             },
             {
               "data_origin": "observed"
@@ -456,7 +456,7 @@
           ],
           "Personnes": [
             {
-              "action_type": "Facebook profiles you have seen after being suggested new friends connexions"
+              "action_type": "Facebook profile you have visited after being suggested new friends connexions"
             },
             {
               "data_origin": "observed"
@@ -476,7 +476,7 @@
           ],
           "Interactions Marketplace": [
             {
-              "action_type": "Interactions with articles on Facebook marketplace"
+              "action_type": "Interaction with an article on Facebook marketplace"
             },
             {
               "data_origin": "observed"
@@ -496,7 +496,7 @@
           ],
           "Recherches Marketplace": [
             {
-              "action_type": "Searches made on Facebook Marketplace"
+              "action_type": "Search made on Facebook Marketplace"
             },
             {
               "data_origin": "observed"
@@ -536,7 +536,7 @@
           ],
           "Publicit\u00c3\u00a9s": [
             {
-              "action_type": "Ads you have seen"
+              "action_type": "Ad you have seen"
             },
             {
               "data_origin": "observed"
@@ -687,7 +687,7 @@
           ],
           "Visites sur la Page": [
             {
-              "action_type": "Facebook pages you have visited"
+              "action_type": "Facebook page you have visited"
             },
             {
               "data_origin": "observed"
@@ -707,7 +707,7 @@
           ],
           "\u00c3\u0089v\u00c3\u00a8nements consult\u00c3\u00a9s": [
             {
-              "action_type": "Facebook events you have visited"
+              "action_type": "Facebook event you have visited"
             },
             {
               "data_origin": "observed"
@@ -1265,7 +1265,7 @@
         "events_interactions_v2": {
           "entries": [
             {
-              "action_type": "Interactions with Facebook event"
+              "action_type": "Interaction with Facebook event"
             },
             {
               "data_origin": "Observed"
@@ -1331,7 +1331,7 @@
         "admined_apps_v2": {
           "entries": [
             {
-              "action_type": "The apps you have created on Facebook Graph API"
+              "action_type": "App you have created on Facebook Graph API"
             },
             {
               "data_origin": "Volunteered"
@@ -1364,7 +1364,7 @@
         "reactions_v2": {
           "entries": [
             {
-              "action_type": "Your reactions (like, love, wow, haha) on Facebook content"
+              "action_type": "Reaction (like, love, wow, haha) left on a Facebook content"
             },
             {
               "data_origin": "Observed"
@@ -1628,7 +1628,7 @@
         "group_badges_v2": {
           "entries": [
             {
-              "action_type": "Facebook groups you have created"
+              "action_type": "Facebook group you have created"
             },
             {
               "data_origin": "Observed"
@@ -1661,7 +1661,7 @@
         "group_comments_v2": {
           "entries": [
             {
-              "action_type": "Facebook groups you have created"
+              "action_type": "Comment you have left on a Facebook group"
             },
             {
               "data_origin": "Observed"
@@ -1694,7 +1694,7 @@
         "groups_joined_v2": {
           "entries": [
             {
-              "action_type": "Facebook groups you have joined"
+              "action_type": "Facebook group you have joined"
             },
             {
               "data_origin": "Observed"
@@ -1727,7 +1727,7 @@
         "groups_admined_v2": {
           "entries": [
             {
-              "action_type": "Facebook groups on which you are the admin"
+              "action_type": "Facebook group on which you are the admin"
             },
             {
               "data_origin": "Observed"
@@ -1749,7 +1749,7 @@
       },
       "location/device_location.json": {
         "language": "en",
-        "comment": "The Facebook groups administrated by the user",
+        "comment": "TBD",
         "file_structure_properties":{
           "depth": 1,
           "has_single_data_point": false,
@@ -1760,13 +1760,13 @@
         "groups_admined_v2": {
           "entries": [
             {
-              "action_type": "Facebook groups on which you are the admin"
+              "action_type": "TBD (device_location.json)"
             },
             {
               "data_origin": "Observed"
             },
             {
-              "data_type": "social relationships"
+              "data_type": "location"
             },
             {
               "platform": "facebook"
@@ -1859,7 +1859,7 @@
         "pages_followed_v2": {
           "entries": [
             {
-              "action_type": "Facebook pages you follow"
+              "action_type": "Facebook page you follow"
             },
             {
               "data_origin": "Observed"
@@ -1892,7 +1892,7 @@
         "page_likes_v2": {
           "entries": [
             {
-              "action_type": "Facebook pages you liked"
+              "action_type": "Facebook page you liked"
             },
             {
               "data_origin": "Observed"
@@ -1925,7 +1925,7 @@
         "pages_unfollowed_v2": {
           "entries": [
             {
-              "action_type": "Facebook pages you have unfollowed"
+              "action_type": "Facebook page you have unfollowed"
             },
             {
               "data_origin": "Observed"
@@ -1958,7 +1958,7 @@
         "recommended_pages_v2": {
           "entries": [
             {
-              "action_type": "Facebook pages you have recommended"
+              "action_type": "Facebook page you have recommended"
             },
             {
               "data_origin": "Observed"
@@ -1991,7 +1991,7 @@
         "pages_v2": {
           "entries": [
             {
-              "action_type": "Facebook pages you have created"
+              "action_type": "Facebook page you have created"
             },
             {
               "data_origin": "Observed"
@@ -2024,7 +2024,7 @@
         "photos": {
           "entries": [
             {
-              "action_type": "Profile photos posted on Facebook"
+              "action_type": "Profile photo posted on Facebook"
             },
             {
               "data_origin": "Volunteered"
@@ -2057,7 +2057,7 @@
         "photos": {
           "entries": [
             {
-              "action_type": "Photos posted on your Facebook Journal"
+              "action_type": "Photo posted on your Facebook Journal"
             },
             {
               "data_origin": "Volunteered"
@@ -2189,7 +2189,7 @@
         "searches_v2": {
           "entries": [
             {
-              "action_type": "People you have searched on Facebook"
+              "action_type": "Person you have searched on Facebook"
             },
             {
               "data_origin": "Observed"
@@ -2255,7 +2255,7 @@
         "recognized_devices": {
           "entries": [
             {
-              "action_type": "Devices linked to your Facebook account"
+              "action_type": "Device linked to your Facebook account"
             },
             {
               "data_origin": "Observed"
@@ -2288,7 +2288,7 @@
         "datr_stats_v2": {
           "entries": [
             {
-              "action_type": "Cookies left by Facebook in your browser(s)"
+              "action_type": "Cookie left by Facebook in your browser(s)"
             },
             {
               "data_origin": "Observed"
@@ -2321,7 +2321,7 @@
         "used_ip_address_v2": {
           "entries": [
             {
-              "action_type": "IP addresses you have used with your Facebook acount"
+              "action_type": "IP address you have used with your Facebook acount"
             },
             {
               "data_origin": "Observed"
@@ -2354,7 +2354,7 @@
         "login_protection_data_v2": {
           "entries": [
             {
-              "action_type": "IP addresses you have used with your Facebook acount"
+              "action_type": "IP address you have used with your Facebook acount"
             },
             {
               "data_origin": "Observed"
@@ -2420,7 +2420,7 @@
         "devices_v2": {
           "entries": [
             {
-              "action_type": "Mobile devices associated to your Facebook account"
+              "action_type": "Mobile device associated to your Facebook account"
             },
             {
               "data_origin": "Observed"
@@ -2475,7 +2475,7 @@
       },
       "security_and_login_information/your_facebook_activity_history.json": {
         "language": "en",
-        "comment": "Geolocation history of where the user logged in to his Facebook account",
+        "comment": "TBD",
         "file_structure_properties":{
           "depth": 1,
           "has_single_data_point": false,
@@ -2486,7 +2486,7 @@
         "devices_v2": {
           "entries": [
             {
-              "action_type": "Geolocation of where you logged in to your Facebook account"
+              "action_type": "TBD (your_facebook_activity_history.json)"
             },
             {
               "data_origin": "Observed"
@@ -2612,7 +2612,7 @@
         "Browser History": {
           "entries": [
             {
-              "action_type": "Websites you have visited on Chrome"
+              "action_type": "Website you have visited on Chrome"
             },
             {
               "data_origin": "Observed"
@@ -2645,7 +2645,7 @@
         "Extensions": {
           "entries": [
             {
-              "action_type": "Web Extensions you have installed on Chrome"
+              "action_type": "Web Extension you have installed on Chrome"
             },
             {
               "data_origin": "Observed"
@@ -2678,7 +2678,7 @@
         "None": {
           "entries": [
             {
-              "action_type": "Games installed from Android Play Store"
+              "action_type": "Game installed from Android Play Store"
             },
             {
               "data_origin": "Observed"
