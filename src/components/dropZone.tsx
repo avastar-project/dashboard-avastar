@@ -30,7 +30,8 @@ export default function DropzoneFiles() {
                   .then(function (fileData: any) {
                     const fileContent = JSON.parse(fileData); // convert the type of fileData variable from String to Object
                     if (Object.keys(fileContent).length > 0) {
-                      smartDataBloc.push(smartParser(filename, fileContent)); // execute parsing function
+                      var newElement = smartParser(filename, fileContent) as any; // execute parsing function
+                      smartDataBloc.push(... newElement);
                     } else {
                       console.warn('The file is empty');
                     }
