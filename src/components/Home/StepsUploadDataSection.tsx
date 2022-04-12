@@ -1,3 +1,7 @@
+/**
+ * StepsUploadDataSection is a component that represents the section of the Homepage page regarding the 4 steps to upload data.
+ */
+
 //utils
 import styled from 'styled-components';
 
@@ -7,8 +11,20 @@ import UploadDataIcon from '../../assets/icon-upload-data.png';
 import DigitalFootprintIcon from '../../assets/icon-digital-footprint.jpg';
 import ActionTakenDataIcon from '../../assets/icon-action-taken-data.jpg';
 
-// Contains each card infomations
-const steps = [
+// Typescript types
+interface Steps {
+  name: string;
+  content:{
+    p1:string,
+    p2:string,
+    pItalic:string
+  };
+  icon: string;
+}
+
+// Contains each steps infomations
+const steps: Steps[] =
+[
   {
     name: 'Request your data',
     content:{
@@ -43,7 +59,7 @@ const steps = [
   {
     name: 'Take action on your data',
     content:{
-        p1:`Now, it’s up to you to take action on your data. 
+        p1:`Now, it’s up to you to take action on your data.
         `,
         p2:`You can start with deleting/modifying data or prevent companies from collecting a specific type of data by personalising your privacy settings. `,
         pItalic:`We are currently experimenting with automating these manual actions. More to come soon!`
@@ -119,22 +135,22 @@ width:50%;
 }
 `;
 
-export default function StepsProcess() {
+export default function StepsUploadData() {
   return (
     <StyledSteps>
       <StepsList>
         {/* Mapping steps array to display each element */}
           {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
-        {steps.map((elt, index) => (
+        {steps.map((steps:Steps, index:number) => (
           <StepItem key={index}>
             <div>
-             <img src={elt.icon} alt={`icon-${elt.name}`} /> 
+             <img src={steps.icon} alt={`icon-${steps.name}`} /> 
             </div>
             <Content>
-             <li>{elt.name}</li>
-             <li>{elt.content.p1}</li>
-             <li>{elt.content.p2}</li>
-             <li>{elt.content.pItalic}</li>
+             <li>{steps.name}</li>
+             <li>{steps.content.p1}</li>
+             <li>{steps.content.p2}</li>
+             <li>{steps.content.pItalic}</li>
             </Content>
           </StepItem>
         ))}

@@ -5,7 +5,7 @@ import ContentPointsList from '../components/Home/ContentPointsListSection';
 import MainBenefits from '../components/Home/MainBenefitsSection';
 import UploadData from '../components/Home/UploadDataSection';
 import UploadTimeLaps from '../components/Home/UploadTimeLapsSection';
-import SecStepsProcess from '../components/Home/SecStepsProcess';
+import StepsUploadData from '../components/Home/StepsUploadDataSection';
 import LearnMoreAbout from '../components/Home/LearnMoreAboutBanner';
 import SecUsersReview from '../components/Home/SecUsersReview';
 import Footer from '../components/Home/HomeFooter';
@@ -38,7 +38,7 @@ export default function Homepage() {
          <MainBenefits/>
          <UploadData/>
          <UploadTimeLaps/>
-         <SecStepsProcess/>
+         <StepsUploadData/>
          <LearnMoreAbout/>
          <SecUsersReview/>
          <Footer/>
