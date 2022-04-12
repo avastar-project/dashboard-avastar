@@ -1,7 +1,12 @@
-//img
+/**
+ * HeaderHome is a component who represents
+ * the first block of the Homepage page.
+ */
+
+// img
 import AvastarLogo from '../../assets/logo-no-bg.png';
 
-//utils
+// utils
 import styled from 'styled-components';
 
 // MUI components
@@ -59,4 +64,3 @@ export default function HeaderHome() {
 </Box>
     );
   }
-  

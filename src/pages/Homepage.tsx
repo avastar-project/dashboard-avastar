@@ -1,5 +1,5 @@
 //components
-import HeaderHome from '../components/Home/HeaderHome';
+import HomeHeader from '../components/Home/HomeHeader';
 import SecIntro from '../components/Home/SecIntro';
 import SecServicesList from '../components/Home/SecServicesList';
 import SecServicesUtility from '../components/Home/SecServicesUtility';
@@ -31,7 +31,7 @@ export default function Homepage() {
     <Box sx={{ flexGrow: 1 }}>
      <Container>
        <Grid item xs={12}>
-        <HeaderHome/>
+        <HomeHeader/>
          <Main>
          <SecIntro/>
          <SecServicesList/>
