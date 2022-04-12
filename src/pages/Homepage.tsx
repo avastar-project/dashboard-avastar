@@ -6,7 +6,7 @@ import SecServicesUtility from '../components/Home/SecServicesUtility';
 import SecStartBanner from '../components/Home/SecStartBanner';
 import SecDiagramProcess from '../components/Home/SecDiagramProcess';
 import SecStepsProcess from '../components/Home/SecStepsProcess';
-import SecBanner from '../components/Home/SecBanner';
+import LearnMoreAboutBanner from '../components/Home/LearnMoreAboutBanner';
 import SecUsersReview from '../components/Home/SecUsersReview';
 import HomeFooter from '../components/Home/HomeFooter';
 //utils
@@ -39,7 +39,7 @@ export default function Homepage() {
          <SecStartBanner/>
          <SecDiagramProcess/>
          <SecStepsProcess/>
-         <SecBanner/>
+         <LearnMoreAboutBanner/>
          <SecUsersReview/>
          <HomeFooter/>
          </Main>

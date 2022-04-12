@@ -16,7 +16,7 @@ import styled from 'styled-components';
 import { Box, Grid } from '@mui/material';
 
 
-// Typescript Props
+// Typescript types
 interface NavFooterLink {
   name: string;
   link: string;

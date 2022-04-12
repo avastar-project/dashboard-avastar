@@ -1,3 +1,8 @@
+/**
+ * LearnMoreAboutBanner is a component who represents
+ * the banner of the Homepage page about Avastar open source project allowing to learn more about the platform
+ */
+
 //utils
 import styled from 'styled-components';
 
