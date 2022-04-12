@@ -1,10 +1,23 @@
+/**
+ * UploadTimeLapsSection is a component that represents
+ * the "What  it takes" section of the Homepage informing about the time needed to get data
+ */
+
 //utils
 import styled from 'styled-components';
 
 // MUI
 import { Box,Grid } from '@mui/material';
 
-const process = [
+// Typescript types
+interface ProcessTimeLaps {
+  content: string;
+  box: string;
+}
+
+// Contains each process time-laps information
+const processTimeLaps: ProcessTimeLaps [] = 
+[
     {
       content: `Depending on the platform, it can take up to 48h to receive your personal data files.`,
       box: 'Request your data',
@@ -45,7 +58,6 @@ const process = [
   flex-direction:column;
   justify-content:center;
   row-gap: 2rem;
-  
 
   & > div {
   min-height:4rem;
@@ -72,19 +84,19 @@ const process = [
     }
   `;
 
-export default function SecDiagramProcess() {
+export default function UploadTimeLaps() {
     return (
 
         <StyledBox>
         <p>What it takes</p>
         <Grid>
         <ProcessList>
-        {/* Mapping process array to display each element */}
+        {/* Mapping process time-laps array to display each element */}
           {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
-        {process.map((elt, index) => (
+        {processTimeLaps.map((processTimeLaps:ProcessTimeLaps, index:number) => (
         <ProcessItem key={index}>
-        <div>{elt.content}</div>
-        <Box>{elt.box}</Box>
+        <div>{processTimeLaps.content}</div>
+        <Box>{processTimeLaps.box}</Box>
         </ProcessItem>
         ))}
         </ProcessList>
