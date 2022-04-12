@@ -1,3 +1,7 @@
+/**
+ GetStartedBanner is a component representing the first banner of the Homepage page about how to get started by getting its data.
+ */
+
 //utils
 import styled from 'styled-components';
 

@@ -1,6 +1,6 @@
 //components
 import HomeHeader from '../components/Home/HomeHeader';
-import SecIntro from '../components/Home/SecIntro';
+import GetStartedBanner from '../components/Home/GetStartedBanner';
 import SecServicesList from '../components/Home/SecServicesList';
 import SecServicesUtility from '../components/Home/SecServicesUtility';
 import SecStartBanner from '../components/Home/SecStartBanner';
@@ -33,7 +33,7 @@ export default function Homepage() {
        <Grid item xs={12}>
         <HomeHeader/>
          <Main>
-         <SecIntro/>
+         <GetStartedBanner/>
          <SecServicesList/>
          <SecServicesUtility />
          <SecStartBanner/>
