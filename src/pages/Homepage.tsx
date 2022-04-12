@@ -7,7 +7,7 @@ import UploadData from '../components/Home/UploadDataSection';
 import UploadTimeLaps from '../components/Home/UploadTimeLapsSection';
 import StepsUploadData from '../components/Home/StepsUploadDataSection';
 import LearnMoreAbout from '../components/Home/LearnMoreAboutBanner';
-import SecUsersReview from '../components/Home/SecUsersReview';
+import UsersReview from '../components/Home/UsersReviewSection';
 import Footer from '../components/Home/HomeFooter';
 //utils
 import styled from '@emotion/styled';
@@ -40,7 +40,7 @@ export default function Homepage() {
          <UploadTimeLaps/>
          <StepsUploadData/>
          <LearnMoreAbout/>
-         <SecUsersReview/>
+         <UsersReview/>
          <Footer/>
          </Main>
        </Grid>
