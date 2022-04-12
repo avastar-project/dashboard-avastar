@@ -30,7 +30,7 @@ const StyledSecIntro = styled.section`
   }
    `;
 
-export default function SecIntro() {
+export default function GetStarted() {
   return (
 <Box sx={{ flexGrow: 1 }}>
 <StyledSecIntro>

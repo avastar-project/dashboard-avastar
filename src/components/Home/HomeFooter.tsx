@@ -66,7 +66,7 @@ const NavItem = styled.li``;
 const NavLink = styled(Link)`
 color:var(--clr-lightest)`;
 
-export default function HomeFooter() {
+export default function Footer() {
     return (
   <Box sx={{ flexGrow: 1 }}>
    <StyledFooter>

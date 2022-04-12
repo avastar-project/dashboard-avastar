@@ -48,7 +48,7 @@ const StyledResume = styled.section`
     `;
 
 
-export default function SecServicesList() {
+export default function ContentPointsList() {
   return (
 <Box sx={{ flexGrow: 1 }}>
 <StyledResume>

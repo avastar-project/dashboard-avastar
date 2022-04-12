@@ -1,3 +1,8 @@
+/**
+ * MainBenefitsSection is a component that represents
+ * the "What you get" section of the Homepage page about 4 main advantages to use the platform
+ */
+
 //utils
 import styled from 'styled-components';
 
@@ -10,8 +15,16 @@ import ClockIcon from '../../assets/icon-clock.png';
 import MonitoringIcon from '../../assets/icon-monitoring.png';
 import CredibilityIcon from '../../assets/icon-credibility.png';
 
-// Contains each service block infomations
-const servicesBlock = [
+
+// Typescript types
+interface BenefitsBlock {
+  name: string;
+  content: string;
+  icon: string;
+}
+// Contains each benefit block infomations
+const benefitsBlock:BenefitsBlock[] = 
+[
   {
     name: 'gain transparency',
     content: `See what information companies have collected about you and how they can use your data. Finally understand why you think your phone is listening to you.`,
@@ -37,7 +50,7 @@ const servicesBlock = [
 
 // Styled-components
 const StyledServices = styled.section`
-
+margin-top:2rem;
 padding-left:4rem;
 & > p {
     font-size:2.5rem;
@@ -76,20 +89,20 @@ line-height: 2rem;
 }
 `;
 
-export default function SecServicesUtility() {
+export default function MainBenefits() {
   return (
     <Box sx={{ flexGrow: 1 }}>
     <StyledServices>
         <p>What you get</p>
       <Grid >
       <ServiceList>
-        {/* Mapping card array to display each element */}
+        {/* Mapping benefit blocks array to display each element */}
           {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
-        {servicesBlock.map((elt, index) => (
-         <ServiceItem key={index}> 
-       <h3>{elt.name}</h3>
-       <img src={elt.icon} alt={`${elt.name}-icon`} />
-       <p>{elt.content}</p>
+        {benefitsBlock.map((benefitsBlock:BenefitsBlock, index:number) => (
+         <ServiceItem key={index}>
+       <h3>{benefitsBlock.name}</h3>
+       <img src={benefitsBlock.icon} alt={`${benefitsBlock.name}-icon`} />
+       <p>{benefitsBlock.content}</p>
           </ServiceItem>
         ))}
       </ServiceList>

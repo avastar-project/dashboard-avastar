@@ -31,7 +31,7 @@ const StyledSecBanner = styled.section`
   }
    `;
 
-export default function SecBanner() {
+export default function LearnMoreAbout() {
   return (
 <Box sx={{ flexGrow: 1 }}>
 <StyledSecBanner>

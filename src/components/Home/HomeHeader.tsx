@@ -48,7 +48,7 @@ margin-bottom:8rem;;
 const Illustration = styled.img`
 grid-row:2`;
 
-export default function HeaderHome() {
+export default function Header() {
     return (
   <Box sx={{ flexGrow: 1 }}>
    <StyledHeader>
