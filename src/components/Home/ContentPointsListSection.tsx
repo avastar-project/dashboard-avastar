@@ -1,11 +1,21 @@
+/**
+ * ContentPointsListSection is a component that represents
+ * the section of the Homepage page listing the advantage to use the platform
+ */
+
 //utils
 import styled from 'styled-components';
 
 // MUI components
 import {Box, Grid} from '@mui/material';
 
-// Contains each content list infomations
-const resumeList = [
+// Typescript types
+interface ResumeList {
+  content: string;
+}
+// Contains each content pointlist infomations
+const resumeList : ResumeList[] =
+ [
   {
     content: `Avoid spending hours reading companies' privacy policies to decide which personal information they can or can’t access.`
   },
@@ -47,9 +57,9 @@ export default function SecServicesList() {
     <LinkList>With Avastar, you no longer need to be technical to understand your data:
         {/* Mapping list array to display each element */}
           {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
-        {resumeList.map((elt, index) => (
+        {resumeList.map((resumeList: ResumeList, index:number) => (
           <LinkItem key={index} >
-       {elt.content}
+       {resumeList.content}
           </LinkItem>
         ))}
       </LinkList>

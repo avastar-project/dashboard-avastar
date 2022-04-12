@@ -1,7 +1,7 @@
 //components
 import HomeHeader from '../components/Home/HomeHeader';
 import GetStartedBanner from '../components/Home/GetStartedBanner';
-import SecServicesList from '../components/Home/SecServicesList';
+import ContentPointsListSection from '../components/Home/ContentPointsListSection';
 import SecServicesUtility from '../components/Home/SecServicesUtility';
 import SecStartBanner from '../components/Home/SecStartBanner';
 import SecDiagramProcess from '../components/Home/SecDiagramProcess';
@@ -34,7 +34,7 @@ export default function Homepage() {
         <HomeHeader/>
          <Main>
          <GetStartedBanner/>
-         <SecServicesList/>
+         <ContentPointsListSection/>
          <SecServicesUtility />
          <SecStartBanner/>
          <SecDiagramProcess/>
