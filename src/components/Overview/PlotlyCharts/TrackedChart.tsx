@@ -1,8 +1,9 @@
 import Plotly from "plotly.js";
 import createPlotlyComponent from "react-plotly.js/factory";
-import * as data_aggregat from '../../../fake-data/fake_data_agg.json'
-
+import * as data_aggregat from '../../../fake-data/fake-data-agg.json'
 //Doc link for layout references : https://plotly.com/javascript/reference
+
+
 const Plot = createPlotlyComponent(Plotly);
 
 export default function LineChart() {
