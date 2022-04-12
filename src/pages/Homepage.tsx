@@ -3,7 +3,7 @@ import Header from '../components/Home/HomeHeader';
 import GetStarted from '../components/Home/GetStartedBanner';
 import ContentPointsList from '../components/Home/ContentPointsListSection';
 import MainBenefits from '../components/Home/MainBenefitsSection';
-import SecStartBanner from '../components/Home/SecStartBanner';
+import UploadData from '../components/Home/UploadDataSection';
 import SecDiagramProcess from '../components/Home/SecDiagramProcess';
 import SecStepsProcess from '../components/Home/SecStepsProcess';
 import LearnMoreAbout from '../components/Home/LearnMoreAboutBanner';
@@ -36,7 +36,7 @@ export default function Homepage() {
          <GetStarted/>
          <ContentPointsList/>
          <MainBenefits/>
-         <SecStartBanner/>
+         <UploadData/>
          <SecDiagramProcess/>
          <SecStepsProcess/>
          <LearnMoreAbout/>

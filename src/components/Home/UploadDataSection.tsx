@@ -1,3 +1,8 @@
+/**
+ * UploadDataSection is a component that represents
+ * the "Ready to get started" section of the Homepage allowing to upload data.
+ */
+
 //utils
 import styled from 'styled-components';
 
@@ -42,7 +47,7 @@ const StyledSecStart = styled.section`
 
   `;
 
-export default function SecStartBanner() {
+export default function UploadData() {
   return (
     <Box sx={{ flexGrow: 1}}>
     <StyledSecStart>
