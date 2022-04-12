@@ -1,5 +1,5 @@
 /**
- * HeaderHome is a component who represents
+ * HomeHeader is a component who represents
  * the first block of the Homepage page.
  */
 

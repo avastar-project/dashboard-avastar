@@ -1,3 +1,8 @@
+/**
+ * HomeFooter is a component who represents
+ * the last block of the Homepage page.
+ */
+
 // Components
 import { Link } from 'react-router-dom';
 
@@ -10,8 +15,16 @@ import styled from 'styled-components';
 // MUI components
 import { Box, Grid } from '@mui/material';
 
-// Contains each page link infomations
-const navLinks = [
+
+// Typescript Props
+interface NavFooterLink {
+  name: string;
+  link: string;
+}
+
+// Contains each page link's footer infomations
+const navLinks : NavFooterLink[] = 
+[
   {
     name: 'Contact us',
     link: '#',
@@ -36,7 +49,7 @@ position:relative;
 
 & > img {
 position:absolute;
-width:50px;
+width:3.125rem;
 }
 
 `;
@@ -61,10 +74,10 @@ export default function HomeFooter() {
     <BrandLogo> <img src={AvastarLogo} alt="Avastar logo"></img>
        </BrandLogo>
        <NavList>
-       {navLinks.map((elt, index) => (
+       {navLinks.map((navLink: NavFooterLink, index:number) => (
           <NavItem key={index}>
-            <NavLink to={elt.link}>
-              {elt.name}
+            <NavLink to={navLink.link}>
+              {navLink.name}
             </NavLink>
           </NavItem>
         ))}
