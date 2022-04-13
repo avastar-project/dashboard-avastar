@@ -10,6 +10,8 @@ import DanielProfil from '../../assets/daniel-review.png';
 import BernardProfil from '../../assets/bernard-review.png';
 import LeaProfil from '../../assets/lea-review.png';
 
+import { Box,Grid } from '@mui/material';
+
 // Typescript types
 interface ReviewsCard {
   user: string;
@@ -40,7 +42,7 @@ const reviewsCard : ReviewsCard[] =
       },
   ];
 
-  const StyledReviews = styled.div`
+  const StyledReviews = styled(Box)`
   padding:2rem 4rem;`;
 
   const ReviewList = styled.ul`
@@ -49,8 +51,8 @@ const reviewsCard : ReviewsCard[] =
   gap:15%;
   list-style:none;
   padding:2rem 0;
-  width:100rem;
-  height:20rem;
+  // width:100rem;
+  // height:20rem;
 `;
 
   const ReviewItem = styled.li`
@@ -78,6 +80,7 @@ export default function UsersReview() {
     return (
       <StyledReviews>
           <h1>What our users say</h1>
+          <Grid>
         <ReviewList>
           {/* Mapping reviews array to display each element */}
             {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
@@ -91,6 +94,7 @@ export default function UsersReview() {
             </ReviewItem>
           ))}
         </ReviewList>
+        </Grid>
       </StyledReviews>
     );
   }

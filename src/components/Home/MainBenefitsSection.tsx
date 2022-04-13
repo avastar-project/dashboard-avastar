@@ -11,9 +11,9 @@ import {Box,Grid} from '@mui/material';
 
 // Icons
 import TransparencyIcon from '../../assets/icon-transparency.png';
-import ClockIcon from '../../assets/icon-clock.png';
-import MonitoringIcon from '../../assets/icon-monitoring.png';
-import CredibilityIcon from '../../assets/icon-credibility.png';
+import SaveTimeIcon from '../../assets/icon-save-time.png';
+import PrivacyThreatsIcon from '../../assets/icon-privacy-threats.png';
+import EreputationRisksIcon from '../../assets/icon-ereputation-risks.png';
 
 
 // Typescript types
@@ -33,18 +33,18 @@ const benefitsBlock:BenefitsBlock[] =
   {
     name: 'save time and complexity',
     content: `We remove the pain of manually analysing the personal data you shared so that you can focus on deciding how you want to manage your online privacy.`,
-    icon: ClockIcon,
+    icon: SaveTimeIcon,
   },
   {
     name: 'understand privacy threats',
     content: `Learn what are the risks and threats associated to sharing specific data points with third-parties.`,
-    icon: MonitoringIcon,
+    icon: PrivacyThreatsIcon,
   },
   {
     name: 'prevent e-reputation risks',
     content: `Control your public image on the internet by identifying the personal information you and your network shared about you in the past.
     `,
-    icon: CredibilityIcon,
+    icon: EreputationRisksIcon,
   },
 ];
 
@@ -94,19 +94,17 @@ export default function MainBenefits() {
     <Box sx={{ flexGrow: 1 }}>
     <StyledServices>
         <p>What you get</p>
-      <Grid >
       <ServiceList>
         {/* Mapping benefit blocks array to display each element */}
           {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
         {benefitsBlock.map((benefitsBlock:BenefitsBlock, index:number) => (
-         <ServiceItem key={index}>
+      <ServiceItem key={index}>
        <h3>{benefitsBlock.name}</h3>
        <img src={benefitsBlock.icon} alt={`${benefitsBlock.name}-icon`} />
        <p>{benefitsBlock.content}</p>
           </ServiceItem>
         ))}
       </ServiceList>
-    </Grid>
     </StyledServices>
     </Box>
   );
