@@ -54,7 +54,6 @@ export const smartParser = (filePath: string, fileContent: any) => {
             }
           } else if (fileDepth === 1) {
             const nestedArrayName = String(Object.keys(fileContent));
-
             if (typeof fileContent[nestedArrayName] === 'string') {
               // Check the type of the element that comes right after the nested array name (string vs object). If it's a string, then it means that there is only one single data point to parse.
               const indivArray = [];
@@ -87,17 +86,35 @@ export const smartParser = (filePath: string, fileContent: any) => {
                   }
                   smartData.push(indivArray);
                 }
-              } else {
-                for (let j = 0; j < fileContent[nestedArrayName].length; j++) {
-                  const indivArray = [];
-                  for (let k = 0; k < ObjectPropertiesName.length; k++) {
-                    indivArray.push(
-                      (parsingModel.parsingmodel as any)[filePathModel][
-                        nestedArrayName
-                      ]['entries'][k][ObjectPropertiesName[k]]
-                    );
+              } else { 
+                if((parsingModel.parsingmodel as any)[filePathModel][
+                  'file_structure_properties'
+                ]['has_multiple_nested_objects'] === true) { // File structure similar to Google file Profile/Profile.json, same parsing principle as profile_information/profile_information.json file, but without nestedArrayName
+                  Object.entries(fileContent).forEach(function (
+                    item,
+                    index
+                  ) {
+                    let categorySelector = item[0]; // Get the name of the arrays that are parsed to know which properties from the data model must be applied to it.
+                    const indivArray = [];
+                    for (let k = 0; k < ObjectPropertiesName.length; k++) {
+                      indivArray.push(
+                        (parsingModel.parsingmodel as any)[filePathModel]["None"][categorySelector][k][ObjectPropertiesName[k]]
+                      );
+                    }
+                    smartData.push(indivArray);
+                  });
+                } else {
+                  for (let j = 0; j < fileContent[nestedArrayName].length; j++) {
+                    const indivArray = [];
+                    for (let k = 0; k < ObjectPropertiesName.length; k++) {
+                      indivArray.push(
+                        (parsingModel.parsingmodel as any)[filePathModel][
+                          nestedArrayName
+                        ]['entries'][k][ObjectPropertiesName[k]]
+                      );
+                    }
+                    smartData.push(indivArray);
                   }
-                  smartData.push(indivArray);
                 }
               }
             }

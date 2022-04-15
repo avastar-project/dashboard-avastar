@@ -2510,7 +2510,7 @@
         "language": "en",
         "comment": "Information registered by Google to fill forms automatically for the user",
         "file_structure_properties":{
-          "depth": 1,
+          "depth": 2,
           "has_single_data_point": false,
           "has_multiple_nested_objects": false,
           "data_point_selector": "",
@@ -2764,7 +2764,7 @@
           ]
         }
       },
-      "Profil/Profil.json": {
+      "Profile/Profile.json": {
         "language": "en",
         "comment": "Profile information filled by the user when he registered on Google",
         "file_structure_properties":{
