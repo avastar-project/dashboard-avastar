@@ -39,6 +39,21 @@
           "timestamp": 1609062360
         }
       ]
+    },
+    {
+      "name": "6play, en direct & replay",
+      "events": [
+        {
+          "id": 295103713895015,
+          "type": "INSTALL",
+          "timestamp": 1641512820
+        },
+        {
+          "id": 295103713895015,
+          "type": "REENABLED_ACTIVITY",
+          "timestamp": 1605126300
+        }
+      ]
     }
   ]
 }
