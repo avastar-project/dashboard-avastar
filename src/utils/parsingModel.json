@@ -2640,7 +2640,7 @@
           "has_single_data_point": false,
           "has_multiple_nested_objects": false,
           "data_point_selector": "",
-          "nested_data_point_selector": ""
+          "nested_data_point_selector": "Extensions"
         },
         "Extensions": {
           "entries": [
