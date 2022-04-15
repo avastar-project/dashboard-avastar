@@ -2506,7 +2506,7 @@
           ]
         }
       },
-      "google-data-fake/Chrome/Autofill.json": {
+      "Chrome/Autofill.json": {
         "language": "en",
         "comment": "Information registered by Google to fill forms automatically for the user",
         "file_structure_properties":{
@@ -2685,6 +2685,185 @@
             },
             {
               "data_type": "behavioural"
+            },
+            {
+              "platform": "google"
+            },
+            {
+              "timestamp": ""
+            },
+            {
+              "details": ""
+            }
+          ]
+        }
+      },
+      "Maps (your places)/Saved Places.json": {
+        "language": "en",
+        "comment": "Places saved or flagged on Google Maps by the user",
+        "file_structure_properties":{
+          "depth": 1,
+          "has_single_data_point": false,
+          "has_multiple_nested_objects": false,
+          "data_point_selector": "",
+          "nested_data_point_selector": "features"
+        },
+        "features": {
+          "entries": [
+            {
+              "action_type": "Place you flagged or saved on Google Maps"
+            },
+            {
+              "data_origin": "Volunteered"
+            },
+            {
+              "data_type": "location"
+            },
+            {
+              "platform": "google"
+            },
+            {
+              "timestamp": ""
+            },
+            {
+              "details": ""
+            }
+          ]
+        }
+      },
+      "Maps (your places)/Reviews.json": {
+        "language": "en",
+        "comment": "Reviews left by the user on Google Maps",
+        "file_structure_properties":{
+          "depth": 1,
+          "has_single_data_point": false,
+          "has_multiple_nested_objects": false,
+          "data_point_selector": "",
+          "nested_data_point_selector": "features"
+        },
+        "features": {
+          "entries": [
+            {
+              "action_type": "Review left on Google Maps"
+            },
+            {
+              "data_origin": "Volunteered"
+            },
+            {
+              "data_type": "behavioural"
+            },
+            {
+              "platform": "google"
+            },
+            {
+              "timestamp": ""
+            },
+            {
+              "details": ""
+            }
+          ]
+        }
+      },
+      "Profil/Profil.json": {
+        "language": "en",
+        "comment": "Profile information filled by the user when he registered on Google",
+        "file_structure_properties":{
+          "depth": 1,
+          "has_single_data_point": false,
+          "has_multiple_nested_objects": true,
+          "data_point_selector": "",
+          "nested_data_point_selector": ""
+        },
+        "None": {
+          "name": [
+            {
+              "action_type": "Provide name at account creation"
+            },
+            {
+              "data_origin": "Volunteered"
+            },
+            {
+              "data_type": "socio-demographic"
+            },
+            {
+              "platform": "google"
+            },
+            {
+              "timestamp": ""
+            },
+            {
+              "details": ""
+            }
+          ],
+          "displayName": [
+            {
+              "action_type": "Name displayed on your Google profile"
+            },
+            {
+              "data_origin": "Volunteered"
+            },
+            {
+              "data_type": "socio-demographic"
+            },
+            {
+              "platform": "google"
+            },
+            {
+              "timestamp": ""
+            },
+            {
+              "details": ""
+            }
+          ],
+          "emails": [
+            {
+              "action_type": "Email address associated to your Google account"
+            },
+            {
+              "data_origin": "Volunteered"
+            },
+            {
+              "data_type": "contact"
+            },
+            {
+              "platform": "google"
+            },
+            {
+              "timestamp": ""
+            },
+            {
+              "details": ""
+            }
+          ],
+          "birthday": [
+            {
+              "action_type": "Birthday date shared with Google"
+            },
+            {
+              "data_origin": "Volunteered"
+            },
+            {
+              "data_type": "socio-demographic"
+            },
+            {
+              "platform": "google"
+            },
+            {
+              "timestamp": ""
+            },
+            {
+              "details": ""
+            }
+          ],
+          "gender": [
+            {
+              "action_type": "Gender information shared with Google"
+            },
+            {
+              "data_origin": "Volunteered"
+            },
+            {
+              "data_type": "socio-demographic"
             },
             {
               "platform": "google"
