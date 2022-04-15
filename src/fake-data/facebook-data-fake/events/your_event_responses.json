@@ -6,6 +6,30 @@
         "start_timestamp": 1641502800,
         "end_timestamp": 1641744000
       }
+    ],
+    "events_declined": [
+      {
+        "name": "HAVANA BAD : NOUVEAUX CLUB",
+        "start_timestamp": 1893452400,
+        "end_timestamp": 0
+      },
+      {
+        "name": "Birthday la Trente et .... uni\u00c3\u00a8me",
+        "start_timestamp": 1600534800,
+        "end_timestamp": 1600574400
+      }
+    ],
+    "events_interested": [
+      {
+        "name": "Pendaison de Cr\u00c3\u00a9maill\u00c3\u00a8re \u00f0\u009f\u008f\u00a0\u00f0\u009f\u008d\u00bb",
+        "start_timestamp": 1583607600,
+        "end_timestamp": 0
+      },
+      {
+        "name": "30 Ans",
+        "start_timestamp": 1569693600,
+        "end_timestamp": 1569769200
+      }
     ]
-  }
+  }  
 }

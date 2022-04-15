@@ -46,6 +46,5 @@ export default function Homepage() {
        </Grid>
      </Container>
    </Box>
-   
   );
 }
