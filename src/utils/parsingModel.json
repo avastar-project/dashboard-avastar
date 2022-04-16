@@ -725,6 +725,26 @@
               "details": ""
             }
           ],
+          "Groupes consult\u00c3\u00a9s": [
+            {
+              "action_type": "Facebook groups you have visited"
+            },
+            {
+              "data_origin": "observed"
+            },
+            {
+              "data_type": "behavioural"
+            },
+            {
+              "platform": "facebook"
+            },
+            {
+              "timestamp": ""
+            },
+            {
+              "details": ""
+            }
+          ],
           "Visites Marketplace": [
             {
               "action_type": "Visit you made on Facebook Marketplace"
@@ -1394,7 +1414,7 @@
           "data_point_selector": "",
           "nested_data_point_selector": ""
         },
-        "events_invited": {
+        "events_invited_v2": {
           "entries": [
             {
               "action_type": "Invitation received for a Facebook event"
@@ -2252,43 +2272,10 @@
           "data_point_selector": "",
           "nested_data_point_selector": ""
         },
-        "recognized_devices": {
+        "recognized_devices_v2": {
           "entries": [
             {
               "action_type": "Device linked to your Facebook account"
-            },
-            {
-              "data_origin": "Observed"
-            },
-            {
-              "data_type": "technical"
-            },
-            {
-              "platform": "facebook"
-            },
-            {
-              "timestamp": ""
-            },
-            {
-              "details": ""
-            }
-          ]
-        }
-      },
-      "security_and_login_information/browser_cookies.json": {
-        "language": "en",
-        "comment": "Cookies left by Facebook in the user's browser(s)",
-        "file_structure_properties":{
-          "depth": 2,
-          "has_single_data_point": false,
-          "has_multiple_nested_objects": false,
-          "data_point_selector": "",
-          "nested_data_point_selector": ""
-        },
-        "datr_stats_v2": {
-          "entries": [
-            {
-              "action_type": "Cookie left by Facebook in your browser(s)"
             },
             {
               "data_origin": "Observed"
@@ -2384,7 +2371,7 @@
           "data_point_selector": "",
           "nested_data_point_selector": ""
         },
-        "account_accesses": {
+        "account_accesses_v2": {
           "entries": [
             {
               "action_type": "Login/Logout of your Facebook account"
