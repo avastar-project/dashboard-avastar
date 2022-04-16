@@ -305,6 +305,6 @@ export const smartParser = (filePath: string, fileContent: any) => {
     }
     return smartData;
   } catch (error) {
-    reportError({message: getErrorMessage(error)})
+    reportError({message: getErrorMessage(error, filePath)})
   }
 };
