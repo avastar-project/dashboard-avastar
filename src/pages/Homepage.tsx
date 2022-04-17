@@ -1,5 +1,4 @@
-import React from 'react';
-import Dropzonefiles from '../components/dropZone'
+import Dropzonefiles from '../components/DropZone';
 
 export default function Homepage() {
   return (
