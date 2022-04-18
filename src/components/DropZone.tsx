@@ -4,9 +4,9 @@ import parsingModel from '../utils/parsingModel.json';
 import { smartParser } from '../utils/smartParser';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
+import { Button } from '@mui/material';
 import { readFileAsync } from '../utils/readFileAsync';
 import { isJSONFile } from '../utils/isJsonFile';
-import { Button } from '@mui/material';
 
 const StyledForm = styled.form`
   display: flex;
@@ -76,4 +76,3 @@ export default function DropZone() {
     </>
   );
 }
-// accept only .zip file
