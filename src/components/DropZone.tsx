@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Dispatch } from 'react';
 import * as jszip from 'jszip';
 import parsingModel from '../utils/parsingModel.json';
 import { smartParser } from '../utils/smartParser';
@@ -10,6 +10,10 @@ import { isJSONFile } from '../utils/isJsonFile';
 
 // Icons
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import { addDataBlock } from '../store/actionCreators';
+import { useDispatch } from 'react-redux';
+import { AvastarParsedDataPoint } from '../types/dataTypes';
+import { useNavigate } from 'react-router-dom';
 
 const StyledForm = styled.form`
   background-color: var(--clr-lightest);
@@ -25,7 +29,7 @@ const DashedArea = styled(Box)`
   justify-content: center;
   border: 1px dashed black;
   padding: 3rem 2rem;
-  text-transform:none;
+  text-transform: none;
 `;
 
 const Drop = styled.div`
@@ -46,7 +50,7 @@ const prepareData = async (data: FormType) => {
 
 const asyncParseData = async (data: FormType) => {
   const preparedData = await prepareData(data);
-  const res: string[][] = [];
+  const res: AvastarParsedDataPoint[] = [];
 
   for await (const [filename, fileproperties] of Object.entries(
     preparedData.files
@@ -74,14 +78,16 @@ const asyncParseData = async (data: FormType) => {
 };
 
 export default function DropZone() {
-  const [smartDataBloc, setSmartDataBloc] = useState<string[][]>([]);
-  console.log('smartDataBloc', smartDataBloc);
+  const dispatch: Dispatch<any> = useDispatch();
+  let navigate = useNavigate();
 
   const { register, handleSubmit } = useForm<FormType>(); // initialize the hook
 
   const onSubmit = async (data: FormType) => {
     const parsedData = await asyncParseData(data);
-    setSmartDataBloc(parsedData);
+    console.log('parsedData', parsedData);
+    dispatch(addDataBlock(parsedData));
+    navigate('/overview');
   };
 
   return (
@@ -97,11 +103,17 @@ export default function DropZone() {
           <Button component="label">
             <DashedArea>
               <CloudUploadIcon />
-              <input hidden multiple type="file" accept=".zip" {...register('file')} />
+              <input
+                hidden
+                multiple
+                type="file"
+                accept=".zip"
+                {...register('file')}
+              />
               <Drop>Drag and drop your .zip file here or click</Drop>
             </DashedArea>
           </Button>
-          <Button variant="contained" type="submit" href="/overview">
+          <Button variant="contained" type="submit">
             Visualize my data
           </Button>
         </Container>
