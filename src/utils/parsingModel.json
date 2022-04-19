@@ -283,7 +283,40 @@
               "data_origin": "inferred"
             },
             {
-              "data_type": "technical"
+              "data_type": "behavioural"
+            },
+            {
+              "platform": "facebook"
+            },
+            {
+              "timestamp": ""
+            },
+            {
+              "details": ""
+            }
+          ]
+        }  
+      },
+      "your_topics/your_topics.json": {
+        "language": "en",
+        "comment": "Areas of interest inferred by Facebook based on the user's activity",
+        "file_structure_properties":{
+          "depth": 1,
+          "has_single_data_point": false,
+          "has_multiple_nested_objects": false,
+          "data_point_selector": "",
+          "nested_data_point_selector": ""
+        },
+        "inferred_topics_v2": {
+          "entries": [
+            {
+              "action_type": "Topic inferred by Facebook as an area of interest based on your activity"
+            },
+            {
+              "data_origin": "inferred"
+            },
+            {
+              "data_type": "behavioural"
             },
             {
               "platform": "facebook"
