@@ -9,6 +9,7 @@ import StepsUploadData from '../components/Home/StepsUploadDataSection';
 import LearnMoreAbout from '../components/Home/LearnMoreAboutBanner';
 import UsersReview from '../components/Home/UsersReviewSection';
 import Footer from '../components/Home/HomeFooter';
+import DropZone from '../components/DropZone';
 //utils
 import styled from '@emotion/styled';
 
@@ -27,7 +28,7 @@ const Main = styled.main``;
 
 export default function Homepage() {
   return (
-    
+
     <Box sx={{ flexGrow: 1 }}>
      <Container>
        <Grid item xs={12}>
@@ -41,6 +42,7 @@ export default function Homepage() {
          <StepsUploadData/>
          <LearnMoreAbout/>
          <UsersReview/>
+         <DropZone/>
          <Footer/>
          </Main>
        </Grid>
