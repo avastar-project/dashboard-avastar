@@ -5,7 +5,8 @@ import OverviewProfile from '../components/Overview/OverviewProfile';
 import TrackedChart from '../components/Overview/PlotlyCharts/TrackedChart';
 import DataCollectedChart from '../components/Overview/PlotlyCharts/DataCollectedChart';
 import DataTable from '../components/Overview/PlotlyCharts/DataTable';
-
+import OverviewEducLink from '../components/Overview/OverviewEducLink'
+import MoreDataContainer from '../components/Overview/MoreDataContainer';
 // MUI components
 import { Box, Grid } from '@mui/material';
 
@@ -22,7 +23,8 @@ const Header = styled.header`
 const Main = styled.main``;
 
 const Aside = styled.aside`
-  border: solid 1px green;
+  border-radius: 0.5rem;
+  over-flow:hidden;
 `;
 
 export default function Overview() {
@@ -62,10 +64,13 @@ export default function Overview() {
               // isSearch on true to see the associated search bar
               isSearch={true}
             />
+            <MoreDataContainer/>
           </Main>
         </Grid>
         <Grid item xs={12} md={3}>
-          <Aside>Aside</Aside>
+          <Aside>
+            <OverviewEducLink />
+          </Aside>
         </Grid>
       </Container>
     </Box>
