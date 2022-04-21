@@ -42,7 +42,6 @@ export default function Homepage() {
          <StepsUploadData/>
          <LearnMoreAbout/>
          <UsersReview/>
-         <DropZone/>
          <Footer/>
          </Main>
        </Grid>

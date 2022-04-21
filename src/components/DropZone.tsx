@@ -4,32 +4,31 @@ import parsingModel from '../utils/parsingModel.json';
 import { smartParser } from '../utils/smartParser';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
-import { Box,Button} from '@mui/material';
+import { Box, Button } from '@mui/material';
 import { readFileAsync } from '../utils/readFileAsync';
 import { isJSONFile } from '../utils/isJsonFile';
 
+// Icons
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 
 const StyledForm = styled.form`
-position:absolute;
-top:40%;
-left:40%;
-background-color: var(--clr-lightest);
-border-radius:1rem;
+  background-color: var(--clr-lightest);
+  border-radius: 1rem;
 `;
 
 const Container = styled(Box)``;
 
 const DashedArea = styled.div`
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-border:1px dashed black;
-padding:2rem; `;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed black;
+  padding: 2rem;
+`;
 
 const Drop = styled.div`
-padding:3rem;
+  padding: 3rem;
 `;
 
 interface FormType {
@@ -87,17 +86,24 @@ export default function DropZone() {
   return (
     <>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
-      <Container display="flex" flexDirection='column' alignItems='center' p={10} gap={2}>
-        <Button  component='label'>
-          <DashedArea >
-          <CloudUploadIcon/>
-            <input hidden type="file" accept=".zip" {...register('file')} /><Drop>Drag and drop your .zip file here or click</Drop>
-        </DashedArea>
-        </Button>
-        <Button variant="contained" type="submit">
-        Visualize my data
-        </Button>
-				</Container>
+        <Container
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          p={5}
+          gap={2}
+        >
+          <Button component="label">
+            <DashedArea>
+              <CloudUploadIcon />
+              <input hidden type="file" accept=".zip" {...register('file')} />
+              <Drop>Drag and drop your .zip file here or click</Drop>
+            </DashedArea>
+          </Button>
+          <Button variant="contained" type="submit">
+            Visualize my data
+          </Button>
+        </Container>
       </StyledForm>
     </>
   );

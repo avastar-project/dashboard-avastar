@@ -2,69 +2,120 @@
  * UploadDataSection is a component that represents
  * the "Ready to get started" section of the Homepage allowing to upload data.
  */
+import { useState } from 'react';
+
+//components
+import DropZone from '../DropZone';
 
 //utils
 import styled from 'styled-components';
 
 // MUI
-import { Button,Box,Grid } from '@mui/material';
+import {
+  Button,
+  Box,
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  Grid,
+  Typography,
+} from '@mui/material';
+
+//Draggable modal box
+import Paper, { PaperProps } from '@mui/material/Paper';
+import Draggable from 'react-draggable';
 
 // Icons
 import UploadFileIcon from '../../assets/icon-upload-file.png';
 
 // Styled-components
-const StyledSecStart = styled.section`
+const StyledUpload = styled(Grid)`
   background-color: var(--clr-lighter);
-  padding:2rem 4rem;
+  padding: 2.027rem 4.851rem 1.782rem 4.851rem;
+`;
 
-  & > .grid {
-    line-height: 2rem;
+const Title = styled(Typography)``;
 
-    & > h2 {
-      padding-bottom:1rem;
-    }
+const P1 = styled(Typography)`
+  padding: 1.569rem 0 2.179rem 0;
+`;
+const P2 = styled(Typography)``;
 
-    & > p {
-      width:90%
-    }
-  }
-  `;
-
-  const ButtonWrapper = styled.div`
-  padding: 1.25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap:2rem;
+const ButtonWrapper = styled(Box)`
+  padding-top: 2.179rem;
 
   & > .MuiButton-contained {
-    width:13rem;
+    width: 15rem;
   }
+`;
 
-  & > a {
-    text-transform:none;
-  }
-
-  `;
-
-export default function UploadData() {
+function PaperComponent(props: PaperProps) {
   return (
-    <Box sx={{ flexGrow: 1}}>
-    <StyledSecStart>
-    <Grid item xs={12} className='grid'>
-    <h2>Ready to get started ?</h2>
-    <p>Upload the personal data files you collected from platforms on Avastar.</p>
-    <p>Your data is safe with us as we can't and don't want to see your data. The files you upload never leave your computer, all your data is stored locally on your browser. It will also be deleted every time your session is refreshed.</p>
-    <ButtonWrapper>
-    <Button variant="contained" href="/facebook" startIcon={<img src={UploadFileIcon} alt='#'/>}>
-     Upload Facebook data
-      </Button>
-      <Button variant="contained" href="/google" startIcon={<img src={UploadFileIcon} alt='#'/>}>
-      Upload Google data
-      </Button>
-    </ButtonWrapper>
-    </Grid>
-    </StyledSecStart>
-    </Box>
+    <Draggable
+      handle="#draggable-dialog-title"
+      cancel={'[class*="MuiDialogContent-root"]'}
+    >
+      <Paper {...props} />
+    </Draggable>
+  );
+}
+export default function UploadData() {
+  
+  //Dialog interaction
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+  return (
+    <StyledUpload>
+      <Title variant="h4">Ready to get started ?</Title>
+      <P1 variant="body1">
+        Upload the personal data files you collected from platforms on Avastar.
+      </P1>
+      <P2 variant="body1">
+        Your data is safe with us as we can't and don't want to see your data.
+        The files you upload never leave your computer, all your data is stored
+        locally on your browser. It will also be deleted every time your session
+        is refreshed.
+      </P2>
+      <ButtonWrapper display="flex" justifyContent="center" gap={2}>
+        <Button
+          onClick={handleClickOpen}
+          variant="contained"
+          startIcon={<img src={UploadFileIcon} alt="#" />}
+        >
+          Upload Facebook data
+        </Button>
+        <Button
+          onClick={handleClickOpen}
+          variant="contained"
+          startIcon={<img src={UploadFileIcon} alt="#" />}
+        >
+          Upload Google data
+        </Button>
+      </ButtonWrapper>
+      <Box>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="draggable-dialog-title"
+          PaperComponent={PaperComponent}
+        >
+          <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title">
+            Upload
+          </DialogTitle>
+          <DialogContent>
+            <Box>
+              <DropZone />
+            </Box>
+          </DialogContent>
+        </Dialog>
+      </Box>
+    </StyledUpload>
   );
 }
