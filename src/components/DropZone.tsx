@@ -18,17 +18,18 @@ const StyledForm = styled.form`
 
 const Container = styled(Box)``;
 
-const DashedArea = styled.div`
+const DashedArea = styled(Box)`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border: 1px dashed black;
-  padding: 2rem;
+  padding: 3rem 2rem;
+  text-transform:none;
 `;
 
 const Drop = styled.div`
-  padding: 3rem;
+  padding: 2rem;
 `;
 
 interface FormType {

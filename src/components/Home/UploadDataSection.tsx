@@ -2,7 +2,7 @@
  * UploadDataSection is a component that represents
  * the "Ready to get started" section of the Homepage allowing to upload data.
  */
-import { useState } from 'react';
+import { useState} from 'react';
 
 //components
 import DropZone from '../DropZone';
@@ -60,7 +60,7 @@ function PaperComponent(props: PaperProps) {
   );
 }
 export default function UploadData() {
-  
+
   //Dialog interaction
   const [open, setOpen] = useState(false);
 
@@ -72,6 +72,7 @@ export default function UploadData() {
     setOpen(false);
   };
   return (
+   
     <StyledUpload>
       <Title variant="h4">Ready to get started ?</Title>
       <P1 variant="body1">
@@ -106,7 +107,7 @@ export default function UploadData() {
           aria-labelledby="draggable-dialog-title"
           PaperComponent={PaperComponent}
         >
-          <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title">
+          <DialogTitle  sx={{ pt: 4 }}style={{ cursor: 'move',textAlign:'center',textTransform:'uppercase' }} id="draggable-dialog-title">
             Upload
           </DialogTitle>
           <DialogContent>
