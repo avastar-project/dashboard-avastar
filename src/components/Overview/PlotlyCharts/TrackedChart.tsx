@@ -1,19 +1,19 @@
 import Plotly from "plotly.js";
 import createPlotlyComponent from "react-plotly.js/factory";
-import * as data_aggregat from '../../../fake-data/fake-data-agg.json'
+import data_aggregat from "../../../fake-data/fake-data-agg.json"
 //Doc link for layout references : https://plotly.com/javascript/reference
 
 
 const Plot = createPlotlyComponent(Plotly);
 
-export default function LineChart() {
+export default function TrackedChart() {
   interface Anything {
       [key: string]: any;
   }
   var plotType: Plotly.PlotType = 'bar'
 
   var counts: Anything = {};
-  
+  console.log(data_aggregat)
   let getData = () =>{
     data_aggregat.data_classification.forEach(object => {
       counts[object.data_type] = (counts[object.data_type] || 0) + 1;
