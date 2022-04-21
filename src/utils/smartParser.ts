@@ -29,6 +29,91 @@ export const smartParser = (
     // Initialisation of the array that will store the properties describing each the data point scanned. It will be the input of the data visualisations showed in the Overview, Facebook and Google pages.
     const smartData = [];
 
+    // Start of tests to get timestamp + details in files
+    // Build a separate function with the following inputs : parsingModel and filePath at the data point step
+    // Build one example per use case 
+    // List the checks to be made
+    // Build a v1 of the function as a separate file
+    // Possible paths :
+    // It can be at the data point level or previous step (cc. your_off-facebook-activity with "name")
+    // (0) [nestedArrayName] (test files : other_logged_information/friend_peer_group.json )
+    // (1) [i] ; [title] ; [name] ; [advertiser_name] ; [type] ; [description] (test files : apps_and_websites_off_of_facebook/apps_and_websites.json, your_topics/your_topics.json, other_logged_information/ads_interests.json)
+    // (2) [data][name] ; [date][text] (test files : activity_messages/group_interactions.json ; )
+    // (3) [attachments][data][name] ; [data][comment][comment] (test files : comments_and_reactions/comments.json)
+    // (5) [attachments][data][0][media][description] (test files : posts/your/posts_1.json)
+
+    // In the parsingModel, add a section with the selectors to integrate in the path as variables, depending on the number of steps to get there
+    // Next steps : 
+    // (1) List the files to test the parsing function 
+    // (2) Make tests on use cases (0) / (1) / (2) and update the parsingModel
+    // Checks : has ts/details ? Nb of steps to ts/details ? 
+
+    // Use case (0) - Test on other_logged_information/friend_peer_group.json (WORKING)
+    
+    // const nestedArrayName = String(Object.keys(fileContent));
+
+    // for (let j = 0; j < fileContent[nestedArrayName].length; j++) {
+    //   const indivArray = [];
+    //   console.log(fileContent[nestedArrayName]) --> HERE!
+    //   for (let k = 0; k < ObjectPropertiesName.length; k++) {
+    //     indivArray.push(
+    //       (parsingModel as any)[filePath][nestedArrayName][
+    //         'entries'
+    //       ][k][ObjectPropertiesName[k]]
+    //     );
+    //   }
+    //   console.log(indivArray);
+    // }
+
+    // Use case (1) - Test on other_logged_information/ads_interests.json (WORKING)
+    
+    // const nestedArrayName = String(Object.keys(fileContent));
+
+    // for (let j = 0; j < fileContent[nestedArrayName].length; j++) {
+    //   const indivArray = [];
+    //   console.log(fileContent[nestedArrayName][j]) --> HERE!
+    //   for (let k = 0; k < ObjectPropertiesName.length; k++) {
+    //     indivArray.push(
+    //       (parsingModel as any)[filePath][nestedArrayName][
+    //         'entries'
+    //       ][k][ObjectPropertiesName[k]]
+    //     );
+    //   }
+    //   // console.log(indivArray);
+    // }
+
+    // Use case (2) - Test on group_interactions (WORKING)
+
+    // const nestedArrayName = String(Object.keys(fileContent));
+
+    // const var1 = "data"
+    // const var2 = "name"
+
+    // // Add two variables in the parsingModel to fetch : data, name
+
+    // for (let j = 0; j < fileContent[nestedArrayName].length; j++) {
+    //   for (
+    //     let k = 0;
+    //     k < fileContent[nestedArrayName][j]['entries'].length;
+    //     k++
+    //   ) {
+    //     const indivArray = [];
+    //     console.log(fileContent[nestedArrayName][j]['entries'][k][var1][var2]) --> HERE!
+    //     for (let l = 0; l < ObjectPropertiesName.length; l++) {
+    //       indivArray.push(
+    //         (parsingModel.parsingmodel as any)[filePath][
+    //           nestedArrayName
+    //         ]['entries'][l][ObjectPropertiesName[l]]
+    //       );
+    //     }
+    //     // console.log(indivArray)
+    //   }
+    // }
+
+     // Use case (3) - Test on comments_and_reactions/comments.json (WIP)
+
+    // End of tests to get timestamp + details in files
+
     // Check the type of file uploaded (.csv, .xlsx, .json, etc.)
     if (filePath.split('.')[1] === 'json') {
       // Check if the file is in the parsingModel
