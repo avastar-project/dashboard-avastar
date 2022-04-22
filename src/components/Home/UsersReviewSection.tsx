@@ -51,15 +51,15 @@ const ReviewList = styled.ul`
 const ReviewItem = styled.li`
   display: flex;
   flex-direction: column;
-  gap:1rem;
-  border:2px solid var(--clr-light);
-  border-radius:10px;
-  padding:1rem 2rem;
-
+  gap: 1rem;
+  border: 2px solid var(--clr-light);
+  border-radius: 10px;
+  padding: 1rem 2rem;
 `;
 
 const Title = styled(Typography)`
-padding-bottom:2rem;`;
+  padding-bottom: 2rem;
+`;
 
 const ImgContainer = styled(Box)`
   & > img {

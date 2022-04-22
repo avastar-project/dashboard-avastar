@@ -7,7 +7,7 @@
 import styled from 'styled-components';
 
 // MUI components
-import {Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 
 // Typescript types
 interface ResumeList {

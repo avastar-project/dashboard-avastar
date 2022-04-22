@@ -15,14 +15,15 @@ const StyledBanner = styled(Grid)`
 `;
 
 const Title = styled(Typography)`
-padding-bottom:2rem;`;
+  padding-bottom: 2rem;
+`;
 
 export default function GetStarted() {
   return (
     <StyledBanner>
       <Title variant="h4">How to get started ?</Title>
-      <Grid container item xs={12} alignItems='center' spacing={2}>
-        <Grid item xs={8} >
+      <Grid container item xs={12} alignItems="center" spacing={2}>
+        <Grid item xs={8}>
           <Typography variant="body1">
             Request your personal data in your favorite apps. Start with Google
             and Facebook.

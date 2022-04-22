@@ -40,7 +40,7 @@ const StyledBox = styled(Box)`
   `;
 
 const Title = styled(Typography)`
-  color:var(--clr-lightest);
+  color: var(--clr-lightest);
   padding-bottom: 4.438rem;
 `;
 
@@ -54,7 +54,9 @@ const ProcessItem = styled(Box)`
 
 const BoxContainer = styled(Box)`
   position: relative;
-  && {background-color:var(--clr-blue-light)};
+  && {
+    background-color: var(--clr-blue-light);
+  }
   color: var(--clr-lightest);
   border-radius: 4px 20px 20px 4px;
   padding: 0 20px;
@@ -98,7 +100,6 @@ const BoxContainer = styled(Box)`
 `;
 
 const Content = styled(Typography)`
-
   color: var(--clr-lightest);
 `;
 
