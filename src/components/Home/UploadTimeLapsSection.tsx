@@ -35,7 +35,7 @@ const processTimeLaps: ProcessTimeLaps[] = [
 
 const StyledBox = styled(Box)`
   background-color: var(--clr-darkest);
-  padding: 4.5rem 4.851rem 3.25rem 4.851rem;
+  padding:  2.009rem 4.851rem 3.25rem 4.851rem;
   }
   `;
 

@@ -7,7 +7,7 @@
 import styled from 'styled-components';
 
 // MUI components
-import {Box,Grid} from '@mui/material';
+import {Box,Grid,Typography} from '@mui/material';
 
 // Icons
 import TransparencyIcon from '../../assets/icon-transparency.png';
@@ -49,63 +49,54 @@ const benefitsBlock:BenefitsBlock[] =
 ];
 
 // Styled-components
-const StyledServices = styled.section`
-margin-top:2rem;
-padding-left:4rem;
-& > p {
-    font-size:2.5rem;
-  }
+const StyledServices = styled(Grid)`
+padding: 2.009rem 4.851rem 3.25rem 4.851rem;
 `;
+
+const Title = styled(Typography)``;
 
 const ServiceList = styled.ul`
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:4rem;
-width:95%;
 list-style:none;
 padding:2rem 0;
 `;
 
 const ServiceItem = styled.li`
-display:grid;
-grid-template-columns:55% 10%;
-grid-column-gap: 1rem;
-
-& > h3 {
-grid-row:1;
-grid-column:1;
-text-transform:uppercase;
-}
-
-& > img {
-    width:100%
-    }
-
-& > p {
-grid-row:1;
-grid-column:1;
-padding-top:3rem;
-line-height: 2rem;
-}
+display:flex;
+gap: 1rem;
 `;
+
+const SubTitle = styled(Typography)`
+text-transform:uppercase;`;
+
+const ImgContainer = styled(Box)``;
+
+const TextContainer = styled(Box)``;
+
+const Content = styled(Typography)``;
 
 export default function MainBenefits() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+   
     <StyledServices>
-        <p>What you get</p>
+        <Title variant='h4'>What you get</Title>
       <ServiceList>
         {/* Mapping benefit blocks array to display each element */}
           {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
         {benefitsBlock.map((benefitsBlock:BenefitsBlock, index:number) => (
       <ServiceItem key={index}>
-       <h3>{benefitsBlock.name}</h3>
+       <ImgContainer>
        <img src={benefitsBlock.icon} alt={`${benefitsBlock.name}-icon`} />
-       <p>{benefitsBlock.content}</p>
+       </ImgContainer>
+       <TextContainer>
+          <SubTitle variant='h6'>{benefitsBlock.name}</SubTitle>
+       <Content variant='body1'>{benefitsBlock.content}</Content>
+       </TextContainer>
           </ServiceItem>
         ))}
       </ServiceList>
     </StyledServices>
-    </Box>
   );
 }
