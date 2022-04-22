@@ -6,43 +6,34 @@
 import styled from 'styled-components';
 
 // MUI components
-import { Button,Box,Grid } from '@mui/material';
+import { Button, Grid, Typography } from '@mui/material';
 
 // Styled-components
-const StyledSecIntro = styled.section`
+const StyledBanner = styled.section`
   background-color: var(--clr-lighter);
-  padding:2rem 4rem;
- 
-  & > h2 {
-      margin-bottom:1rem;
-  }
-  `;
+  padding: 2.009rem 4.851rem 3.25rem 4.851rem;
+`;
 
-  const MainContent = styled.main`
-  display:grid;
-  grid-template-columns:75% 25%;
-  align-items: center;
-  margin:1rem 0;
-  
-  & > a {
-    width:10rem;
-    text-transform:none;
-  }
-   `;
+const Title = styled(Typography)`
+padding-bottom:2rem;`;
 
 export default function GetStarted() {
   return (
-<Box sx={{ flexGrow: 1 }}>
-<StyledSecIntro>
- <Grid item xs={12}>
-  <h2>How to get started ?</h2>
-    <MainContent>
-    <p>Request your personal data in your favorite apps. Start with Google and Facebook.</p>
-    <Button variant="contained" href="/overview">Get my data</Button>
-    </MainContent>
- </Grid>
-</StyledSecIntro>
-</Box>
+    <StyledBanner>
+      <Title variant="h4">How to get started ?</Title>
+      <Grid container item xs={12} alignItems='center' spacing={2}>
+        <Grid item xs={8} >
+          <Typography variant="body1">
+            Request your personal data in your favorite apps. Start with Google
+            and Facebook.
+          </Typography>
+        </Grid>
+        <Grid item xs={3}>
+          <Button variant="contained" href="/overview">
+            Get my data
+          </Button>
+        </Grid>
+      </Grid>
+    </StyledBanner>
   );
 }
-

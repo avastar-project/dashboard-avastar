@@ -7,7 +7,7 @@
 import styled from 'styled-components';
 
 // MUI components
-import { Grid, Typography } from '@mui/material';
+import {Typography } from '@mui/material';
 
 // Typescript types
 interface ResumeList {
@@ -29,12 +29,13 @@ const resumeList: ResumeList[] = [
 ];
 // Styled-components
 const StyledResume = styled.section`
-padding:  2.009rem 4.851rem 2.009rem 4.851rem;
+  padding: 2.009rem 4.851rem 2.009rem 4.851rem;
   background-color: var(--clr-lightest);
 `;
 
 const Title = styled(Typography)`
-padding-bottom:2.318rem`;
+  padding-bottom: 2.318rem;
+`;
 
 const LinkList = styled.ul`
   line-height: 2rem;
@@ -46,22 +47,21 @@ const LinkItem = styled.li`
 
 export default function ContentPointsList() {
   return (
-      <StyledResume>
-        <Title variant='h4'>
-          We give you back the transparency you deserve on the internet.
-        </Title>
-        <Grid>
-          <LinkList>
-            With Avastar, you no longer need to be technical to understand your
-            data:
-            {/* Mapping list array to display each element */}
-            {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
-            {resumeList.map((resumeList: ResumeList, index: number) => (
-              <LinkItem key={index}>{resumeList.content}</LinkItem>
-            ))}
-          </LinkList>
-        </Grid>
-      </StyledResume>
- 
+    <StyledResume>
+      <Title variant="h4">
+        We give you back the transparency you deserve on the internet.
+      </Title>
+      <LinkList>
+        <Typography pb={2}>
+          With Avastar, you no longer need to be technical to understand your
+          data:
+        </Typography>
+        {/* Mapping list array to display each element */}
+        {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
+        {resumeList.map((resumeList: ResumeList, index: number) => (
+          <LinkItem key={index}>{resumeList.content}</LinkItem>
+        ))}
+      </LinkList>
+    </StyledResume>
   );
 }
