@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import { Button, Grid, Typography } from '@mui/material';
 
 // Styled-components
-const StyledBanner = styled.section`
+const StyledBanner = styled(Grid)`
   background-color: var(--clr-lighter);
   padding: 2.009rem 4.851rem 3.25rem 4.851rem;
 `;
