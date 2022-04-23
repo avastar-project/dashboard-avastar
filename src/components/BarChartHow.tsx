@@ -9,7 +9,7 @@ const CountObserved = data.data_classification.filter(data => data.data_origin =
 const CountInferred = data.data_classification.filter(data => data.data_origin === 'Inferred').length
 const CountVolunteered = data.data_classification.filter(data => data.data_origin === 'Volunteered').length
 
-const BarChartHow = () => {
+export default function BarChartHow() {
 
     return (
     <Plot
@@ -23,4 +23,3 @@ const BarChartHow = () => {
     );
   }
 
-  export default BarChartHow
