@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import * as jszip from 'jszip';
 import parsingModel from '../utils/parsingModel.json';
-import { smartParser } from '../utils/smartParser';
+import { smartParserJson } from '../utils/smartParserJson';
+import { smartParserCsv } from '../utils/smartParserCsv';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import { Button } from '@mui/material';
 import { readFileAsync } from '../utils/readFileAsync';
 import { isJSONFile } from '../utils/isJsonFile';
 import { isCSVFile } from '../utils/isCsvFile';
-import Papa from 'papaparse';
 
 
 const StyledForm = styled.form`
@@ -41,7 +41,7 @@ const asyncParseData = async (data: FormType) => {
           const fileData: string = await fileproperties.async('string'); // function of jszip
           const fileContent = JSON.parse(fileData); // convert the type of fileData variable from String to Object
           if (Object.keys(fileContent).length > 0) {
-            const newElement = smartParser(filename, fileContent); // execute parsing function
+            const newElement = smartParserJson(filename, fileContent); // execute parsing function
             newElement && res.push(...newElement);
           } else {
             console.warn('The file is empty');
@@ -50,21 +50,10 @@ const asyncParseData = async (data: FormType) => {
       }
     } else if (isCSVFile(filename)) {
         for (let i = 0; i < parsingModelFilepaths.length; i++) {
-            console.log(filename);
-            if (filename.replace(" ","_").endsWith(parsingModelFilepaths[i])) {
-                console.log('test')
-                const filePathModel = parsingModelFilepaths[i];
-                const headerValue = (parsingModel as any)[filePathModel]['file_structure_properties']['header']
-                const delimiterValue = (parsingModel as any)[filePathModel]['file_structure_properties']['delimiter']
+            if (filename === parsingModelFilepaths[i].split('/').pop()) {
                 const fileData: string = await fileproperties.async('string'); // function of jszip
-                  Papa.parse(fileData, {
-                      header: headerValue,
-                      skipEmptyLines: true,
-                      delimiter : delimiterValue,
-                      complete: function (results) {
-                        console.log(results.data)
-                    },
-                  });
+                const newElement = smartParserCsv(filename, fileData); // execute parsing function
+                newElement && res.push(...newElement);
             }
         }
     } else if (filename.split('.').length > 1) {
