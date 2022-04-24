@@ -46,7 +46,6 @@ export const smartParserCsv = (
                       skipEmptyLines: true,
                       delimiter : delimiterValue,
                       complete: function (results) {
-                        console.log(results.data.length)
                         for (let j = 0; j < results.data.length; j++) {
                           const indivArray = [];
                           for (let k = 0; k < ObjectPropertiesName.length; k++) {
