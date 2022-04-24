@@ -2696,5 +2696,201 @@
         }
       ]
     }
+  },
+ "Activité du journal des accès/Activités _ liste des services Google auxquels vos.csv": {
+    "language": "fr",
+    "comment": "list all google services used by the suer",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "Google services list"
+      },
+      {
+        "data_origin": "Inferred"
+      },
+      {
+        "data_type": "Contractual"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+ "Activité du journal des accès/Appareils _ liste des appareils (par exemple, Nest.csv": {
+    "language": "fr",
+    "comment": "list all devices linked to the account",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "list of all devices"
+      },
+      {
+        "data_origin": "Observed"
+      },
+      {
+        "data_type": "Technical"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+ "Google Pay/Envois et demandes d_argent": {
+    "language": "fr",
+    "comment": "list all google pay payment transactions",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "list of all payment transactions"
+      },
+      {
+        "data_origin": "Observed"
+      },
+      {
+        "data_type": "Transactional"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+ "Saved/Adresses vendeurs.csv": {
+    "language": "fr",
+    "comment": "list all sellers who proposed a premium ad to the user",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "adverstiser"
+      },
+      {
+        "data_origin": "Inferred"
+      },
+      {
+        "data_type": "Communications"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+"Saved/Favourite places.csv": {
+    "language": "fr",
+    "comment": "list the favourites places saved by the user",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "favourite place saved"
+      },
+      {
+        "data_origin": "Volunteered"
+      },
+      {
+        "data_type": "Locational"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+"Saved/Want to go.csv": {
+    "language": "fr",
+    "comment": "list the want to go places saved by the user",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "want to go place saved"
+      },
+      {
+        "data_origin": "Volunteered"
+      },
+      {
+        "data_type": "Locational"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+"YouTube et YouTube Music/subscriptions/subscriptions.csv": {
+    "language": "fr",
+    "comment": "list the you tube subscriptions",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "you tube subscriptions"
+      },
+      {
+        "data_origin": "Volunteered"
+      },
+      {
+        "data_type": "Behavioural"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
   }
 }
