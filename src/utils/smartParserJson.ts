@@ -12,6 +12,8 @@ import parsingModel from './parsingModel.json';
 // Import function to get a formatted error message when an exception occurs in the smarParser
 import { getErrorMessage } from './getErrorMessage';
 
+import { isJSONFile } from './isJsonFile';
+
 // Create a list with the names of properties that will be used to describe each data point retrieved in the files uploaded by the user, based on the parsingModel.
 const ObjectPropertiesName = [
   'action_type',
@@ -21,7 +23,7 @@ const ObjectPropertiesName = [
 ];
 
 // Initialisation of the function used to parse the content of the files uploaded by the user.
-export const smartParser = (
+export const smartParserJson = (
   filePath: string,
   fileContent: any
 ): string[][] | undefined => {
@@ -30,7 +32,7 @@ export const smartParser = (
     const smartData = [];
 
     // Check the type of file uploaded (.csv, .xlsx, .json, etc.)
-    if (filePath.split('.')[1] === 'json') {
+    if (isJSONFile(filePath)) {
       // Check if the file is in the parsingModel
       const parsingModelfilePathModel = Object.keys(parsingModel);
       for (let i = 0; i < parsingModelfilePathModel.length; i++) {
