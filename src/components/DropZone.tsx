@@ -7,6 +7,9 @@ import styled from 'styled-components';
 import { Button } from '@mui/material';
 import { readFileAsync } from '../utils/readFileAsync';
 import { isJSONFile } from '../utils/isJsonFile';
+import { isCSVFile } from '../utils/isCsvFile';
+import Papa from 'papaparse';
+
 
 const StyledForm = styled.form`
   display: flex;
@@ -45,8 +48,25 @@ const asyncParseData = async (data: FormType) => {
           }
         }
       }
-    } else if (filename.split('.')[1] === 'csv') {
-      console.log('csv file [WIP]');
+    } else if (isCSVFile(filename)) {
+        for (let i = 0; i < parsingModelFilepaths.length; i++) {
+            console.log(filename);
+            if (filename.replace(" ","_").endsWith(parsingModelFilepaths[i])) {
+                console.log('test')
+                const filePathModel = parsingModelFilepaths[i];
+                const headerValue = (parsingModel as any)[filePathModel]['file_structure_properties']['header']
+                const delimiterValue = (parsingModel as any)[filePathModel]['file_structure_properties']['delimiter']
+                const fileData: string = await fileproperties.async('string'); // function of jszip
+                  Papa.parse(fileData, {
+                      header: headerValue,
+                      skipEmptyLines: true,
+                      delimiter : delimiterValue,
+                      complete: function (results) {
+                        console.log(results.data)
+                    },
+                  });
+            }
+        }
     } else if (filename.split('.').length > 1) {
       console.log('unknown file type');
     }
