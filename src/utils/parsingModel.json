@@ -2697,7 +2697,7 @@
       ]
     }
   },
- "Activité du journal des accès/Activités _ liste des services Google auxquels vos.csv": {
+ "Activité du journal des accès/Activités _ liste des services Google auxquels vos.csv": {
     "language": "fr",
     "comment": "list all google services used by the suer",
     "file_structure_properties": {
@@ -2725,7 +2725,7 @@
       }
     ]
   },
- "Activité du journal des accès/Appareils _ liste des appareils (par exemple, Nest.csv": {
+ "Activité du journal des accès/Appareils _ liste des appareils (par exemple, Nest.csv": {
     "language": "fr",
     "comment": "list all devices linked to the account",
     "file_structure_properties": {
