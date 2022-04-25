@@ -88,14 +88,7 @@ export default function UploadData() {
           variant="contained"
           startIcon={<img src={UploadFileIcon} alt="#" />}
         >
-          Upload Facebook data
-        </Button>
-        <Button
-          onClick={handleClickOpen}
-          variant="contained"
-          startIcon={<img src={UploadFileIcon} alt="#" />}
-        >
-          Upload Google data
+          Upload my data
         </Button>
       </ButtonWrapper>
       <Box>
