@@ -2,11 +2,20 @@
  GetStartedBanner is a component representing the first banner of the Homepage page about how to get started by getting its data.
  */
 
+ import { useState } from 'react';
+
+//components
+import DropZone from '../DropZone';
+
 //utils
 import styled from 'styled-components';
 
 // MUI components
-import { Button, Grid, Typography } from '@mui/material';
+import { Box, Button, Dialog,DialogContent,DialogTitle,Grid, Typography } from '@mui/material';
+
+//Draggable modal box
+import Paper, { PaperProps } from '@mui/material/Paper';
+import Draggable from 'react-draggable';
 
 // Styled-components
 const StyledBanner = styled(Grid)`
@@ -18,7 +27,28 @@ const Title = styled(Typography)`
   padding-bottom: 2rem;
 `;
 
+function PaperComponent(props: PaperProps) {
+  return (
+    <Draggable
+      handle="#draggable-dialog-title"
+      cancel={'[class*="MuiDialogContent-root"]'}
+    >
+      <Paper {...props} />
+    </Draggable>
+  );
+}
+
 export default function GetStarted() {
+  //Dialog interaction
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <StyledBanner>
       <Title variant="h4">How to get started ?</Title>
@@ -30,10 +60,33 @@ export default function GetStarted() {
           </Typography>
         </Grid>
         <Grid item xs={3}>
-          <Button variant="contained" href="/overview">
+          <Button variant="contained"  onClick={handleClickOpen} >
             Get my data
           </Button>
         </Grid>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="draggable-dialog-title"
+          PaperComponent={PaperComponent}
+        >
+          <DialogTitle
+            sx={{ pt: 4 }}
+            style={{
+              cursor: 'move',
+              textAlign: 'center',
+              textTransform: 'uppercase',
+            }}
+            id="draggable-dialog-title"
+          >
+            Upload
+          </DialogTitle>
+          <DialogContent>
+            <Box>
+              <DropZone />
+            </Box>
+          </DialogContent>
+        </Dialog>
       </Grid>
     </StyledBanner>
   );
