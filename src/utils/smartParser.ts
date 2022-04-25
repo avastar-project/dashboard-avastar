@@ -244,7 +244,7 @@ export const smartParser = (
                 ) {
                   let categorySelector = item[0] // Get the name of the arrays that are parsed to know which properties from the data model must be applied to it
                   const indivArray = [];
-                  if ((parsingModel as any)[filePathModel][nestedArrayName][categorySelector] !== null) { // Check if the name of the categorySelector parsed is in the parsingModel
+                  if ((parsingModel as any)[filePathModel][nestedArrayName][categorySelector] != null) { // Check if the name of the categorySelector parsed is in the parsingModel
                     for (let k = 0; k < ObjectPropertiesName.length; k++) {
                       indivArray.push(
                         (parsingModel as any)[filePathModel][nestedArrayName][categorySelector][k][ObjectPropertiesName[k]]
