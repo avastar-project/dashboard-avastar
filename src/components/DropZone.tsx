@@ -97,7 +97,7 @@ export default function DropZone() {
           <Button component="label">
             <DashedArea>
               <CloudUploadIcon />
-              <input hidden type="file" accept=".zip" {...register('file')} />
+              <input hidden multiple type="file" accept=".zip" {...register('file')} />
               <Drop>Drag and drop your .zip file here or click</Drop>
             </DashedArea>
           </Button>
