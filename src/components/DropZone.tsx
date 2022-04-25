@@ -101,7 +101,7 @@ export default function DropZone() {
               <Drop>Drag and drop your .zip file here or click</Drop>
             </DashedArea>
           </Button>
-          <Button variant="contained" type="submit">
+          <Button variant="contained" type="submit" href="/overview">
             Visualize my data
           </Button>
         </Container>
