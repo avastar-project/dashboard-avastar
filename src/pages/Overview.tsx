@@ -5,10 +5,15 @@ import OverviewProfile from '../components/Overview/OverviewProfile';
 import TrackedChart from '../components/Overview/PlotlyCharts/TrackedChart';
 import DataCollectedChart from '../components/Overview/PlotlyCharts/DataCollectedChart';
 import DataTable from '../components/Overview/PlotlyCharts/DataTable';
-import OverviewEducLink from '../components/Overview/OverviewEducLink'
+import OverviewEducLink from '../components/Overview/OverviewEducLink';
 import MoreDataContainer from '../components/Overview/MoreDataContainer';
 // MUI components
 import { Box, Grid } from '@mui/material';
+import { useSelector, shallowEqual } from 'react-redux';
+import {
+  AvastarParsedDataPoint,
+  AvastarParsedDataPointState,
+} from '../types/dataTypes';
 
 // Styled-components
 const Container = styled(Grid)`
@@ -24,10 +29,15 @@ const Main = styled.main``;
 
 const Aside = styled.aside`
   border-radius: 0.5rem;
-  over-flow:hidden;
+  over-flow: hidden;
 `;
 
 export default function Overview() {
+  const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
+    (state: AvastarParsedDataPointState) => state.avastarParsedData,
+    shallowEqual
+  );
+  console.log('avastarParsedData from redux', avastarParsedData);
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Container container spacing={2}>
@@ -64,7 +74,7 @@ export default function Overview() {
               // isSearch on true to see the associated search bar
               isSearch={true}
             />
-            <MoreDataContainer/>
+            <MoreDataContainer />
           </Main>
         </Grid>
         <Grid item xs={12} md={3}>

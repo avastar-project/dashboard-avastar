@@ -85,7 +85,6 @@ export default function DropZone() {
 
   const onSubmit = async (data: FormType) => {
     const parsedData = await asyncParseData(data);
-    console.log('parsedData', parsedData);
     dispatch(addDataBlock(parsedData));
     navigate('/overview');
   };
