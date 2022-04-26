@@ -62,6 +62,6 @@ export const smartParserCsv = (
     }
     return smartData;
   } catch (error) {
-    //reportError({ message: getErrorMessage(error) });
+    reportError({ message: getErrorMessage(error) });
   }
 };

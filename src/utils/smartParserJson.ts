@@ -276,6 +276,6 @@ export const smartParserJson = (
     }
     return smartData;
   } catch (error) {
-    //reportError({ message: getErrorMessage(error) });
+    reportError({ message: getErrorMessage(error) });
   }
 };
