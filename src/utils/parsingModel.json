@@ -2699,7 +2699,7 @@
   },
  "Activité du journal des accès/Activités _ liste des services Google auxquels vos.csv": {
     "language": "fr",
-    "comment": "list all google services used by the suer",
+    "comment": "list all historical google services the user access",
     "file_structure_properties": {
       "header": true,
       "delimiter": ","
@@ -2725,16 +2725,72 @@
       }
     ]
   },
- "Activité du journal des accès/Appareils _ liste des appareils (par exemple, Nest.csv": {
-    "language": "fr",
-    "comment": "list all devices linked to the account",
+  "Access log activity/Activities – A list of Google services accessed by.csv": {
+    "language": "en",
+    "comment": "list all google services used by the suer",
     "file_structure_properties": {
       "header": true,
       "delimiter": ","
     },
     "entries": [
       {
-        "action_type": "list of all devices"
+        "action_type": "Connect to a Google Service (Gmail, Drive, etc.)"
+      },
+      {
+        "data_origin": "Observed"
+      },
+      {
+        "data_type": "Behavioural"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+ "Activité du journal des accès/Appareils _ liste des appareils (par exemple, Nest.csv": {
+    "language": "fr",
+    "comment": "List of devices used to access any Google Service linked to the user account",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "Use new device to access a Google service"
+      },
+      {
+        "data_origin": "Observed"
+      },
+      {
+        "data_type": "Technical"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+ "Access log activity/Devices – A list of devices (i.e. Nest, Pixel, iPh.csv": {
+    "language": "en",
+    "comment": "List of devices used to access any Google Service linked to the user account",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "Use new device to access a Google service"
       },
       {
         "data_origin": "Observed"
@@ -2755,14 +2811,42 @@
   },
  "Google Pay/Envois et demandes d_argent": {
     "language": "fr",
-    "comment": "list all google pay payment transactions",
+    "comment": "History of payment transactions made by the user with Google Pay",
     "file_structure_properties": {
       "header": true,
       "delimiter": ","
     },
     "entries": [
       {
-        "action_type": "list of all payment transactions"
+        "action_type": "Perform transaction with Google Pay"
+      },
+      {
+        "data_origin": "Observed"
+      },
+      {
+        "data_type": "Transactional"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+ "Google Pay/Money remittances and requests/Money remittances and requests.csv": {
+    "language": "en",
+    "comment": "History of payment transactions made by the user with Google Pay",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "Perform transaction with Google Pay"
       },
       {
         "data_origin": "Observed"
@@ -2811,14 +2895,14 @@
   },
 "Saved/Favourite places.csv": {
     "language": "fr",
-    "comment": "list the favourites places saved by the user",
+    "comment": "List of adresses saved by the user under 'Favourite places' label on Google Maps",
     "file_structure_properties": {
       "header": true,
       "delimiter": ","
     },
     "entries": [
       {
-        "action_type": "favourite place saved"
+        "action_type": "Save new place in Google Maps list 'Favourite address'"
       },
       {
         "data_origin": "Volunteered"
@@ -2839,14 +2923,14 @@
   },
 "Saved/Want to go.csv": {
     "language": "fr",
-    "comment": "list the want to go places saved by the user",
+    "comment": "List of adresses saved by the user under 'Want to go' label on Google Maps.",
     "file_structure_properties": {
       "header": true,
       "delimiter": ","
     },
     "entries": [
       {
-        "action_type": "want to go place saved"
+        "action_type": "Save new place in Google Maps list 'Want to go'"
       },
       {
         "data_origin": "Volunteered"
@@ -2867,14 +2951,42 @@
   },
 "YouTube et YouTube Music/subscriptions/subscriptions.csv": {
     "language": "fr",
-    "comment": "list the you tube subscriptions",
+    "comment": "YouTube channels to which the user subscribed",
     "file_structure_properties": {
       "header": true,
       "delimiter": ","
     },
     "entries": [
       {
-        "action_type": "you tube subscriptions"
+        "action_type": "Subscribe to a new channel on YouTube"
+      },
+      {
+        "data_origin": "Volunteered"
+      },
+      {
+        "data_type": "Behavioural"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+"YouTube and YouTube Music/subscriptions/subscriptions.csv": {
+    "language": "en",
+    "comment": "YouTube channels to which the user subscribed",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "Subscribe to a new channel on YouTube"
       },
       {
         "data_origin": "Volunteered"
