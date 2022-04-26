@@ -64,6 +64,7 @@ export default function Overview() {
               // isSearch on true to see the associated search bar
               isSearch={true}
             />
+            <DataTable />
             <MoreDataContainer />
           </Main>
         </Grid>
