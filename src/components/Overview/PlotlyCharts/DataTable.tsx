@@ -149,7 +149,9 @@ export default function DataTable() {
   const columns = React.useMemo(
     () => [
       {
-        Header: 'Name',
+        Header: '',
+        isVisible: false,
+        id: 'default',
         columns: [
           {
             Header: 'Platform',
