@@ -2706,13 +2706,13 @@
     },
     "entries": [
       {
-        "action_type": "Google services list"
+        "action_type": "Connect to a Google Service (Gmail, Drive, etc.)"
       },
       {
-        "data_origin": "Inferred"
+        "data_origin": "observed"
       },
       {
-        "data_type": "Contractual"
+        "data_type": "behavioural"
       },
       {
         "platform": "google"
@@ -2867,20 +2867,20 @@
   },
  "Saved/Adresses vendeurs.csv": {
     "language": "fr",
-    "comment": "list all sellers who proposed a premium ad to the user",
+    "comment": "list all saved place in Google Maps list (sellers address)",
     "file_structure_properties": {
       "header": true,
       "delimiter": ","
     },
     "entries": [
       {
-        "action_type": "adverstiser"
+        "action_type": "Save new place in Google Maps list (sellers address)"
       },
       {
-        "data_origin": "Inferred"
+        "data_origin": "Volunteered"
       },
       {
-        "data_type": "Communications"
+        "data_type": "Locational"
       },
       {
         "platform": "google"
@@ -2895,7 +2895,7 @@
   },
 "Saved/Favourite places.csv": {
     "language": "fr",
-    "comment": "List of adresses saved by the user under 'Favourite places' label on Google Maps",
+    "comment": "List of address saved by the user under 'Favourite places' label on Google Maps",
     "file_structure_properties": {
       "header": true,
       "delimiter": ","
