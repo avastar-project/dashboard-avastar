@@ -2725,7 +2725,7 @@
       }
     ]
   },
-  "Access log activity/Activities – A list of Google services accessed by.csv": {
+  "Access log activity/Activities – A list of Google services accessed by.csv": {
     "language": "en",
     "comment": "list all google services used by the suer",
     "file_structure_properties": {
@@ -2781,7 +2781,7 @@
       }
     ]
   },
- "Access log activity/Devices – A list of devices (i.e. Nest, Pixel, iPh.csv": {
+ "Access log activity/Devices – A list of devices (i.e. Nest, Pixel, iPh.csv": {
     "language": "en",
     "comment": "List of devices used to access any Google Service linked to the user account",
     "file_structure_properties": {
