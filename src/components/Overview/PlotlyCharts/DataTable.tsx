@@ -73,6 +73,23 @@ function GlobalFilter({
   );
 }
 
+// Define a default UI for filtering
+function DefaultColumnFilter({
+  column: { filterValue, preFilteredRows, setFilter },
+}: any) {
+  const count = preFilteredRows.length;
+
+  return (
+    <input
+      value={filterValue || ''}
+      onChange={(e) => {
+        setFilter(e.target.value || undefined); // Set undefined to remove the filter entirely
+      }}
+      placeholder={`Search ${count} records...`}
+    />
+  );
+}
+
 // This is a custom filter UI for selecting
 // a unique option from a list
 function SelectColumnFilter({
@@ -110,7 +127,7 @@ function Table({ columns, data }: { columns: any; data: any }) {
   const defaultColumn = React.useMemo(
     () => ({
       // Let's set up our default Filter UI
-      Filter: SelectColumnFilter,
+      Filter: DefaultColumnFilter,
     }),
     []
   );
@@ -257,18 +274,26 @@ export default function DataTable() {
           {
             Header: 'Platform',
             accessor: 'platform',
+            Filter: SelectColumnFilter,
+            filter: 'includes',
           },
           {
             Header: 'Source',
             accessor: 'source',
+            Filter: SelectColumnFilter,
+            filter: 'includes',
           },
           {
             Header: 'Data type',
             accessor: 'data_type',
+            Filter: SelectColumnFilter,
+            filter: 'includes',
           },
           {
             Header: 'Data origin',
             accessor: 'data_origin',
+            Filter: SelectColumnFilter,
+            filter: 'includes',
           },
           {
             Header: 'Interaction date',
