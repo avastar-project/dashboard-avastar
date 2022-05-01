@@ -11,17 +11,33 @@ import parsingModel from './parsingModel.json';
 
 // Import function to get a formatted error message when an exception occurs in the smarParser
 import { getErrorMessage } from './getErrorMessage';
-import { AvastarParsedDataPoint } from '../types/dataTypes';
+import { AvastarParsedDataPoint, getEmptyDataPoint } from '../types/dataTypes';
+import { keys } from 'ts-transformer-keys';
 
 // Create a list with the names of properties that will be used to describe each data point retrieved in the files uploaded by the user, based on the parsingModel.
-const ObjectPropertiesName = [
-  'action_type',
-  'data_origin',
-  'data_type',
-  'platform',
-];
+// Trying to leverage Typescript to do this, but this is actually super tricky
+// https://stackoverflow.com/questions/43909566/get-keys-of-a-typescript-interface-as-array-of-strings
+// https://stackoverflow.com/questions/45670705/iterate-over-interface-properties-in-typescript
+const avastarParsedDataPointProperties = keys<AvastarParsedDataPoint>(); // using https://www.npmjs.com/package/ts-transformer-keys
+// An other way to do it would be to just get an empty object and iterate over the properties
 
-// Initialisation of the function used to parse the content of the files uploaded by the user.
+const parsingModelfilePathModel = Object.keys(parsingModel);
+
+const getParsedDataPoint = (
+  filePathModel: string,
+  nestedDataSelector: string
+): AvastarParsedDataPoint => {
+  const parsedDataPoint = getEmptyDataPoint();
+  for (let k = 0; k < avastarParsedDataPointProperties.length; k++) {
+    parsedDataPoint[avastarParsedDataPointProperties[k]] = (
+      parsingModel as any
+    )[filePathModel][nestedDataSelector]['entries'][k][
+      avastarParsedDataPointProperties[k]
+    ];
+  }
+  return parsedDataPoint;
+};
+
 export const smartParser = (
   filePath: string,
   fileContent: any
@@ -33,7 +49,6 @@ export const smartParser = (
     // Check the type of file uploaded (.csv, .xlsx, .json, etc.)
     if (filePath.split('.')[1] === 'json') {
       // Check if the file is in the parsingModel
-      const parsingModelfilePathModel = Object.keys(parsingModel);
       for (let i = 0; i < parsingModelfilePathModel.length; i++) {
         if (filePath.endsWith(parsingModelfilePathModel[i])) {
           const filePathModel = parsingModelfilePathModel[i];
@@ -46,30 +61,23 @@ export const smartParser = (
             const nestedArrayName = 'None'; // If the depth === 0 then necessarily, there is no nested array name.
 
             for (let j = 0; j < fileContent.length; j++) {
-              const indivArray = [];
-              for (let k = 0; k < ObjectPropertiesName.length; k++) {
-                indivArray.push(
-                  (parsingModel as any)[filePathModel][nestedArrayName][
-                    'entries'
-                  ][k][ObjectPropertiesName[k]]
-                );
-              }
-              smartData.push(indivArray);
+              const parsedDataPoint = getParsedDataPoint(
+                filePathModel,
+                nestedArrayName
+              );
+
+              smartData.push(parsedDataPoint);
             }
           } else if (fileDepth === 1) {
             const nestedArrayName = String(Object.keys(fileContent));
 
             if (typeof fileContent[nestedArrayName] === 'string') {
               // Check the type of the element that comes right after the nested array name (string vs object). If it's a string, then it means that there is only one single data point to parse.
-              const indivArray = [];
-              for (let j = 0; j < ObjectPropertiesName.length; j++) {
-                indivArray.push(
-                  (parsingModel as any)[filePathModel][nestedArrayName][
-                    'entries'
-                  ][j][ObjectPropertiesName[j]]
-                );
-              }
-              smartData.push(indivArray);
+              const parsedDataPoint = getParsedDataPoint(
+                filePathModel,
+                nestedArrayName
+              );
+              smartData.push(parsedDataPoint);
             } else {
               if (
                 (parsingModel as any)[filePathModel][
@@ -85,15 +93,11 @@ export const smartParser = (
                   j < fileContent[nestedDataSelector].length;
                   j++
                 ) {
-                  const indivArray = [];
-                  for (let k = 0; k < ObjectPropertiesName.length; k++) {
-                    indivArray.push(
-                      (parsingModel as any)[filePathModel][nestedDataSelector][
-                        'entries'
-                      ][k][ObjectPropertiesName[k]]
-                    );
-                  }
-                  smartData.push(indivArray);
+                  const parsedDataPoint = getParsedDataPoint(
+                    filePathModel,
+                    nestedDataSelector
+                  );
+                  smartData.push(parsedDataPoint);
                 }
               } else {
                 if (
@@ -102,17 +106,21 @@ export const smartParser = (
                   ]['has_multiple_nested_objects'] === true
                 ) {
                   // File structure similar to Google file Profile/Profile.json, same parsing principle as profile_information/profile_information.json file, but without nestedArrayName
-                  Object.entries(fileContent).forEach(function (item, index) {
+                  Object.entries(fileContent).forEach(function (item) {
                     let categorySelector = item[0]; // Get the name of the arrays that are parsed to know which properties from the data model must be applied to it.
-                    const indivArray = [];
-                    for (let k = 0; k < ObjectPropertiesName.length; k++) {
-                      indivArray.push(
-                        (parsingModel as any)[filePathModel]['None'][
-                          categorySelector
-                        ][k][ObjectPropertiesName[k]]
-                      );
+                    const parsedDataPoint = getEmptyDataPoint();
+                    for (
+                      let k = 0;
+                      k < avastarParsedDataPointProperties.length;
+                      k++
+                    ) {
+                      parsedDataPoint[avastarParsedDataPointProperties[k]] = (
+                        parsingModel as any
+                      )[filePathModel]['None'][categorySelector][k][
+                        avastarParsedDataPointProperties[k]
+                      ];
                     }
-                    smartData.push(indivArray);
+                    smartData.push(parsedDataPoint);
                   });
                 } else {
                   for (
@@ -120,15 +128,11 @@ export const smartParser = (
                     j < fileContent[nestedArrayName].length;
                     j++
                   ) {
-                    const indivArray = [];
-                    for (let k = 0; k < ObjectPropertiesName.length; k++) {
-                      indivArray.push(
-                        (parsingModel as any)[filePathModel][nestedArrayName][
-                          'entries'
-                        ][k][ObjectPropertiesName[k]]
-                      );
-                    }
-                    smartData.push(indivArray);
+                    const parsedDataPoint = getParsedDataPoint(
+                      filePathModel,
+                      nestedArrayName
+                    );
+                    smartData.push(parsedDataPoint);
                   }
                 }
               }
@@ -142,15 +146,11 @@ export const smartParser = (
               ] === true
             ) {
               // Check if the file contains only one data point that we want to retrieve among all the others.
-              const indivArray = [];
-              for (let j = 0; j < ObjectPropertiesName.length; j++) {
-                indivArray.push(
-                  (parsingModel as any)[filePathModel][nestedArrayName][
-                    'entries'
-                  ][j][ObjectPropertiesName[j]]
-                );
-              }
-              smartData.push(indivArray);
+              const parsedDataPoint = getParsedDataPoint(
+                filePathModel,
+                nestedArrayName
+              );
+              smartData.push(parsedDataPoint);
             } else {
               if (Array.isArray(fileContent[nestedArrayName]) === false) {
                 // Check type of the nestedArray name, being either an array ("[]") or an object ("{}") to apply the right methodology to parse the file.
@@ -163,15 +163,19 @@ export const smartParser = (
                     function (item, index) {
                       let categorySelector = item[0]; // Get the name of the arrays that are parsed to know which properties from the data model must be applied to it.
 
-                      const indivArray = [];
-                      for (let k = 0; k < ObjectPropertiesName.length; k++) {
-                        indivArray.push(
-                          (parsingModel as any)[filePathModel][nestedArrayName][
-                            categorySelector
-                          ][k][ObjectPropertiesName[k]]
-                        );
+                      const parsedDataPoint = getEmptyDataPoint();
+                      for (
+                        let k = 0;
+                        k < avastarParsedDataPointProperties.length;
+                        k++
+                      ) {
+                        parsedDataPoint[avastarParsedDataPointProperties[k]] = (
+                          parsingModel as any
+                        )[filePathModel]['None'][categorySelector][k][
+                          avastarParsedDataPointProperties[k]
+                        ];
                       }
-                      smartData.push(indivArray);
+                      smartData.push(parsedDataPoint);
                     }
                   );
                 } else {
@@ -184,15 +188,11 @@ export const smartParser = (
                         fileContent[nestedArrayName][categorySelector].length;
                         j++
                       ) {
-                        const indivArray = [];
-                        for (let k = 0; k < ObjectPropertiesName.length; k++) {
-                          indivArray.push(
-                            (parsingModel as any)[filePathModel][
-                              nestedArrayName
-                            ][categorySelector][k][ObjectPropertiesName[k]]
-                          );
-                        }
-                        smartData.push(indivArray);
+                        const parsedDataPoint = getParsedDataPoint(
+                          filePathModel,
+                          nestedArrayName
+                        );
+                        smartData.push(parsedDataPoint);
                       }
                     }
                   );
@@ -204,16 +204,11 @@ export const smartParser = (
                     k < fileContent[nestedArrayName][j]['entries'].length;
                     k++
                   ) {
-                    const indivArray = [];
-
-                    for (let l = 0; l < ObjectPropertiesName.length; l++) {
-                      indivArray.push(
-                        (parsingModel as any)[filePathModel][nestedArrayName][
-                          'entries'
-                        ][l][ObjectPropertiesName[l]]
-                      );
-                    }
-                    smartData.push(indivArray);
+                    const parsedDataPoint = getParsedDataPoint(
+                      filePathModel,
+                      nestedArrayName
+                    );
+                    smartData.push(parsedDataPoint);
                   }
                 }
               }
@@ -237,37 +232,29 @@ export const smartParser = (
                   fileContent[nestedArrayName][j][nestedDataSelector].length;
                   k++
                 ) {
-                  const indivArray = [];
-                  for (let l = 0; l < ObjectPropertiesName.length; l++) {
-                    indivArray.push(
-                      (parsingModel as any)[filePathModel][nestedArrayName][
-                        'entries'
-                      ][l][ObjectPropertiesName[l]]
-                    );
-                  }
-                  smartData.push(indivArray);
+                  const parsedDataPoint = getParsedDataPoint(
+                    filePathModel,
+                    nestedArrayName
+                  );
+                  smartData.push(parsedDataPoint);
                 }
               }
             } else {
               for (let i = 0; i < fileContent[nestedArrayName].length; i++) {
                 Object.entries(fileContent[nestedArrayName][i]).forEach(
-                  function (item, index) {
+                  function (item) {
                     let categorySelector = item[0]; // Get the name of the arrays that are parsed to know which properties from the data model must be applied to it
-                    const indivArray = [];
                     if (
                       (parsingModel as any)[filePathModel][nestedArrayName][
                         categorySelector
                       ] != null
                     ) {
                       // Check if the name of the categorySelector parsed is in the parsingModel
-                      for (let k = 0; k < ObjectPropertiesName.length; k++) {
-                        indivArray.push(
-                          (parsingModel as any)[filePathModel][nestedArrayName][
-                            categorySelector
-                          ][k][ObjectPropertiesName[k]]
-                        );
-                      }
-                      smartData.push(indivArray);
+                      const parsedDataPoint = getParsedDataPoint(
+                        filePathModel,
+                        nestedArrayName
+                      );
+                      smartData.push(parsedDataPoint);
                     }
                   }
                 );
@@ -277,8 +264,6 @@ export const smartParser = (
             const nestedArrayName = String(Object.keys(fileContent));
 
             for (let j = 0; j < fileContent[nestedArrayName].length; j++) {
-              let categorySelector = fileContent[nestedArrayName][j]['name'];
-
               let hasPropertyEntries =
                 fileContent[nestedArrayName][j].hasOwnProperty('entries'); // Check if the data point selector in the nested array is either "children" or "entries".
 
@@ -288,17 +273,15 @@ export const smartParser = (
                   k < fileContent[nestedArrayName][j]['entries'].length;
                   k++
                 ) {
-                  const indivArray = [];
-                  for (let l = 0; l < ObjectPropertiesName.length; l++) {
-                    indivArray.push(
-                      (parsingModel as any)[filePathModel][nestedArrayName][
-                        categorySelector
-                      ][l][ObjectPropertiesName[l]]
-                    );
-                  }
-                  smartData.push(indivArray);
+                  const parsedDataPoint = getParsedDataPoint(
+                    filePathModel,
+                    nestedArrayName
+                  );
+                  smartData.push(parsedDataPoint);
                 }
               } else {
+                let categorySelector = fileContent[nestedArrayName][j]['name'];
+
                 for (
                   let k = 0;
                   k < fileContent[nestedArrayName][j]['children'].length;
@@ -311,15 +294,19 @@ export const smartParser = (
                       .length;
                     l++
                   ) {
-                    const indivArray = [];
-                    for (let m = 0; m < ObjectPropertiesName.length; m++) {
-                      indivArray.push(
-                        (parsingModel as any)[filePathModel][nestedArrayName][
-                          categorySelector
-                        ][m][ObjectPropertiesName[m]]
-                      );
+                    const parsedDataPoint = getEmptyDataPoint();
+                    for (
+                      let m = 0;
+                      m < avastarParsedDataPointProperties.length;
+                      m++
+                    ) {
+                      parsedDataPoint[avastarParsedDataPointProperties[m]] = (
+                        parsingModel as any
+                      )[filePathModel]['None'][categorySelector][m][
+                        avastarParsedDataPointProperties[m]
+                      ];
                     }
-                    smartData.push(indivArray);
+                    smartData.push(parsedDataPoint);
                   }
                 }
               }
