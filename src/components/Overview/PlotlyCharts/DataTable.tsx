@@ -1,6 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useTable, usePagination } from 'react-table';
+import {
+  useTable,
+  usePagination,
+  useFilters,
+  useGlobalFilter,
+  useAsyncDebounce,
+} from 'react-table';
 import fakeData from '../../../fake-data/fake-data-agg.json';
 
 const Styles = styled.div`
@@ -36,8 +42,78 @@ const Styles = styled.div`
   }
 `;
 
+// Define a default UI for filtering
+function GlobalFilter({
+  preGlobalFilteredRows,
+  globalFilter,
+  setGlobalFilter,
+}: any) {
+  const count = preGlobalFilteredRows.length;
+  const [value, setValue] = React.useState(globalFilter);
+  const onChange = useAsyncDebounce((value) => {
+    setGlobalFilter(value || undefined);
+  }, 200);
+
+  return (
+    <span>
+      Search:{' '}
+      <input
+        value={value || ''}
+        onChange={(e) => {
+          setValue(e.target.value);
+          onChange(e.target.value);
+        }}
+        placeholder={`${count} records...`}
+        style={{
+          fontSize: '1.1rem',
+          border: '0',
+        }}
+      />
+    </span>
+  );
+}
+
+// This is a custom filter UI for selecting
+// a unique option from a list
+function SelectColumnFilter({
+  column: { filterValue, setFilter, preFilteredRows, id },
+}: any) {
+  // Calculate the options for filtering
+  // using the preFilteredRows
+  const options: any = React.useMemo(() => {
+    const options = new Set();
+    preFilteredRows.forEach((row: { values: { [x: string]: unknown } }) => {
+      options.add(row.values[id]);
+    });
+    return [...options.values()];
+  }, [id, preFilteredRows]);
+
+  // Render a multi-select box
+  return (
+    <select
+      value={filterValue}
+      onChange={(e) => {
+        setFilter(e.target.value || undefined);
+      }}
+    >
+      <option value="">All</option>
+      {options.map((option: any, i: any) => (
+        <option key={i} value={option}>
+          {option}
+        </option>
+      ))}
+    </select>
+  );
+}
+
 function Table({ columns, data }: { columns: any; data: any }) {
-  // Use the state and functions returned from useTable to build your UI
+  const defaultColumn = React.useMemo(
+    () => ({
+      // Let's set up our default Filter UI
+      Filter: SelectColumnFilter,
+    }),
+    []
+  );
   const {
     getTableProps,
     getTableBodyProps,
@@ -55,13 +131,20 @@ function Table({ columns, data }: { columns: any; data: any }) {
     nextPage,
     previousPage,
     setPageSize,
+    visibleColumns,
+    preGlobalFilteredRows,
+    setGlobalFilter,
+    state,
     state: { pageIndex, pageSize },
   } = useTable(
     {
       columns,
       data,
-      initialState: { pageIndex: 2 },
+      defaultColumn,
+      initialState: { pageIndex: 0 },
     },
+    useFilters,
+    useGlobalFilter,
     usePagination
   );
 
@@ -73,10 +156,28 @@ function Table({ columns, data }: { columns: any; data: any }) {
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                <th {...column.getHeaderProps()}>
+                  {column.render('Header')}
+                  {/* Render the columns filter UI */}
+                  <div>{column.canFilter ? column.render('Filter') : null}</div>
+                </th>
               ))}
             </tr>
           ))}
+          <tr>
+            <th
+              colSpan={visibleColumns.length}
+              style={{
+                textAlign: 'left',
+              }}
+            >
+              <GlobalFilter
+                preGlobalFilteredRows={preGlobalFilteredRows}
+                globalFilter={state.globalFilter}
+                setGlobalFilter={setGlobalFilter}
+              />
+            </th>
+          </tr>
         </thead>
         <tbody {...getTableBodyProps()}>
           {page.map((row, i) => {
@@ -176,6 +277,8 @@ export default function DataTable() {
           {
             Header: 'Action',
             accessor: 'action',
+            Filter: SelectColumnFilter,
+            filter: 'includes',
           },
           {
             Header: 'Details',
