@@ -4,7 +4,8 @@ import OverviewProfile from '../components/Overview/OverviewProfile';
 // Calling Plotly Charts for integration on Overview page
 import TrackedChart from '../components/Overview/PlotlyCharts/TrackedChart';
 import DataCollectedChart from '../components/Overview/PlotlyCharts/DataCollectedChart';
-import DataTable from '../components/Overview/PlotlyCharts/DataTable';
+// import DataTable from '../components/Overview/PlotlyCharts/DataTable';
+import DataTable from '../components/Overview/PlotlyCharts/DataTableTest';
 import OverviewEducLink from '../components/Overview/OverviewEducLink';
 import MoreDataContainer from '../components/Overview/MoreDataContainer';
 // MUI components
@@ -60,11 +61,10 @@ export default function Overview() {
             <PlotlyContainer
               title="Search my data"
               tooltip="about"
-              plotlyComponent={<TrackedChart />}
+              plotlyComponent={ <DataTable />}
               // isSearch on true to see the associated search bar
               isSearch={true}
             />
-            <DataTable />
             <MoreDataContainer />
           </Main>
         </Grid>
