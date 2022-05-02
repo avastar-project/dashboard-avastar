@@ -37,7 +37,7 @@ export const smartParserCsv = (
     if (isCSVFile(filePath)) {
         const parsingModelfilePathModel = Object.keys(parsingModel);
         for (let i = 0; i < parsingModelfilePathModel.length; i++) {
-            if (filePath === parsingModelfilePathModel[i].split('/').pop()) {
+            if (filePath.split('/').pop() === parsingModelfilePathModel[i].split('/').pop()) {
                 const filePathModel = parsingModelfilePathModel[i];
                 const headerValue = (parsingModel as any)[filePathModel]['file_structure_properties']['header']
                 const delimiterValue = (parsingModel as any)[filePathModel]['file_structure_properties']['delimiter']
