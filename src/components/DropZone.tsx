@@ -37,7 +37,7 @@ const asyncParseData = async (data: FormType) => {
   )) {
     if (isJSONFile(filename)) {
       for (let i = 0; i < parsingModelFilepaths.length; i++) {
-        if (filename.endsWith(parsingModelFilepaths[i])) {
+        if (filename.split('/').pop() === parsingModelFilepaths[i].split('/').pop()) {
           const fileData: string = await fileproperties.async('string'); // function of jszip
           const fileContent = JSON.parse(fileData); // convert the type of fileData variable from String to Object
           if (Object.keys(fileContent).length > 0) {
@@ -50,7 +50,7 @@ const asyncParseData = async (data: FormType) => {
       }
     } else if (isCSVFile(filename)) {
         for (let i = 0; i < parsingModelFilepaths.length; i++) {
-            if (filename === parsingModelFilepaths[i].split('/').pop()) {
+            if (filename.split('/').pop() === parsingModelFilepaths[i].split('/').pop()) {
                 const fileData: string = await fileproperties.async('string'); // function of jszip
                 const newElement = smartParserCsv(filename, fileData); // execute parsing function
                 newElement && res.push(...newElement);
