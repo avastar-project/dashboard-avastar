@@ -1,6 +1,6 @@
 export interface AvastarParsedDataPoint {
-  platform: 'facebook' | 'google' | 'other'; // suggesting by github copilot not sure if accurate
-  source: string; // could be more precise, since it's a path out of the path references file
+  action_type: string; 
+  data_origin: 'volunteered' | 'observed' | 'inferred' | 'other'; // suggesting by github copilot not sure if accurate
   data_type:
     | 'Locational'
     | 'Behavioural'
@@ -13,10 +13,10 @@ export interface AvastarParsedDataPoint {
     | 'Socio-demographic'
     | 'Contractual'
     | 'Other';
-  data_origin: 'volunteered' | 'observed' | 'inferred' | 'other'; // suggesting by github copilot not sure if accurate
-  action: string; // same here, maybe there is an enum for this
-  details?: string[]; // same here
-  interaction_date?: string;
+  platform: 'facebook' | 'google' | 'other'; // suggesting by github copilot not sure if accurate
+  timestamp?: string;
+  details?: string[];
+  source?: string; // could be more precise, since it's a path out of the path references file
 }
 
 export type AvastarParsedDataPointState = {
@@ -31,11 +31,11 @@ export type APDPAction = {
 export type DispatchType = (args: APDPAction) => APDPAction;
 
 export const getEmptyDataPoint = (): AvastarParsedDataPoint => ({
-  platform: 'other',
-  source: '',
-  data_type: 'Other',
+  action_type: '',
   data_origin: 'other',
-  action: '',
+  data_type: 'Other',
+  platform: 'other',
+  timestamp: '',
   details: [],
-  interaction_date: '',
+  source: '',
 });
