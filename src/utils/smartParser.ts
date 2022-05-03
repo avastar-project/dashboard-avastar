@@ -12,14 +12,17 @@ import parsingModel from './parsingModel.json';
 // Import function to get a formatted error message when an exception occurs in the smarParser
 import { getErrorMessage } from './getErrorMessage';
 import { AvastarParsedDataPoint, getEmptyDataPoint } from '../types/dataTypes';
-import { keys } from 'ts-transformer-keys';
+import { getKeys } from './getKeys';
 
 // Create a list with the names of properties that will be used to describe each data point retrieved in the files uploaded by the user, based on the parsingModel.
 // Trying to leverage Typescript to do this, but this is actually super tricky
 // https://stackoverflow.com/questions/43909566/get-keys-of-a-typescript-interface-as-array-of-strings
 // https://stackoverflow.com/questions/45670705/iterate-over-interface-properties-in-typescript
-const avastarParsedDataPointProperties = keys<AvastarParsedDataPoint>(); // using https://www.npmjs.com/package/ts-transformer-keys
+// and not practical to use in our project; would need to eject the project from create-react-app to use ttypescript
+// const avastarParsedDataPointProperties = keys<AvastarParsedDataPoint>(); // using https://www.npmjs.com/package/ts-transformer-keys
 // An other way to do it would be to just get an empty object and iterate over the properties
+const emptyDataPoint: AvastarParsedDataPoint = getEmptyDataPoint();
+const avastarParsedDataPointProperties = getKeys(emptyDataPoint); // leveraging https://stackoverflow.com/questions/52856496/typescript-object-keys-return-string
 
 const parsingModelfilePathModel = Object.keys(parsingModel);
 
@@ -29,11 +32,11 @@ const getParsedDataPoint = (
 ): AvastarParsedDataPoint => {
   const parsedDataPoint = getEmptyDataPoint();
   for (let k = 0; k < avastarParsedDataPointProperties.length; k++) {
-    parsedDataPoint[avastarParsedDataPointProperties[k]] = (
-      parsingModel as any
-    )[filePathModel][nestedDataSelector]['entries'][k][
-      avastarParsedDataPointProperties[k]
-    ];
+    const property = avastarParsedDataPointProperties[k];
+    parsedDataPoint[property] =
+      (parsingModel as any)[filePathModel][nestedDataSelector]['entries'][k]?.[
+        avastarParsedDataPointProperties[k]
+      ] ?? parsedDataPoint[avastarParsedDataPointProperties[k]];
   }
   return parsedDataPoint;
 };
@@ -41,7 +44,7 @@ const getParsedDataPoint = (
 export const smartParser = (
   filePath: string,
   fileContent: any
-): AvastarParsedDataPoint[] | undefined => {
+): AvastarParsedDataPoint[] => {
   try {
     // Initialisation of the array that will store the properties describing each the data point scanned. It will be the input of the data visualisations showed in the Overview, Facebook and Google pages.
     const smartData: AvastarParsedDataPoint[] = [];
@@ -317,6 +320,7 @@ export const smartParser = (
     }
     return smartData;
   } catch (error) {
-    reportError({ message: getErrorMessage(error, filePath) });
+    console.error({ message: getErrorMessage(error, filePath) });
+    return [];
   }
 };

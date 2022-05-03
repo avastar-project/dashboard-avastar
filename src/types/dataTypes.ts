@@ -1,4 +1,4 @@
-export interface AvastarParsedDataPoint {
+export type AvastarParsedDataPoint = {
   platform:
     | 'Facebook'
     | 'Twitter'
@@ -30,7 +30,7 @@ export interface AvastarParsedDataPoint {
   action: string; // same here, maybe there is an enum for this
   details?: string[]; // same here
   interaction_date?: string;
-}
+};
 
 export type AvastarParsedDataPointState = {
   avastarParsedData: AvastarParsedDataPoint[];
