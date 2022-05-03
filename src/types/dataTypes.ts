@@ -1,5 +1,5 @@
-export type AvastarParsedDataPoint = {
-  platform: 'facebook' | 'google' | 'Other'; // suggesting by github copilot not sure if accurate
+export interface AvastarParsedDataPoint {
+  platform: 'facebook' | 'google' | 'other'; // suggesting by github copilot not sure if accurate
   source: string; // could be more precise, since it's a path out of the path references file
   data_type:
     | 'Locational'
@@ -17,7 +17,7 @@ export type AvastarParsedDataPoint = {
   action: string; // same here, maybe there is an enum for this
   details?: string[]; // same here
   interaction_date?: string;
-};
+}
 
 export type AvastarParsedDataPointState = {
   avastarParsedData: AvastarParsedDataPoint[];
@@ -31,10 +31,10 @@ export type APDPAction = {
 export type DispatchType = (args: APDPAction) => APDPAction;
 
 export const getEmptyDataPoint = (): AvastarParsedDataPoint => ({
-  platform: 'Other',
+  platform: 'other',
   source: '',
   data_type: 'Other',
-  data_origin: 'Other',
+  data_origin: 'other',
   action: '',
   details: [],
   interaction_date: '',
