@@ -43,7 +43,7 @@ const Container = styled.div`
 const Styles = styled(Box)`
   margin: 2rem 0 2rem 0;
   background: var(--tab-clr-bg);
-  overflow-x: scroll;
+  overflow-x: auto;
   border: solid 0.2rem var(--tab-clr-bg2);
   border-radius: var(--tab-radius);
   width: 73rem;
@@ -67,7 +67,6 @@ const STHeadTR = styled.tr`
 `;
 
 const STH = styled.th`
-  font-weight: normal;
   padding: 0 var(--tab-smSpacing) var(--tab-smSpacing) var(--tab-smSpacing);
   color: var(--tab-clr-text);
   text-transform: capitalize;
@@ -75,10 +74,6 @@ const STH = styled.th`
   font-size: 14px;
   :not(:last-of-type) {
     border-right: var(--tab-clr-bg2);
-  }
-  :first-of-type {
-    width: 1%;
-    white-space: nowrap;
   }
 `;
 
@@ -91,7 +86,13 @@ const STBodyTR = styled.tr`
 const STD = styled.td`
   padding: var(--tab-smSpacing);
   border: 1px solid var(--tab-clr-bg2);
-  font-size: 14px;
+  font-size: 0.9rem;
+
+  :first-child {
+    font-weight:500;
+    color:#34495e;
+  }
+
 `;
 
 const Pagination = styled(Box)`
@@ -158,39 +159,37 @@ const SearchBox = styled(Box)`
   padding: 1rem;
 
   span {
-    padding:0.3rem 0;
-  color:#34495e;
+    padding: 0.3rem 0;
+    color: #34495e;
   }
 
   input {
-    margin-left:0.5rem;
-    padding:0.3rem 0;
+    margin-left: 0.5rem;
+    padding: 0.3rem 0;
     background: var(--tab-clr-bg);
-    border:none;
-    border-bottom:1px solid #34495e;
+    border: none;
+    border-bottom: 1px solid #34495e;
 
     ::placeholder {
-      font-size:0.9rem;
+      font-size: 0.9rem;
     }
   }
 `;
 
 const SearchHeaderBox = styled(Box)`
-input{
-background-color:var(--tab-clr-bg3);
-border:1px solid #34495e;
-font-weight: bold;
-border-radius: 0.3rem;
-height: 1.5em;
+  input {
+    background-color: var(--tab-clr-bg3);
+    border: 1px solid #34495e;
+    font-weight: bold;
+    border-radius: 0.3rem;
+    height: 1.5em;
 
-::placeholder {
-  padding-left:0.5rem;
-  color: #34495e;
-  font-weight:normal;
-}
-}
-
-
+    ::placeholder {
+      padding-left: 0.5rem;
+      color: #34495e;
+      font-weight: normal;
+    }
+  }
 `;
 //Define a default UI for filtering
 function GlobalFilter({
@@ -229,15 +228,14 @@ function DefaultColumnFilter({
 
   return (
     <SearchHeaderBox>
-       <input
-      value={filterValue || ''}
-      onChange={(e) => {
-        setFilter(e.target.value || undefined); // Set undefined to remove the filter entirely
-      }}
-      placeholder={`Search ${count} records...`}
-    />
+      <input
+        value={filterValue || ''}
+        onChange={(e) => {
+          setFilter(e.target.value || undefined); // Set undefined to remove the filter entirely
+        }}
+        placeholder={`Search ${count} records...`}
+      />
     </SearchHeaderBox>
-   
   );
 }
 
@@ -327,7 +325,7 @@ function Table({ columns, data }: { columns: any; data: any }) {
             {headerGroups.map((headerGroup) => (
               <STHeadTR {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => (
-                  <STH {...column.getHeaderProps()}>
+                  <STH  style={{ width: columns.width }} {...column.getHeaderProps()}>
                     <Box mb={2}>{column.render('Header')}</Box>
                     {/* Render the columns filter UI */}
                     <Box>
@@ -413,23 +411,6 @@ function Table({ columns, data }: { columns: any; data: any }) {
 
           <PagiBox>
             <Box>
-              <span>
-                | Go to page: {' '}
-                <input
-                  type="number"
-                  min="0"
-                  defaultValue={pageIndex + 1}
-                  onChange={(e) => {
-                    const page = e.target.value
-                      ? Number(e.target.value) - 1
-                      : 0;
-                    gotoPage(page);
-                  }}
-                  style={{ width: '40px' }}
-                />
-              </span>{' '}
-            </Box>
-            <Box>
               <select
                 value={pageSize}
                 onChange={(e) => {
@@ -442,6 +423,23 @@ function Table({ columns, data }: { columns: any; data: any }) {
                   </option>
                 ))}
               </select>
+            </Box>
+            <Box>
+              <span>
+                | Go to page:{' '}
+                <input
+                  type="number"
+                  min="0"
+                  defaultValue={pageIndex + 1}
+                  onChange={(e) => {
+                    const page = e.target.value
+                      ? Number(e.target.value) - 1
+                      : 0;
+                    gotoPage(page);
+                  }}
+                  style={{ width: '2.5rem' }}
+                />
+              </span>{' '}
             </Box>
           </PagiBox>
         </Pagination>
@@ -463,38 +461,45 @@ export default function DataTable() {
             accessor: 'platform',
             Filter: SelectColumnFilter,
             filter: 'includes',
+            width: '20%',
           },
           {
             Header: 'Source',
             accessor: 'source',
             Filter: SelectColumnFilter,
             filter: 'includes',
+            width: '20%',
           },
           {
             Header: 'Data type',
             accessor: 'data_type',
             Filter: SelectColumnFilter,
             filter: 'includes',
+            width: '20%',
           },
           {
             Header: 'Data origin',
             accessor: 'data_origin',
             Filter: SelectColumnFilter,
             filter: 'includes',
+            width: '20%',
           },
           {
             Header: 'Interaction date',
             accessor: 'interaction_date',
+            width: '20%',
           },
           {
             Header: 'Action',
             accessor: 'action',
             Filter: SelectColumnFilter,
             filter: 'includes',
+            width: '20%',
           },
           {
             Header: 'Details',
             accessor: 'details',
+            width: '20%',
           },
         ],
       },

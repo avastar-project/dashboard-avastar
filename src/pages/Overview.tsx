@@ -62,7 +62,6 @@ export default function Overview() {
               title="Search my data"
               tooltip="about"
               plotlyComponent={ <DataTable />}
-              // isSearch on true to see the associated search bar
               isSearch={false}
             />
             <MoreDataContainer />
