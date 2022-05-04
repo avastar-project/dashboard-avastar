@@ -89,10 +89,9 @@ const STD = styled.td`
   font-size: 0.9rem;
 
   :first-child {
-    font-weight:500;
-    color:#34495e;
+    font-weight: 500;
+    color: #34495e;
   }
-
 `;
 
 const Pagination = styled(Box)`
@@ -325,7 +324,10 @@ function Table({ columns, data }: { columns: any; data: any }) {
             {headerGroups.map((headerGroup) => (
               <STHeadTR {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => (
-                  <STH  style={{ width: columns.width }} {...column.getHeaderProps()}>
+                  <STH
+                    style={{ width: columns.width }}
+                    {...column.getHeaderProps()}
+                  >
                     <Box mb={2}>{column.render('Header')}</Box>
                     {/* Render the columns filter UI */}
                     <Box>
