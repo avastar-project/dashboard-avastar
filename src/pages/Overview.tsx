@@ -63,7 +63,7 @@ export default function Overview() {
               tooltip="about"
               plotlyComponent={ <DataTable />}
               // isSearch on true to see the associated search bar
-              isSearch={true}
+              isSearch={false}
             />
             <MoreDataContainer />
           </Main>
