@@ -16,8 +16,6 @@ const Container = styled.div`
   display: flex;
   width: auto;
   height: 1.5em;
-  border-radius: 0.25em;
-  overflow: hidden;
 
   & select {
     /* Reset Select */
@@ -32,6 +30,7 @@ const Container = styled.div`
     background-color: #34495e;
     background-image: none;
     cursor: pointer;
+    border-radius: 0.25em;
   }
 
   & option {
@@ -100,7 +99,7 @@ const Pagination = styled(Box)`
 
 const PagiBox = styled.div`
   display: flex;
-  gap: 2rem;
+  gap:2rem;
   align-items: center;
   width: 100%;
   height: auto;
@@ -321,10 +320,10 @@ function Table({ columns, data }: { columns: any; data: any }) {
               <STHeadTR {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => (
                   <STH
-                    style={{ width: columns.width }}
+                    style={{ minWidth: column.minWidth }}
                     {...column.getHeaderProps()}
                   >
-                    <Box mb={2}>{column.render('Header')}</Box>
+                    <Box  mb={2}>{column.render('Header')}</Box>
                     {/* Render the columns filter UI */}
                     <Box>
                       {column.canFilter ? column.render('Filter') : null}
@@ -364,12 +363,12 @@ function Table({ columns, data }: { columns: any; data: any }) {
           </STBody>
         </STable>
       </Box>
-      <Box pb={4}>
+      <Box pb={5}>
         {/*
         Pagination can be built however you'd like. 
         This is just a very basic UI implementation:
       */}
-        <Pagination position="absolute" left="17%" width="92%">
+        <Pagination position="absolute" left='17%' width="92%">
           <PagiBox>
             <Box>
               <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
@@ -458,45 +457,45 @@ export default function DataTable() {
             accessor: 'platform',
             Filter: SelectColumnFilter,
             filter: 'includes',
-            width: '20%',
+            minWidth: '5rem',
           },
           {
             Header: 'Source',
             accessor: 'source',
             Filter: SelectColumnFilter,
             filter: 'includes',
-            width: '20%',
+            minWidth: '20rem',
           },
           {
             Header: 'Data type',
             accessor: 'data_type',
             Filter: SelectColumnFilter,
             filter: 'includes',
-            width: '20%',
+            minWidth: '5rem',
           },
           {
             Header: 'Data origin',
             accessor: 'data_origin',
             Filter: SelectColumnFilter,
             filter: 'includes',
-            width: '20%',
+            minWidth: '5rem',
           },
           {
             Header: 'Interaction date',
             accessor: 'interaction_date',
-            width: '20%',
+            minWidth: '5rem',
           },
           {
             Header: 'Action',
             accessor: 'action',
             Filter: SelectColumnFilter,
             filter: 'includes',
-            width: '20%',
+            minWidth: '15rem',
           },
           {
             Header: 'Details',
             accessor: 'details',
-            width: '20%',
+            minWidth: '20rem',
           },
         ],
       },
