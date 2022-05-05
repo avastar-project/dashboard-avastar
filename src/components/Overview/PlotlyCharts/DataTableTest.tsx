@@ -96,18 +96,14 @@ const STD = styled.td`
 
 const Pagination = styled(Box)`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
 `;
 
 const PagiBox = styled.div`
   display: flex;
-  justify-content: space-between;
+  gap: 2rem;
   align-items: center;
-  width: 20rem;
-  height: 1.5em;
-  border-radius: 0.25em;
-  overflow: hidden;
+  width: 100%;
+  height: auto;
 
   button {
     width: 2.3rem;
@@ -318,7 +314,7 @@ function Table({ columns, data }: { columns: any; data: any }) {
   // Render the UI for your table
   return (
     <>
-      <Box>
+      <Box position="relative" pb={2}>
         <STable {...getTableProps()}>
           <STHead>
             {headerGroups.map((headerGroup) => (
@@ -368,12 +364,12 @@ function Table({ columns, data }: { columns: any; data: any }) {
           </STBody>
         </STable>
       </Box>
-      <Box p={3}>
+      <Box pb={4}>
         {/*
         Pagination can be built however you'd like. 
         This is just a very basic UI implementation:
       */}
-        <Pagination>
+        <Pagination position="absolute" left="17%" width="92%">
           <PagiBox>
             <Box>
               <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
@@ -410,7 +406,6 @@ function Table({ columns, data }: { columns: any; data: any }) {
               </button>{' '}
             </Box>
           </PagiBox>
-
           <PagiBox>
             <Box>
               <select
