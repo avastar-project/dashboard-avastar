@@ -16,7 +16,6 @@ export interface AvastarParsedDataPoint {
   platform: 'facebook' | 'google' | 'other'; // suggesting by github copilot not sure if accurate
   timestamp?: string;
   details?: string[];
-  source?: string; // could be more precise, since it's a path out of the path references file
 }
 
 export type AvastarParsedDataPointState = {
@@ -36,6 +35,5 @@ export const getEmptyDataPoint = (): AvastarParsedDataPoint => ({
   data_type: 'Other',
   platform: 'other',
   timestamp: '',
-  details: [],
-  source: '',
+  details: []
 });
