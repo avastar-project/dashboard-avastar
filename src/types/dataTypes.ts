@@ -2,17 +2,17 @@ export interface AvastarParsedDataPoint {
   action_type: string; 
   data_origin: 'volunteered' | 'observed' | 'inferred' | 'other'; // suggesting by github copilot not sure if accurate
   data_type:
-    | 'Locational'
-    | 'Behavioural'
-    | 'Communications'
-    | 'Technical'
-    | 'Social relationships'
-    | 'Contact'
-    | 'Transactional'
-    | 'Financial'
-    | 'Socio-demographic'
-    | 'Contractual'
-    | 'Other';
+    | 'locational'
+    | 'behavioural'
+    | 'communications'
+    | 'technical'
+    | 'social relationships'
+    | 'contact'
+    | 'transactional'
+    | 'financial'
+    | 'socio-demographic'
+    | 'contractual'
+    | 'other';
   platform: 'facebook' | 'google' | 'other'; // suggesting by github copilot not sure if accurate
   timestamp?: string;
   details?: string[];
@@ -32,7 +32,7 @@ export type DispatchType = (args: APDPAction) => APDPAction;
 export const getEmptyDataPoint = (): AvastarParsedDataPoint => ({
   action_type: '',
   data_origin: 'other',
-  data_type: 'Other',
+  data_type: 'other',
   platform: 'other',
   timestamp: '',
   details: []
