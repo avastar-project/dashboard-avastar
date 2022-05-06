@@ -805,7 +805,7 @@
       "file_structure_properties":{
         "depth": 2,
         "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
+        "has_multiple_nested_objects": true,
         "data_point_selector": "",
         "nested_data_point_selector": ""
       },
@@ -1801,7 +1801,7 @@
     },
     "location/device_location.json": {
       "language": "en",
-      "comment": "TBD",
+      "comment": "Location of the user inferred from the phone number of his device (country code)",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -1809,10 +1809,10 @@
         "data_point_selector": "",
         "nested_data_point_selector": ""
       },
-      "groups_admined_v2": {
+      "phone_number_location_v2": {
         "entries": [
           {
-            "action_type": "TBD (device_location.json)"
+            "action_type": "Location of your device inferred from your phone number"
           },
           {
             "data_origin": "Observed"
@@ -2531,7 +2531,7 @@
       "file_structure_properties":{
         "depth": 3,
         "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
+        "has_multiple_nested_objects": true,
         "data_point_selector": "",
         "nested_data_point_selector": ""
       },
