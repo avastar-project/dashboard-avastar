@@ -84,16 +84,30 @@ export default function TrackedChart() {
           textposition: 'auto',
           type: 'bar',
           mode: 'lines+markers',
-          marker: { cmin: 0, cmax: 255 },
+          marker: {
+            cmin: 0,
+            cmax: 255,
+            color: [
+              '#636EFA',
+              '#EF553B',
+              '#00CC96',
+              '#AB63FA',
+              '#FFA15A',
+              '#19D3F3',
+              '#FF6692',
+            ],
+          },
         },
       ]}
       // Doc link for layout references : https://plotly.com/javascript/reference/#layout
       layout={{
         autosize: true,
-        title: 'Volume of data points',
+        title: 'Breakdown of the types of data collected by platforms',
         xaxis: { categoryorder: 'total descending' },
+        yaxis: { showgrid: false, title: 'Volume of data points' },
+        font: { size: 11 },
       }}
-      config={{ responsive: true }}
+      config={{ responsive: true, displayModeBar: false, showTips: false }}
     />
   );
 }

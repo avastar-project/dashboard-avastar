@@ -38,19 +38,27 @@ export default function DataCollectedChart() {
         {
           x: ['Observed', 'Volunteered', 'Inferred'],
           y: [observedCount, volunteeredCount, inferredCount],
+          width: [0.4, 0.4, 0.4],
           textposition: 'auto',
           type: 'bar',
           mode: 'lines+markers',
-          marker: { cmin: 0, cmax: 255 },
+          marker: {
+            cmin: 0,
+            cmax: 255,
+            color: ['#636EFA', '#EF553B', '#00CC96'],
+          },
         },
       ]}
       // Doc link for layout references : https://plotly.com/javascript/reference/#layout
       layout={{
         autosize: true,
-        title: 'Volume of data points',
+        title:
+          'Breakdown of methodologies used by platform to collect your data',
         xaxis: { categoryorder: 'total descending' },
+        yaxis: { showgrid: false, title: 'Volume of data points' },
+        font: { size: 11 },
       }}
-      config={{ responsive: true }}
+      config={{ responsive: true, displayModeBar: false, showTips: false }}
     />
   );
 }
