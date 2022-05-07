@@ -88,7 +88,11 @@ export default function TrackedChart() {
         },
       ]}
       // Doc link for layout references : https://plotly.com/javascript/reference/#layout
-      layout={{ autosize: true, title: 'Volume of data points' }}
+      layout={{
+        autosize: true,
+        title: 'Volume of data points',
+        xaxis: { categoryorder: 'total descending' },
+      }}
       config={{ responsive: true }}
     />
   );
