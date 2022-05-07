@@ -11,6 +11,11 @@ import DataLakeIcon from '../../assets/data-lake.png';
 import DeviceIcon from '../../assets/device.png';
 import HourglassIcon from '../../assets/hourglass.png';
 import OrganizationIcon from '../../assets/organization.png';
+import { useSelector, shallowEqual } from 'react-redux';
+import {
+  AvastarParsedDataPoint,
+  AvastarParsedDataPointState,
+} from '../../types/dataTypes';
 
 // Styled-components
 const Article = styled.article`
@@ -20,35 +25,103 @@ const Article = styled.article`
   padding: 0.5rem;
 `;
 
-// Contains basic informations for each overview profile's block
-const overviewBlocks = [
-  {
-    title: 'Data points shared',
-    icon: DataLakeIcon,
-    number: 1025,
-    tooltip: 'about data points',
-  },
-  {
-    title: 'Entities accessed your data',
-    icon: OrganizationIcon,
-    number: 150,
-    tooltip: 'about entities',
-  },
-  {
-    title: 'Devices sharing data',
-    icon: DeviceIcon,
-    number: 8,
-    tooltip: 'about devices',
-  },
-  {
-    title: 'Years of data exchange',
-    icon: HourglassIcon,
-    number: 11,
-    tooltip: 'About years of data exchange',
-  },
-];
-
 export default function OverviewProfile() {
+  // Fetch data from State
+  const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
+    (state: AvastarParsedDataPointState) => state.avastarParsedData,
+    shallowEqual
+  );
+
+  // Compute Overview KPIs
+  const dataPointsShared = avastarParsedData.length;
+
+  let entitiesAccessedDataProfile = 0;
+  for (let i = 0; i < avastarParsedData.length; i++) {
+    if (
+      avastarParsedData[i].action_type ==
+      'Advertiser who has added your name to an audience based on your information or your activity outside of Facebook'
+    ) {
+      entitiesAccessedDataProfile++;
+    } else if (
+      avastarParsedData[i].action_type ==
+      'Advertiser who has added your name to an audience based on your information or your activity outside of Facebook'
+    ) {
+      entitiesAccessedDataProfile++;
+    } else if (
+      avastarParsedData[i].action_type ==
+      'Advertisers whose ads you have recently seen or clicked on'
+    ) {
+      entitiesAccessedDataProfile++;
+    } else if (
+      avastarParsedData[i].action_type ==
+      'Company that shared information with facebook about your activity on their website/application'
+    ) {
+      entitiesAccessedDataProfile++;
+    } else if (
+      avastarParsedData[i].action_type ==
+      'Apps that have been installed on your mobile device'
+    ) {
+      entitiesAccessedDataProfile++;
+    } else if (
+      avastarParsedData[i].action_type ==
+      'Account linked to your Facebook profile'
+    ) {
+      entitiesAccessedDataProfile++;
+    } else if (
+      avastarParsedData[i].action_type == 'Game you played on Facebook'
+    ) {
+      entitiesAccessedDataProfile++;
+    }
+  }
+
+  let devicesSharingdata = 0;
+  for (let i = 0; i < avastarParsedData.length; i++) {
+    if (
+      avastarParsedData[i].action_type ==
+      'Device linked to your Facebook account'
+    ) {
+      devicesSharingdata++;
+    } else if (
+      avastarParsedData[i].action_type ==
+      'Mobile device associated to your Facebook account'
+    ) {
+      devicesSharingdata++;
+    } else if (
+      avastarParsedData[i].action_type ==
+      'Use new device to access a Google service'
+    ) {
+      devicesSharingdata++;
+    }
+  }
+
+  // Contains basic informations for each overview profile's block
+  const overviewBlocks = [
+    {
+      title: 'Data points shared',
+      icon: DataLakeIcon,
+      number: dataPointsShared,
+      tooltip: 'about data points',
+    },
+    {
+      title: 'Entities accessed your data',
+      icon: OrganizationIcon,
+      number: entitiesAccessedDataProfile,
+      tooltip: 'about entities',
+    },
+    {
+      title: 'Devices sharing data',
+      icon: DeviceIcon,
+      number: devicesSharingdata,
+      tooltip: 'about devices',
+    },
+    {
+      title: 'Years of data exchange',
+      icon: HourglassIcon,
+      number: 11,
+      tooltip: 'About years of data exchange',
+    },
+  ];
+
   return (
     <Article>
       <h2>Overview</h2>
