@@ -345,7 +345,7 @@
             "action_type": "Content (photo, video, post) that you have shared on Facebook"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "communications"
@@ -378,7 +378,7 @@
             "action_type": "Comment you posted on Facebook"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "communications"
@@ -603,7 +603,7 @@
             "action_type": "Message sent in Hangouts"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "communications"
@@ -815,7 +815,7 @@
             "action_type": "Facebook Event invite you accepted"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "behavioural"
@@ -835,7 +835,7 @@
             "action_type": "Facebook Event invite you declined"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "behavioural"
@@ -855,7 +855,7 @@
             "action_type": "Facebook Event invite you showed interest for"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "behavioural"
@@ -888,7 +888,7 @@
             "action_type": "Account linked to your Facebook profile"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "technical"
@@ -921,7 +921,7 @@
             "action_type": "Content you posted in a Facebook group"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "communications"
@@ -954,7 +954,7 @@
             "action_type": "Cover photo posted on Facebook"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "commmunications"
@@ -987,7 +987,7 @@
             "action_type": "Provide name at account creation"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "contact"
@@ -1007,7 +1007,7 @@
             "action_type": "Provide email at account creation"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "contact"
@@ -1027,7 +1027,7 @@
             "action_type": "Provide birth date at account creation"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "socio-demographic"
@@ -1047,7 +1047,7 @@
             "action_type": "Specify your gender"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "socio-demographic"
@@ -1067,7 +1067,7 @@
             "action_type": "Previous names you used on Facebook"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "contact"
@@ -1087,7 +1087,7 @@
             "action_type": "Other names you used on Facebook"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "contact"
@@ -1107,7 +1107,7 @@
             "action_type": "Share your current city"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "location"
@@ -1127,7 +1127,7 @@
             "action_type": "Share your hometown"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "location"
@@ -1147,7 +1147,7 @@
             "action_type": "Share your education experience"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "socio-demographic"
@@ -1167,7 +1167,7 @@
             "action_type": "Share your education experience"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "socio-demographic"
@@ -1187,7 +1187,7 @@
             "action_type": "Share your sex orientation"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "socio-demographic"
@@ -1207,7 +1207,7 @@
             "action_type": "Share your blood donner info"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "socio-demographic"
@@ -1227,7 +1227,7 @@
             "action_type": "Share your websites"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "contact"
@@ -1247,7 +1247,7 @@
             "action_type": "Share your phone number"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "contact"
@@ -1267,7 +1267,7 @@
             "action_type": "Facebook account creation date"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "technical"
@@ -1287,7 +1287,7 @@
             "action_type": "Unique identifier of your facebook profile"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "technical"
@@ -1320,7 +1320,7 @@
             "action_type": "Interaction with Facebook event"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "behavioural"
@@ -1353,7 +1353,7 @@
             "action_type": "Apps that have been installed on your mobile device"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "behavioural"
@@ -1386,7 +1386,7 @@
             "action_type": "App you have created on Facebook Graph API"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "technical"
@@ -1419,7 +1419,7 @@
             "action_type": "Reaction (like, love, wow, haha) left on a Facebook content"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "behavioural"
@@ -1452,7 +1452,7 @@
             "action_type": "Invitation received for a Facebook event"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "behavioural"
@@ -1485,7 +1485,7 @@
             "action_type": "Game you played on Facebook"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "behavioural"
@@ -1518,7 +1518,7 @@
             "action_type": "Payment you made on Facebook"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "behavioural"
@@ -1551,7 +1551,7 @@
             "action_type": "Friend request received on Facebook"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "social relationships"
@@ -1584,7 +1584,7 @@
             "action_type": "Friend request sent on Facebook"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "social relationships"
@@ -1617,7 +1617,7 @@
             "action_type": "Friend request rejected on Facebook"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "social relationships"
@@ -1650,7 +1650,7 @@
             "action_type": "People you follow on Facebook"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "social relationships"
@@ -1683,7 +1683,7 @@
             "action_type": "Facebook group you have created"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "social relationships"
@@ -1716,7 +1716,7 @@
             "action_type": "Comment you have left on a Facebook group"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "social relationships"
@@ -1749,7 +1749,7 @@
             "action_type": "Facebook group you have joined"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "social relationships"
@@ -1782,7 +1782,7 @@
             "action_type": "Facebook group on which you are the admin"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "social relationships"
@@ -1815,7 +1815,7 @@
             "action_type": "Location of your device inferred from your phone number"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "location"
@@ -1848,7 +1848,7 @@
             "action_type": "Your main timezone detected by facebook"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "technical"
@@ -1881,7 +1881,7 @@
             "action_type": "Phone contact of your personal address books collected by Facebook"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "contact"
@@ -1914,7 +1914,7 @@
             "action_type": "Facebook page you follow"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "social relationships"
@@ -1947,7 +1947,7 @@
             "action_type": "Facebook page you liked"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "social relationships"
@@ -1980,7 +1980,7 @@
             "action_type": "Facebook page you have unfollowed"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "social relationships"
@@ -2013,7 +2013,7 @@
             "action_type": "Facebook page you have recommended"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "social relationships"
@@ -2046,7 +2046,7 @@
             "action_type": "Facebook page you have created"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "behavioural"
@@ -2079,7 +2079,7 @@
             "action_type": "Profile photo posted on Facebook"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "commmunications"
@@ -2112,7 +2112,7 @@
             "action_type": "Photo posted on your Facebook Journal"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "commmunications"
@@ -2145,7 +2145,7 @@
             "action_type": "Video you posted on Facebook"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "commmunications"
@@ -2178,7 +2178,7 @@
             "action_type": "Interaction with Facebook Privacy Checkup"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "behavioural"
@@ -2211,7 +2211,7 @@
             "action_type": "Content (post, video, etc.) you saved on Facebook"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "behavioural"
@@ -2244,7 +2244,7 @@
             "action_type": "Person you have searched on Facebook"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "behavioural"
@@ -2277,7 +2277,7 @@
             "action_type": "Background activity of your Facebook account"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "technical"
@@ -2310,7 +2310,7 @@
             "action_type": "Device linked to your Facebook account"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "technical"
@@ -2343,7 +2343,7 @@
             "action_type": "IP address you have used with your Facebook acount"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "technical"
@@ -2376,7 +2376,7 @@
             "action_type": "IP address you have used with your Facebook acount"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "technical"
@@ -2409,7 +2409,7 @@
             "action_type": "Login/Logout of your Facebook account"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "technical"
@@ -2442,7 +2442,7 @@
             "action_type": "Mobile device associated to your Facebook account"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "technical"
@@ -2475,7 +2475,7 @@
             "action_type": "Geolocation of where you logged in to your Facebook account"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "location"
@@ -2508,7 +2508,7 @@
             "action_type": "TBD (your_facebook_activity_history.json)"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "location"
@@ -2541,10 +2541,10 @@
             "action_type": "Shared the city where you live in with Google"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
-            "data_type": "socio demographic"
+            "data_type": "socio-demographic"
           },
           {
             "platform": "google"
@@ -2561,10 +2561,10 @@
             "action_type": "Shared the address where you live in with Google"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
-            "data_type": "socio demographic"
+            "data_type": "socio-demographic"
           },
           {
             "platform": "google"
@@ -2581,7 +2581,7 @@
             "action_type": "Shared your phone number with Google"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "contact"
@@ -2601,7 +2601,7 @@
             "action_type": "Shared your email address with Google"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "contact"
@@ -2634,7 +2634,7 @@
             "action_type": "Website you have visited on Chrome"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "behavioural"
@@ -2667,7 +2667,7 @@
             "action_type": "Web Extension you have installed on Chrome"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "behavioural"
@@ -2700,7 +2700,7 @@
             "action_type": "Game installed from Android Play Store"
           },
           {
-            "data_origin": "Observed"
+            "data_origin": "observed"
           },
           {
             "data_type": "behavioural"
@@ -2733,7 +2733,7 @@
             "action_type": "Place you flagged or saved on Google Maps"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "location"
@@ -2766,7 +2766,7 @@
             "action_type": "Review left on Google Maps"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "behavioural"
@@ -2799,7 +2799,7 @@
             "action_type": "Provide name at account creation"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "socio-demographic"
@@ -2819,7 +2819,7 @@
             "action_type": "Name displayed on your Google profile"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "socio-demographic"
@@ -2839,7 +2839,7 @@
             "action_type": "Email address associated to your Google account"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "contact"
@@ -2859,7 +2859,7 @@
             "action_type": "Birthday date shared with Google"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "socio-demographic"
@@ -2879,7 +2879,7 @@
             "action_type": "Gender information shared with Google"
           },
           {
-            "data_origin": "Volunteered"
+            "data_origin": "volunteered"
           },
           {
             "data_type": "socio-demographic"
