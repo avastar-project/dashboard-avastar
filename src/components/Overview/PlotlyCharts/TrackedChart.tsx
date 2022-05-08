@@ -30,20 +30,17 @@ export default function TrackedChart(props: Props) {
     // data_filter = getDataFilter(props.platform, props.type, props.origin);
 
     if (props.platform) {
-      console.log('platform', props.platform);
       data_filter = data_filter.filter((object) => {
         return object.platform === props.platform;
       });
     }
 
     if (props.type) {
-      console.log('data_type', props.type);
       data_filter = data_filter.filter((object) => {
         return object.data_type === props.type;
       });
     }
     if (props.origin) {
-      console.log('origin', props.origin);
       data_filter = data_filter.filter((object) => {
         return object.data_origin === props.origin;
       });
