@@ -12,6 +12,7 @@ import parsingModel from './parsingModel.json';
 // Import function to get a formatted error message when an exception occurs in the smarParser
 import { getErrorMessage } from './getErrorMessage';
 import { isCSVFile } from './isCsvFile';
+import Papa from 'papaparse';
 import { AvastarParsedDataPoint, getEmptyDataPoint } from '../types/dataTypes';
 import { getKeys } from './getKeys';
 
@@ -20,21 +21,6 @@ const emptyDataPoint: AvastarParsedDataPoint = getEmptyDataPoint();
 const avastarParsedDataPointProperties = getKeys(emptyDataPoint); // leveraging https://stackoverflow.com/questions/52856496/typescript-object-keys-return-string
 
 const parsingModelfilePathModel = Object.keys(parsingModel);
-
-const getParsedDataPoint = (
-  filePathModel: string,
-  nestedDataSelector: string
-): AvastarParsedDataPoint => {
-  const parsedDataPoint = getEmptyDataPoint();
-  for (let k = 0; k < avastarParsedDataPointProperties.length; k++) {
-    const property = avastarParsedDataPointProperties[k];
-    parsedDataPoint[property] =
-      (parsingModel as any)[filePathModel][nestedDataSelector]['entries'][k]?.[
-        avastarParsedDataPointProperties[k]
-      ] ?? parsedDataPoint[avastarParsedDataPointProperties[k]];
-  }
-  return parsedDataPoint;
-};
 
 export const smartParserCsv = (
   filePath: string,
@@ -56,16 +42,22 @@ export const smartParserCsv = (
             header: headerValue,
             skipEmptyLines: true,
             delimiter : delimiterValue,
-            complete: (results) => {
-                const parsedDataPoint = getParsedDataPoint(
-                    filePathModel,
-                    nestedArrayName
-                );
-            }
-            smartData.push(parsedDataPoint);
+            complete: function (results) {
+                        for (let j = 0; j < results.data.length; j++) {
+                          const parsedDataPoint = getEmptyDataPoint();
+                          for (let k = 0; k < avastarParsedDataPointProperties.length; k++) {
+                            const property = avastarParsedDataPointProperties[k];
+                            parsedDataPoint[property] =
+                              (parsingModel as any)[filePathModel]['entries'][k]?.[
+                                avastarParsedDataPointProperties[k]
+                              ] ?? parsedDataPoint[avastarParsedDataPointProperties[k]];
+                          }
+                        smartData.push(parsedDataPoint);
+                        }
+            },
           });
         }
-      });
+      }
     }
     return smartData;
   } catch (error) {
