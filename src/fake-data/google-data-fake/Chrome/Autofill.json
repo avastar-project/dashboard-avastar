@@ -64,7 +64,7 @@
             "address_home_zip_status": "VERIFICATION_STATUS_UNSPECIFIED",
             "name_middle_status": ["VERIFICATION_STATUS_UNSPECIFIED"],
             "address_home_zip": "XXXXX",
-            "address_home_street_address": "XXXX,
+            "address_home_street_address": "XXXX",
             "address_home_dependent_thoroughfare_name_status": "VERIFICATION_STATUS_UNSPECIFIED",
             "name_last_first": [""],
             "address_home_language_code": "",

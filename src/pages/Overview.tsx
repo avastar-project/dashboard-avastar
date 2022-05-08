@@ -7,8 +7,15 @@ import DataCollectedChart from '../components/Overview/PlotlyCharts/DataCollecte
 import DataTable from '../components/Overview/PlotlyCharts/DataTable';
 import Filter from '../components/Overview/Filter';
 import { useState } from 'react';
+import OverviewEducLink from '../components/Overview/OverviewEducLink';
+import MoreDataContainer from '../components/Overview/MoreDataContainer';
 // MUI components
 import { Box, Grid } from '@mui/material';
+import { useSelector, shallowEqual } from 'react-redux';
+import {
+  AvastarParsedDataPoint,
+  AvastarParsedDataPointState,
+} from '../types/dataTypes';
 
 // DATA JSON
 import data_aggregat from '../fake-data/fake-data-agg.json';
@@ -26,7 +33,8 @@ const Header = styled.header`
 const Main = styled.main``;
 
 const Aside = styled.aside`
-  border: solid 1px green;
+  border-radius: 0.5rem;
+  over-flow: hidden;
 `;
 
 // Data
@@ -56,6 +64,11 @@ export default function Overview() {
   const [platform, setPlatform] = useState('');
   const [origin, setOrigin] = useState('');
   const [type, setType] = useState('');
+  const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
+    (state: AvastarParsedDataPointState) => state.avastarParsedData,
+    shallowEqual
+  );
+  console.log('avastarParsedData from redux', avastarParsedData);
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Container container spacing={2}>
@@ -121,10 +134,13 @@ export default function Overview() {
               // isSearch on true to see the associated search bar
               isSearch={true}
             />
+            <MoreDataContainer />
           </Main>
         </Grid>
         <Grid item xs={12} md={3}>
-          <Aside>Aside</Aside>
+          <Aside>
+            <OverviewEducLink />
+          </Aside>
         </Grid>
       </Container>
     </Box>
