@@ -1,7 +1,7 @@
 import { Dispatch } from 'react';
 import * as jszip from 'jszip';
 import parsingModel from '../utils/parsingModel.json';
-import { smartParser } from '../utils/smartParser';
+import { smartParserJson } from '../utils/smartParserJson';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import { Box, Button } from '@mui/material';
@@ -61,7 +61,7 @@ const asyncParseData = async (data: FormType) => {
           const fileData: string = await fileproperties.async('string'); // function of jszip
           const fileContent = JSON.parse(fileData); // convert the type of fileData variable from String to Object
           if (Object.keys(fileContent).length > 0) {
-            const newElement = smartParser(filename, fileContent); // execute parsing function
+            const newElement = smartParserJson(filename, fileContent); // execute parsing function
             newElement && res.push(...newElement);
           } else {
             console.warn('The file is empty');
