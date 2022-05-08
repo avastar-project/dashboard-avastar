@@ -1,5 +1,5 @@
 /**
- * @name smartParser
+ * @name smartParserJson
  * @description Function to read, parse and classfify the personal data files uploaded by the user.
  * @param {string} filePath path of the file streamed, coming from the Zip folder uploaded in the DropZone component.
  * @param {object} fileContent variable that stores the content of the file streamed, coming from the Zip folder uploaded in the DropZone component.
@@ -50,7 +50,7 @@ export const smartParserJson = (
     // Initialisation of the array that will store the properties describing each the data point scanned. It will be the input of the data visualisations showed in the Overview, Facebook and Google pages.
     const smartData: AvastarParsedDataPoint[] = [];
 
-    // Check the type of file uploaded (.csv, .xlsx, .json, etc.)
+    // Check the type of file uploaded (.json)
     if (isJSONFile(filePath)) {
       // Check if the file is in the parsingModel
       for (let i = 0; i < parsingModelfilePathModel.length; i++) {

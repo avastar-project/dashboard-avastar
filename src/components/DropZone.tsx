@@ -2,11 +2,13 @@ import { Dispatch } from 'react';
 import * as jszip from 'jszip';
 import parsingModel from '../utils/parsingModel.json';
 import { smartParserJson } from '../utils/smartParserJson';
+import { smartParserCsv } from '../utils/smartParserCsv';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import { Box, Button } from '@mui/material';
 import { readFileAsync } from '../utils/readFileAsync';
 import { isJSONFile } from '../utils/isJsonFile';
+import { isCSVFile } from '../utils/isCsvFile';
 
 // Icons
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
@@ -68,8 +70,16 @@ const asyncParseData = async (data: FormType) => {
           }
         }
       }
-    } else if (filename.split('.')[1] === 'csv') {
-      console.log('csv file [WIP]');
+    } if (isCSVFile(filename)) {
+          for (let i = 0; i < parsingModelFilepaths.length; i++) {
+            if (filename.endsWith(parsingModelFilepaths[i])) {
+              const fileData: string = await fileproperties.async('string');
+              const newElement = smartParserCsv(filename, fileData); // execute parsing function
+              newElement && res.push(...newElement);
+            } else {
+                console.warn('The file is empty');
+            }
+          }
     } else if (filename.split('.').length > 1) {
       console.log('unknown file type');
     }
