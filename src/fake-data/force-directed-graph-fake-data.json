@@ -1,0 +1,35 @@
+{
+  "results": [
+    {
+      "nodes": [
+        {"id": "Facebook", "group": 1},
+        {"id": "Google", "group": 1},
+        {"id": "Heetch", "group": 1},
+        {"id": "Amazon", "group": 1},
+        {"id": "Gens de Confiance", "group": 2},
+        {"id": "UM Australia", "group": 2},
+        {"id": "Zapier", "group": 2},
+        {"id": "Figma", "group": 2},
+        {"id": "Calendly", "group": 2},
+        {"id": "Lydia", "group": 3},
+        {"id": "YouTube", "group": 3},
+        {"id": "Dashlane", "group": 3},
+        {"id": "uBlock Origin", "group": 3}
+      ],
+      "links": [
+        {"source": "Heetch", "target": "Facebook", "value": 1},
+        {"source": "Amazon", "target": "Facebook", "value": 8},
+        {"source": "Gens de Confiance", "target": "Facebook", "value": 10},
+        {"source": "UM Australia", "target": "Facebook", "value": 6},
+        {"source": "Zapier", "target": "Facebook", "value": 1},
+        {"source": "Figma", "target": "Facebook", "value": 1},
+        {"source": "Calendly", "target": "Facebook", "value": 1},
+        {"source": "Lydia", "target": "Facebook", "value": 1},
+        {"source": "YouTube", "target": "Facebook", "value": 1},
+        {"source": "Dashlane", "target": "Google", "value": 1},
+        {"source": "uBlock Origin", "target": "Google", "value": 1}
+      ]
+    }
+  ]
+}
+  
