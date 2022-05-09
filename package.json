@@ -1,6 +1,9 @@
 {
   "name": "reimagined-eureka",
   "version": "0.1.0",
+  "engines": {
+    "node": "16.x"
+  },
   "homepage": ".",
   "private": false,
   "proxy": "http://localhost:3000",
