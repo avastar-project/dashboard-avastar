@@ -10,7 +10,7 @@ import DanielProfil from '../../assets/daniel-review.png';
 import BernardProfil from '../../assets/bernard-review.png';
 import LeaProfil from '../../assets/lea-review.png';
 
-import { Box,Grid } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 
 // Typescript types
 interface ReviewsCard {
@@ -20,81 +20,77 @@ interface ReviewsCard {
 }
 
 // Contains each review's card infomations
-const reviewsCard : ReviewsCard[] =
-[
-    {
-      user: 'Daniel',
-      content: `"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."`
-      ,
-      picture: DanielProfil,
-    },
-    {
-        user: 'Bernard',
-        content: `"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."`
-        ,
-        picture: BernardProfil,
-      },
-      {
-        user: 'Lea',
-        content: `"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."`
-        ,
-        picture: LeaProfil,
-      },
-  ];
+const reviewsCard: ReviewsCard[] = [
+  {
+    user: 'Daniel',
+    content: `"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."`,
+    picture: DanielProfil,
+  },
+  {
+    user: 'Bernard',
+    content: `"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."`,
+    picture: BernardProfil,
+  },
+  {
+    user: 'Lea',
+    content: `"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."`,
+    picture: LeaProfil,
+  },
+];
 
-  const StyledReviews = styled(Box)`
-  padding:2rem 4rem;`;
-
-  const ReviewList = styled.ul`
-  display:flex;
-  justify-content:flex-start;
-  gap:15%;
-  list-style:none;
-  padding:2rem 0;
-  // width:100rem;
-  // height:20rem;
+const StyledReviews = styled(Box)`
+  padding: 2.009rem 4.851rem 3.25rem 4.851rem;
 `;
 
-  const ReviewItem = styled.li`
-  display:flex;
-  flex-direction:column;
-  gap:2rem;
-  border:2px solid var(--clr-light);
-  border-radius:10px;
-  padding:1rem;
-  width:19%;
+const ReviewList = styled.ul`
+  display: flex;
+  gap: 5%;
+  list-style: none;
+`;
 
-  & > div {
-      display:flex;
-      align-items: center;
-      gap:5%;
+const ReviewItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 2px solid var(--clr-light);
+  border-radius: 10px;
+  padding: 1rem 2rem;
+`;
 
-      & > img {
-          width:20%;
-          border-radius: 50%;
-      }
-  };
-  `;
+const Title = styled(Typography)`
+  padding-bottom: 2rem;
+`;
+
+const ImgContainer = styled(Box)`
+  & > img {
+    border-radius: 50%;
+  }
+`;
 
 export default function UsersReview() {
-    return (
-      <StyledReviews>
-          <h1>What our users say</h1>
-          <Grid>
+  return (
+    <StyledReviews>
+      <Title variant="h4">What our users say</Title>
+      <Grid>
         <ReviewList>
           {/* Mapping reviews array to display each element */}
-            {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
-          {reviewsCard.map((reviewsCard:ReviewsCard, index:number) => (
+          {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
+          {reviewsCard.map((reviewsCard: ReviewsCard, index: number) => (
             <ReviewItem key={index}>
-            <div>
-                <img src={reviewsCard.picture} alt={`${reviewsCard.picture}`} />
-                <span>{reviewsCard.user}</span>
-            </div>
-            <p>{reviewsCard.content}</p>
+              <Box display="flex" alignItems="center" gap={2}>
+                <ImgContainer>
+                  <img
+                    src={reviewsCard.picture}
+                    alt={`${reviewsCard.picture}`}
+                  />
+                </ImgContainer>
+                <Typography>{reviewsCard.user}</Typography>
+              </Box>
+              <Typography>{reviewsCard.content}</Typography>
             </ReviewItem>
           ))}
         </ReviewList>
-        </Grid>
-      </StyledReviews>
-    );
-  }
+      </Grid>
+    </StyledReviews>
+  );
+}

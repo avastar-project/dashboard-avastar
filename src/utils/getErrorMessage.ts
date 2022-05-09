@@ -5,7 +5,7 @@
  * @returns {string} string with the error message.
  */
 
-export const getErrorMessage = (error: unknown) => {
-    if (error instanceof Error) return error.message
+export const getErrorMessage = (error: unknown, filePath: String) => {
+    if (error instanceof Error) return 'error: ' + error.message + ', file: ' + filePath
     return String(error)
 }

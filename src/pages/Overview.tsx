@@ -10,6 +10,11 @@ import OverviewEducLink from '../components/Overview/OverviewEducLink';
 import MoreDataContainer from '../components/Overview/MoreDataContainer';
 // MUI components
 import { Box, Grid } from '@mui/material';
+import { useSelector, shallowEqual } from 'react-redux';
+import {
+  AvastarParsedDataPoint,
+  AvastarParsedDataPointState,
+} from '../types/dataTypes';
 
 // Styled-components
 const Container = styled(Grid)`
@@ -29,6 +34,11 @@ const Aside = styled.aside`
 `;
 
 export default function Overview() {
+  const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
+    (state: AvastarParsedDataPointState) => state.avastarParsedData,
+    shallowEqual
+  );
+  console.log('avastarParsedData from redux', avastarParsedData);
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Container container spacing={2}>

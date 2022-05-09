@@ -19,6 +19,11 @@ const StyledGlobalStyle = createGlobalStyle`
         --clr-darker: #1a1a1a;
         --clr-dark: #2b2b2b;
 
+        --clr-blue-dark: #002199;
+        --clr-blue-primary:#0034F5;
+        --clr-blue-light:#9CB1FF;
+
+        
         /* Shadows */
         --bx-shdw-light: 0 0 5px 0 var(--clr-dark);
 
