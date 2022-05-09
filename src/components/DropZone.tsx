@@ -66,7 +66,7 @@ const asyncParseData = async (data: FormType) => {
             const newElement = smartParserJson(filename, fileContent); // execute parsing function
             newElement && res.push(...newElement);
           } else {
-            console.warn('The file is empty');
+            console.warn('JSON file is empty');
           }
         }
       }
@@ -76,8 +76,6 @@ const asyncParseData = async (data: FormType) => {
               const fileData: string = await fileproperties.async('string');
               const newElement = smartParserCsv(filename, fileData); // execute parsing function
               newElement && res.push(...newElement);
-            } else {
-                console.warn('The file is empty');
             }
           }
     } else if (filename.split('.').length > 1) {
