@@ -1,2899 +1,3207 @@
 {
-    "location/primary_location.json": {
-      "language": "en",
-      "comment": "This file contains the main location of the user inferred by Facebook based on elements like the current city indicated on the user profile, the device's IP address used to connect to his Facebook account, or device localisation settings",
-      "file_structure_properties":{
-        "depth": 2,
-        "has_single_data_point": true,
-        "has_multiple_nested_objects": false,
-        "single_data_point_selector": "city_region_pairs",
-        "nested_data_point_selector": ""
-      },
-      "primary_location_v2": {
-        "entries": [
-          {
-            "action_type": "Facebook inferred the current main city you live in"
-          },
-          {
-            "data_origin": "inferred"
-          },
-          {
-            "data_type": "location"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "city_region_pairs"
-          }
-        ]
-      }
-    },
-    "location/primary_public_location.json": {
-      "language": "en",
-      "comment": "This file contains the main public location of the user inferred by facebook based on elements like the current city indicated on the user profile, the device's IP address used to connect to his facebook account, or device localisation settings",
-      "file_structure_properties":{
-        "depth": 2,
-        "has_single_data_point": true,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "city",
-        "nested_data_point_selector": ""
-      },
-      "primary_public_location_v2": {
-        "entries": [
-          {
-            "action_type": "Facebook inferred the current main city you live in"
-          },
-          {
-            "data_origin": "inferred"
-          },
-          {
-            "data_type": "location"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "city"
-          }
-        ]
-      }
-    },
-    "activity_messages/group_interactions.json": {
-      "language": "en",
-      "comment": "Volume of comments and posts shared in specific Facebook groups",
-      "file_structure_properties":{
-        "depth": 2,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "group_interactions_v2": {
-        "entries": [
-          {
-            "action_type": "Post or comment you have shared in a Facebook group"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "communications"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "name"
-          }
-        ]
-      }
-    },
-    "activity_messages/people_and_friends.json": {
-      "language": "en",
-      "comment": "Interactions of any type the user had with people on Facebook",
-      "file_structure_properties":{
-        "depth": 2,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "people_interactions_v2": {
-        "entries": [
-          {
-            "action_type": "Interaction (of any type) you had with other people on Facebook"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "social relationships"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "name"
-          }
-        ]
-      }
-    },
-    "apps_and_websites_off_of_facebook/your_off-facebook_activity.json": {
-      "language": "en",
-      "comment": "Information that companies and organizations share with facebook about the user interactions with them, such as visits to their applications or websites",
-      "file_structure_properties":{
-        "depth": 3,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": "events"
-      },
-      "off_facebook_activity_v2": {
-        "entries": [
-          {
-            "action_type": "Company that shared information with facebook about your activity on their website/application"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": "timestamp"
-          },
-          {
-            "details": "name"
-          }
-        ]
-      }
-    },
-    "ads_information/advertisers_using_your_activity_or_information.json": {
-      "language": "en",
-      "comment": "Advertisers who have added the user's name to an audience based on his information or his activity outside of Facebook. Advertisers can use or import a list of information that facebook compares to the user's profile to show or not show certain ads. The user can also be part of an audience based on their interactions with an advertiser's website, app or store.",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "custom_audiences_all_types_v2": {
-        "entries": [
-          {
-            "action_type": "Advertiser who has added your name to an audience based on your information or your activity outside of Facebook"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "technical"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "advertiser_name"
-          }
-        ]
-      }
-    },
-    "ads_information/advertisers_you've_interacted_with.json": {
-      "language": "en",
-      "comment": "Advertisers whose ads the user has recently seen or clicked on",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "history_v2": {
-        "entries": [
-          {
-            "action_type": "Advertisers whose ads you have recently seen or clicked on"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": "timestamp"
-          },
-          {
-            "details": "title"
-          }
-        ]
-      }
-    },
-    "other_logged_information/friend_peer_group.json": {
-      "language": "en",
-      "comment": "The stages in the lives of your friends on Facebook",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "friend_peer_group_v2": {
-        "entries": [
-          {
-            "action_type": "The current stage of life of your friends inferred by Facebook"
-          },
-          {
-            "data_origin": "inferred"
-          },
-          {
-            "data_type": "socio-demographic"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }  
-    },
-    "other_logged_information/ads_interests.json": {
-      "language": "en",
-      "comment": "Interest categories and other categories that Facebook associates with the user based on the information he provided on Facebook and his activity. Advertisers may reach the user based on the interest categories ",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "topics_v2": {
-        "entries": [
-          {
-            "action_type": "Interest categories that Facebook associates with you based on the information he provided on Facebook and your activity"
-          },
-          {
-            "data_origin": "inferred"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }  
-    },
-    "your_topics/your_topics.json": {
-      "language": "en",
-      "comment": "Areas of interest inferred by Facebook based on the user's activity",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "inferred_topics_v2": {
-        "entries": [
-          {
-            "action_type": "Topic inferred by Facebook as an area of interest based on your activity"
-          },
-          {
-            "data_origin": "inferred"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }  
-    },
-    "posts/your_posts_1.json": {
-      "language": "en",
-      "comment": "Photos, videos, posts and statuses the user has shared on Facebook",
-      "file_structure_properties":{
-        "depth": 0,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "None": {
-        "entries": [
-          {
-            "action_type": "Content (photo, video, post) that you have shared on Facebook"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "communications"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": "timestamp"
-          },
-          {
-            "details": "title"
-          }
-        ]
-      }  
-    },
-    "comments_and_reactions/comments.json": {
-      "language": "en",
-      "comment": "Comments shared by the user on Facebook",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "comments_v2": {
-        "entries": [
-          {
-            "action_type": "Comment you posted on Facebook"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "communications"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": "timestamp"
-          },
-          {
-            "details": "title"
-          }
-        ]
-      }  
-    },
-    "your_interactions_on_facebook/recently_viewed.json": {
-      "language": "en",
-      "comment": "Content recently viewed by the user on Facebook (videos, posts, facebook profiles, off-facebook web pages, articles on facebook marketplace, ads)",
-      "file_structure_properties":{
-        "depth": 4,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "recently_viewed": {
-        "Vid\u00c3\u00a9os et programmes de Facebook Watch": [
-          {
-            "action_type": "Video you have seen on Facebook Watch"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "Publications qui ont \u00c3\u00a9t\u00c3\u00a9 affich\u00c3\u00a9es dans votre fil d\u00e2\u0080\u0099actualit\u00c3\u00a9.": [
-          {
-            "action_type": "Post that you have seen on your Facebook feed"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "Vid\u00c3\u00a9os que vous avez regard\u00c3\u00a9es": [
-          {
-            "action_type": "Video that you have watched on your Facebook feed"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "Pages web que vous avez consult\u00c3\u00a9es en dehors de Facebook": [
-          {
-            "action_type": "Web page you have consulted off Facebook"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "Personnes": [
-          {
-            "action_type": "Facebook profile you have visited after being suggested new friends connexions"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "Interactions Marketplace": [
-          {
-            "action_type": "Interaction with an article on Facebook marketplace"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "Recherches Marketplace": [
-          {
-            "action_type": "Search made on Facebook Marketplace"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "Rappels des publications enregistr\u00c3\u00a9es": [
-          {
-            "action_type": "Content you have saved on Facebook"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "Publicit\u00c3\u00a9s": [
-          {
-            "action_type": "Ad you have seen"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }  
-    },
-    "Hangouts/Hangouts.json": {
-      "language": "en",
-      "comment": "Messages sent in Hangouts",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "None": {
-        "entries": [
-          {
-            "action_type": "Message sent in Hangouts"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "communications"
-          },
-          {
-            "platform": "google"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }  
-    },
-    "Application Google Home/HomeApp.json": {
-      "language": "en",
-      "comment": "Information recorded about the user activity on Google Home app",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "Home App Data": {
-        "entries": [
-          {
-            "action_type": "Information recorded from your activity on Google Home app"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "google"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }  
-    },
-    "Application Google Home/HomeHistory.json": {
-      "language": "en",
-      "comment": "Information recorded about the user activity on Google Home",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "None": {
-        "entries": [
-          {
-            "action_type": "Information recorded from your activity on Google Home"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "google"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }  
-    },
-    "your_interactions_on_facebook/recently_visited.json": {
-      "language": "en",
-      "comment": "Facebook profiles, pages and events visited by the user.",
-      "file_structure_properties":{
-        "depth": 4,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "visited_things_v2": {
-        "Visites de profil": [
-          {
-            "action_type": "Facebook profile you have visited"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "Visites sur la Page": [
-          {
-            "action_type": "Facebook page you have visited"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "\u00c3\u0089v\u00c3\u00a8nements consult\u00c3\u00a9s": [
-          {
-            "action_type": "Facebook event you have visited"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "Groupes consult\u00c3\u00a9s": [
-          {
-            "action_type": "Facebook groups you have visited"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "Visites Marketplace": [
-          {
-            "action_type": "Visit you made on Facebook Marketplace"
-          },
-          {
-            "data_origin": "observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }    
-    },
-    "events/your_event_responses.json": {
-      "language": "en",
-      "comment": "Facebook Events invites joined and declined by the user",
-      "file_structure_properties":{
-        "depth": 2,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": true,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "event_responses_v2": {
-        "events_joined": [
-          {
-            "action_type": "Facebook Event invite you accepted"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "events_declined": [
-          {
-            "action_type": "Facebook Event invite you declined"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "events_interested": [
-          {
-            "action_type": "Facebook Event invite you showed interest for"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }  
-    },
-    "facebook_accounts_center/accounts_center.json": {
-      "language": "en",
-      "comment": "Accounts linked to your Facebook profile",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "accounts_center_v2": {
-        "entries": [
-          {
-            "action_type": "Account linked to your Facebook profile"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "technical"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "service_name"
-          }
-        ]
-      }  
-    },
-    "groups/your_posts_in_groups.json": {
-      "language": "en",
-      "comment": "Content posted by the user in Facebook groups",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "group_posts_v2": {
-        "entries": [
-          {
-            "action_type": "Content you posted in a Facebook group"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "communications"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "title"
-          }
-        ]
-      }
-    },  
-    "posts/album/0.json": {
-      "language": "en",
-      "comment": "Cover photos posted by the user on Facebook",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": "photos"
-      },
-      "photos": {
-        "entries": [
-          {
-            "action_type": "Cover photo posted on Facebook"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "commmunications"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "title"
-          }
-        ]
-      }
-    },
-    "profile_information/profile_information.json": {
-      "language": "en",
-      "comment": "Information about the user",
-      "file_structure_properties":{
-        "depth": 2,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": true,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "profile_v2": {
-        "name": [
-          {
-            "action_type": "Provide name at account creation"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "contact"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "emails"
-          }
-        ],
-        "emails": [
-          {
-            "action_type": "Provide email at account creation"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "contact"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "emails"
-          }
-        ],
-        "birthday": [
-          {
-            "action_type": "Provide birth date at account creation"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "socio-demographic"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "emails"
-          }
-        ],
-        "gender": [
-          {
-            "action_type": "Specify your gender"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "socio-demographic"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "gender_option"
-          }
-        ],
-        "previous_names": [
-          {
-            "action_type": "Previous names you used on Facebook"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "contact"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "emails"
-          }
-        ],
-        "other_names": [
-          {
-            "action_type": "Other names you used on Facebook"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "contact"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "emails"
-          }
-        ],
-        "current_city": [
-          {
-            "action_type": "Share your current city"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "location"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "name"
-          }
-        ],
-        "hometown": [
-          {
-            "action_type": "Share your hometown"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "location"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "name"
-          }
-        ],
-        "education_experiences": [
-          {
-            "action_type": "Share your education experience"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "socio-demographic"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "name"
-          }
-        ],
-        "work_experiences": [
-          {
-            "action_type": "Share your education experience"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "socio-demographic"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "name"
-          }
-        ],
-        "interested_in": [
-          {
-            "action_type": "Share your sex orientation"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "socio-demographic"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "name"
-          }
-        ],
-        "blood_info": [
-          {
-            "action_type": "Share your blood donner info"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "socio-demographic"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "name"
-          }
-        ],
-        "websites": [
-          {
-            "action_type": "Share your websites"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "contact"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "name"
-          }
-        ],
-        "phone_numbers": [
-          {
-            "action_type": "Share your phone number"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "contact"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "registration_timestamp": [
-          {
-            "action_type": "Facebook account creation date"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "technical"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "profile_uri": [
-          {
-            "action_type": "Unique identifier of your facebook profile"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "technical"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": "name"
-          }
-        ]
-      }
-    },
-    "activity_messages/events_interactions.json": {
-      "language": "en",
-      "comment": "Interactions with specific Facebook events (no more precise information",
-      "file_structure_properties":{
-        "depth": 2,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "events_interactions_v2": {
-        "entries": [
-          {
-            "action_type": "Interaction with Facebook event"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "apps_and_websites_off_of_facebook/apps_and_websites.json": {
-      "language": "en",
-      "comment": "Apps installed by the user on his mobile device",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "installed_apps_v2": {
-        "entries": [
-          {
-            "action_type": "Apps that have been installed on your mobile device"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "apps_and_websites_off_of_facebook/your_apps.json": {
-      "language": "en",
-      "comment": "The apps created by the user on Facebook Graph API",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "admined_apps_v2": {
-        "entries": [
-          {
-            "action_type": "App you have created on Facebook Graph API"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "technical"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "comments_and_reactions/posts_and_comments.json": {
-      "language": "en",
-      "comment": "Reactions (like, love, wow, haha) of the user on Facebook content",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "reactions_v2": {
-        "entries": [
-          {
-            "action_type": "Reaction (like, love, wow, haha) left on a Facebook content"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "events/event_invitations.json": {
-      "language": "en",
-      "comment": "Invitations to events received by the user",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "events_invited_v2": {
-        "entries": [
-          {
-            "action_type": "Invitation received for a Facebook event"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "facebook_gaming/instant_games.json": {
-      "language": "en",
-      "comment": "The games played by the user on Facebook",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "instant_games_played_v2": {
-        "entries": [
-          {
-            "action_type": "Game you played on Facebook"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "facebook_payments/payment_history.json": {
-      "language": "en",
-      "comment": "Payment history of the user on Facebook",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "payments_v2": {
-        "entries": [
-          {
-            "action_type": "Payment you made on Facebook"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "friends_and_followers/friend_requests_received.json": {
-      "language": "en",
-      "comment": "Friends requests received by the user on Facebook",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "received_requests_v2": {
-        "entries": [
-          {
-            "action_type": "Friend request received on Facebook"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "social relationships"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "friends_and_followers/friend_requests_sent.json": {
-      "language": "en",
-      "comment": "Friends requests sent by the user on Facebook",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "sent_requests_v2": {
-        "entries": [
-          {
-            "action_type": "Friend request sent on Facebook"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "social relationships"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "friends_and_followers/rejected_friend_requests.json": {
-      "language": "en",
-      "comment": "Friends requests rejected by the user on Facebook",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "rejected_requests_v2": {
-        "entries": [
-          {
-            "action_type": "Friend request rejected on Facebook"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "social relationships"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "friends_and_followers/who_you_follow.json": {
-      "language": "en",
-      "comment": "The people followed by the user on Facebook",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "following_v2": {
-        "entries": [
-          {
-            "action_type": "People you follow on Facebook"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "social relationships"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "groups/creator_badges.json": {
-      "language": "en",
-      "comment": "The Facebook groups created by the user",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "group_badges_v2": {
-        "entries": [
-          {
-            "action_type": "Facebook group you have created"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "social relationships"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "groups/your_comments_in_groups.json": {
-      "language": "en",
-      "comment": "The comments left by the user in Facebook groups",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "group_comments_v2": {
-        "entries": [
-          {
-            "action_type": "Comment you have left on a Facebook group"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "social relationships"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "groups/your_group_membership_activity.json": {
-      "language": "en",
-      "comment": "The Facebook groups joined by the user",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "groups_joined_v2": {
-        "entries": [
-          {
-            "action_type": "Facebook group you have joined"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "social relationships"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "groups/your_groups.json": {
-      "language": "en",
-      "comment": "The Facebook groups administrated by the user",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "groups_admined_v2": {
-        "entries": [
-          {
-            "action_type": "Facebook group on which you are the admin"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "social relationships"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "location/device_location.json": {
-      "language": "en",
-      "comment": "Location of the user inferred from the phone number of his device (country code)",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "phone_number_location_v2": {
-        "entries": [
-          {
-            "action_type": "Location of your device inferred from your phone number"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "location"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "location/timezone.json": {
-      "language": "en",
-      "comment": "The timezone of the user",
-      "file_structure_properties":{
-        "depth": 0,
-        "has_single_data_point": true,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "timezone_v2",
-        "nested_data_point_selector": ""
-      },
-      "timezone_v2": {
-        "entries": [
-          {
-            "action_type": "Your main timezone detected by facebook"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "technical"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "other_personal_information/your_address_books.json": {
-      "language": "en",
-      "comment": "The personal address books of the user",
-      "file_structure_properties":{
-        "depth": 2,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "address_book_v2": {
-        "address_book": [
-          {
-            "action_type": "Phone contact of your personal address books collected by Facebook"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "contact"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "pages/pages_you_follow.json": {
-      "language": "en",
-      "comment": "The Facebook pages followed by the user",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "pages_followed_v2": {
-        "entries": [
-          {
-            "action_type": "Facebook page you follow"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "social relationships"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "pages_you've_liked.json": {
-      "language": "en",
-      "comment": "The Facebook pages liked by the user",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "page_likes_v2": {
-        "entries": [
-          {
-            "action_type": "Facebook page you liked"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "social relationships"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "pages/pages_you've_unfollowed.json": {
-      "language": "en",
-      "comment": "The Facebook pages unfollowed by the user",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "pages_unfollowed_v2": {
-        "entries": [
-          {
-            "action_type": "Facebook page you have unfollowed"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "social relationships"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "pages/pages_you've_recommended.json": {
-      "language": "en",
-      "comment": "The Facebook pages recommended by the user",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "recommended_pages_v2": {
-        "entries": [
-          {
-            "action_type": "Facebook page you have recommended"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "social relationships"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "pages/your_pages.json": {
-      "language": "en",
-      "comment": "The Facebook pages created by the user",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "pages_v2": {
-        "entries": [
-          {
-            "action_type": "Facebook page you have created"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "posts/album/1.json": {
-      "language": "en",
-      "comment": "Profile photos posted by the user on Facebook",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": "photos"
-      },
-      "photos": {
-        "entries": [
-          {
-            "action_type": "Profile photo posted on Facebook"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "commmunications"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "posts/album/2.json": {
-      "language": "en",
-      "comment": "Photos posted by the user on his Facebook Journal",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": "photos"
-      },
-      "photos": {
-        "entries": [
-          {
-            "action_type": "Photo posted on your Facebook Journal"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "commmunications"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "posts/your_videos.json": {
-      "language": "en",
-      "comment": "Videos posted by the user on Facebook",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "videos_v2": {
-        "entries": [
-          {
-            "action_type": "Video you posted on Facebook"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "commmunications"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "privacy_checkup/interactions.json": {
-      "language": "en",
-      "comment": "Interactions of the user with Facebook Privacy Checkup",
-      "file_structure_properties":{
-        "depth": 2,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": true,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "privacy_checkup_interactions_v2": {
-        "privacy_checkup_topic": [
-          {
-            "action_type": "Interaction with Facebook Privacy Checkup"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "saved_items_and_collections/saved_items_and_collections.json": {
-      "language": "en",
-      "comment": "Content saved by the user on Facebook",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "saves_and_collections_v2": {
-        "entries": [
-          {
-            "action_type": "Content (post, video, etc.) you saved on Facebook"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "search/your_search_history.json": {
-      "language": "en",
-      "comment": "Search history of the user on Facebook",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "searches_v2": {
-        "entries": [
-          {
-            "action_type": "Person you have searched on Facebook"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "security_and_login_information/account_activity.json": {
-      "language": "en",
-      "comment": "Background activity of the user account (login, session updates, etc.)",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "account_activity_v2": {
-        "entries": [
-          {
-            "action_type": "Background activity of your Facebook account"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "technical"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "security_and_login_information/authorized_logins.json": {
-      "language": "en",
-      "comment": "Devices linked to the user Facebook account",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "recognized_devices_v2": {
-        "entries": [
-          {
-            "action_type": "Device linked to your Facebook account"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "technical"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "security_and_login_information/ip_address_activity.json": {
-      "language": "en",
-      "comment": "IP addresses used by the user",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "used_ip_address_v2": {
-        "entries": [
-          {
-            "action_type": "IP address you have used with your Facebook acount"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "technical"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "security_and_login_information/login_protection_data.json": {
-      "language": "en",
-      "comment": "IP addresses used by the user",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "login_protection_data_v2": {
-        "entries": [
-          {
-            "action_type": "IP address you have used with your Facebook acount"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "technical"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "security_and_login_information/logins_and_logouts.json": {
-      "language": "en",
-      "comment": "Login and Logout activity history of the user",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "account_accesses_v2": {
-        "entries": [
-          {
-            "action_type": "Login/Logout of your Facebook account"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "technical"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "security_and_login_information/mobile_devices.json": {
-      "language": "en",
-      "comment": "Mobile devices associated to the user Facebook account",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "devices_v2": {
-        "entries": [
-          {
-            "action_type": "Mobile device associated to your Facebook account"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "technical"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "security_and_login_information/where_you're_logged_in.json": {
-      "language": "en",
-      "comment": "Geolocation history of where the user logged in to his Facebook account",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "active_sessions_v2": {
-        "entries": [
-          {
-            "action_type": "Geolocation of where you logged in to your Facebook account"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "location"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "security_and_login_information/your_facebook_activity_history.json": {
-      "language": "en",
-      "comment": "TBD",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "devices_v2": {
-        "entries": [
-          {
-            "action_type": "TBD (your_facebook_activity_history.json)"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "location"
-          },
-          {
-            "platform": "facebook"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "Chrome/Autofill.json": {
-      "language": "en",
-      "comment": "Information registered by Google to fill forms automatically for the user",
-      "file_structure_properties":{
-        "depth": 3,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": true,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "Autofill Profile": {
-        "address_home_city": [
-          {
-            "action_type": "Shared the city where you live in with Google"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "socio demographic"
-          },
-          {
-            "platform": "google"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "address_home_street_address": [
-          {
-            "action_type": "Shared the address where you live in with Google"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "socio demographic"
-          },
-          {
-            "platform": "google"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "phone_home_whole_number": [
-          {
-            "action_type": "Shared your phone number with Google"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "contact"
-          },
-          {
-            "platform": "google"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "email_address": [
-          {
-            "action_type": "Shared your email address with Google"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "contact"
-          },
-          {
-            "platform": "google"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "Chrome/BrowserHistory.json": {
-      "language": "en",
-      "comment": "Browser history of the user on Chrome",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "Browser History": {
-        "entries": [
-          {
-            "action_type": "Website you have visited on Chrome"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "google"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "Chrome/Extensions.json": {
-      "language": "en",
-      "comment": "Web extensions installed by the user on Chrome",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": "Extensions"
-      },
-      "Extensions": {
-        "entries": [
-          {
-            "action_type": "Web Extension you have installed on Chrome"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "google"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "Google Play Store/Library.json": {
-      "language": "en",
-      "comment": "Games installed from Android Play Store",
-      "file_structure_properties":{
-        "depth": 0,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "None": {
-        "entries": [
-          {
-            "action_type": "Game installed from Android Play Store"
-          },
-          {
-            "data_origin": "Observed"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "google"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "Maps (your places)/Saved Places.json": {
-      "language": "en",
-      "comment": "Places saved or flagged on Google Maps by the user",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": "features"
-      },
-      "features": {
-        "entries": [
-          {
-            "action_type": "Place you flagged or saved on Google Maps"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "location"
-          },
-          {
-            "platform": "google"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "Maps (your places)/Reviews.json": {
-      "language": "en",
-      "comment": "Reviews left by the user on Google Maps",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": false,
-        "data_point_selector": "",
-        "nested_data_point_selector": "features"
-      },
-      "features": {
-        "entries": [
-          {
-            "action_type": "Review left on Google Maps"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "behavioural"
-          },
-          {
-            "platform": "google"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
-    },
-    "Profile/Profile.json": {
-      "language": "en",
-      "comment": "Profile information filled by the user when he registered on Google",
-      "file_structure_properties":{
-        "depth": 1,
-        "has_single_data_point": false,
-        "has_multiple_nested_objects": true,
-        "data_point_selector": "",
-        "nested_data_point_selector": ""
-      },
-      "None": {
-        "name": [
-          {
-            "action_type": "Provide name at account creation"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "socio-demographic"
-          },
-          {
-            "platform": "google"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "displayName": [
-          {
-            "action_type": "Name displayed on your Google profile"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "socio-demographic"
-          },
-          {
-            "platform": "google"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "emails": [
-          {
-            "action_type": "Email address associated to your Google account"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "contact"
-          },
-          {
-            "platform": "google"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "birthday": [
-          {
-            "action_type": "Birthday date shared with Google"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "socio-demographic"
-          },
-          {
-            "platform": "google"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ],
-        "gender": [
-          {
-            "action_type": "Gender information shared with Google"
-          },
-          {
-            "data_origin": "Volunteered"
-          },
-          {
-            "data_type": "socio-demographic"
-          },
-          {
-            "platform": "google"
-          },
-          {
-            "timestamp": ""
-          },
-          {
-            "details": ""
-          }
-        ]
-      }
+  "location/primary_location.json": {
+    "language": "en",
+    "comment": "This file contains the main location of the user inferred by Facebook based on elements like the current city indicated on the user profile, the device's IP address used to connect to his Facebook account, or device localisation settings",
+    "file_structure_properties": {
+      "depth": 2,
+      "has_single_data_point": true,
+      "has_multiple_nested_objects": false,
+      "single_data_point_selector": "city_region_pairs",
+      "nested_data_point_selector": ""
+    },
+    "primary_location_v2": {
+      "entries": [
+        {
+          "action_type": "Facebook inferred the current main city you live in"
+        },
+        {
+          "data_origin": "inferred"
+        },
+        {
+          "data_type": "location"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "city_region_pairs"
+        }
+      ]
     }
+  },
+  "location/primary_public_location.json": {
+    "language": "en",
+    "comment": "This file contains the main public location of the user inferred by facebook based on elements like the current city indicated on the user profile, the device's IP address used to connect to his facebook account, or device localisation settings",
+    "file_structure_properties": {
+      "depth": 2,
+      "has_single_data_point": true,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "city",
+      "nested_data_point_selector": ""
+    },
+    "primary_public_location_v2": {
+      "entries": [
+        {
+          "action_type": "Facebook inferred the current main city you live in"
+        },
+        {
+          "data_origin": "inferred"
+        },
+        {
+          "data_type": "location"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "city"
+        }
+      ]
+    }
+  },
+  "activity_messages/group_interactions.json": {
+    "language": "en",
+    "comment": "Volume of comments and posts shared in specific Facebook groups",
+    "file_structure_properties": {
+      "depth": 2,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "group_interactions_v2": {
+      "entries": [
+        {
+          "action_type": "Post or comment you have shared in a Facebook group"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "communications"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "name"
+        }
+      ]
+    }
+  },
+  "activity_messages/people_and_friends.json": {
+    "language": "en",
+    "comment": "Interactions of any type the user had with people on Facebook",
+    "file_structure_properties": {
+      "depth": 2,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "people_interactions_v2": {
+      "entries": [
+        {
+          "action_type": "Interaction (of any type) you had with other people on Facebook"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "social relationships"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "name"
+        }
+      ]
+    }
+  },
+  "apps_and_websites_off_of_facebook/your_off-facebook_activity.json": {
+    "language": "en",
+    "comment": "Information that companies and organizations share with facebook about the user interactions with them, such as visits to their applications or websites",
+    "file_structure_properties": {
+      "depth": 3,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": "events"
+    },
+    "off_facebook_activity_v2": {
+      "entries": [
+        {
+          "action_type": "Company that shared information with facebook about your activity on their website/application"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": "timestamp"
+        },
+        {
+          "details": "name"
+        }
+      ]
+    }
+  },
+  "ads_information/advertisers_using_your_activity_or_information.json": {
+    "language": "en",
+    "comment": "Advertisers who have added the user's name to an audience based on his information or his activity outside of Facebook. Advertisers can use or import a list of information that facebook compares to the user's profile to show or not show certain ads. The user can also be part of an audience based on their interactions with an advertiser's website, app or store.",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "custom_audiences_all_types_v2": {
+      "entries": [
+        {
+          "action_type": "Advertiser who has added your name to an audience based on your information or your activity outside of Facebook"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "technical"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "advertiser_name"
+        }
+      ]
+    }
+  },
+  "ads_information/advertisers_you've_interacted_with.json": {
+    "language": "en",
+    "comment": "Advertisers whose ads the user has recently seen or clicked on",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "history_v2": {
+      "entries": [
+        {
+          "action_type": "Advertisers whose ads you have recently seen or clicked on"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": "timestamp"
+        },
+        {
+          "details": "title"
+        }
+      ]
+    }
+  },
+  "other_logged_information/friend_peer_group.json": {
+    "language": "en",
+    "comment": "The stages in the lives of your friends on Facebook",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "friend_peer_group_v2": {
+      "entries": [
+        {
+          "action_type": "The current stage of life of your friends inferred by Facebook"
+        },
+        {
+          "data_origin": "inferred"
+        },
+        {
+          "data_type": "socio-demographic"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "other_logged_information/ads_interests.json": {
+    "language": "en",
+    "comment": "Interest categories and other categories that Facebook associates with the user based on the information he provided on Facebook and his activity. Advertisers may reach the user based on the interest categories ",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "topics_v2": {
+      "entries": [
+        {
+          "action_type": "Interest categories that Facebook associates with you based on the information he provided on Facebook and your activity"
+        },
+        {
+          "data_origin": "inferred"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "your_topics/your_topics.json": {
+    "language": "en",
+    "comment": "Areas of interest inferred by Facebook based on the user's activity",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "inferred_topics_v2": {
+      "entries": [
+        {
+          "action_type": "Topic inferred by Facebook as an area of interest based on your activity"
+        },
+        {
+          "data_origin": "inferred"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "posts/your_posts_1.json": {
+    "language": "en",
+    "comment": "Photos, videos, posts and statuses the user has shared on Facebook",
+    "file_structure_properties": {
+      "depth": 0,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "None": {
+      "entries": [
+        {
+          "action_type": "Content (photo, video, post) that you have shared on Facebook"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "communications"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": "timestamp"
+        },
+        {
+          "details": "title"
+        }
+      ]
+    }
+  },
+  "comments_and_reactions/comments.json": {
+    "language": "en",
+    "comment": "Comments shared by the user on Facebook",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "comments_v2": {
+      "entries": [
+        {
+          "action_type": "Comment you posted on Facebook"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "communications"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": "timestamp"
+        },
+        {
+          "details": "title"
+        }
+      ]
+    }
+  },
+  "your_interactions_on_facebook/recently_viewed.json": {
+    "language": "en",
+    "comment": "Content recently viewed by the user on Facebook (videos, posts, facebook profiles, off-facebook web pages, articles on facebook marketplace, ads)",
+    "file_structure_properties": {
+      "depth": 4,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "recently_viewed": {
+      "Vid\u00c3\u00a9os et programmes de Facebook Watch": [
+        {
+          "action_type": "Video you have seen on Facebook Watch"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "Publications qui ont \u00c3\u00a9t\u00c3\u00a9 affich\u00c3\u00a9es dans votre fil d\u00e2\u0080\u0099actualit\u00c3\u00a9.": [
+        {
+          "action_type": "Post that you have seen on your Facebook feed"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "Vid\u00c3\u00a9os que vous avez regard\u00c3\u00a9es": [
+        {
+          "action_type": "Video that you have watched on your Facebook feed"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "Pages web que vous avez consult\u00c3\u00a9es en dehors de Facebook": [
+        {
+          "action_type": "Web page you have consulted off Facebook"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "Personnes": [
+        {
+          "action_type": "Facebook profile you have visited after being suggested new friends connexions"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "Interactions Marketplace": [
+        {
+          "action_type": "Interaction with an article on Facebook marketplace"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "Recherches Marketplace": [
+        {
+          "action_type": "Search made on Facebook Marketplace"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "Rappels des publications enregistr\u00c3\u00a9es": [
+        {
+          "action_type": "Content you have saved on Facebook"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "Publicit\u00c3\u00a9s": [
+        {
+          "action_type": "Ad you have seen"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "Hangouts/Hangouts.json": {
+    "language": "en",
+    "comment": "Messages sent in Hangouts",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "None": {
+      "entries": [
+        {
+          "action_type": "Message sent in Hangouts"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "communications"
+        },
+        {
+          "platform": "google"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "Application Google Home/HomeApp.json": {
+    "language": "en",
+    "comment": "Information recorded about the user activity on Google Home app",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "Home App Data": {
+      "entries": [
+        {
+          "action_type": "Information recorded from your activity on Google Home app"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "google"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "Application Google Home/HomeHistory.json": {
+    "language": "en",
+    "comment": "Information recorded about the user activity on Google Home",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "None": {
+      "entries": [
+        {
+          "action_type": "Information recorded from your activity on Google Home"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "google"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "your_interactions_on_facebook/recently_visited.json": {
+    "language": "en",
+    "comment": "Facebook profiles, pages and events visited by the user.",
+    "file_structure_properties": {
+      "depth": 4,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "visited_things_v2": {
+      "Visites de profil": [
+        {
+          "action_type": "Facebook profile you have visited"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "Visites sur la Page": [
+        {
+          "action_type": "Facebook page you have visited"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "\u00c3\u0089v\u00c3\u00a8nements consult\u00c3\u00a9s": [
+        {
+          "action_type": "Facebook event you have visited"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "Groupes consult\u00c3\u00a9s": [
+        {
+          "action_type": "Facebook groups you have visited"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "Visites Marketplace": [
+        {
+          "action_type": "Visit you made on Facebook Marketplace"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "events/your_event_responses.json": {
+    "language": "en",
+    "comment": "Facebook Events invites joined and declined by the user",
+    "file_structure_properties": {
+      "depth": 2,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": true,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "event_responses_v2": {
+      "events_joined": [
+        {
+          "action_type": "Facebook Event invite you accepted"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "events_declined": [
+        {
+          "action_type": "Facebook Event invite you declined"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "events_interested": [
+        {
+          "action_type": "Facebook Event invite you showed interest for"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "facebook_accounts_center/accounts_center.json": {
+    "language": "en",
+    "comment": "Accounts linked to your Facebook profile",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "accounts_center_v2": {
+      "entries": [
+        {
+          "action_type": "Account linked to your Facebook profile"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "technical"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "service_name"
+        }
+      ]
+    }
+  },
+  "groups/your_posts_in_groups.json": {
+    "language": "en",
+    "comment": "Content posted by the user in Facebook groups",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "group_posts_v2": {
+      "entries": [
+        {
+          "action_type": "Content you posted in a Facebook group"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "communications"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "title"
+        }
+      ]
+    }
+  },
+  "posts/album/0.json": {
+    "language": "en",
+    "comment": "Cover photos posted by the user on Facebook",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": "photos"
+    },
+    "photos": {
+      "entries": [
+        {
+          "action_type": "Cover photo posted on Facebook"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "commmunications"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "title"
+        }
+      ]
+    }
+  },
+  "profile_information/profile_information.json": {
+    "language": "en",
+    "comment": "Information about the user",
+    "file_structure_properties": {
+      "depth": 2,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": true,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "profile_v2": {
+      "name": [
+        {
+          "action_type": "Provide name at account creation"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "contact"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "emails"
+        }
+      ],
+      "emails": [
+        {
+          "action_type": "Provide email at account creation"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "contact"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "emails"
+        }
+      ],
+      "birthday": [
+        {
+          "action_type": "Provide birth date at account creation"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "socio-demographic"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "emails"
+        }
+      ],
+      "gender": [
+        {
+          "action_type": "Specify your gender"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "socio-demographic"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "gender_option"
+        }
+      ],
+      "previous_names": [
+        {
+          "action_type": "Previous names you used on Facebook"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "contact"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "emails"
+        }
+      ],
+      "other_names": [
+        {
+          "action_type": "other names you used on Facebook"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "contact"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "emails"
+        }
+      ],
+      "current_city": [
+        {
+          "action_type": "Share your current city"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "location"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "name"
+        }
+      ],
+      "hometown": [
+        {
+          "action_type": "Share your hometown"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "location"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "name"
+        }
+      ],
+      "education_experiences": [
+        {
+          "action_type": "Share your education experience"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "socio-demographic"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "name"
+        }
+      ],
+      "work_experiences": [
+        {
+          "action_type": "Share your education experience"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "socio-demographic"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "name"
+        }
+      ],
+      "interested_in": [
+        {
+          "action_type": "Share your sex orientation"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "socio-demographic"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "name"
+        }
+      ],
+      "blood_info": [
+        {
+          "action_type": "Share your blood donner info"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "socio-demographic"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "name"
+        }
+      ],
+      "websites": [
+        {
+          "action_type": "Share your websites"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "contact"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "name"
+        }
+      ],
+      "phone_numbers": [
+        {
+          "action_type": "Share your phone number"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "contact"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "registration_timestamp": [
+        {
+          "action_type": "Facebook account creation date"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "technical"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "profile_uri": [
+        {
+          "action_type": "Unique identifier of your facebook profile"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "technical"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": "name"
+        }
+      ]
+    }
+  },
+  "activity_messages/events_interactions.json": {
+    "language": "en",
+    "comment": "Interactions with specific Facebook events (no more precise information",
+    "file_structure_properties": {
+      "depth": 2,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "events_interactions_v2": {
+      "entries": [
+        {
+          "action_type": "Interaction with Facebook event"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "apps_and_websites_off_of_facebook/apps_and_websites.json": {
+    "language": "en",
+    "comment": "Apps installed by the user on his mobile device",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "installed_apps_v2": {
+      "entries": [
+        {
+          "action_type": "Apps that have been installed on your mobile device"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "apps_and_websites_off_of_facebook/your_apps.json": {
+    "language": "en",
+    "comment": "The apps created by the user on Facebook Graph API",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "admined_apps_v2": {
+      "entries": [
+        {
+          "action_type": "App you have created on Facebook Graph API"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "technical"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "comments_and_reactions/posts_and_comments.json": {
+    "language": "en",
+    "comment": "Reactions (like, love, wow, haha) of the user on Facebook content",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "reactions_v2": {
+      "entries": [
+        {
+          "action_type": "Reaction (like, love, wow, haha) left on a Facebook content"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "events/event_invitations.json": {
+    "language": "en",
+    "comment": "Invitations to events received by the user",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "events_invited_v2": {
+      "entries": [
+        {
+          "action_type": "Invitation received for a Facebook event"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "facebook_gaming/instant_games.json": {
+    "language": "en",
+    "comment": "The games played by the user on Facebook",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "instant_games_played_v2": {
+      "entries": [
+        {
+          "action_type": "Game you played on Facebook"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "facebook_payments/payment_history.json": {
+    "language": "en",
+    "comment": "Payment history of the user on Facebook",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "payments_v2": {
+      "entries": [
+        {
+          "action_type": "Payment you made on Facebook"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "friends_and_followers/friend_requests_received.json": {
+    "language": "en",
+    "comment": "Friends requests received by the user on Facebook",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "received_requests_v2": {
+      "entries": [
+        {
+          "action_type": "Friend request received on Facebook"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "social relationships"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "friends_and_followers/friend_requests_sent.json": {
+    "language": "en",
+    "comment": "Friends requests sent by the user on Facebook",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "sent_requests_v2": {
+      "entries": [
+        {
+          "action_type": "Friend request sent on Facebook"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "social relationships"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "friends_and_followers/rejected_friend_requests.json": {
+    "language": "en",
+    "comment": "Friends requests rejected by the user on Facebook",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "rejected_requests_v2": {
+      "entries": [
+        {
+          "action_type": "Friend request rejected on Facebook"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "social relationships"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "friends_and_followers/who_you_follow.json": {
+    "language": "en",
+    "comment": "The people followed by the user on Facebook",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "following_v2": {
+      "entries": [
+        {
+          "action_type": "People you follow on Facebook"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "social relationships"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "groups/creator_badges.json": {
+    "language": "en",
+    "comment": "The Facebook groups created by the user",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "group_badges_v2": {
+      "entries": [
+        {
+          "action_type": "Facebook group you have created"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "social relationships"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "groups/your_comments_in_groups.json": {
+    "language": "en",
+    "comment": "The comments left by the user in Facebook groups",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "group_comments_v2": {
+      "entries": [
+        {
+          "action_type": "Comment you have left on a Facebook group"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "social relationships"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "groups/your_group_membership_activity.json": {
+    "language": "en",
+    "comment": "The Facebook groups joined by the user",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "groups_joined_v2": {
+      "entries": [
+        {
+          "action_type": "Facebook group you have joined"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "social relationships"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "groups/your_groups.json": {
+    "language": "en",
+    "comment": "The Facebook groups administrated by the user",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "groups_admined_v2": {
+      "entries": [
+        {
+          "action_type": "Facebook group on which you are the admin"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "social relationships"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "location/device_location.json": {
+    "language": "en",
+    "comment": "Location of the user inferred from the phone number of his device (country code)",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "phone_number_location_v2": {
+      "entries": [
+        {
+          "action_type": "Location of your device inferred from your phone number"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "location"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "location/timezone.json": {
+    "language": "en",
+    "comment": "The timezone of the user",
+    "file_structure_properties": {
+      "depth": 0,
+      "has_single_data_point": true,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "timezone_v2",
+      "nested_data_point_selector": ""
+    },
+    "timezone_v2": {
+      "entries": [
+        {
+          "action_type": "Your main timezone detected by facebook"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "technical"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "other_personal_information/your_address_books.json": {
+    "language": "en",
+    "comment": "The personal address books of the user",
+    "file_structure_properties": {
+      "depth": 2,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "address_book_v2": {
+      "address_book": [
+        {
+          "action_type": "Phone contact of your personal address books collected by Facebook"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "contact"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "pages/pages_you_follow.json": {
+    "language": "en",
+    "comment": "The Facebook pages followed by the user",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "pages_followed_v2": {
+      "entries": [
+        {
+          "action_type": "Facebook page you follow"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "social relationships"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "pages_you've_liked.json": {
+    "language": "en",
+    "comment": "The Facebook pages liked by the user",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "page_likes_v2": {
+      "entries": [
+        {
+          "action_type": "Facebook page you liked"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "social relationships"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "pages/pages_you've_unfollowed.json": {
+    "language": "en",
+    "comment": "The Facebook pages unfollowed by the user",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "pages_unfollowed_v2": {
+      "entries": [
+        {
+          "action_type": "Facebook page you have unfollowed"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "social relationships"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "pages/pages_you've_recommended.json": {
+    "language": "en",
+    "comment": "The Facebook pages recommended by the user",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "recommended_pages_v2": {
+      "entries": [
+        {
+          "action_type": "Facebook page you have recommended"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "social relationships"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "pages/your_pages.json": {
+    "language": "en",
+    "comment": "The Facebook pages created by the user",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "pages_v2": {
+      "entries": [
+        {
+          "action_type": "Facebook page you have created"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "posts/album/1.json": {
+    "language": "en",
+    "comment": "Profile photos posted by the user on Facebook",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": "photos"
+    },
+    "photos": {
+      "entries": [
+        {
+          "action_type": "Profile photo posted on Facebook"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "commmunications"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "posts/album/2.json": {
+    "language": "en",
+    "comment": "Photos posted by the user on his Facebook Journal",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": "photos"
+    },
+    "photos": {
+      "entries": [
+        {
+          "action_type": "Photo posted on your Facebook Journal"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "commmunications"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "posts/your_videos.json": {
+    "language": "en",
+    "comment": "Videos posted by the user on Facebook",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "videos_v2": {
+      "entries": [
+        {
+          "action_type": "Video you posted on Facebook"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "commmunications"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "privacy_checkup/interactions.json": {
+    "language": "en",
+    "comment": "Interactions of the user with Facebook Privacy Checkup",
+    "file_structure_properties": {
+      "depth": 2,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": true,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "privacy_checkup_interactions_v2": {
+      "privacy_checkup_topic": [
+        {
+          "action_type": "Interaction with Facebook Privacy Checkup"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "saved_items_and_collections/saved_items_and_collections.json": {
+    "language": "en",
+    "comment": "Content saved by the user on Facebook",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "saves_and_collections_v2": {
+      "entries": [
+        {
+          "action_type": "Content (post, video, etc.) you saved on Facebook"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "search/your_search_history.json": {
+    "language": "en",
+    "comment": "Search history of the user on Facebook",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "searches_v2": {
+      "entries": [
+        {
+          "action_type": "Person you have searched on Facebook"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "security_and_login_information/account_activity.json": {
+    "language": "en",
+    "comment": "Background activity of the user account (login, session updates, etc.)",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "account_activity_v2": {
+      "entries": [
+        {
+          "action_type": "Background activity of your Facebook account"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "technical"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "security_and_login_information/authorized_logins.json": {
+    "language": "en",
+    "comment": "Devices linked to the user Facebook account",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "recognized_devices_v2": {
+      "entries": [
+        {
+          "action_type": "Device linked to your Facebook account"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "technical"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "security_and_login_information/ip_address_activity.json": {
+    "language": "en",
+    "comment": "IP addresses used by the user",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "used_ip_address_v2": {
+      "entries": [
+        {
+          "action_type": "IP address you have used with your Facebook acount"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "technical"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "security_and_login_information/login_protection_data.json": {
+    "language": "en",
+    "comment": "IP addresses used by the user",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "login_protection_data_v2": {
+      "entries": [
+        {
+          "action_type": "IP address you have used with your Facebook acount"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "technical"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "security_and_login_information/logins_and_logouts.json": {
+    "language": "en",
+    "comment": "Login and Logout activity history of the user",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "account_accesses_v2": {
+      "entries": [
+        {
+          "action_type": "Login/Logout of your Facebook account"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "technical"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "security_and_login_information/mobile_devices.json": {
+    "language": "en",
+    "comment": "Mobile devices associated to the user Facebook account",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "devices_v2": {
+      "entries": [
+        {
+          "action_type": "Mobile device associated to your Facebook account"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "technical"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "security_and_login_information/where_you're_logged_in.json": {
+    "language": "en",
+    "comment": "Geolocation history of where the user logged in to his Facebook account",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "active_sessions_v2": {
+      "entries": [
+        {
+          "action_type": "Geolocation of where you logged in to your Facebook account"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "location"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "security_and_login_information/your_facebook_activity_history.json": {
+    "language": "en",
+    "comment": "TBD",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "devices_v2": {
+      "entries": [
+        {
+          "action_type": "TBD (your_facebook_activity_history.json)"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "location"
+        },
+        {
+          "platform": "facebook"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "Chrome/Autofill.json": {
+    "language": "en",
+    "comment": "Information registered by Google to fill forms automatically for the user",
+    "file_structure_properties": {
+      "depth": 3,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": true,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "Autofill Profile": {
+      "address_home_city": [
+        {
+          "action_type": "Shared the city where you live in with Google"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "socio demographic"
+        },
+        {
+          "platform": "google"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "address_home_street_address": [
+        {
+          "action_type": "Shared the address where you live in with Google"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "socio demographic"
+        },
+        {
+          "platform": "google"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "phone_home_whole_number": [
+        {
+          "action_type": "Shared your phone number with Google"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "contact"
+        },
+        {
+          "platform": "google"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "email_address": [
+        {
+          "action_type": "Shared your email address with Google"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "contact"
+        },
+        {
+          "platform": "google"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "Chrome/BrowserHistory.json": {
+    "language": "en",
+    "comment": "Browser history of the user on Chrome",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "Browser History": {
+      "entries": [
+        {
+          "action_type": "Website you have visited on Chrome"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "google"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "Chrome/Extensions.json": {
+    "language": "en",
+    "comment": "Web extensions installed by the user on Chrome",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": "Extensions"
+    },
+    "Extensions": {
+      "entries": [
+        {
+          "action_type": "Web Extension you have installed on Chrome"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "google"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "Google Play Store/Library.json": {
+    "language": "en",
+    "comment": "Games installed from Android Play Store",
+    "file_structure_properties": {
+      "depth": 0,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "None": {
+      "entries": [
+        {
+          "action_type": "Game installed from Android Play Store"
+        },
+        {
+          "data_origin": "observed"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "google"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "Maps (your places)/Saved Places.json": {
+    "language": "en",
+    "comment": "Places saved or flagged on Google Maps by the user",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": "features"
+    },
+    "features": {
+      "entries": [
+        {
+          "action_type": "Place you flagged or saved on Google Maps"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "location"
+        },
+        {
+          "platform": "google"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "Maps (your places)/Reviews.json": {
+    "language": "en",
+    "comment": "Reviews left by the user on Google Maps",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": false,
+      "data_point_selector": "",
+      "nested_data_point_selector": "features"
+    },
+    "features": {
+      "entries": [
+        {
+          "action_type": "Review left on Google Maps"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "behavioural"
+        },
+        {
+          "platform": "google"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "Profile/Profile.json": {
+    "language": "en",
+    "comment": "Profile information filled by the user when he registered on Google",
+    "file_structure_properties": {
+      "depth": 1,
+      "has_single_data_point": false,
+      "has_multiple_nested_objects": true,
+      "data_point_selector": "",
+      "nested_data_point_selector": ""
+    },
+    "None": {
+      "name": [
+        {
+          "action_type": "Provide name at account creation"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "socio-demographic"
+        },
+        {
+          "platform": "google"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "displayName": [
+        {
+          "action_type": "Name displayed on your Google profile"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "socio-demographic"
+        },
+        {
+          "platform": "google"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "emails": [
+        {
+          "action_type": "Email address associated to your Google account"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "contact"
+        },
+        {
+          "platform": "google"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "birthday": [
+        {
+          "action_type": "Birthday date shared with Google"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "socio-demographic"
+        },
+        {
+          "platform": "google"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ],
+      "gender": [
+        {
+          "action_type": "Gender information shared with Google"
+        },
+        {
+          "data_origin": "volunteered"
+        },
+        {
+          "data_type": "socio-demographic"
+        },
+        {
+          "platform": "google"
+        },
+        {
+          "timestamp": ""
+        },
+        {
+          "details": ""
+        }
+      ]
+    }
+  },
+  "Activité du journal des accès/Activités _ liste des services Google auxquels vos.csv": {
+    "language": "fr",
+    "comment": "list all historical google services the user access",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "Connect to a Google Service (Gmail, Drive, etc.)"
+      },
+      {
+        "data_origin": "observed"
+      },
+      {
+        "data_type": "behavioural"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+  "Access log activity/Activities – A list of Google services accessed by.csv": {
+    "language": "en",
+    "comment": "list all google services used by the suer",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "Connect to a Google Service (Gmail, Drive, etc.)"
+      },
+      {
+        "data_origin": "observed"
+      },
+      {
+        "data_type": "behavioural"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+  "Activité du journal des accès/Appareils _ liste des appareils (par exemple, Nest.csv": {
+    "language": "fr",
+    "comment": "List of devices used to access any Google Service linked to the user account",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "Use new device to access a Google service"
+      },
+      {
+        "data_origin": "observed"
+      },
+      {
+        "data_type": "technical"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+  "Access log activity/Devices – A list of devices (i.e. Nest, Pixel, iPh.csv": {
+    "language": "en",
+    "comment": "List of devices used to access any Google Service linked to the user account",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "Use new device to access a Google service"
+      },
+      {
+        "data_origin": "observed"
+      },
+      {
+        "data_type": "technical"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+  "Google Pay/Envois et demandes d_argent": {
+    "language": "fr",
+    "comment": "History of payment transactions made by the user with Google Pay",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "Perform transaction with Google Pay"
+      },
+      {
+        "data_origin": "observed"
+      },
+      {
+        "data_type": "transactional"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+  "Google Pay/Money remittances and requests/Money remittances and requests.csv": {
+    "language": "en",
+    "comment": "History of payment transactions made by the user with Google Pay",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "Perform transaction with Google Pay"
+      },
+      {
+        "data_origin": "observed"
+      },
+      {
+        "data_type": "transactional"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+  "Saved/Adresses vendeurs.csv": {
+    "language": "fr",
+    "comment": "list all saved place in Google Maps list (sellers address)",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "Save new place in Google Maps list (sellers address)"
+      },
+      {
+        "data_origin": "volunteered"
+      },
+      {
+        "data_type": "locational"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+  "Saved/Favourite places.csv": {
+    "language": "fr",
+    "comment": "List of address saved by the user under 'Favourite places' label on Google Maps",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "Save new place in Google Maps list 'Favourite address'"
+      },
+      {
+        "data_origin": "volunteered"
+      },
+      {
+        "data_type": "locational"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+  "Saved/Want to go.csv": {
+    "language": "fr",
+    "comment": "List of adresses saved by the user under 'Want to go' label on Google Maps.",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "Save new place in Google Maps list 'Want to go'"
+      },
+      {
+        "data_origin": "volunteered"
+      },
+      {
+        "data_type": "locational"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+  "YouTube et YouTube Music/subscriptions/subscriptions.csv": {
+    "language": "fr",
+    "comment": "YouTube channels to which the user subscribed",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "Subscribe to a new channel on YouTube"
+      },
+      {
+        "data_origin": "volunteered"
+      },
+      {
+        "data_type": "behavioural"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  },
+  "YouTube and YouTube Music/subscriptions/subscriptions.csv": {
+    "language": "en",
+    "comment": "YouTube channels to which the user subscribed",
+    "file_structure_properties": {
+      "header": true,
+      "delimiter": ","
+    },
+    "entries": [
+      {
+        "action_type": "Subscribe to a new channel on YouTube"
+      },
+      {
+        "data_origin": "volunteered"
+      },
+      {
+        "data_type": "behavioural"
+      },
+      {
+        "platform": "google"
+      },
+      {
+        "timestamp": ""
+      },
+      {
+        "details": ""
+      }
+    ]
+  }
 }
