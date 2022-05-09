@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 // MUI components
 import { Box } from '@mui/material';
+
 import {
   useTable,
   usePagination,
@@ -39,12 +40,12 @@ const Container = styled.div`
 `;
 
 const Styles = styled(Box)`
+  overflow: auto;
   margin: 2rem 0 2rem 0;
   background: var(--tab-clr-bg);
-  overflow-x: auto;
   border: solid 0.2rem var(--tab-clr-bg2);
   border-radius: var(--tab-radius);
-  width: 73rem;
+  width: 100%;
   height: auto;
   box-shadow: 1px 0 5px 0px #888;
 `;
@@ -61,6 +62,7 @@ const STHead = styled.thead`
 `;
 
 const STHeadTR = styled.tr`
+  width: 100%;
   background: var(--tab-clr-bg);
 `;
 
@@ -94,6 +96,15 @@ const STD = styled.td`
 
 const Pagination = styled(Box)`
   display: flex;
+  position: absolute;
+  width: 85%;
+  left: 18%;
+
+  @media screen and (min-width: 870px) and (max-width: 1200px) {
+    width: 97%;
+    left: 21%;
+    font-size: smaller;
+  }
 `;
 
 const PagiBox = styled.div`
@@ -103,6 +114,10 @@ const PagiBox = styled.div`
   width: 100%;
   height: auto;
 
+  @media screen and (min-width: 870px) and (max-width: 1200px) {
+    gap: 0.5rem;
+  }
+
   button {
     width: 2.3rem;
     height: auto;
@@ -111,6 +126,10 @@ const PagiBox = styled.div`
     font-weight: bold;
     border-radius: 0.3rem;
 
+    @media screen and (min-width: 870px) and (max-width: 1200px) {
+      width: 1.3rem;
+    }
+
     :disabled {
       background-color: var(--tab-clr-bg2);
       color: var(--tab-clr-bg3);
@@ -118,11 +137,16 @@ const PagiBox = styled.div`
   }
 
   input {
+    width: 2.3rem;
     text-align: center;
     background-color: #34495e;
     color: white;
     font-weight: bold;
     border-radius: 0.3rem;
+
+    @media screen and (min-width: 870px) and (max-width: 1200px) {
+      font-size: smaller;
+    }
   }
 
   & select {
@@ -140,6 +164,10 @@ const PagiBox = styled.div`
     cursor: pointer;
     border-radius: 0.3rem;
     height: 1.5em;
+
+    @media screen and (min-width: 870px) and (max-width: 1200px) {
+      font-size: smaller;
+    }
   }
 
   & option {
@@ -171,6 +199,7 @@ const SearchBox = styled(Box)`
 
 const SearchHeaderBox = styled(Box)`
   width: 0.1rem;
+  height: auto;
   input {
     outline: none;
     opacity: 0;
@@ -371,7 +400,7 @@ function Table({ columns, data }: { columns: any; data: any }) {
         Pagination can be built however you'd like. 
         This is just a very basic UI implementation:
       */}
-        <Pagination position="absolute" left="17%" width="92%">
+        <Pagination>
           <PagiBox>
             <Box>
               <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
@@ -484,16 +513,16 @@ export default function DataTable() {
             minWidth: '5.4rem',
           },
           {
-            Header: 'Interaction date',
-            accessor: 'interaction_date',
-            minWidth: '7.3rem',
-          },
-          {
             Header: 'Action',
             accessor: 'action',
             Filter: SelectColumnFilter,
             filter: 'includes',
             minWidth: '11.4rem',
+          },
+          {
+            Header: 'Interaction date',
+            accessor: 'interaction_date',
+            minWidth: '7.3rem',
           },
           {
             Header: 'Details',
