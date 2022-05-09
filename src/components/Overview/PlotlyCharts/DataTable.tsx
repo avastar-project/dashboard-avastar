@@ -14,8 +14,6 @@ import fakeData from '../../../fake-data/fake-data-agg.json';
 
 const Container = styled.div`
   display: flex;
-  width: auto;
-  height: 1.5em;
 
   & select {
     /* Reset Select */
@@ -31,6 +29,7 @@ const Container = styled.div`
     background-image: none;
     cursor: pointer;
     border-radius: 0.25em;
+    width: 3.8rem;
   }
 
   & option {
@@ -85,7 +84,7 @@ const STBodyTR = styled.tr`
 const STD = styled.td`
   padding: var(--tab-smSpacing);
   border: 1px solid var(--tab-clr-bg2);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 
   :first-child {
     font-weight: 500;
@@ -99,7 +98,7 @@ const Pagination = styled(Box)`
 
 const PagiBox = styled.div`
   display: flex;
-  gap:2rem;
+  gap: 2rem;
   align-items: center;
   width: 100%;
   height: auto;
@@ -171,10 +170,11 @@ const SearchBox = styled(Box)`
 `;
 
 const SearchHeaderBox = styled(Box)`
+  width: 0.1rem;
   input {
-    outline:none;
-    opacity:0;
-    cursor:default;
+    outline: none;
+    opacity: 0;
+    cursor: default;
     background-color: var(--tab-clr-bg3);
     border: 1px solid #34495e;
     font-weight: bold;
@@ -326,7 +326,7 @@ function Table({ columns, data }: { columns: any; data: any }) {
                     style={{ minWidth: column.minWidth }}
                     {...column.getHeaderProps()}
                   >
-                    <Box  mb={2}>{column.render('Header')}</Box>
+                    <Box mb={2}>{column.render('Header')}</Box>
                     {/* Render the columns filter UI */}
                     <Box>
                       {column.canFilter ? column.render('Filter') : null}
@@ -371,7 +371,7 @@ function Table({ columns, data }: { columns: any; data: any }) {
         Pagination can be built however you'd like. 
         This is just a very basic UI implementation:
       */}
-        <Pagination position="absolute" left='17%' width="92%">
+        <Pagination position="absolute" left="17%" width="92%">
           <PagiBox>
             <Box>
               <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
@@ -460,45 +460,45 @@ export default function DataTable() {
             accessor: 'platform',
             Filter: SelectColumnFilter,
             filter: 'includes',
-            minWidth: '5rem',
+            minWidth: '2.8rem',
           },
           {
             Header: 'Source',
             accessor: 'source',
             Filter: SelectColumnFilter,
             filter: 'includes',
-            minWidth: '20rem',
+            minWidth: '19rem',
           },
           {
             Header: 'Data type',
             accessor: 'data_type',
             Filter: SelectColumnFilter,
             filter: 'includes',
-            minWidth: '5rem',
+            minWidth: '1.5rem',
           },
           {
             Header: 'Data origin',
             accessor: 'data_origin',
             Filter: SelectColumnFilter,
             filter: 'includes',
-            minWidth: '5rem',
+            minWidth: '5.4rem',
           },
           {
             Header: 'Interaction date',
             accessor: 'interaction_date',
-            minWidth: '5rem',
+            minWidth: '7.3rem',
           },
           {
             Header: 'Action',
             accessor: 'action',
             Filter: SelectColumnFilter,
             filter: 'includes',
-            minWidth: '15rem',
+            minWidth: '11.4rem',
           },
           {
             Header: 'Details',
             accessor: 'details',
-            minWidth: '20rem',
+            minWidth: '17.27rem',
           },
         ],
       },
