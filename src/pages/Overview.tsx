@@ -5,7 +5,7 @@ import OverviewProfile from '../components/Overview/OverviewProfile';
 import TrackedChart from '../components/Overview/PlotlyCharts/TrackedChart';
 import DataCollectedChart from '../components/Overview/PlotlyCharts/DataCollectedChart';
 // import DataTable from '../components/Overview/PlotlyCharts/DataTable';
-import DataTable from '../components/Overview/PlotlyCharts/DataTableTest';
+import DataTable from '../components/Overview/PlotlyCharts/DataTable';
 import OverviewEducLink from '../components/Overview/OverviewEducLink';
 import MoreDataContainer from '../components/Overview/MoreDataContainer';
 // MUI components

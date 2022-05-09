@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+// MUI components
+import { Box } from '@mui/material';
 import {
   useTable,
   usePagination,
@@ -7,42 +9,186 @@ import {
   useGlobalFilter,
   useAsyncDebounce,
 } from 'react-table';
+
 import fakeData from '../../../fake-data/fake-data-agg.json';
 
-const Styles = styled.div`
-  padding: 1rem;
+const Container = styled.div`
+  display: flex;
+  width: auto;
+  height: 1.5em;
 
-  table {
-    border-spacing: 0;
-    border: 1px solid black;
+  & select {
+    /* Reset Select */
+    outline: 0;
+    border: 0;
+    box-shadow: none;
 
-    tr {
-      :last-child {
-        td {
-          border-bottom: 0;
-        }
-      }
-    }
-
-    th,
-    td {
-      margin: 0;
-      padding: 0.5rem;
-      border-bottom: 1px solid black;
-      border-right: 1px solid black;
-
-      :last-child {
-        border-right: 0;
-      }
-    }
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    color: #fff;
+    background-color: #34495e;
+    background-image: none;
+    cursor: pointer;
+    border-radius: 0.25em;
   }
 
-  .pagination {
-    padding: 0.5rem;
+  & option {
+    background-color: var(--tab-clr-bg2);
+    color: black;
   }
 `;
 
-// Define a default UI for filtering
+const Styles = styled(Box)`
+  margin: 2rem 0 2rem 0;
+  background: var(--tab-clr-bg);
+  overflow-x: auto;
+  border: solid 0.2rem var(--tab-clr-bg2);
+  border-radius: var(--tab-radius);
+  width: 73rem;
+  height: auto;
+  box-shadow: 1px 0 5px 0px #888;
+`;
+
+const STable = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+`;
+
+const STHead = styled.thead`
+  position: sticky;
+  z-index: 100;
+`;
+
+const STHeadTR = styled.tr`
+  background: var(--tab-clr-bg);
+`;
+
+const STH = styled.th`
+  padding: 0 var(--tab-smSpacing) var(--tab-smSpacing) var(--tab-smSpacing);
+  color: var(--tab-clr-text);
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 14px;
+  :not(:last-of-type) {
+    border-right: var(--tab-clr-bg2);
+  }
+`;
+
+const STBody = styled.tbody``;
+
+const STBodyTR = styled.tr`
+  background: var(--tab-clr-white);
+`;
+
+const STD = styled.td`
+  padding: var(--tab-smSpacing);
+  border: 1px solid var(--tab-clr-bg2);
+  font-size: 0.9rem;
+
+  :first-child {
+    font-weight: 500;
+    color: #34495e;
+  }
+`;
+
+const Pagination = styled(Box)`
+  display: flex;
+`;
+
+const PagiBox = styled.div`
+  display: flex;
+  gap:2rem;
+  align-items: center;
+  width: 100%;
+  height: auto;
+
+  button {
+    width: 2.3rem;
+    height: auto;
+    background-color: #34495e;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.3rem;
+
+    :disabled {
+      background-color: var(--tab-clr-bg2);
+      color: var(--tab-clr-bg3);
+    }
+  }
+
+  input {
+    text-align: center;
+    background-color: #34495e;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.3rem;
+  }
+
+  & select {
+    /* Reset Select */
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    color: #fff;
+    background-color: #34495e;
+    background-image: none;
+    cursor: pointer;
+    border-radius: 0.3rem;
+    height: 1.5em;
+  }
+
+  & option {
+    background-color: var(--tab-clr-bg2);
+    color: black;
+  }
+`;
+
+const SearchBox = styled(Box)`
+  padding: 1rem;
+
+  span {
+    padding: 0.3rem 0;
+    color: #34495e;
+  }
+
+  input {
+    margin-left: 0.5rem;
+    padding: 0.3rem 0;
+    background: var(--tab-clr-bg);
+    border: none;
+    border-bottom: 1px solid #34495e;
+
+    ::placeholder {
+      font-size: 0.9rem;
+    }
+  }
+`;
+
+const SearchHeaderBox = styled(Box)`
+  input {
+    outline:none;
+    opacity:0;
+    cursor:default;
+    background-color: var(--tab-clr-bg3);
+    border: 1px solid #34495e;
+    font-weight: bold;
+    border-radius: 0.3rem;
+    height: 1.5em;
+
+    ::placeholder {
+      padding-left: 0.5rem;
+      color: #34495e;
+      font-weight: normal;
+    }
+  }
+`;
+//Define a default UI for filtering
 function GlobalFilter({
   preGlobalFilteredRows,
   globalFilter,
@@ -55,21 +201,19 @@ function GlobalFilter({
   }, 200);
 
   return (
-    <span>
-      Search:{' '}
-      <input
-        value={value || ''}
-        onChange={(e) => {
-          setValue(e.target.value);
-          onChange(e.target.value);
-        }}
-        placeholder={`${count} records...`}
-        style={{
-          fontSize: '1.1rem',
-          border: '0',
-        }}
-      />
-    </span>
+    <SearchBox>
+      <span>
+        Search:{' '}
+        <input
+          value={value || ''}
+          onChange={(e) => {
+            setValue(e.target.value);
+            onChange(e.target.value);
+          }}
+          placeholder={`${count} records...`}
+        />
+      </span>
+    </SearchBox>
   );
 }
 
@@ -80,13 +224,15 @@ function DefaultColumnFilter({
   const count = preFilteredRows.length;
 
   return (
-    <input
-      value={filterValue || ''}
-      onChange={(e) => {
-        setFilter(e.target.value || undefined); // Set undefined to remove the filter entirely
-      }}
-      placeholder={`Search ${count} records...`}
-    />
+    <SearchHeaderBox>
+      <input
+        value={filterValue || ''}
+        onChange={(e) => {
+          setFilter(e.target.value || undefined); // Set undefined to remove the filter entirely
+        }}
+        placeholder={`Search ${count} records...`}
+      />
+    </SearchHeaderBox>
   );
 }
 
@@ -107,19 +253,21 @@ function SelectColumnFilter({
 
   // Render a multi-select box
   return (
-    <select
-      value={filterValue}
-      onChange={(e) => {
-        setFilter(e.target.value || undefined);
-      }}
-    >
-      <option value="">All</option>
-      {options.map((option: any, i: any) => (
-        <option key={i} value={option}>
-          {option}
-        </option>
-      ))}
-    </select>
+    <Container>
+      <select
+        value={filterValue}
+        onChange={(e) => {
+          setFilter(e.target.value || undefined);
+        }}
+      >
+        <option value="">All </option>
+        {options.map((option: any, i: any) => (
+          <option key={i} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+    </Container>
   );
 }
 
@@ -168,97 +316,133 @@ function Table({ columns, data }: { columns: any; data: any }) {
   // Render the UI for your table
   return (
     <>
-      <table {...getTableProps()}>
-        <thead>
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()}>
-                  {column.render('Header')}
-                  {/* Render the columns filter UI */}
-                  <div>{column.canFilter ? column.render('Filter') : null}</div>
-                </th>
-              ))}
+      <Box position="relative" pb={2}>
+        <STable {...getTableProps()}>
+          <STHead>
+            {headerGroups.map((headerGroup) => (
+              <STHeadTR {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((column) => (
+                  <STH
+                    style={{ minWidth: column.minWidth }}
+                    {...column.getHeaderProps()}
+                  >
+                    <Box  mb={2}>{column.render('Header')}</Box>
+                    {/* Render the columns filter UI */}
+                    <Box>
+                      {column.canFilter ? column.render('Filter') : null}
+                    </Box>
+                  </STH>
+                ))}
+              </STHeadTR>
+            ))}
+            <tr>
+              <th
+                colSpan={visibleColumns.length}
+                style={{
+                  textAlign: 'left',
+                }}
+              >
+                <GlobalFilter
+                  preGlobalFilteredRows={preGlobalFilteredRows}
+                  globalFilter={state.globalFilter}
+                  setGlobalFilter={setGlobalFilter}
+                />
+              </th>
             </tr>
-          ))}
-          <tr>
-            <th
-              colSpan={visibleColumns.length}
-              style={{
-                textAlign: 'left',
-              }}
-            >
-              <GlobalFilter
-                preGlobalFilteredRows={preGlobalFilteredRows}
-                globalFilter={state.globalFilter}
-                setGlobalFilter={setGlobalFilter}
-              />
-            </th>
-          </tr>
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {page.map((row, i) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => {
-                  return (
-                    <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-                  );
-                })}
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-      {/* 
+          </STHead>
+          <STBody {...getTableBodyProps()}>
+            {page.map((row, i) => {
+              prepareRow(row);
+              return (
+                <STBodyTR {...row.getRowProps()}>
+                  {row.cells.map((cell) => {
+                    return (
+                      <STD {...cell.getCellProps()}>{cell.render('Cell')}</STD>
+                    );
+                  })}
+                </STBodyTR>
+              );
+            })}
+          </STBody>
+        </STable>
+      </Box>
+      <Box pb={5}>
+        {/*
         Pagination can be built however you'd like. 
         This is just a very basic UI implementation:
       */}
-      <div className="pagination">
-        <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-          {'<<'}
-        </button>{' '}
-        <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-          {'<'}
-        </button>{' '}
-        <button onClick={() => nextPage()} disabled={!canNextPage}>
-          {'>'}
-        </button>{' '}
-        <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-          {'>>'}
-        </button>{' '}
-        <span>
-          Page{' '}
-          <strong>
-            {pageIndex + 1} of {pageOptions.length}
-          </strong>{' '}
-        </span>
-        <span>
-          | Go to page:{' '}
-          <input
-            type="number"
-            defaultValue={pageIndex + 1}
-            onChange={(e) => {
-              const page = e.target.value ? Number(e.target.value) - 1 : 0;
-              gotoPage(page);
-            }}
-            style={{ width: '100px' }}
-          />
-        </span>{' '}
-        <select
-          value={pageSize}
-          onChange={(e) => {
-            setPageSize(Number(e.target.value));
-          }}
-        >
-          {[10, 20, 30, 40, 50].map((pageSize) => (
-            <option key={pageSize} value={pageSize}>
-              Show {pageSize}
-            </option>
-          ))}
-        </select>
-      </div>
+        <Pagination position="absolute" left='17%' width="92%">
+          <PagiBox>
+            <Box>
+              <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+                {'<<'}
+              </button>{' '}
+            </Box>
+            <Box>
+              <button
+                onClick={() => previousPage()}
+                disabled={!canPreviousPage}
+              >
+                {'<'}
+              </button>{' '}
+            </Box>
+            <Box>
+              <span>
+                Page{' '}
+                <strong>
+                  {pageIndex + 1} of {pageOptions.length}
+                </strong>{' '}
+              </span>
+            </Box>
+            <Box>
+              <button onClick={() => nextPage()} disabled={!canNextPage}>
+                {'>'}
+              </button>{' '}
+            </Box>
+            <Box>
+              <button
+                onClick={() => gotoPage(pageCount - 1)}
+                disabled={!canNextPage}
+              >
+                {'>>'}
+              </button>{' '}
+            </Box>
+          </PagiBox>
+          <PagiBox>
+            <Box>
+              <select
+                value={pageSize}
+                onChange={(e) => {
+                  setPageSize(Number(e.target.value));
+                }}
+              >
+                {[10, 20, 30, 40, 50].map((pageSize) => (
+                  <option key={pageSize} value={pageSize}>
+                    Show {pageSize}
+                  </option>
+                ))}
+              </select>
+            </Box>
+            <Box>
+              <span>
+                | Go to page:{' '}
+                <input
+                  type="number"
+                  min="0"
+                  defaultValue={pageIndex + 1}
+                  onChange={(e) => {
+                    const page = e.target.value
+                      ? Number(e.target.value) - 1
+                      : 0;
+                    gotoPage(page);
+                  }}
+                  style={{ width: '2.5rem' }}
+                />
+              </span>{' '}
+            </Box>
+          </PagiBox>
+        </Pagination>
+      </Box>
     </>
   );
 }
@@ -276,38 +460,45 @@ export default function DataTable() {
             accessor: 'platform',
             Filter: SelectColumnFilter,
             filter: 'includes',
+            minWidth: '5rem',
           },
           {
             Header: 'Source',
             accessor: 'source',
             Filter: SelectColumnFilter,
             filter: 'includes',
+            minWidth: '20rem',
           },
           {
             Header: 'Data type',
             accessor: 'data_type',
             Filter: SelectColumnFilter,
             filter: 'includes',
+            minWidth: '5rem',
           },
           {
             Header: 'Data origin',
             accessor: 'data_origin',
             Filter: SelectColumnFilter,
             filter: 'includes',
+            minWidth: '5rem',
           },
           {
             Header: 'Interaction date',
             accessor: 'interaction_date',
+            minWidth: '5rem',
           },
           {
             Header: 'Action',
             accessor: 'action',
             Filter: SelectColumnFilter,
             filter: 'includes',
+            minWidth: '15rem',
           },
           {
             Header: 'Details',
             accessor: 'details',
+            minWidth: '20rem',
           },
         ],
       },
@@ -318,8 +509,10 @@ export default function DataTable() {
   const data = fakeData.data_classification;
 
   return (
-    <Styles>
-      <Table columns={columns} data={data} />
-    </Styles>
+    <Box>
+      <Styles>
+        <Table columns={columns} data={data} />
+      </Styles>
+    </Box>
   );
 }
