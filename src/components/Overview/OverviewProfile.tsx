@@ -117,7 +117,7 @@ export default function OverviewProfile() {
     {
       title: 'Years of data exchange',
       icon: HourglassIcon,
-      number: 11,
+      number: 11, // To be done once we have implemented timestamp and details in the smartParserJson and smartparserCsv
       tooltip: 'About years of data exchange',
     },
   ];
