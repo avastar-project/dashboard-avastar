@@ -21,6 +21,7 @@ const Article = styled.article`
   border-radius: 0.5rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
+  overflow:auto;
 `;
 
 const Header = styled.div`
