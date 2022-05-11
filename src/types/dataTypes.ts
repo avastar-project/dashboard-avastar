@@ -2,7 +2,7 @@ export interface AvastarParsedDataPoint {
   action_type: string; 
   data_origin: 'volunteered' | 'observed' | 'inferred' | 'other'; // suggesting by github copilot not sure if accurate
   data_type:
-    | 'locational'
+    | 'location'
     | 'behavioural'
     | 'communications'
     | 'technical'
