@@ -1,4 +1,4 @@
-{
+ {
   "data_classification": [
     {
       "platform": "Facebook",
@@ -52,7 +52,7 @@
       "data_origin": "Observed",
       "interaction_date": 1482393378938,
       "action": "Send location",
-      "details": {"latitudeE7": 519601402, "longitudeE7": 76004708}
+      "details": ["latitudeE7: 519601402", "longitudeE7: 76004708"]
     },
     {
       "platform": "Google",
@@ -61,7 +61,7 @@
       "data_origin": "Observed",
       "interaction_date": 1482393378938,
       "action": "Send location",
-      "details": {"latitudeE7": 519601402, "longitudeE7": 76004708}
+      "details": ["latitudeE7: 519601402", "longitudeE7: 76004708"]
     },
     {
       "platform": "Facebook",

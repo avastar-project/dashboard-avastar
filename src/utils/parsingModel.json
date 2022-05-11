@@ -1,7 +1,7 @@
 {
     "location/primary_location.json": {
       "language": "en",
-      "comment": "This file contains the main location of the user inferred by Facebook based on elements like the current city indicated on the user profile, the device's IP address used to connect to his Facebook account, or device localisation settings",
+      "comment": "This file contains the main location of the user inferred by facebook based on elements like the current city indicated on the user profile, the device's IP address used to connect to his facebook account, or device localisation settings",
       "file_structure_properties":{
         "depth": 2,
         "has_single_data_point": true,
@@ -12,7 +12,7 @@
       "primary_location_v2": {
         "entries": [
           {
-            "action_type": "Facebook inferred the current main city you live in"
+            "action_type": "facebook inferred the current main city you live in"
           },
           {
             "data_origin": "inferred"
@@ -45,7 +45,7 @@
       "primary_public_location_v2": {
         "entries": [
           {
-            "action_type": "Facebook inferred the current main city you live in"
+            "action_type": "facebook inferred the current main city you live in"
           },
           {
             "data_origin": "inferred"
@@ -67,7 +67,7 @@
     },
     "activity_messages/group_interactions.json": {
       "language": "en",
-      "comment": "Volume of comments and posts shared in specific Facebook groups",
+      "comment": "Volume of comments and posts shared in specific facebook groups",
       "file_structure_properties":{
         "depth": 2,
         "has_single_data_point": false,
@@ -78,7 +78,7 @@
       "group_interactions_v2": {
         "entries": [
           {
-            "action_type": "Post or comment you have shared in a Facebook group"
+            "action_type": "Post or comment you have shared in a facebook group"
           },
           {
             "data_origin": "observed"
@@ -100,7 +100,7 @@
     },
     "activity_messages/people_and_friends.json": {
       "language": "en",
-      "comment": "Interactions of any type the user had with people on Facebook",
+      "comment": "Interactions of any type the user had with people on facebook",
       "file_structure_properties":{
         "depth": 2,
         "has_single_data_point": false,
@@ -111,7 +111,7 @@
       "people_interactions_v2": {
         "entries": [
           {
-            "action_type": "Interaction (of any type) you had with other people on Facebook"
+            "action_type": "Interaction (of any type) you had with other people on facebook"
           },
           {
             "data_origin": "observed"
@@ -166,7 +166,7 @@
     },
     "ads_information/advertisers_using_your_activity_or_information.json": {
       "language": "en",
-      "comment": "Advertisers who have added the user's name to an audience based on his information or his activity outside of Facebook. Advertisers can use or import a list of information that facebook compares to the user's profile to show or not show certain ads. The user can also be part of an audience based on their interactions with an advertiser's website, app or store.",
+      "comment": "Advertisers who have added the user's name to an audience based on his information or his activity outside of facebook. Advertisers can use or import a list of information that facebook compares to the user's profile to show or not show certain ads. The user can also be part of an audience based on their interactions with an advertiser's website, app or store.",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -177,7 +177,7 @@
       "custom_audiences_all_types_v2": {
         "entries": [
           {
-            "action_type": "Advertiser who has added your name to an audience based on your information or your activity outside of Facebook"
+            "action_type": "Advertiser who has added your name to an audience based on your information or your activity outside of facebook"
           },
           {
             "data_origin": "observed"
@@ -232,7 +232,7 @@
     },
     "other_logged_information/friend_peer_group.json": {
       "language": "en",
-      "comment": "The stages in the lives of your friends on Facebook",
+      "comment": "The stages in the lives of your friends on facebook",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -243,7 +243,7 @@
       "friend_peer_group_v2": {
         "entries": [
           {
-            "action_type": "The current stage of life of your friends inferred by Facebook"
+            "action_type": "The current stage of life of your friends inferred by facebook"
           },
           {
             "data_origin": "inferred"
@@ -265,7 +265,7 @@
     },
     "other_logged_information/ads_interests.json": {
       "language": "en",
-      "comment": "Interest categories and other categories that Facebook associates with the user based on the information he provided on Facebook and his activity. Advertisers may reach the user based on the interest categories ",
+      "comment": "Interest categories and other categories that facebook associates with the user based on the information he provided on facebook and his activity. Advertisers may reach the user based on the interest categories ",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -276,7 +276,7 @@
       "topics_v2": {
         "entries": [
           {
-            "action_type": "Interest categories that Facebook associates with you based on the information he provided on Facebook and your activity"
+            "action_type": "Interest categories that facebook associates with you based on the information he provided on facebook and your activity"
           },
           {
             "data_origin": "inferred"
@@ -298,7 +298,7 @@
     },
     "your_topics/your_topics.json": {
       "language": "en",
-      "comment": "Areas of interest inferred by Facebook based on the user's activity",
+      "comment": "Areas of interest inferred by facebook based on the user's activity",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -309,7 +309,7 @@
       "inferred_topics_v2": {
         "entries": [
           {
-            "action_type": "Topic inferred by Facebook as an area of interest based on your activity"
+            "action_type": "Topic inferred by facebook as an area of interest based on your activity"
           },
           {
             "data_origin": "inferred"
@@ -331,7 +331,7 @@
     },
     "posts/your_posts_1.json": {
       "language": "en",
-      "comment": "Photos, videos, posts and statuses the user has shared on Facebook",
+      "comment": "Photos, videos, posts and statuses the user has shared on facebook",
       "file_structure_properties":{
         "depth": 0,
         "has_single_data_point": false,
@@ -342,7 +342,7 @@
       "None": {
         "entries": [
           {
-            "action_type": "Content (photo, video, post) that you have shared on Facebook"
+            "action_type": "Content (photo, video, post) that you have shared on facebook"
           },
           {
             "data_origin": "volunteered"
@@ -364,7 +364,7 @@
     },
     "comments_and_reactions/comments.json": {
       "language": "en",
-      "comment": "Comments shared by the user on Facebook",
+      "comment": "Comments shared by the user on facebook",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -375,7 +375,7 @@
       "comments_v2": {
         "entries": [
           {
-            "action_type": "Comment you posted on Facebook"
+            "action_type": "Comment you posted on facebook"
           },
           {
             "data_origin": "volunteered"
@@ -397,7 +397,7 @@
     },
     "your_interactions_on_facebook/recently_viewed.json": {
       "language": "en",
-      "comment": "Content recently viewed by the user on Facebook (videos, posts, facebook profiles, off-facebook web pages, articles on facebook marketplace, ads)",
+      "comment": "Content recently viewed by the user on facebook (videos, posts, facebook profiles, off-facebook web pages, articles on facebook marketplace, ads)",
       "file_structure_properties":{
         "depth": 4,
         "has_single_data_point": false,
@@ -406,9 +406,9 @@
         "nested_data_point_selector": ""
       },
       "recently_viewed": {
-        "Vid\u00c3\u00a9os et programmes de Facebook Watch": [
+        "Vid\u00c3\u00a9os et programmes de facebook Watch": [
           {
-            "action_type": "Video you have seen on Facebook Watch"
+            "action_type": "Video you have seen on facebook Watch"
           },
           {
             "data_origin": "observed"
@@ -428,7 +428,7 @@
         ],
         "Publications qui ont \u00c3\u00a9t\u00c3\u00a9 affich\u00c3\u00a9es dans votre fil d\u00e2\u0080\u0099actualit\u00c3\u00a9.": [
           {
-            "action_type": "Post that you have seen on your Facebook feed"
+            "action_type": "Post that you have seen on your facebook feed"
           },
           {
             "data_origin": "observed"
@@ -448,7 +448,7 @@
         ],
         "Vid\u00c3\u00a9os que vous avez regard\u00c3\u00a9es": [
           {
-            "action_type": "Video that you have watched on your Facebook feed"
+            "action_type": "Video that you have watched on your facebook feed"
           },
           {
             "data_origin": "observed"
@@ -466,9 +466,9 @@
             "details": ""
           }
         ],
-        "Pages web que vous avez consult\u00c3\u00a9es en dehors de Facebook": [
+        "Pages web que vous avez consult\u00c3\u00a9es en dehors de facebook": [
           {
-            "action_type": "Web page you have consulted off Facebook"
+            "action_type": "Web page you have consulted off facebook"
           },
           {
             "data_origin": "observed"
@@ -488,7 +488,7 @@
         ],
         "Personnes": [
           {
-            "action_type": "Facebook profile you have visited after being suggested new friends connexions"
+            "action_type": "facebook profile you have visited after being suggested new friends connexions"
           },
           {
             "data_origin": "observed"
@@ -508,7 +508,7 @@
         ],
         "Interactions Marketplace": [
           {
-            "action_type": "Interaction with an article on Facebook marketplace"
+            "action_type": "Interaction with an article on facebook marketplace"
           },
           {
             "data_origin": "observed"
@@ -528,7 +528,7 @@
         ],
         "Recherches Marketplace": [
           {
-            "action_type": "Search made on Facebook Marketplace"
+            "action_type": "Search made on facebook Marketplace"
           },
           {
             "data_origin": "observed"
@@ -548,7 +548,7 @@
         ],
         "Rappels des publications enregistr\u00c3\u00a9es": [
           {
-            "action_type": "Content you have saved on Facebook"
+            "action_type": "Content you have saved on facebook"
           },
           {
             "data_origin": "observed"
@@ -620,9 +620,9 @@
         ]
       }  
     },
-    "Application Google Home/HomeApp.json": {
+    "Application google Home/HomeApp.json": {
       "language": "en",
-      "comment": "Information recorded about the user activity on Google Home app",
+      "comment": "Information recorded about the user activity on google Home app",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -633,7 +633,7 @@
       "Home App Data": {
         "entries": [
           {
-            "action_type": "Information recorded from your activity on Google Home app"
+            "action_type": "Information recorded from your activity on google Home app"
           },
           {
             "data_origin": "observed"
@@ -653,9 +653,9 @@
         ]
       }  
     },
-    "Application Google Home/HomeHistory.json": {
+    "Application google Home/HomeHistory.json": {
       "language": "en",
-      "comment": "Information recorded about the user activity on Google Home",
+      "comment": "Information recorded about the user activity on google Home",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -666,7 +666,7 @@
       "None": {
         "entries": [
           {
-            "action_type": "Information recorded from your activity on Google Home"
+            "action_type": "Information recorded from your activity on google Home"
           },
           {
             "data_origin": "observed"
@@ -688,7 +688,7 @@
     },
     "your_interactions_on_facebook/recently_visited.json": {
       "language": "en",
-      "comment": "Facebook profiles, pages and events visited by the user.",
+      "comment": "facebook profiles, pages and events visited by the user.",
       "file_structure_properties":{
         "depth": 4,
         "has_single_data_point": false,
@@ -699,7 +699,7 @@
       "visited_things_v2": {
         "Visites de profil": [
           {
-            "action_type": "Facebook profile you have visited"
+            "action_type": "facebook profile you have visited"
           },
           {
             "data_origin": "observed"
@@ -719,7 +719,7 @@
         ],
         "Visites sur la Page": [
           {
-            "action_type": "Facebook page you have visited"
+            "action_type": "facebook page you have visited"
           },
           {
             "data_origin": "observed"
@@ -739,7 +739,7 @@
         ],
         "\u00c3\u0089v\u00c3\u00a8nements consult\u00c3\u00a9s": [
           {
-            "action_type": "Facebook event you have visited"
+            "action_type": "facebook event you have visited"
           },
           {
             "data_origin": "observed"
@@ -759,7 +759,7 @@
         ],
         "Groupes consult\u00c3\u00a9s": [
           {
-            "action_type": "Facebook groups you have visited"
+            "action_type": "facebook groups you have visited"
           },
           {
             "data_origin": "observed"
@@ -779,7 +779,7 @@
         ],
         "Visites Marketplace": [
           {
-            "action_type": "Visit you made on Facebook Marketplace"
+            "action_type": "Visit you made on facebook Marketplace"
           },
           {
             "data_origin": "observed"
@@ -801,7 +801,7 @@
     },
     "events/your_event_responses.json": {
       "language": "en",
-      "comment": "Facebook Events invites joined and declined by the user",
+      "comment": "facebook Events invites joined and declined by the user",
       "file_structure_properties":{
         "depth": 2,
         "has_single_data_point": false,
@@ -812,7 +812,7 @@
       "event_responses_v2": {
         "events_joined": [
           {
-            "action_type": "Facebook Event invite you accepted"
+            "action_type": "facebook Event invite you accepted"
           },
           {
             "data_origin": "observed"
@@ -832,7 +832,7 @@
         ],
         "events_declined": [
           {
-            "action_type": "Facebook Event invite you declined"
+            "action_type": "facebook Event invite you declined"
           },
           {
             "data_origin": "observed"
@@ -852,7 +852,7 @@
         ],
         "events_interested": [
           {
-            "action_type": "Facebook Event invite you showed interest for"
+            "action_type": "facebook Event invite you showed interest for"
           },
           {
             "data_origin": "observed"
@@ -874,7 +874,7 @@
     },
     "facebook_accounts_center/accounts_center.json": {
       "language": "en",
-      "comment": "Accounts linked to your Facebook profile",
+      "comment": "Accounts linked to your facebook profile",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -885,7 +885,7 @@
       "accounts_center_v2": {
         "entries": [
           {
-            "action_type": "Account linked to your Facebook profile"
+            "action_type": "Account linked to your facebook profile"
           },
           {
             "data_origin": "volunteered"
@@ -907,7 +907,7 @@
     },
     "groups/your_posts_in_groups.json": {
       "language": "en",
-      "comment": "Content posted by the user in Facebook groups",
+      "comment": "Content posted by the user in facebook groups",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -918,7 +918,7 @@
       "group_posts_v2": {
         "entries": [
           {
-            "action_type": "Content you posted in a Facebook group"
+            "action_type": "Content you posted in a facebook group"
           },
           {
             "data_origin": "volunteered"
@@ -940,7 +940,7 @@
     },  
     "posts/album/0.json": {
       "language": "en",
-      "comment": "Cover photos posted by the user on Facebook",
+      "comment": "Cover photos posted by the user on facebook",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -951,7 +951,7 @@
       "photos": {
         "entries": [
           {
-            "action_type": "Cover photo posted on Facebook"
+            "action_type": "Cover photo posted on facebook"
           },
           {
             "data_origin": "volunteered"
@@ -1064,7 +1064,7 @@
         ],
         "previous_names": [
           {
-            "action_type": "Previous names you used on Facebook"
+            "action_type": "Previous names you used on facebook"
           },
           {
             "data_origin": "volunteered"
@@ -1084,7 +1084,7 @@
         ],
         "other_names": [
           {
-            "action_type": "Other names you used on Facebook"
+            "action_type": "other names you used on facebook"
           },
           {
             "data_origin": "volunteered"
@@ -1264,7 +1264,7 @@
         ],
         "registration_timestamp": [
           {
-            "action_type": "Facebook account creation date"
+            "action_type": "facebook account creation date"
           },
           {
             "data_origin": "observed"
@@ -1306,7 +1306,7 @@
     },
     "activity_messages/events_interactions.json": {
       "language": "en",
-      "comment": "Interactions with specific Facebook events (no more precise information",
+      "comment": "Interactions with specific facebook events (no more precise information",
       "file_structure_properties":{
         "depth": 2,
         "has_single_data_point": false,
@@ -1317,7 +1317,7 @@
       "events_interactions_v2": {
         "entries": [
           {
-            "action_type": "Interaction with Facebook event"
+            "action_type": "Interaction with facebook event"
           },
           {
             "data_origin": "observed"
@@ -1372,7 +1372,7 @@
     },
     "apps_and_websites_off_of_facebook/your_apps.json": {
       "language": "en",
-      "comment": "The apps created by the user on Facebook Graph API",
+      "comment": "The apps created by the user on facebook Graph API",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -1383,7 +1383,7 @@
       "admined_apps_v2": {
         "entries": [
           {
-            "action_type": "App you have created on Facebook Graph API"
+            "action_type": "App you have created on facebook Graph API"
           },
           {
             "data_origin": "volunteered"
@@ -1405,7 +1405,7 @@
     },
     "comments_and_reactions/posts_and_comments.json": {
       "language": "en",
-      "comment": "Reactions (like, love, wow, haha) of the user on Facebook content",
+      "comment": "Reactions (like, love, wow, haha) of the user on facebook content",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -1416,7 +1416,7 @@
       "reactions_v2": {
         "entries": [
           {
-            "action_type": "Reaction (like, love, wow, haha) left on a Facebook content"
+            "action_type": "Reaction (like, love, wow, haha) left on a facebook content"
           },
           {
             "data_origin": "observed"
@@ -1449,7 +1449,7 @@
       "events_invited_v2": {
         "entries": [
           {
-            "action_type": "Invitation received for a Facebook event"
+            "action_type": "Invitation received for a facebook event"
           },
           {
             "data_origin": "observed"
@@ -1471,7 +1471,7 @@
     },
     "facebook_gaming/instant_games.json": {
       "language": "en",
-      "comment": "The games played by the user on Facebook",
+      "comment": "The games played by the user on facebook",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -1482,7 +1482,7 @@
       "instant_games_played_v2": {
         "entries": [
           {
-            "action_type": "Game you played on Facebook"
+            "action_type": "Game you played on facebook"
           },
           {
             "data_origin": "observed"
@@ -1504,7 +1504,7 @@
     },
     "facebook_payments/payment_history.json": {
       "language": "en",
-      "comment": "Payment history of the user on Facebook",
+      "comment": "Payment history of the user on facebook",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -1515,7 +1515,7 @@
       "payments_v2": {
         "entries": [
           {
-            "action_type": "Payment you made on Facebook"
+            "action_type": "Payment you made on facebook"
           },
           {
             "data_origin": "observed"
@@ -1537,7 +1537,7 @@
     },
     "friends_and_followers/friend_requests_received.json": {
       "language": "en",
-      "comment": "Friends requests received by the user on Facebook",
+      "comment": "Friends requests received by the user on facebook",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -1548,7 +1548,7 @@
       "received_requests_v2": {
         "entries": [
           {
-            "action_type": "Friend request received on Facebook"
+            "action_type": "Friend request received on facebook"
           },
           {
             "data_origin": "observed"
@@ -1570,7 +1570,7 @@
     },
     "friends_and_followers/friend_requests_sent.json": {
       "language": "en",
-      "comment": "Friends requests sent by the user on Facebook",
+      "comment": "Friends requests sent by the user on facebook",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -1581,7 +1581,7 @@
       "sent_requests_v2": {
         "entries": [
           {
-            "action_type": "Friend request sent on Facebook"
+            "action_type": "Friend request sent on facebook"
           },
           {
             "data_origin": "observed"
@@ -1603,7 +1603,7 @@
     },
     "friends_and_followers/rejected_friend_requests.json": {
       "language": "en",
-      "comment": "Friends requests rejected by the user on Facebook",
+      "comment": "Friends requests rejected by the user on facebook",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -1614,7 +1614,7 @@
       "rejected_requests_v2": {
         "entries": [
           {
-            "action_type": "Friend request rejected on Facebook"
+            "action_type": "Friend request rejected on facebook"
           },
           {
             "data_origin": "observed"
@@ -1636,7 +1636,7 @@
     },
     "friends_and_followers/who_you_follow.json": {
       "language": "en",
-      "comment": "The people followed by the user on Facebook",
+      "comment": "The people followed by the user on facebook",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -1647,7 +1647,7 @@
       "following_v2": {
         "entries": [
           {
-            "action_type": "People you follow on Facebook"
+            "action_type": "People you follow on facebook"
           },
           {
             "data_origin": "observed"
@@ -1669,7 +1669,7 @@
     },
     "groups/creator_badges.json": {
       "language": "en",
-      "comment": "The Facebook groups created by the user",
+      "comment": "The facebook groups created by the user",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -1680,7 +1680,7 @@
       "group_badges_v2": {
         "entries": [
           {
-            "action_type": "Facebook group you have created"
+            "action_type": "facebook group you have created"
           },
           {
             "data_origin": "observed"
@@ -1702,7 +1702,7 @@
     },
     "groups/your_comments_in_groups.json": {
       "language": "en",
-      "comment": "The comments left by the user in Facebook groups",
+      "comment": "The comments left by the user in facebook groups",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -1713,7 +1713,7 @@
       "group_comments_v2": {
         "entries": [
           {
-            "action_type": "Comment you have left on a Facebook group"
+            "action_type": "Comment you have left on a facebook group"
           },
           {
             "data_origin": "observed"
@@ -1735,7 +1735,7 @@
     },
     "groups/your_group_membership_activity.json": {
       "language": "en",
-      "comment": "The Facebook groups joined by the user",
+      "comment": "The facebook groups joined by the user",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -1746,7 +1746,7 @@
       "groups_joined_v2": {
         "entries": [
           {
-            "action_type": "Facebook group you have joined"
+            "action_type": "facebook group you have joined"
           },
           {
             "data_origin": "observed"
@@ -1768,7 +1768,7 @@
     },
     "groups/your_groups.json": {
       "language": "en",
-      "comment": "The Facebook groups administrated by the user",
+      "comment": "The facebook groups administrated by the user",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -1779,7 +1779,7 @@
       "groups_admined_v2": {
         "entries": [
           {
-            "action_type": "Facebook group on which you are the admin"
+            "action_type": "facebook group on which you are the admin"
           },
           {
             "data_origin": "observed"
@@ -1801,7 +1801,7 @@
     },
     "location/device_location.json": {
       "language": "en",
-      "comment": "Location of the user inferred from the phone number of his device (country code)",
+      "comment": "location of the user inferred from the phone number of his device (country code)",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -1812,7 +1812,7 @@
       "phone_number_location_v2": {
         "entries": [
           {
-            "action_type": "Location of your device inferred from your phone number"
+            "action_type": "location of your device inferred from your phone number"
           },
           {
             "data_origin": "observed"
@@ -1878,7 +1878,7 @@
       "address_book_v2": {
         "address_book": [
           {
-            "action_type": "Phone contact of your personal address books collected by Facebook"
+            "action_type": "Phone contact of your personal address books collected by facebook"
           },
           {
             "data_origin": "observed"
@@ -1900,7 +1900,7 @@
     },
     "pages/pages_you_follow.json": {
       "language": "en",
-      "comment": "The Facebook pages followed by the user",
+      "comment": "The facebook pages followed by the user",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -1911,7 +1911,7 @@
       "pages_followed_v2": {
         "entries": [
           {
-            "action_type": "Facebook page you follow"
+            "action_type": "facebook page you follow"
           },
           {
             "data_origin": "observed"
@@ -1933,7 +1933,7 @@
     },
     "pages_you've_liked.json": {
       "language": "en",
-      "comment": "The Facebook pages liked by the user",
+      "comment": "The facebook pages liked by the user",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -1944,7 +1944,7 @@
       "page_likes_v2": {
         "entries": [
           {
-            "action_type": "Facebook page you liked"
+            "action_type": "facebook page you liked"
           },
           {
             "data_origin": "observed"
@@ -1966,7 +1966,7 @@
     },
     "pages/pages_you've_unfollowed.json": {
       "language": "en",
-      "comment": "The Facebook pages unfollowed by the user",
+      "comment": "The facebook pages unfollowed by the user",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -1977,7 +1977,7 @@
       "pages_unfollowed_v2": {
         "entries": [
           {
-            "action_type": "Facebook page you have unfollowed"
+            "action_type": "facebook page you have unfollowed"
           },
           {
             "data_origin": "observed"
@@ -1999,7 +1999,7 @@
     },
     "pages/pages_you've_recommended.json": {
       "language": "en",
-      "comment": "The Facebook pages recommended by the user",
+      "comment": "The facebook pages recommended by the user",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -2010,7 +2010,7 @@
       "recommended_pages_v2": {
         "entries": [
           {
-            "action_type": "Facebook page you have recommended"
+            "action_type": "facebook page you have recommended"
           },
           {
             "data_origin": "observed"
@@ -2032,7 +2032,7 @@
     },
     "pages/your_pages.json": {
       "language": "en",
-      "comment": "The Facebook pages created by the user",
+      "comment": "The facebook pages created by the user",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -2043,7 +2043,7 @@
       "pages_v2": {
         "entries": [
           {
-            "action_type": "Facebook page you have created"
+            "action_type": "facebook page you have created"
           },
           {
             "data_origin": "observed"
@@ -2065,7 +2065,7 @@
     },
     "posts/album/1.json": {
       "language": "en",
-      "comment": "Profile photos posted by the user on Facebook",
+      "comment": "Profile photos posted by the user on facebook",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -2076,7 +2076,7 @@
       "photos": {
         "entries": [
           {
-            "action_type": "Profile photo posted on Facebook"
+            "action_type": "Profile photo posted on facebook"
           },
           {
             "data_origin": "volunteered"
@@ -2098,7 +2098,7 @@
     },
     "posts/album/2.json": {
       "language": "en",
-      "comment": "Photos posted by the user on his Facebook Journal",
+      "comment": "Photos posted by the user on his facebook Journal",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -2109,7 +2109,7 @@
       "photos": {
         "entries": [
           {
-            "action_type": "Photo posted on your Facebook Journal"
+            "action_type": "Photo posted on your facebook Journal"
           },
           {
             "data_origin": "volunteered"
@@ -2131,7 +2131,7 @@
     },
     "posts/your_videos.json": {
       "language": "en",
-      "comment": "Videos posted by the user on Facebook",
+      "comment": "Videos posted by the user on facebook",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -2142,7 +2142,7 @@
       "videos_v2": {
         "entries": [
           {
-            "action_type": "Video you posted on Facebook"
+            "action_type": "Video you posted on facebook"
           },
           {
             "data_origin": "volunteered"
@@ -2164,7 +2164,7 @@
     },
     "privacy_checkup/interactions.json": {
       "language": "en",
-      "comment": "Interactions of the user with Facebook Privacy Checkup",
+      "comment": "Interactions of the user with facebook Privacy Checkup",
       "file_structure_properties":{
         "depth": 2,
         "has_single_data_point": false,
@@ -2175,7 +2175,7 @@
       "privacy_checkup_interactions_v2": {
         "privacy_checkup_topic": [
           {
-            "action_type": "Interaction with Facebook Privacy Checkup"
+            "action_type": "Interaction with facebook Privacy Checkup"
           },
           {
             "data_origin": "volunteered"
@@ -2197,7 +2197,7 @@
     },
     "saved_items_and_collections/saved_items_and_collections.json": {
       "language": "en",
-      "comment": "Content saved by the user on Facebook",
+      "comment": "Content saved by the user on facebook",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -2208,7 +2208,7 @@
       "saves_and_collections_v2": {
         "entries": [
           {
-            "action_type": "Content (post, video, etc.) you saved on Facebook"
+            "action_type": "Content (post, video, etc.) you saved on facebook"
           },
           {
             "data_origin": "volunteered"
@@ -2230,7 +2230,7 @@
     },
     "search/your_search_history.json": {
       "language": "en",
-      "comment": "Search history of the user on Facebook",
+      "comment": "Search history of the user on facebook",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -2241,7 +2241,7 @@
       "searches_v2": {
         "entries": [
           {
-            "action_type": "Person you have searched on Facebook"
+            "action_type": "Person you have searched on facebook"
           },
           {
             "data_origin": "observed"
@@ -2274,7 +2274,7 @@
       "account_activity_v2": {
         "entries": [
           {
-            "action_type": "Background activity of your Facebook account"
+            "action_type": "Background activity of your facebook account"
           },
           {
             "data_origin": "observed"
@@ -2296,7 +2296,7 @@
     },
     "security_and_login_information/authorized_logins.json": {
       "language": "en",
-      "comment": "Devices linked to the user Facebook account",
+      "comment": "Devices linked to the user facebook account",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -2307,7 +2307,7 @@
       "recognized_devices_v2": {
         "entries": [
           {
-            "action_type": "Device linked to your Facebook account"
+            "action_type": "Device linked to your facebook account"
           },
           {
             "data_origin": "observed"
@@ -2340,7 +2340,7 @@
       "used_ip_address_v2": {
         "entries": [
           {
-            "action_type": "IP address you have used with your Facebook acount"
+            "action_type": "IP address you have used with your facebook acount"
           },
           {
             "data_origin": "observed"
@@ -2373,7 +2373,7 @@
       "login_protection_data_v2": {
         "entries": [
           {
-            "action_type": "IP address you have used with your Facebook acount"
+            "action_type": "IP address you have used with your facebook acount"
           },
           {
             "data_origin": "observed"
@@ -2406,7 +2406,7 @@
       "account_accesses_v2": {
         "entries": [
           {
-            "action_type": "Login/Logout of your Facebook account"
+            "action_type": "Login/Logout of your facebook account"
           },
           {
             "data_origin": "observed"
@@ -2428,7 +2428,7 @@
     },
     "security_and_login_information/mobile_devices.json": {
       "language": "en",
-      "comment": "Mobile devices associated to the user Facebook account",
+      "comment": "Mobile devices associated to the user facebook account",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -2439,7 +2439,7 @@
       "devices_v2": {
         "entries": [
           {
-            "action_type": "Mobile device associated to your Facebook account"
+            "action_type": "Mobile device associated to your facebook account"
           },
           {
             "data_origin": "observed"
@@ -2461,7 +2461,7 @@
     },
     "security_and_login_information/where_you're_logged_in.json": {
       "language": "en",
-      "comment": "Geolocation history of where the user logged in to his Facebook account",
+      "comment": "Geolocation history of where the user logged in to his facebook account",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -2472,7 +2472,7 @@
       "active_sessions_v2": {
         "entries": [
           {
-            "action_type": "Geolocation of where you logged in to your Facebook account"
+            "action_type": "Geolocation of where you logged in to your facebook account"
           },
           {
             "data_origin": "observed"
@@ -2527,7 +2527,7 @@
     },
     "Chrome/Autofill.json": {
       "language": "en",
-      "comment": "Information registered by Google to fill forms automatically for the user",
+      "comment": "Information registered by google to fill forms automatically for the user",
       "file_structure_properties":{
         "depth": 3,
         "has_single_data_point": false,
@@ -2538,13 +2538,13 @@
       "Autofill Profile": {
         "address_home_city": [
           {
-            "action_type": "Shared the city where you live in with Google"
+            "action_type": "Shared the city where you live in with google"
           },
           {
             "data_origin": "volunteered"
           },
           {
-            "data_type": "socio-demographic"
+            "data_type": "socio demographic"
           },
           {
             "platform": "google"
@@ -2558,13 +2558,13 @@
         ],
         "address_home_street_address": [
           {
-            "action_type": "Shared the address where you live in with Google"
+            "action_type": "Shared the address where you live in with google"
           },
           {
             "data_origin": "volunteered"
           },
           {
-            "data_type": "socio-demographic"
+            "data_type": "socio demographic"
           },
           {
             "platform": "google"
@@ -2578,7 +2578,7 @@
         ],
         "phone_home_whole_number": [
           {
-            "action_type": "Shared your phone number with Google"
+            "action_type": "Shared your phone number with google"
           },
           {
             "data_origin": "volunteered"
@@ -2598,7 +2598,7 @@
         ],
         "email_address": [
           {
-            "action_type": "Shared your email address with Google"
+            "action_type": "Shared your email address with google"
           },
           {
             "data_origin": "volunteered"
@@ -2684,7 +2684,7 @@
         ]
       }
     },
-    "Google Play Store/Library.json": {
+    "google Play Store/Library.json": {
       "language": "en",
       "comment": "Games installed from Android Play Store",
       "file_structure_properties":{
@@ -2719,7 +2719,7 @@
     },
     "Maps (your places)/Saved Places.json": {
       "language": "en",
-      "comment": "Places saved or flagged on Google Maps by the user",
+      "comment": "Places saved or flagged on google Maps by the user",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -2730,7 +2730,7 @@
       "features": {
         "entries": [
           {
-            "action_type": "Place you flagged or saved on Google Maps"
+            "action_type": "Place you flagged or saved on google Maps"
           },
           {
             "data_origin": "volunteered"
@@ -2752,7 +2752,7 @@
     },
     "Maps (your places)/Reviews.json": {
       "language": "en",
-      "comment": "Reviews left by the user on Google Maps",
+      "comment": "Reviews left by the user on google Maps",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -2763,7 +2763,7 @@
       "features": {
         "entries": [
           {
-            "action_type": "Review left on Google Maps"
+            "action_type": "Review left on google Maps"
           },
           {
             "data_origin": "volunteered"
@@ -2785,7 +2785,7 @@
     },
     "Profile/Profile.json": {
       "language": "en",
-      "comment": "Profile information filled by the user when he registered on Google",
+      "comment": "Profile information filled by the user when he registered on google",
       "file_structure_properties":{
         "depth": 1,
         "has_single_data_point": false,
@@ -2816,7 +2816,7 @@
         ],
         "displayName": [
           {
-            "action_type": "Name displayed on your Google profile"
+            "action_type": "Name displayed on your google profile"
           },
           {
             "data_origin": "volunteered"
@@ -2836,7 +2836,7 @@
         ],
         "emails": [
           {
-            "action_type": "Email address associated to your Google account"
+            "action_type": "Email address associated to your google account"
           },
           {
             "data_origin": "volunteered"
@@ -2856,7 +2856,7 @@
         ],
         "birthday": [
           {
-            "action_type": "Birthday date shared with Google"
+            "action_type": "Birthday date shared with google"
           },
           {
             "data_origin": "volunteered"
@@ -2876,7 +2876,7 @@
         ],
         "gender": [
           {
-            "action_type": "Gender information shared with Google"
+            "action_type": "Gender information shared with google"
           },
           {
             "data_origin": "volunteered"
