@@ -7,13 +7,11 @@ export default class Links extends React.PureComponent<{
   links: Types.link[];
 }> {
   render() {
-    let links;
-    if (this.props.links) {
-      const links = this.props.links.map((link: Types.link) => {
-        return <Link key={`link-${uuidv4()}`} link={link} />;
-      });
-    }
+    const links = this.props.links.map((link: Types.link) => {
+      return <Link key={`link-${uuidv4()}`} link={link} />;
+    });
+    console.log(links);
 
-    return <g>{links}</g>;
+    return <g className="links">{links}</g>;
   }
 }
