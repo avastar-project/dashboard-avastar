@@ -38,37 +38,37 @@ export default function OverviewProfile() {
   let entitiesAccessedDataProfile = 0;
   for (let i = 0; i < avastarParsedData.length; i++) {
     if (
-      avastarParsedData[i].action_type ==
+      avastarParsedData[i].action_type ===
       'Advertiser who has added your name to an audience based on your information or your activity outside of Facebook'
     ) {
       entitiesAccessedDataProfile++;
     } else if (
-      avastarParsedData[i].action_type ==
+      avastarParsedData[i].action_type ===
       'Advertiser who has added your name to an audience based on your information or your activity outside of Facebook'
     ) {
       entitiesAccessedDataProfile++;
     } else if (
-      avastarParsedData[i].action_type ==
+      avastarParsedData[i].action_type ===
       'Advertisers whose ads you have recently seen or clicked on'
     ) {
       entitiesAccessedDataProfile++;
     } else if (
-      avastarParsedData[i].action_type ==
+      avastarParsedData[i].action_type ===
       'Company that shared information with facebook about your activity on their website/application'
     ) {
       entitiesAccessedDataProfile++;
     } else if (
-      avastarParsedData[i].action_type ==
+      avastarParsedData[i].action_type ===
       'Apps that have been installed on your mobile device'
     ) {
       entitiesAccessedDataProfile++;
     } else if (
-      avastarParsedData[i].action_type ==
+      avastarParsedData[i].action_type ===
       'Account linked to your Facebook profile'
     ) {
       entitiesAccessedDataProfile++;
     } else if (
-      avastarParsedData[i].action_type == 'Game you played on Facebook'
+      avastarParsedData[i].action_type === 'Game you played on Facebook'
     ) {
       entitiesAccessedDataProfile++;
     }
@@ -77,17 +77,17 @@ export default function OverviewProfile() {
   let devicesSharingdata = 0;
   for (let i = 0; i < avastarParsedData.length; i++) {
     if (
-      avastarParsedData[i].action_type ==
+      avastarParsedData[i].action_type ===
       'Device linked to your Facebook account'
     ) {
       devicesSharingdata++;
     } else if (
-      avastarParsedData[i].action_type ==
+      avastarParsedData[i].action_type ===
       'Mobile device associated to your Facebook account'
     ) {
       devicesSharingdata++;
     } else if (
-      avastarParsedData[i].action_type ==
+      avastarParsedData[i].action_type ===
       'Use new device to access a Google service'
     ) {
       devicesSharingdata++;

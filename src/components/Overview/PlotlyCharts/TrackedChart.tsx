@@ -28,25 +28,25 @@ export default function TrackedChart() {
   let contractualCount = 0;
   let otherCount = 0;
   for (let i = 0; i < avastarParsedData.length; i++) {
-    if (avastarParsedData[i].data_type == 'location') {
+    if (avastarParsedData[i].data_type === 'location') {
       locationalCount++;
-    } else if (avastarParsedData[i].data_type == 'behavioural') {
+    } else if (avastarParsedData[i].data_type === 'behavioural') {
       behaviouralCount++;
-    } else if (avastarParsedData[i].data_type == 'communications') {
+    } else if (avastarParsedData[i].data_type === 'communications') {
       communicationCount++;
-    } else if (avastarParsedData[i].data_type == 'technical') {
+    } else if (avastarParsedData[i].data_type === 'technical') {
       technicalCount++;
-    } else if (avastarParsedData[i].data_type == 'social relationships') {
+    } else if (avastarParsedData[i].data_type === 'social relationships') {
       socialRelationshipCount++;
-    } else if (avastarParsedData[i].data_type == 'contact') {
+    } else if (avastarParsedData[i].data_type === 'contact') {
       contactCount++;
-    } else if (avastarParsedData[i].data_type == 'transactional') {
+    } else if (avastarParsedData[i].data_type === 'transactional') {
       transactionalCount++;
-    } else if (avastarParsedData[i].data_type == 'financial') {
+    } else if (avastarParsedData[i].data_type === 'financial') {
       financialCount++;
-    } else if (avastarParsedData[i].data_type == 'socio-demographic') {
+    } else if (avastarParsedData[i].data_type === 'socio-demographic') {
       socioDemographicCount++;
-    } else if (avastarParsedData[i].data_type == 'contractual') {
+    } else if (avastarParsedData[i].data_type === 'contractual') {
       contractualCount++;
     } else {
       otherCount++;

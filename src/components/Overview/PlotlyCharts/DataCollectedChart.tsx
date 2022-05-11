@@ -21,11 +21,11 @@ export default function DataCollectedChart() {
   let inferredCount = 0;
   let otherCount = 0;
   for (let i = 0; i < avastarParsedData.length; i++) {
-    if (avastarParsedData[i].data_origin == 'observed') {
+    if (avastarParsedData[i].data_origin === 'observed') {
       observedCount++;
-    } else if (avastarParsedData[i].data_origin == 'volunteered') {
+    } else if (avastarParsedData[i].data_origin === 'volunteered') {
       volunteeredCount++;
-    } else if (avastarParsedData[i].data_origin == 'inferred') {
+    } else if (avastarParsedData[i].data_origin === 'inferred') {
       inferredCount++;
     } else {
       otherCount++;
