@@ -14,7 +14,7 @@ import {
   AvastarParsedDataPoint,
   AvastarParsedDataPointState,
 } from '../types/dataTypes';
-import NetworksWidget from '../components/Overview/D3ForceGraph/NetworkWidget';
+import NetworkWidget from '../components/Overview/D3ForceGraph/NetworkWidget';
 
 // Styled-components
 const Container = styled(Grid)`
@@ -75,7 +75,7 @@ export default function Overview() {
               // isSearch on true to see the associated search bar
               isSearch={true}
             />
-            <NetworksWidget />
+            <NetworkWidget />
             <MoreDataContainer />
           </Main>
         </Grid>
