@@ -17,7 +17,7 @@ export default class Circle extends React.PureComponent<{ node: Types.node }> {
         fill={this.props.node.fillColor as string}
         ref={(ref: SVGCircleElement) => (this.ref = ref)}
       >
-        <title>{this.props.node.name}</title>
+        <title>{this.props.node.id}</title>
       </circle>
     );
   }

@@ -5,9 +5,12 @@ import { Types } from './types';
 
 export default class Circles extends React.PureComponent<ICirclesProps> {
   render() {
-    const nodes = this.props.nodes.map((node: Types.node) => {
-      return <Circle key={`node-${uuidv4()}`} node={node} />;
-    });
+    let nodes;
+    if (this.props.nodes) {
+      const nodes = this.props.nodes.map((node: Types.node) => {
+        return <Circle key={`node-${uuidv4()}`} node={node} />;
+      });
+    }
     return <g> {nodes} </g>;
   }
 }

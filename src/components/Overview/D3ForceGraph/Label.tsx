@@ -13,7 +13,7 @@ export default class Label extends React.PureComponent<{ node: Types.node }> {
     return (
       // eslint-disable-next-line no-return-assign
       <text ref={(ref: SVGTextElement) => (this.ref = ref)}>
-        {this.props.node.name}
+        {this.props.node.id}
       </text>
     );
   }

@@ -1,6 +1,6 @@
 export namespace Types {
     export type node = {
-      name: string;
+      id: string;
       group: number;
       radiusSize: number;
       fillColor: string;

@@ -1,10 +1,11 @@
 import * as React from 'react';
 import Links from './Links';
+import './ForceGraph.scss';
 import Circles from './Circles';
 import Labels from './Labels';
-import { Types } from './types';
 import { Simulation, SimulationNodeDatum } from 'd3';
 import * as d3 from 'd3';
+import { Types } from './types';
 
 export default class ForceGraph extends React.PureComponent<
   IForceGraphProps,
@@ -21,12 +22,16 @@ export default class ForceGraph extends React.PureComponent<
 
   componentDidMount() {
     this.simulatePositions();
+    this.drawTicks();
   }
 
   componentDidUpdate(
     prevProps: Readonly<IForceGraphProps>,
     prevState: ForceGraphState
-  ) {}
+  ) {
+    this.simulatePositions();
+    this.drawTicks();
+  }
 
   simulatePositions = () => {
     this.simulation = d3
@@ -37,7 +42,7 @@ export default class ForceGraph extends React.PureComponent<
         d3
           .forceLink()
           .id((d) => {
-            return (d as Types.node).name;
+            return (d as Types.node).id;
           })
           .distance(this.props.linkDistance)
           .strength(this.props.linkStrength)
@@ -50,6 +55,48 @@ export default class ForceGraph extends React.PureComponent<
 
     // @ts-ignore
     this.simulation.force('link').links(this.state.clonedData?.links);
+  };
+
+  drawTicks = () => {
+    const nodes = d3.selectAll('.node');
+    const links = d3.selectAll('.link');
+    const labels = d3.selectAll('.label');
+
+    if (this.simulation) {
+      this.simulation
+        .nodes(this.state.clonedData?.nodes as SimulationNodeDatum[])
+        .on('tick', onTickHandler);
+    }
+
+    function onTickHandler() {
+      links
+        .attr('x1', (d) => {
+          return (d as { source: Types.point }).source.x;
+        })
+        .attr('y1', (d) => {
+          return (d as { source: Types.point }).source.y;
+        })
+        .attr('x2', (d) => {
+          return (d as { target: Types.point }).target.x;
+        })
+        .attr('y2', (d) => {
+          return (d as { target: Types.point }).target.y;
+        });
+      nodes
+        .attr('cx', (d) => {
+          return (d as Types.point).x;
+        })
+        .attr('cy', (d) => {
+          return (d as Types.point).y;
+        });
+      labels
+        .attr('x', (d) => {
+          return (d as Types.point).x + 5;
+        })
+        .attr('y', (d) => {
+          return (d as Types.point).y + 5;
+        });
+    }
   };
 
   render() {
@@ -67,6 +114,7 @@ export default class ForceGraph extends React.PureComponent<
 
     return (
       <svg
+        className="container"
         x={0}
         y={0}
         width={width}
