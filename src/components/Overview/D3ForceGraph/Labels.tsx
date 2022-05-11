@@ -5,7 +5,7 @@ import { Types } from './types';
 
 export default class Labels extends React.PureComponent<ILabelsProps> {
   render() {
-    const labels = this.props.nodes.map((node) => {
+    const labels = this.props.nodes.map((node: Types.node) => {
       return <Label key={`label-${uuidv4()}`} node={node} />;
     });
     console.log(labels);
