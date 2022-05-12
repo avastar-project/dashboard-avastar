@@ -1,5 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSelector, shallowEqual } from 'react-redux';
+import {
+  AvastarParsedDataPoint,
+  AvastarParsedDataPointState,
+} from '../../../types/dataTypes';
 // MUI components
 import { Box } from '@mui/material';
 
@@ -10,8 +15,6 @@ import {
   useGlobalFilter,
   useAsyncDebounce,
 } from 'react-table';
-
-import fakeData from '../../../fake-data/fake-data-agg.json';
 
 const Container = styled.div`
   display: flex;
@@ -477,6 +480,12 @@ function Table({ columns, data }: { columns: any; data: any }) {
 }
 
 export default function DataTable() {
+  // Fetch data from State
+  const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
+    (state: AvastarParsedDataPointState) => state.avastarParsedData,
+    shallowEqual
+  );
+
   const columns = React.useMemo(
     () => [
       {
@@ -535,7 +544,7 @@ export default function DataTable() {
     []
   );
 
-  const data = fakeData.data_classification;
+  const data = avastarParsedData;
 
   return (
     <Box>
