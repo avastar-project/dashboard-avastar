@@ -523,7 +523,7 @@ export default function DataTable() {
           },
           {
             Header: 'Action',
-            accessor: 'action',
+            accessor: 'action_type',
             Filter: SelectColumnFilter,
             filter: 'includes',
             minWidth: '11.4rem',
