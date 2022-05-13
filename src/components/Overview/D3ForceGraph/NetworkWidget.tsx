@@ -1,6 +1,6 @@
 import ForceGraph from './ForceGraph';
 import testFile from '../../../fake-data/force-directed-graph-fake-data.json';
-import './NetworkWidget.scss';
+// import './NetworkWidget.scss';
 import { Types } from '../D3ForceGraph/types';
 import { useEffect } from 'react';
 

@@ -9,7 +9,7 @@ import { Types } from './types';
 
 export default class ForceGraph extends React.PureComponent<
   IForceGraphProps,
-  ForceGraphState
+  IForceGraphState
 > {
   private simulation: Simulation<SimulationNodeDatum, undefined> | undefined;
 
@@ -25,10 +25,7 @@ export default class ForceGraph extends React.PureComponent<
     this.drawTicks();
   }
 
-  componentDidUpdate(
-    prevProps: Readonly<IForceGraphProps>,
-    prevState: ForceGraphState
-  ) {
+  componentDidUpdate(prevProps: IForceGraphProps, prevState: IForceGraphState) {
     this.simulatePositions();
     this.drawTicks();
   }
@@ -140,6 +137,6 @@ interface IForceGraphProps {
   centerHeight: number;
 }
 
-interface ForceGraphState {
+interface IForceGraphState {
   clonedData: Types.dataObject;
 }
