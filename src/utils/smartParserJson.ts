@@ -1,5 +1,5 @@
 /**
- * @name smartParser
+ * @name smartParserJson
  * @description Function to read, parse and classfify the personal data files uploaded by the user.
  * @param {string} filePath path of the file streamed, coming from the Zip folder uploaded in the DropZone component.
  * @param {object} fileContent variable that stores the content of the file streamed, coming from the Zip folder uploaded in the DropZone component.
@@ -11,6 +11,7 @@ import parsingModel from './parsingModel.json';
 
 // Import function to get a formatted error message when an exception occurs in the smarParser
 import { getErrorMessage } from './getErrorMessage';
+import { isJSONFile } from './isJsonFile';
 import { AvastarParsedDataPoint, getEmptyDataPoint } from '../types/dataTypes';
 import { getKeys } from './getKeys';
 
@@ -41,7 +42,7 @@ const getParsedDataPoint = (
   return parsedDataPoint;
 };
 
-export const smartParser = (
+export const smartParserJson = (
   filePath: string,
   fileContent: any
 ): AvastarParsedDataPoint[] => {
@@ -49,11 +50,11 @@ export const smartParser = (
     // Initialisation of the array that will store the properties describing each the data point scanned. It will be the input of the data visualisations showed in the Overview, Facebook and Google pages.
     const smartData: AvastarParsedDataPoint[] = [];
 
-    // Check the type of file uploaded (.csv, .xlsx, .json, etc.)
-    if (filePath.split('.')[1] === 'json') {
+    // Check the type of file uploaded (.json)
+    if (isJSONFile(filePath)) {
       // Check if the file is in the parsingModel
       for (let i = 0; i < parsingModelfilePathModel.length; i++) {
-        if (filePath.endsWith(parsingModelfilePathModel[i])) {
+        if (filePath.split('/').pop() === parsingModelfilePathModel[i].split('/').pop()) {
           const filePathModel = parsingModelfilePathModel[i];
           // Get depth of the file scanned. The depth is defined manually (cf. parsingModel) from the maximum number of steps it takes to get to the targeted object.
           const fileDepth = (parsingModel as any)[filePathModel][

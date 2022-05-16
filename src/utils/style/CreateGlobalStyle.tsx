@@ -26,8 +26,26 @@ const StyledGlobalStyle = createGlobalStyle`
         
         /* Shadows */
         --bx-shdw-light: 0 0 5px 0 var(--clr-dark);
+
+        /* Table-styled */
+        --tab-radius:8px;
+        --tab-mdSpacing:16px;
+        --tab-smSpacing:8px;
+        --tab-lgSpacing:32px;
+        --tab-sm: 37.5em;
+        --tab-md: 48em;
+        --tab-lg: 64em;
+        --tab-boxShadow:
+            0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11), 0 8px 16px rgba(0, 0, 0, 0.11);
+            
+        --tab-clr-white:rgb(255, 255, 255);
+        --tab-clr-bg: rgb(245, 245, 245);
+        --tab-clr-bg2: rgb(237, 237, 237);
+        --tab-clr-bg3: rgb(214, 214, 214);
+        --tab-clr-text: rgb(33, 33, 33);
+        --tab-clr-primary: rgb(224, 132, 209);
     }
-    
+
     /* CSS Rules for entire document element */
     * {
         box-sizing: border-box;
