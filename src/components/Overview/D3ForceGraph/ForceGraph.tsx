@@ -26,6 +26,7 @@ export default class ForceGraph extends React.PureComponent<
   }
 
   componentDidUpdate(prevProps: IForceGraphProps, prevState: IForceGraphState) {
+    console.log('test1');
     this.simulatePositions();
     this.drawTicks();
   }
@@ -105,8 +106,8 @@ export default class ForceGraph extends React.PureComponent<
       });
     }
 
-    const initialTranslate = [0, 0];
     const initialScale = 1;
+    const initialTranslate = [0, 0];
     const { width, height } = this.props;
 
     return (
@@ -118,9 +119,11 @@ export default class ForceGraph extends React.PureComponent<
         height={height}
         transform={`translate(${initialTranslate[0]}, ${initialTranslate[1]})scale(${initialScale})`}
       >
-        <Links links={this.state.clonedData?.links} />
-        <Circles nodes={this.state.clonedData?.nodes} />
-        <Labels nodes={this.state.clonedData?.nodes} />
+        <g>
+          <Links links={this.state.clonedData?.links as Types.link[]} />
+          <Circles nodes={this.state.clonedData?.nodes as Types.node[]} />
+          <Labels nodes={this.state.clonedData?.nodes as Types.node[]} />
+        </g>
       </svg>
     );
   }
