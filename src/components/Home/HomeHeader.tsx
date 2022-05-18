@@ -3,9 +3,6 @@
  * the first block of the Homepage page.
  */
 
-// img
-import AvastarLogo from '../../assets/logo-horizontal-text-print-dark.png';
-
 // utils styled
 import styled from 'styled-components';
 
@@ -22,11 +19,6 @@ const Container = styled(Grid)`
   }
 `;
 
-const BrandLogo = styled.img`
-  width: 10%;
-  height: auto;
-`;
-
 const Headline1 = styled(Typography)``;
 
 const BackgroundImage = styled.p`
@@ -40,7 +32,6 @@ const Headline2 = styled(Typography)`
 export default function Header() {
   return (
     <Container alignItems="center">
-      <BrandLogo src={AvastarLogo} alt="Avastar logo" />
       <Grid container alignItems="center" spacing={6}>
         <Grid item xs={8}>
           <Headline1 variant="h2">

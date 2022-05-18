@@ -3,7 +3,7 @@ import Homepage from './pages/Homepage';
 import Overview from './pages/Overview';
 import Facebook from './pages/Facebook';
 import Google from './pages/Google';
-import MainNav from './layouts/MainNav';
+import HeaderNav from './layouts/MainNav';
 import Header from './layouts/Header';
 import { Routes, Route } from 'react-router-dom';
 // Utils
@@ -23,7 +23,7 @@ const Main = styled.main`
 export default function App() {
   return (
     <Container className="container">
-      <MainNav />
+      <HeaderNav />
       <Main>
         <Header />
         <Routes>
