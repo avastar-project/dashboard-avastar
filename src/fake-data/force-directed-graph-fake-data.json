@@ -1,0 +1,167 @@
+
+{
+  "nodes": [{
+    "id": "Facebook",
+    "group": 1
+  },
+  {
+    "id": "Google",
+    "group": 2
+  },
+  {
+    "id": "Heetch",
+    "group": 3
+  },
+  {
+    "id": "Amazon",
+    "group": 3
+  },
+  {
+    "id": "Gens de Confiance",
+    "group": 3
+  },
+  {
+    "id": "UM Australia",
+    "group": 3
+  },
+  {
+    "id": "Zapier",
+    "group": 3
+  },
+  {
+    "id": "Figma",
+    "group": 3
+  },
+  {
+    "id": "Calendly",
+    "group": 3
+  },
+  {
+    "id": "Lydia",
+    "group": 3
+  },
+  {
+    "id": "YouTube",
+    "group": 4
+  },
+  {
+    "id": "Dashlane",
+    "group": 5
+  },
+  {
+    "id": "uBlock Origin",
+    "group": 6
+  },
+  {
+    "id": "You",
+    "group": 7
+  }
+
+],
+"links": [{
+    "source": "You",
+    "target": "Facebook",
+    "value": 10
+  },
+  {
+    "source": "You",
+    "target": "Google",
+    "value": 5
+  },
+  {
+    "source": "You",
+    "target": "Heetch",
+    "value": 3
+  },
+  {
+    "source": "Facebook",
+    "target": "Heetch",
+    "value": 3
+  },
+  {
+    "source": "You",
+    "target": "Amazon",
+    "value": 3
+  },
+  {
+    "source": "Facebook",
+    "target": "Amazon",
+    "value": 3
+  },
+  {
+    "source": "You",
+    "target": "Gens de Confiance",
+    "value": 3
+  },
+  {
+    "source": "Facebook",
+    "target": "Gens de Confiance",
+    "value": 3
+  },
+  {
+    "source": "You",
+    "target": "UM Australia",
+    "value": 3
+  },
+  {
+    "source": "Facebook",
+    "target": "UM Australia",
+    "value": 3
+  },
+  {
+    "source": "You",
+    "target": "Zapier",
+    "value": 3
+  },
+  {
+    "source": "Facebook",
+    "target": "Zapier",
+    "value": 3
+  },
+  {
+    "source": "You",
+    "target": "Figma",
+    "value": 3
+  },
+  {
+    "source": "Facebook",
+    "target": "Figma",
+    "value": 3
+  },
+  {
+    "source": "You",
+    "target": "Calendly",
+    "value": 3
+  },
+  {
+    "source": "Facebook",
+    "target": "Calendly",
+    "value": 3
+  },
+  {
+    "source": "You",
+    "target": "Lydia",
+    "value": 3
+  },
+  {
+    "source": "You",
+    "target": "YouTube",
+    "value": 3
+  },
+  {
+    "source": "YouTube",
+    "target": "Google",
+    "value": 3
+  },
+  {
+    "source": "You",
+    "target": "Dashlane",
+    "value": 3
+  },
+  {
+    "source": "You",
+    "target": "uBlock Origin",
+    "value": 3
+  }
+]
+}
