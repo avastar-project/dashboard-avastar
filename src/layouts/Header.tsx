@@ -34,11 +34,13 @@ const navLinks: NavLinksHeader[] = [
 
 // Styled-components
 const StyledHeader = styled.header`
+  position:fixed;
+  width:100%;
   background-color: var(--clr-darkest);
   display: flex;
   justify-content: space-between;
-  align-items:center;
-  padding: 0.5rem 1rem;
+  align-items: center;
+  padding: 3rem 5rem;
   & a {
     color: white;
   }
@@ -47,12 +49,13 @@ const StyledHeader = styled.header`
   }
 `;
 const ImgContainer = styled(Box)`
-width:20%;
+  width: 50%;
 `;
 
 const BrandLogo = styled.img`
-width:100%;
-height:auto;`;
+  width: 100%;
+  height: auto;
+`;
 const NavList = styled.ul`
   list-style-type: none;
   display: flex;
@@ -68,28 +71,45 @@ const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
 export default function Header() {
   return (
     <StyledHeader>
-      <Box sx={{ display: 'flex', justifyContent: 'space-evenly',alignItems:'center'}}>
+      <Box
+        sx={{
+          flexGrow: 1,
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
         {/* Calling MUI Button component */}
-        <ImgContainer display="flex" justifyContent="center">
-          <BrandLogo src={AvastarLogo} alt="Avastar logo" />
-        </ImgContainer>
-        <Box onClick={preventDefault}>
-          <NavList>
-            {/* Mapping navLinks array to display each element */}
-            {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
-            {navLinks.map((navLinks: NavLinksHeader, index: number) => (
-              <NavItem key={index}>
-                <NavLink href={navLinks.link} underline="hover">
-                  {navLinks.name}
-                </NavLink>
-              </NavItem>
-            ))}
-          </NavList>
+        <Box>
+          <ImgContainer display="flex" justifyContent="center">
+            <BrandLogo src={AvastarLogo} alt="Avastar logo" />
+          </ImgContainer>
+        </Box>
+        <Box display="flex" alignItems="center" gap={3}>
+          <Box onClick={preventDefault}>
+            <NavList>
+              {/* Mapping navLinks array to display each element */}
+              {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
+              {navLinks.map((navLinks: NavLinksHeader, index: number) => (
+                <NavItem key={index}>
+                  <NavLink href={navLinks.link} underline="hover">
+                    {navLinks.name}
+                  </NavLink>
+                </NavItem>
+              ))}
+            </NavList>
+          </Box>
+          <Box>
+            <Button
+              sx={{ marginLeft: '5rem'}}
+              variant="contained"
+              href="/"
+            >
+              <Typography variant="caption">+ Upload data</Typography>
+            </Button>
+          </Box>
         </Box>
       </Box>
-      <Button sx={{ width:'9rem',textAlign:'center'}}variant="contained" href="/">
-        <Typography variant="caption">+ Upload data</Typography>
-      </Button>
     </StyledHeader>
   );
 }
