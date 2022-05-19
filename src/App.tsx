@@ -17,15 +17,16 @@ const Container = styled.div`
 `;
 
 const Main = styled.main`
-  width: 85%;
+padding-top: 5rem;
+  width: 100%;
 `;
 
 export default function App() {
   return (
     <Container className="container">
-      <HeaderNav />
-      <Main>
-        <Header />
+      <Header />
+      <HeaderNav/>
+      <Main  >
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/overview" element={<Overview />} />

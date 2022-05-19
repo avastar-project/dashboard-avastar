@@ -36,16 +36,18 @@ const navLinks: NavLinksHeader[] = [
 const StyledHeader = styled.header`
   position:fixed;
   width:100%;
-  background-color: var(--clr-darkest);
+  z-index:1;
+  background-color: #07143A;
+  // background-color:'rgba(52, 52, 52, 0.8)'
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem 5rem;
+  padding: 1rem 5rem;
   & a {
     color: white;
   }
   & > a:last-child {
-    color: white;
+    color: red;
   }
 `;
 const ImgContainer = styled(Box)`
@@ -101,11 +103,11 @@ export default function Header() {
           </Box>
           <Box>
             <Button
-              sx={{ marginLeft: '5rem'}}
+              sx={{ marginLeft: '5rem',backgroundColor:'white'}}
               variant="contained"
               href="/"
             >
-              <Typography variant="caption">+ Upload data</Typography>
+              <Typography variant="caption"               sx={{color:'CaptionText'}}>+ Upload data</Typography>
             </Button>
           </Box>
         </Box>
