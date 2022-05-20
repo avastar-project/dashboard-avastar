@@ -1,11 +1,8 @@
-import { Datum } from 'plotly.js';
-import React from 'react';
 import { ForceGraph2D } from 'react-force-graph';
 
 import myData from '../../../fake-data/force-directed-graph-fake-data.json';
 
 export default function TrackedChart() {
-  const GROUPS = 12;
   return (
     <ForceGraph2D
       graphData={myData}
