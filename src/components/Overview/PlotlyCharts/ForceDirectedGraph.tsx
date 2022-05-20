@@ -1,11 +1,6 @@
 import { Datum } from 'plotly.js';
 import React from 'react';
-import {
-  ForceGraph2D,
-  ForceGraph3D,
-  ForceGraphVR,
-  ForceGraphAR,
-} from 'react-force-graph';
+import { ForceGraph2D } from 'react-force-graph';
 
 import myData from '../../../fake-data/force-directed-graph-fake-data.json';
 
