@@ -12,7 +12,7 @@ export default function TrackedChart() {
       linkWidth={1}
       nodeCanvasObject={(node: any, ctx: any, globalScale: any) => {
         const label = node.id;
-        const fontSize = 12 / globalScale;
+        const fontSize = 16 / globalScale;
         ctx.font = `${fontSize}px Sans-Serif`;
         const textWidth = ctx.measureText(label).width;
         const bckgDimensions = [textWidth, fontSize].map(
