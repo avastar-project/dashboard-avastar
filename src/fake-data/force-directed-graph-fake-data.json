@@ -144,6 +144,11 @@
     "value": 3
   },
   {
+    "source": "Lydia",
+    "target": "Google",
+    "value": 3
+  },
+  {
     "source": "You",
     "target": "YouTube",
     "value": 3
@@ -156,6 +161,11 @@
   {
     "source": "You",
     "target": "Dashlane",
+    "value": 3
+  },
+  {
+    "source": "Dashlane",
+    "target": "Google",
     "value": 3
   },
   {
