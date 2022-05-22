@@ -9,7 +9,7 @@ export default function TrackedChart() {
       nodeAutoColorBy="group"
       linkDirectionalParticles="value"
       linkDirectionalParticleSpeed={(d: any) => d.value * 0.001}
-      linkWidth={1}
+      linkDirectionalParticleWidth={1.5}
       nodeCanvasObject={(node: any, ctx: any, globalScale: any) => {
         const label = node.id;
         const fontSize = 16 / globalScale;
