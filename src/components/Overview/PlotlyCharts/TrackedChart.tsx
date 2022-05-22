@@ -68,6 +68,7 @@ export default function TrackedChart() {
             'Financial',
             'Socio-demographic',
             'Contractual',
+            'Other',
           ],
           y: [
             locationalCount,
@@ -80,6 +81,7 @@ export default function TrackedChart() {
             financialCount,
             socioDemographicCount,
             contractualCount,
+            otherCount
           ],
           textposition: 'auto',
           type: 'bar',

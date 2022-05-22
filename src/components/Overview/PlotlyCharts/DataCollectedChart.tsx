@@ -36,8 +36,8 @@ export default function DataCollectedChart() {
     <Plot
       data={[
         {
-          x: ['Observed', 'Volunteered', 'Inferred'],
-          y: [observedCount, volunteeredCount, inferredCount],
+          x: ['Observed', 'Volunteered', 'Inferred', 'Other'],
+          y: [observedCount, volunteeredCount, inferredCount, otherCount],
           width: [0.4, 0.4, 0.4],
           textposition: 'auto',
           type: 'bar',
