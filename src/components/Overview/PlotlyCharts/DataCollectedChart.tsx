@@ -6,26 +6,62 @@ import {
   AvastarParsedDataPoint,
   AvastarParsedDataPointState,
 } from '../../../types/dataTypes';
+import { getDataFilter } from '../../../utils/data/utilsData';
 
 const Plot = createPlotlyComponent(Plotly);
 
-export default function DataCollectedChart() {
+interface PropsFilter {
+  platform: string;
+  origin: string;
+  type: string;
+}
+
+export default function DataCollectedChart(props: PropsFilter) {
   // Fetch data from State
   const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
     (state: AvastarParsedDataPointState) => state.avastarParsedData,
     shallowEqual
   );
+  // retourne avastarParsedData Filtrées
+  let getDataFiltered = (data: readonly AvastarParsedDataPoint[]) => {
+    var data_filter: readonly AvastarParsedDataPoint[] = data;
+    if (props.platform) {
+      data_filter = data_filter.filter((object) => {
+        return object.platform === props.platform;
+      });
+    }
+
+    if (props.type) {
+      data_filter = data_filter.filter((object) => {
+        return object.data_type === props.type;
+      });
+    }
+    if (props.origin) {
+      data_filter = data_filter.filter((object) => {
+        return object.data_origin === props.origin;
+      });
+    }
+    // data_filter.forEach((object) => {
+    //   counts[object.data_origin] = (counts[object.data_origin] || 0) + 1;
+    // });
+    // return counts;
+
+    return data_filter;
+  };
+
+  let AvastarParsedDataFiltered: readonly AvastarParsedDataPoint[] =
+    getDataFiltered(avastarParsedData);
   // Aggregate the count of each data type
   let observedCount = 0;
   let volunteeredCount = 0;
   let inferredCount = 0;
   let otherCount = 0;
-  for (let i = 0; i < avastarParsedData.length; i++) {
-    if (avastarParsedData[i].data_origin === 'observed') {
+  for (let i = 0; i < AvastarParsedDataFiltered.length; i++) {
+    if (AvastarParsedDataFiltered[i].data_origin === 'observed') {
       observedCount++;
-    } else if (avastarParsedData[i].data_origin === 'volunteered') {
+    } else if (AvastarParsedDataFiltered[i].data_origin === 'volunteered') {
       volunteeredCount++;
-    } else if (avastarParsedData[i].data_origin === 'inferred') {
+    } else if (AvastarParsedDataFiltered[i].data_origin === 'inferred') {
       inferredCount++;
     } else {
       otherCount++;

@@ -15,6 +15,8 @@ import {
   AvastarParsedDataPoint,
   AvastarParsedDataPointState,
 } from '../types/dataTypes';
+import Filter from '../components/Overview/Filter';
+import { useState } from 'react';
 
 // Styled-components
 const Container = styled(Grid)`
@@ -33,11 +35,23 @@ const Aside = styled.aside`
   over-flow: hidden;
 `;
 
+// Data
+// const platformList: String[] = AvastarParsedDataPoint.platform;
+// const data_type: String[] = AvastarParsedDataPoint.data_type;
+// const data_origin: String[] = AvastarParsedDataPoint.data_origin;
+const platformList: String[] = ['facebook', 'google', 'other'];
+const data_type: String[] = ['location', 'behavioural', 'communications'];
+const data_origin: String[] = ['volunteered', 'observed', 'inferred', 'other'];
+
 export default function Overview() {
   const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
     (state: AvastarParsedDataPointState) => state.avastarParsedData,
     shallowEqual
   );
+  const [platform, setPlatform] = useState('');
+  const [origin, setOrigin] = useState('');
+  const [type, setType] = useState('');
+
   console.log('avastarParsedData from redux', avastarParsedData);
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -45,33 +59,62 @@ export default function Overview() {
         <Grid item xs={12}>
           {/* Will contain form's select input fields */}
           <Header>Header</Header>
+          <Filter
+            onChange={setPlatform}
+            optionsList={platformList}
+            name="Platform"
+          ></Filter>
+          <Filter
+            onChange={setType}
+            optionsList={data_type}
+            name="Type"
+          ></Filter>
+          <Filter
+            onChange={setOrigin}
+            optionsList={data_origin}
+            name="Origin"
+          ></Filter>
         </Grid>
         <Grid item xs={12} md={9}>
           <Main>
             <OverviewProfile />
             {/* Contains each stat view */}
-            <PlotlyContainer
+            {/* <PlotlyContainer
               title="What is being tracked ?"
+              color="#d1c5fd"
               tooltip="about"
-              plotlyComponent={<TrackedChart />}
+              plotlyComponent={
+                <TrackedChart platform={platform} origin={origin} type={type} />
+              }
               isSearch={false}
-            />
+            /> */}
             <PlotlyContainer
               title="How my data is collected ?"
+              color="#BDE8D1"
               tooltip="about"
-              plotlyComponent={<DataCollectedChart />}
+              plotlyComponent={
+                <DataCollectedChart
+                  platform={platform}
+                  origin={origin}
+                  type={type}
+                />
+              }
               isSearch={false}
             />
-            <PlotlyContainer
+            {/* <PlotlyContainer
               title="Who has my data ?"
+              color="#BAE9FC"
               tooltip="about"
-              plotlyComponent={<TrackedChart />}
+              plotlyComponent={
+                <TrackedChart platform={''} origin={''} type={''} />
+              }
               isSearch={false}
-            />
+            /> */}
             <PlotlyContainer
               title="Search my data"
+              color="#d1c5fd"
               tooltip="about"
-              plotlyComponent={ <DataTable />}
+              plotlyComponent={<DataTable />}
               isSearch={false}
             />
             <MoreDataContainer />
