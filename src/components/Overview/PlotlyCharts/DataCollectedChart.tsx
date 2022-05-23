@@ -25,9 +25,7 @@ export default function DataCollectedChart(props: PropsFilter) {
     shallowEqual
   )
   let getData = (data: readonly AvastarParsedDataPoint[]) => {
-    // data_filter = getDataFilter(props.platform, props.type, props.origin);
     var data_filter: readonly AvastarParsedDataPoint[] = data;
-    console.log(data_filter)
     if (props.platform) {
       data_filter = data_filter.filter((object) => {
         return object.platform === props.platform;

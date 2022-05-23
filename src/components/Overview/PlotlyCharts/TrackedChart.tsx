@@ -1,4 +1,3 @@
-// Example for how to create a plotly component
 import Plotly from 'plotly.js-basic-dist';
 import createPlotlyComponent from 'react-plotly.js/factory';
 import { useSelector, shallowEqual } from 'react-redux';
@@ -8,106 +7,77 @@ import {
 } from '../../../types/dataTypes';
 
 const Plot = createPlotlyComponent(Plotly);
-
-export default function TrackedChart() {
-  // Fetch data from State
+interface PropsFilter {
+  platform: string;
+  origin: string;
+  type: string;
+}
+export default function TrackedChart(props: PropsFilter) {
+  interface Anything {
+    [key: string]: any;
+  }
+  var plotType: Plotly.PlotType = 'bar';
+  var counts: Anything = {};
   const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
     (state: AvastarParsedDataPointState) => state.avastarParsedData,
     shallowEqual
-  );
-  // Aggregate the count of each data type
-  let locationalCount = 0;
-  let behaviouralCount = 0;
-  let communicationCount = 0;
-  let technicalCount = 0;
-  let socialRelationshipCount = 0;
-  let contactCount = 0;
-  let transactionalCount = 0;
-  let financialCount = 0;
-  let socioDemographicCount = 0;
-  let contractualCount = 0;
-  let otherCount = 0;
-  for (let i = 0; i < avastarParsedData.length; i++) {
-    if (avastarParsedData[i].data_type === 'location') {
-      locationalCount++;
-    } else if (avastarParsedData[i].data_type === 'behavioural') {
-      behaviouralCount++;
-    } else if (avastarParsedData[i].data_type === 'communications') {
-      communicationCount++;
-    } else if (avastarParsedData[i].data_type === 'technical') {
-      technicalCount++;
-    } else if (avastarParsedData[i].data_type === 'social relationships') {
-      socialRelationshipCount++;
-    } else if (avastarParsedData[i].data_type === 'contact') {
-      contactCount++;
-    } else if (avastarParsedData[i].data_type === 'transactional') {
-      transactionalCount++;
-    } else if (avastarParsedData[i].data_type === 'financial') {
-      financialCount++;
-    } else if (avastarParsedData[i].data_type === 'socio-demographic') {
-      socioDemographicCount++;
-    } else if (avastarParsedData[i].data_type === 'contractual') {
-      contractualCount++;
-    } else {
-      otherCount++;
+  )
+    let getData = (data: readonly AvastarParsedDataPoint[]) => {
+    var data_filter: readonly AvastarParsedDataPoint[] = data;
+    if (props.platform) {
+      data_filter = data_filter.filter((object) => {
+        return object.platform === props.platform;
+      });
     }
-  }
+
+    if (props.type) {
+      data_filter = data_filter.filter((object) => {
+        return object.data_type === props.type;
+      });
+    }
+    if (props.origin) {
+      data_filter = data_filter.filter((object) => {
+        return object.data_origin === props.origin;
+      });
+    }
+
+    data_filter.forEach((object) => {
+      counts[object.data_type] = (counts[object.data_type] || 0) + 1;
+    });
+    return counts;
+  };
+
+  let data = getData(avastarParsedData);
+
+  const dataPlot = [
+    {
+      x: Object.keys(data),
+      y: Object.values(data),
+      type: plotType,
+      marker: {
+        cmin: 0,
+        cmax: 255,
+        color: [
+          '#636EFA',
+          '#EF553B',
+          '#00CC96',
+          '#AB63FA',
+          '#FFA15A',
+          '#19D3F3',
+          '#FF6692',
+        ],
+      },
+    },
+  ];
+  var layout = {
+    autosize: true,
+    yaxis: { title: 'Volume of data points' },
+  };
 
   return (
     <Plot
-      data={[
-        {
-          x: [
-            'Locational',
-            'Behavioural',
-            'Communications',
-            'Technical',
-            'Social relationships',
-            'Contact',
-            'Transactional',
-            'Financial',
-            'Socio-demographic',
-            'Contractual',
-          ],
-          y: [
-            locationalCount,
-            behaviouralCount,
-            communicationCount,
-            technicalCount,
-            socialRelationshipCount,
-            contactCount,
-            transactionalCount,
-            financialCount,
-            socioDemographicCount,
-            contractualCount,
-          ],
-          textposition: 'auto',
-          type: 'bar',
-          mode: 'lines+markers',
-          marker: {
-            cmin: 0,
-            cmax: 255,
-            color: [
-              '#636EFA',
-              '#EF553B',
-              '#00CC96',
-              '#AB63FA',
-              '#FFA15A',
-              '#19D3F3',
-              '#FF6692',
-            ],
-          },
-        },
-      ]}
-      // Doc link for layout references : https://plotly.com/javascript/reference/#layout
-      layout={{
-        autosize: true,
-        title: 'Breakdown of the types of data collected by platforms',
-        xaxis: { categoryorder: 'total descending' },
-        yaxis: { showgrid: false, title: 'Volume of data points' },
-        font: { size: 11 },
-      }}
-      config={{ responsive: true, displayModeBar: false, showTips: false }}
+      data={dataPlot}
+      layout={layout}
     />
   );
 }

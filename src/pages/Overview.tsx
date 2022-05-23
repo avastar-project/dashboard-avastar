@@ -79,7 +79,7 @@ export default function Overview() {
           <Main>
             <OverviewProfile />
             {/* Contains each stat view */}
-            {/* <PlotlyContainer
+            <PlotlyContainer
               title="What is being tracked ?"
               color="#d1c5fd"
               tooltip="about"
@@ -87,7 +87,7 @@ export default function Overview() {
                 <TrackedChart platform={platform} origin={origin} type={type} />
               }
               isSearch={false}
-            /> */}
+            />
             <PlotlyContainer
               title="How my data is collected ?"
               color="#BDE8D1"
@@ -106,7 +106,11 @@ export default function Overview() {
               color="#BAE9FC"
               tooltip="about"
               plotlyComponent={
-                <TrackedChart platform={''} origin={''} type={''} />
+                <TrackedChart
+                  platform={platform}
+                  origin={origin}
+                  type={type}
+                />
               }
               isSearch={false}
             /> */}
