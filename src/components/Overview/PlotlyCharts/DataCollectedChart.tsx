@@ -1,4 +1,3 @@
-// Example for how to create a plotly component
 import Plotly from 'plotly.js-basic-dist';
 import createPlotlyComponent from 'react-plotly.js/factory';
 import { useSelector, shallowEqual } from 'react-redux';
@@ -6,11 +5,9 @@ import {
   AvastarParsedDataPoint,
   AvastarParsedDataPointState,
 } from '../../../types/dataTypes';
-import { getDataFilter } from '../../../utils/data/utilsData';
+
 
 const Plot = createPlotlyComponent(Plotly);
-
-
 interface PropsFilter {
   platform: string;
   origin: string;
@@ -18,17 +15,19 @@ interface PropsFilter {
 }
 
 export default function DataCollectedChart(props: PropsFilter) {
-  // Fetch data from State
+  interface Anything {
+    [key: string]: any;
+  }
+  var plotType: Plotly.PlotType = 'bar';
+  var counts: Anything = {};
   const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
     (state: AvastarParsedDataPointState) => state.avastarParsedData,
     shallowEqual
-  );
-  let getDataFiltered = (data: readonly AvastarParsedDataPoint[]) => {
-    interface Anything {
-    [key: string]: any;
-    }
-    var counts: Anything = {};
+  )
+  let getData = (data: readonly AvastarParsedDataPoint[]) => {
+    // data_filter = getDataFilter(props.platform, props.type, props.origin);
     var data_filter: readonly AvastarParsedDataPoint[] = data;
+    console.log(data_filter)
     if (props.platform) {
       data_filter = data_filter.filter((object) => {
         return object.platform === props.platform;
@@ -46,41 +45,41 @@ export default function DataCollectedChart(props: PropsFilter) {
       });
     }
     data_filter.forEach((object) => {
-        counts[object.data_origin as string] = parseInt(counts[object.data_origin] || 0) + 1;
+      counts[object.data_origin] = (counts[object.data_origin] || 0) + 1;
     });
     return counts;
-
-    // return data_filter;
   };
-  let data = getDataFiltered(avastarParsedData);
 
+  let data = getData(avastarParsedData);
+
+  const dataPlot = [
+    {
+      x: Object.keys(data),
+      y: Object.values(data),
+      type: plotType,
+      marker: {
+        cmin: 0,
+        cmax: 255,
+        color: [
+          '#636EFA',
+          '#EF553B',
+          '#00CC96',
+          '#AB63FA',
+          '#FFA15A',
+          '#19D3F3',
+          '#FF6692',
+        ],
+      },
+    },
+  ];
+  var layout = {
+    autosize: true,
+    yaxis: { title: 'Volume of data points' },
+  };
   return (
     <Plot
-      data={[
-        {
-          x: Object.keys(data),
-          y: Object.values(data),
-          width: [0.4, 0.4, 0.4],
-          textposition: 'auto',
-          type: 'bar',
-          mode: 'lines+markers',
-          marker: {
-            cmin: 0,
-            cmax: 255,
-            color: ['#636EFA', '#EF553B', '#00CC96'],
-          },
-        },
-      ]}
-      // Doc link for layout references : https://plotly.com/javascript/reference/#layout
-      layout={{
-        autosize: true,
-        title:
-          'Breakdown of methodologies used by platform to collect your data',
-        xaxis: { categoryorder: 'total descending' },
-        yaxis: { showgrid: false, title: 'Volume of data points' },
-        font: { size: 11 },
-      }}
-      config={{ responsive: true, displayModeBar: false, showTips: false }}
+      data={dataPlot}
+      layout={layout}
     />
   );
 }

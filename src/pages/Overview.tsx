@@ -35,32 +35,13 @@ const Aside = styled.aside`
   over-flow: hidden;
 `;
 
-// Data
-// to be deleted
-import data_aggregat from '../fake-data/fake-data-agg.json';
-
-var platformList: String[] = [];
-platformList = data_aggregat.data_classification
-  .map((value) => value.platform)
-  .filter((value, index, _arr) => _arr.indexOf(value) === index);
-// console.log('platformList', platformList)
-
-var data_type: String[] = [];
-data_type = data_aggregat.data_classification
-  .map((value) => value.data_type)
-  .filter((value, index, _arr) => _arr.indexOf(value) === index);
-// console.log('data_type', data_type)
-
-var data_origin: String[] = [];
-data_origin = data_aggregat.data_classification
-  .map((value) => value.data_origin)
-  .filter((value, index, _arr) => _arr.indexOf(value) === index);
+// Data -- to be changed with dataTypes.ts
 // const platformList: String[] = AvastarParsedDataPoint.platform;
 // const data_type: String[] = AvastarParsedDataPoint.data_type;
 // const data_origin: String[] = AvastarParsedDataPoint.data_origin;
-// const platformList: String[] = ['facebook', 'google', 'other'];
-// const data_type: String[] = ['location', 'behavioural', 'communications'];
-// const data_origin: String[] = ['volunteered', 'observed', 'inferred', 'other'];
+const platformList: String[] = ['facebook', 'google', 'other'];
+const data_type: String[] = ['location', 'behavioural', 'communications'];
+const data_origin: String[] = ['volunteered', 'observed', 'inferred', 'other'];
 
 export default function Overview() {
   const [platform, setPlatform] = useState('');
