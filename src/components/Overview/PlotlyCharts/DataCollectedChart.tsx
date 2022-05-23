@@ -10,6 +10,7 @@ import { getDataFilter } from '../../../utils/data/utilsData';
 
 const Plot = createPlotlyComponent(Plotly);
 
+
 interface PropsFilter {
   platform: string;
   origin: string;
@@ -22,8 +23,11 @@ export default function DataCollectedChart(props: PropsFilter) {
     (state: AvastarParsedDataPointState) => state.avastarParsedData,
     shallowEqual
   );
-  // retourne avastarParsedData Filtrées
   let getDataFiltered = (data: readonly AvastarParsedDataPoint[]) => {
+    interface Anything {
+    [key: string]: any;
+    }
+    var counts: Anything = {};
     var data_filter: readonly AvastarParsedDataPoint[] = data;
     if (props.platform) {
       data_filter = data_filter.filter((object) => {
@@ -41,39 +45,21 @@ export default function DataCollectedChart(props: PropsFilter) {
         return object.data_origin === props.origin;
       });
     }
-    // data_filter.forEach((object) => {
-    //   counts[object.data_origin] = (counts[object.data_origin] || 0) + 1;
-    // });
-    // return counts;
+    data_filter.forEach((object) => {
+        counts[object.data_origin as string] = parseInt(counts[object.data_origin] || 0) + 1;
+    });
+    return counts;
 
-    return data_filter;
+    // return data_filter;
   };
-
-  let AvastarParsedDataFiltered: readonly AvastarParsedDataPoint[] =
-    getDataFiltered(avastarParsedData);
-  // Aggregate the count of each data type
-  let observedCount = 0;
-  let volunteeredCount = 0;
-  let inferredCount = 0;
-  let otherCount = 0;
-  for (let i = 0; i < AvastarParsedDataFiltered.length; i++) {
-    if (AvastarParsedDataFiltered[i].data_origin === 'observed') {
-      observedCount++;
-    } else if (AvastarParsedDataFiltered[i].data_origin === 'volunteered') {
-      volunteeredCount++;
-    } else if (AvastarParsedDataFiltered[i].data_origin === 'inferred') {
-      inferredCount++;
-    } else {
-      otherCount++;
-    }
-  }
+  let data = getDataFiltered(avastarParsedData);
 
   return (
     <Plot
       data={[
         {
-          x: ['Observed', 'Volunteered', 'Inferred'],
-          y: [observedCount, volunteeredCount, inferredCount],
+          x: Object.keys(data),
+          y: Object.values(data),
           width: [0.4, 0.4, 0.4],
           textposition: 'auto',
           type: 'bar',
