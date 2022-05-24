@@ -1,7 +1,7 @@
 import React from 'react';
 import { ForceGraph2D } from 'react-force-graph';
-const { useRef } = React;
 import myData from '../../../fake-data/force-directed-graph-fake-data.json'; // To be replaced by function transforming AvastarParsedDaat Object in another object with the required shape
+const { useRef } = React;
 
 export default function ForceGraph() {
   const fgRef = useRef();
