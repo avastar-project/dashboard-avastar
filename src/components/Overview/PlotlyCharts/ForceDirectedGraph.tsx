@@ -1,10 +1,17 @@
+import React from 'react';
 import { ForceGraph2D } from 'react-force-graph';
+const { useRef } = React;
 import myData from '../../../fake-data/force-directed-graph-fake-data.json'; // To be replaced by function transforming AvastarParsedDaat Object in another object with the required shape
 
 export default function ForceGraph() {
+  const fgRef = useRef();
   return (
     <ForceGraph2D
+      ref={fgRef}
       graphData={myData}
+      cooldownTicks={100}
+      // @ts-ignore
+      onEngineStop={() => fgRef.current.zoomToFit(400)}
       width={1060}
       height={500}
       nodeAutoColorBy="group"
