@@ -8,6 +8,7 @@ import DataCollectedChart from '../components/Overview/PlotlyCharts/DataCollecte
 import DataTable from '../components/Overview/PlotlyCharts/DataTable';
 import OverviewEducLink from '../components/Overview/OverviewEducLink';
 import MoreDataContainer from '../components/Overview/MoreDataContainer';
+import ForceGraph from '../components/Overview/PlotlyCharts/ForceDirectedGraph';
 // MUI components
 import { Box, Grid } from '@mui/material';
 import { useSelector, shallowEqual } from 'react-redux';
@@ -65,13 +66,13 @@ export default function Overview() {
             <PlotlyContainer
               title="Who has my data ?"
               tooltip="about"
-              plotlyComponent={<TrackedChart />}
+              plotlyComponent={<ForceGraph />}
               isSearch={false}
             />
             <PlotlyContainer
               title="Search my data"
               tooltip="about"
-              plotlyComponent={ <DataTable />}
+              plotlyComponent={<DataTable />}
               isSearch={false}
             />
             <MoreDataContainer />
