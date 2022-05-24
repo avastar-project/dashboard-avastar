@@ -20,12 +20,14 @@ export default function Filter(props: PropsFilter) {
         id={props.name}
         value={option}
         label="option"
+        // @ts-ignore
         onChange={selectChange}
       >
         <MenuItem value="">
           <em>None</em>
         </MenuItem>
         {props.optionsList.map((element, index) => (
+          // @ts-ignore
           <MenuItem key={index} value={element}>
             {element}
           </MenuItem>
