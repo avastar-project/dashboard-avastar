@@ -1,7 +1,11 @@
 {
   "name": "reimagined-eureka",
   "version": "0.1.0",
-  "private": true,
+  "engines": {
+    "node": "16.x"
+  },
+  "homepage": ".",
+  "private": false,
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
@@ -19,12 +23,14 @@
     "@types/react-dom": "^17.0.9",
     "@types/styled-components": "^5.1.24",
     "axios": "^0.26.1",
+    "express": "^4.18.1",
     "jszip": "^3.7.1",
     "lodash": "^4.17.21",
     "papaparse": "^5.3.2",
     "plotly.js": "^2.8.3",
     "plotly.js-basic-dist": "^2.9.0",
     "react": "^17.0.2",
+    "react-capsule": "^1.0.3",
     "react-dom": "^17.0.2",
     "react-draggable": "^4.4.4",
     "react-dropzone": "^11.4.2",
@@ -42,10 +48,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-local-prod": "react-scripts build && nodemon server/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:9000",
   "eslintConfig": {
     "extends": [
       "react-app",
