@@ -47,7 +47,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server/server.ts",
+    "dev": "react-scripts start",
     "start-local-prod": "react-scripts build && nodemon server/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -83,6 +84,7 @@
     "@types/redux": "^3.6.0",
     "@types/redux-thunk": "^2.1.0",
     "@types/styled-components": "^5.1.24",
+    "nodemon": "^2.0.16",
     "prettier": "^2.4.1",
     "typescript": "^4.6.4",
     "worker-loader": "^3.0.8"
