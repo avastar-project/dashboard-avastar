@@ -25,24 +25,23 @@ export default function DataCollectedChart(props: PropsFilter) {
     shallowEqual
   )
   let getData = (data: readonly AvastarParsedDataPoint[]) => {
-    var data_filter: readonly AvastarParsedDataPoint[] = data;
     if (props.platform) {
-      data_filter = data_filter.filter((object) => {
+      data = data.filter((object) => {
         return object.platform === props.platform;
       });
     }
 
     if (props.type) {
-      data_filter = data_filter.filter((object) => {
+      data = data.filter((object) => {
         return object.data_type === props.type;
       });
     }
     if (props.origin) {
-      data_filter = data_filter.filter((object) => {
+      data = data.filter((object) => {
         return object.data_origin === props.origin;
       });
     }
-    data_filter.forEach((object) => {
+    data.forEach((object) => {
       counts[object.data_origin] = (counts[object.data_origin] || 0) + 1;
     });
     return counts;
