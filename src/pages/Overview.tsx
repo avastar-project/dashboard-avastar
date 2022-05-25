@@ -10,7 +10,7 @@ import OverviewEducLink from '../components/Overview/OverviewEducLink';
 import MoreDataContainer from '../components/Overview/MoreDataContainer';
 import ForceGraph from '../components/Overview/PlotlyCharts/ForceDirectedGraph';
 // MUI components
-import { Box, Grid } from '@mui/material';
+import { Box, Grid,Typography } from '@mui/material';
 import { useSelector, shallowEqual } from 'react-redux';
 import {
   AvastarParsedDataPoint,
@@ -26,7 +26,13 @@ const Container = styled(Grid)`
 `;
 
 const Header = styled.header`
-  border: solid 1px red;
+width:75%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:2rem;
+`;
+const Title = styled(Typography)`
 `;
 
 const Main = styled.main``;
@@ -58,8 +64,9 @@ export default function Overview() {
     <Box sx={{ flexGrow: 1 }}>
       <Container container spacing={2}>
         <Grid item xs={12}>
-          {/* Will contain form's select input fields */}
-          <Header>Header</Header>
+          <Header >
+          <Title variant="h4">My identity</Title>
+          <Box display="flex" justifyContent='flex-end'>
           <Filter
             onChange={setPlatform}
             optionsList={platformList}
@@ -75,6 +82,8 @@ export default function Overview() {
             optionsList={data_origin}
             name="Origin"
           ></Filter>
+          </Box>
+          </Header>
         </Grid>
         <Grid item xs={12} md={9}>
           <Main>
