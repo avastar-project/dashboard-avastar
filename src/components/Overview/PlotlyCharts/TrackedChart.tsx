@@ -13,11 +13,11 @@ interface PropsFilter {
   type: string;
 }
 export default function TrackedChart(props: PropsFilter) {
-  interface Anything {
+  interface DataPointCounterType {
     [key: string]: any;
   }
   var plotType: Plotly.PlotType = 'bar';
-  var counts: Anything = {};
+  var dataPointCounter: DataPointCounterType = {};
   const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
     (state: AvastarParsedDataPointState) => state.avastarParsedData,
     shallowEqual
@@ -41,9 +41,9 @@ export default function TrackedChart(props: PropsFilter) {
     }
 
     data.forEach((object) => {
-      counts[object.data_type] = (counts[object.data_type] || 0) + 1;
+      dataPointCounter[object.data_type] = (dataPointCounter[object.data_type] || 0) + 1;
     });
-    return counts;
+    return dataPointCounter;
   };
 
   let data = filterData(avastarParsedData);

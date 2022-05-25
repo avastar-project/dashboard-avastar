@@ -15,11 +15,11 @@ interface PropsFilter {
 }
 
 export default function DataCollectedChart(props: PropsFilter) {
-  interface Anything {
+  interface DataPointCounterType {
     [key: string]: any;
   }
   var plotType: Plotly.PlotType = 'bar';
-  var counts: Anything = {};
+  var dataPointCounter: DataPointCounterType = {};
   const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
     (state: AvastarParsedDataPointState) => state.avastarParsedData,
     shallowEqual
@@ -42,9 +42,9 @@ export default function DataCollectedChart(props: PropsFilter) {
       });
     }
     data.forEach((object) => {
-      counts[object.data_origin] = (counts[object.data_origin] || 0) + 1;
+      dataPointCounter[object.data_origin] = (dataPointCounter[object.data_origin] || 0) + 1;
     });
-    return counts;
+    return dataPointCounter;
   };
 
   let data = getData(avastarParsedData);
