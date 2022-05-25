@@ -22,7 +22,7 @@ export default function TrackedChart(props: PropsFilter) {
     (state: AvastarParsedDataPointState) => state.avastarParsedData,
     shallowEqual
   )
-    let getData = (data: readonly AvastarParsedDataPoint[]) => {
+    let filterData = (data: readonly AvastarParsedDataPoint[]) => {
     if (props.platform) {
       data = data.filter((object) => {
         return object.platform === props.platform;
@@ -46,7 +46,7 @@ export default function TrackedChart(props: PropsFilter) {
     return counts;
   };
 
-  let data = getData(avastarParsedData);
+  let data = filterData(avastarParsedData);
 
   const dataPlot = [
     {
