@@ -12,7 +12,7 @@ const Selector = styled(Select)`
   background: white;
 `;
 
-export default function Filter(props: PropsFilter) {
+export default function FilterData(props: PropsFilter) {
   const [option, setOptions] = useState<String>('');
   var selectChange = (event: ChangeEvent<{ value: string }>): void => {
     setOptions(event.target.value);
