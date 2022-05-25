@@ -25,7 +25,9 @@ const Container = styled(Grid)`
   width: calc(100% - 1rem);
 `;
 
-const Header = styled.header``;
+const Header = styled.header`
+  border: solid 1px red;
+`;
 
 const Main = styled.main``;
 
@@ -57,13 +59,13 @@ export default function Overview() {
       <Container container spacing={2}>
         <Grid item xs={12}>
           {/* Will contain form's select input fields */}
-          <Header>
+          <Header>Header</Header>
           <Filter
             onChange={setPlatform}
             optionsList={platformList}
             name="Platform"
           ></Filter>
-           <Filter
+          <Filter
             onChange={setType}
             optionsList={data_type}
             name="Type"
@@ -73,8 +75,6 @@ export default function Overview() {
             optionsList={data_origin}
             name="Origin"
           ></Filter>
-          </Header>
-         
         </Grid>
         <Grid item xs={12} md={9}>
           <Main>
