@@ -31,7 +31,7 @@ export default function Filter(props: PropsFilter) {
         onChange={selectChange}
       >
         <MenuItem value="">
-          <em>None</em>
+          <em>All</em>
         </MenuItem>
         {props.optionsList.map((element, index) => (
           // @ts-ignore
