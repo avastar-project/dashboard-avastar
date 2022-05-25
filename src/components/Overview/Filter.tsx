@@ -1,5 +1,5 @@
 import { FormControl, Select, InputLabel, MenuItem } from '@mui/material';
-import { useState, ChangeEvent } from 'react';
+import { useState } from 'react';
 interface PropsFilter {
   optionsList: String[];
   name: string;
@@ -8,10 +8,6 @@ interface PropsFilter {
 
 export default function Filter(props: PropsFilter) {
   const [option, setOptions] = useState<String>('');
-  var selectChange = (event: ChangeEvent<{ value: string }>): void => {
-    setOptions(event.target.value);
-    props.onChange(event.target.value);
-  };
   return (
     <FormControl>
       <InputLabel id="platform">{props.name}</InputLabel>
@@ -20,16 +16,14 @@ export default function Filter(props: PropsFilter) {
         id={props.name}
         value={option}
         label="option"
-        // @ts-ignore
-        onChange={selectChange}
+        onChange={(e) => setOptions(e.target.value as string)}
       >
         <MenuItem value="">
           <em>None</em>
         </MenuItem>
-        {props.optionsList.map((element, index) => (
-          // @ts-ignore
-          <MenuItem key={index} value={element}>
-            {element}
+        {props.optionsList.map((option:any,index :number) => (
+          <MenuItem key={index} value={option}>
+            {option}
           </MenuItem>
         ))}
       </Select>
