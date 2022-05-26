@@ -47,7 +47,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "node server/server.ts",
+    "start": "node server/server.js",
     "dev": "react-scripts start",
     "start-local-prod": "react-scripts build && nodemon server/server.js",
     "build": "react-scripts build",
