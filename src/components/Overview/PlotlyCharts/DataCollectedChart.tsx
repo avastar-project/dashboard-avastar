@@ -4,20 +4,14 @@ import { useSelector, shallowEqual } from 'react-redux';
 import {
   AvastarParsedDataPoint,
   AvastarParsedDataPointState,
+  PropsFilter,
+  DataPointCounterType
 } from '../../../types/dataTypes';
 
 
 const Plot = createPlotlyComponent(Plotly);
-interface PropsFilter {
-  platform: string;
-  origin: string;
-  type: string;
-}
 
 export default function DataCollectedChart(props: PropsFilter) {
-  interface DataPointCounterType {
-    [key: string]: any;
-  }
   var plotType: Plotly.PlotType = 'bar';
   var dataPointCounter: DataPointCounterType = {};
   const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(

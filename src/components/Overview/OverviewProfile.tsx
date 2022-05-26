@@ -15,6 +15,7 @@ import { useSelector, shallowEqual } from 'react-redux';
 import {
   AvastarParsedDataPoint,
   AvastarParsedDataPointState,
+  PropsFilter
 } from '../../types/dataTypes';
 
 // Styled-components
@@ -24,12 +25,6 @@ const Article = styled.article`
   margin-bottom: 1rem;
   padding: 0.5rem;
 `;
-
-interface PropsFilter {
-  platform: string;
-  origin: string;
-  type: string;
-}
 
 export default function OverviewProfile(props: PropsFilter) {
   // Fetch data from State

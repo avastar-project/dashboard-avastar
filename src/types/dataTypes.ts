@@ -18,8 +18,18 @@ export interface AvastarParsedDataPoint {
   details?: string[];
 }
 
+export interface PropsFilter {
+  platform: string;
+  origin: string;
+  type: string;
+}
+
 export type AvastarParsedDataPointState = {
   avastarParsedData: AvastarParsedDataPoint[];
+};
+
+export type DataPointCounterType = {
+    [key: string]: any;
 };
 
 export type APDPAction = {
