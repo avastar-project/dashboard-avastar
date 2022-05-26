@@ -25,69 +25,97 @@ const Article = styled.article`
   padding: 0.5rem;
 `;
 
-export default function OverviewProfile() {
+interface PropsFilter {
+  platform: string;
+  origin: string;
+  type: string;
+}
+
+export default function OverviewProfile(props: PropsFilter) {
   // Fetch data from State
   const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
     (state: AvastarParsedDataPointState) => state.avastarParsedData,
     shallowEqual
   );
+  // Filter data
+  let filterData = (data: readonly AvastarParsedDataPoint[]) => {
+    if (props.platform) {
+      data = data.filter((object) => {
+        return object.platform === props.platform;
+      });
+    }
+
+    if (props.type) {
+      data = data.filter((object) => {
+        return object.data_type === props.type;
+      });
+    }
+    if (props.origin) {
+      data = data.filter((object) => {
+        return object.data_origin === props.origin;
+      });
+    }
+    return data;
+  };
+
+  let avastarParsedDataFiltered = filterData(avastarParsedData);
 
   // Compute Overview KPIs
-  const dataPointsShared = avastarParsedData.length;
+  const dataPointsShared = avastarParsedDataFiltered.length;
 
   let entitiesAccessedDataProfile = 0;
-  for (let i = 0; i < avastarParsedData.length; i++) {
+  for (let i = 0; i < avastarParsedDataFiltered.length; i++) {
     if (
-      avastarParsedData[i].action_type ===
+      avastarParsedDataFiltered[i].action_type ===
       'Advertiser who has added your name to an audience based on your information or your activity outside of Facebook'
     ) {
       entitiesAccessedDataProfile++;
     } else if (
-      avastarParsedData[i].action_type ===
+      avastarParsedDataFiltered[i].action_type ===
       'Advertiser who has added your name to an audience based on your information or your activity outside of Facebook'
     ) {
       entitiesAccessedDataProfile++;
     } else if (
-      avastarParsedData[i].action_type ===
+      avastarParsedDataFiltered[i].action_type ===
       'Advertisers whose ads you have recently seen or clicked on'
     ) {
       entitiesAccessedDataProfile++;
     } else if (
-      avastarParsedData[i].action_type ===
+      avastarParsedDataFiltered[i].action_type ===
       'Company that shared information with facebook about your activity on their website/application'
     ) {
       entitiesAccessedDataProfile++;
     } else if (
-      avastarParsedData[i].action_type ===
+      avastarParsedDataFiltered[i].action_type ===
       'Apps that have been installed on your mobile device'
     ) {
       entitiesAccessedDataProfile++;
     } else if (
-      avastarParsedData[i].action_type ===
+      avastarParsedDataFiltered[i].action_type ===
       'Account linked to your Facebook profile'
     ) {
       entitiesAccessedDataProfile++;
     } else if (
-      avastarParsedData[i].action_type === 'Game you played on Facebook'
+      avastarParsedDataFiltered[i].action_type === 'Game you played on Facebook'
     ) {
       entitiesAccessedDataProfile++;
     }
   }
 
   let devicesSharingdata = 0;
-  for (let i = 0; i < avastarParsedData.length; i++) {
+  for (let i = 0; i < avastarParsedDataFiltered.length; i++) {
     if (
-      avastarParsedData[i].action_type ===
+      avastarParsedDataFiltered[i].action_type ===
       'Device linked to your Facebook account'
     ) {
       devicesSharingdata++;
     } else if (
-      avastarParsedData[i].action_type ===
+      avastarParsedDataFiltered[i].action_type ===
       'Mobile device associated to your Facebook account'
     ) {
       devicesSharingdata++;
     } else if (
-      avastarParsedData[i].action_type ===
+      avastarParsedDataFiltered[i].action_type ===
       'Use new device to access a Google service'
     ) {
       devicesSharingdata++;

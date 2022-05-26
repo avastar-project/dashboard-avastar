@@ -84,7 +84,7 @@ export default function Overview() {
         </Grid>
         <Grid item xs={12} md={9}>
           <Main>
-            <OverviewProfile />
+            <OverviewProfile platform={platform} origin={origin} type={type}/>
             {/* Contains each stat view */}
             <PlotlyContainer
               title="What is being tracked ?"
