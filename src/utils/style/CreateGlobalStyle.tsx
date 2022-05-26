@@ -3,6 +3,10 @@ import { createGlobalStyle } from 'styled-components';
 const StyledGlobalStyle = createGlobalStyle`
     /* :root represents globals styles vars */
     :root {
+
+        /*background color */
+        --bck-clr:linear-gradient(180deg, #02272C -230%, #06092B 623.13%, #081B43 1570%);
+        
         /* Borders */
         --bor-light: solid 1px var(--clr-light);
         

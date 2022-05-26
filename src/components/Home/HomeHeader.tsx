@@ -3,51 +3,65 @@
  * the first block of the Homepage page.
  */
 
+// img
+import HeaderPic from '../../assets/home-header.png';
+
 // utils styled
 import styled from 'styled-components';
 
 // MUI components
-import { Grid, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
-const Container = styled(Grid)`
-  padding: 3.683rem 4.851rem 4.954rem 4.851rem;
-  background-color: var(--clr-darkest);
+const Container = styled(Box)`
+  padding: 18.125rem 9.75rem 13.125rem 9.75rem;
+  background: var(--bck-clr);
   color: var(--clr-lightest);
-
-  & > .MuiGrid-container {
-    padding-top: 5.422rem;
-  }
 `;
 
 const Headline1 = styled(Typography)``;
 
-const BackgroundImage = styled.p`
-  text-transform: uppercase;
+const ImgContainer = styled(Box)`
+  width: 100%;
+`;
+
+const Img = styled.img`
+  width: 23.893rem;
+  height: 23.936rem;
 `;
 
 const Headline2 = styled(Typography)`
-  padding-top: 8.566rem;
+  padding-top: 3.125rem;
 `;
 
 export default function Header() {
   return (
     <Container alignItems="center">
-      <Grid container alignItems="center" spacing={6}>
-        <Grid item xs={8}>
-          <Headline1 variant="h2">
+      <Box display="flex"alignItems="center" justifyContent='space-between'>
+        <Box sx={{ width: '48rem', height: 'auto' }}>
+          <Headline1
+            sx={{
+              lineHeight: '4.75rem',
+              fontWeight: 900,
+              fontSize: '2.986rem',
+            }}
+          >
             {' '}
-            Get an immediate overview of your digital footprint & learn how to
-            manage your online privacy.
+            Visualize what the internet knows about you in minutes
           </Headline1>
-        </Grid>
-        <Grid item xs={4}>
-          <BackgroundImage>place holder illustration</BackgroundImage>
-        </Grid>
-      </Grid>
-      <Headline2 variant="body1">
-        {' '}
-        Undersand what your favorite apps know about you and do with your data.
-      </Headline2>
+          <Headline2
+            sx={{ lineHeight: '2.5rem', fontWeight: 600, fontSize: '1.728rem' }}
+          >
+            {' '}
+            Undersand what your favorite apps know about you and learn how to
+            manage your online privacy
+          </Headline2>
+        </Box>
+        <Box>
+          <ImgContainer>
+            <Img src={HeaderPic} alt="picture home header" />
+          </ImgContainer>
+        </Box>
+      </Box>
     </Container>
   );
 }
