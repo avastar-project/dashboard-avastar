@@ -37,3 +37,7 @@ export const getEmptyDataPoint = (): AvastarParsedDataPoint => ({
   timestamp: '',
   details: []
 });
+
+export const platformList: String[] = ['facebook', 'google'];
+export const data_type: String[] = ['location', 'behavioural', 'communications','technical','social relationships','contact','transactional','financial','socio-demographic','contractual'];
+export const data_origin: String[] = ['volunteered', 'observed', 'inferred'];

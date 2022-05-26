@@ -18,6 +18,7 @@ import {
 } from '../types/dataTypes';
 import Filter from '../components/Overview/Filter';
 import { useState } from 'react';
+import {platformList, data_type, data_origin} from '../types/dataTypes'
 
 // Styled-components
 const Container = styled(Grid)`
@@ -41,11 +42,6 @@ const Aside = styled.aside`
   border-radius: 0.5rem;
   over-flow: hidden;
 `;
-
-// to be migrated to dataTypes.ts
-const platformList: String[] = ['facebook', 'google'];
-const data_type: String[] = ['location', 'behavioural', 'communications','technical','social relationships','contact','transactional','financial','socio-demographic','contractual'];
-const data_origin: String[] = ['volunteered', 'observed', 'inferred'];
 
 export default function Overview() {
   const [platform, setPlatform] = useState('');
