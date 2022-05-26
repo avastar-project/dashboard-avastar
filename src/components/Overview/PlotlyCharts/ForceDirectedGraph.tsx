@@ -140,7 +140,7 @@ export default function ForceGraph() {
       } else if (data[i].action_type === 'Game you played on Facebook') {
         nodes.push({
           id: data[i].details,
-          group: 8,
+          group: 6,
         });
         links.push({
           source: 'You',
@@ -162,9 +162,6 @@ export default function ForceGraph() {
   };
 
   const myGraphData = setForceGraphData();
-
-  console.log(myGraphData);
-  console.log(myData);
 
   const fgRef = useRef();
   return (
