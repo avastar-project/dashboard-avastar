@@ -6,10 +6,10 @@ const StyledGlobalStyle = createGlobalStyle`
 
         /*background color */
         --bck-clr:linear-gradient(180deg, #02272C -230%, #06092B 623.13%, #081B43 1570%);
-        
+
         /* Borders */
         --bor-light: solid 1px var(--clr-light);
-        
+
         /* Colors */
         --clr-blue: #2567FF;
         --clr-yellow: #F3C7A9;
@@ -27,7 +27,6 @@ const StyledGlobalStyle = createGlobalStyle`
         --clr-blue-primary:#0034F5;
         --clr-blue-light:#9CB1FF;
 
-        
         /* Shadows */
         --bx-shdw-light: 0 0 5px 0 var(--clr-dark);
 
@@ -41,7 +40,7 @@ const StyledGlobalStyle = createGlobalStyle`
         --tab-lg: 64em;
         --tab-boxShadow:
             0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11), 0 8px 16px rgba(0, 0, 0, 0.11);
-            
+
         --tab-clr-white:rgb(255, 255, 255);
         --tab-clr-bg: rgb(245, 245, 245);
         --tab-clr-bg2: rgb(237, 237, 237);
@@ -60,7 +59,7 @@ const StyledGlobalStyle = createGlobalStyle`
 
     /* Body CSS Rule */
     body {
-        background-color: var(--clr-lighter);
+        background-color: #F5F7FE;
     }
 
     a {
