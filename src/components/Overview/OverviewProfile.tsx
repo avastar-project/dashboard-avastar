@@ -32,14 +32,12 @@ export default function OverviewProfile(props: PropsFilter) {
     (state: AvastarParsedDataPointState) => state.avastarParsedData,
     shallowEqual
   );
-  // Filter data
   let filterData = (data: readonly AvastarParsedDataPoint[]) => {
     if (props.platform) {
       data = data.filter((object) => {
         return object.platform === props.platform;
       });
     }
-
     if (props.type) {
       data = data.filter((object) => {
         return object.data_type === props.type;
