@@ -62,11 +62,15 @@ export default function App() {
         </Routes>
       </Main>
       <CookieConsent
+        style={{ background: "#9CB1FF" }}
+        buttonStyle={{ color: "#FFFFFF", fontSize: "13px", background: "#0034F5", fontWeight: 'bold' }}
+        declineButtonStyle={{ color: "#FFFFFF", fontSize: "13px", background: "#0034F5", fontWeight: 'bold'}}
+        expires={150}
         enableDeclineButton
-        onAccept={handleAcceptCookie}
         onDecline={handleDeclineCookie}
+        onAccept={handleAcceptCookie}
       >
-        This website uses cookies to enhance the user experience.
+        <span style={{ fontSize: "15px" }}>We use a Google Analytics tag to estimate the volume of users that visited Avastar. We only store an anonymised IP address as well a device-id, whenever a new visitor come to our app.</span>
       </CookieConsent>
     </Container>
   );
