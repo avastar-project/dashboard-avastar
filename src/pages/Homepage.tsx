@@ -1,5 +1,5 @@
 //components
-import HeaderNav from '../layouts/Header';
+import NavHeader from '../components/Home/NavHeader';
 import Header from '../components/Home/HomeHeader';
 import GetStarted from '../components/Home/GetStartedBanner';
 import ContentPointsList from '../components/Home/ContentPointsListSection';
@@ -32,7 +32,7 @@ export default function Homepage() {
 
     <Box sx={{ flexGrow: 1 }}>
      <Container>
-       <HeaderNav/>
+       <NavHeader/>
        <Grid item xs={12}>
         <Header/>
          <Main>
