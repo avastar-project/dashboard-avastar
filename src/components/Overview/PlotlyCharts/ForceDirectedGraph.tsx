@@ -1,89 +1,177 @@
 import React from 'react';
 import { ForceGraph2D } from 'react-force-graph';
-import { useSelector, shallowEqual } from 'react-redux';
-import {
-  AvastarParsedDataPoint,
-  AvastarParsedDataPointState,
-} from '../../../types/dataTypes';
 import myData from '../../../fake-data/force-directed-graph-fake-data.json'; // To be replaced by function transforming AvastarParsedDaat Object in another object with the required shape
-import fakeData from '../../../fake-data/fake-data-agg.json';
+import fakeData from '../../../fake-data/fake-data-agg.json'; // Temporary import while the details information is not automatically fetched from "Who has my data" files
 
 const { useRef } = React;
 
-// Methodology
-
-// 0) Import data stored in Redux
-
-// 1) Identify the files that are needed to build the chart
-// ads_information/advertisers_using_your_activity_or_information.json --> Advertiser who has added your name to an audience based on your information or your activity outside of Facebook
-// ads_information/advertisers_you've_interacted_with.json -->  Advertisers whose ads you have recently seen or clicked on
-// apps_and_websites_off_of_facebook/apps_and_websites.json --> Apps that have been installed on your mobile device
-// apps_and_websites_off_of_facebook/your_off-facebook_activity.json --> Company that shared information with facebook about your activity on their website/application
-// facebook_accounts_center/accounts_center.json --> Account linked to your Facebook profile
-// facebook_gaming/instant_games.json --> Game you played on Facebook
-// Other companies that are owned by Facebook and Google, which might share data profiles between entities (What's app, etc.)
-
-// 2) Build categories of companies based on the files
-// a) Companies that displayed ads to you ;
-// b) Apps and games you installed/played ;
-// c) Companies linked to the ones you share data with
-
-// 3) Define the shape of the final object (nodes, links)
-
-// 4) Build the nodes object
-// "nodes": [{
-//   "id": "Facebook",
-//   "group": 1
-// },
-// {
-//   "id": "Google",
-//   "group": 2
-// }]
-
-// 5) Build the links object
-// "links": [{
-//   "source": "You",
-//   "target": "Facebook",
-//   "value": 10
-// },
-// {
-//   "source": "You",
-//   "target": "Google",
-//   "value": 5
-// }]
-
-// 6) Define the list of colours to be used for each category and see how to add a legend in the chart
-
-//
-
 export default function ForceGraph() {
-  // Fetch data from State
-  // const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
-  //   (state: AvastarParsedDataPointState) => state.avastarParsedData,
-  //   shallowEqual
-  // );
-
-  // Reprendre ici
+  // Read local fake data file
   const data = fakeData.data_classification;
 
-  const setNodes = () => {
+  // Transform data from State into the right shape for the force graph
+  const setForceGraphData = () => {
+    // Set empty dictionnaries
+    var forceGraphData = [];
+    var nodes = [];
+    var links = [];
+    // Set the initial nodes (You, Facebook, Google)
+    nodes.push({
+      id: 'You',
+      group: 1,
+    });
+    nodes.push({
+      id: 'Facebook',
+      group: 2,
+    });
+    nodes.push({
+      id: 'Google',
+      group: 3,
+    });
+    // Set the initial links (You, Facebook, Google)
+    links.push({
+      source: 'You',
+      target: 'Facebook',
+      value: 10,
+    });
+    links.push({
+      source: 'You',
+      target: 'Google',
+      value: 10,
+    });
+
+    // Build nodes and links based on each type of relationships with companies identified in files
     for (let i = 0; i < data.length; i++) {
       if (
+        // @ts-ignore
         data[i].action_type ===
         'Advertisers whose ads you have recently seen or clicked on'
       ) {
-        console.log(data[i]);
+        nodes.push({
+          id: data[i].details,
+          group: 4,
+        });
+        links.push({
+          source: 'You',
+          target: data[i].details,
+          value: 3,
+        });
+        links.push({
+          source: data[i].details,
+          target: data[i].platform,
+          value: 3,
+        });
+      } else if (
+        // @ts-ignore
+        data[i].action_type ===
+        'Advertiser who has added your name to an audience based on your information or your activity outside of Facebook'
+      ) {
+        nodes.push({
+          id: data[i].details,
+          group: 4,
+        });
+        links.push({
+          source: 'You',
+          target: data[i].details,
+          value: 3,
+        });
+        links.push({
+          source: data[i].details,
+          target: data[i].platform,
+          value: 3,
+        });
+      } else if (
+        // @ts-ignore
+        data[i].action_type ===
+        'Company that shared information with facebook about your activity on their website/application'
+      ) {
+        nodes.push({
+          id: data[i].details,
+          group: 5,
+        });
+        links.push({
+          source: 'You',
+          target: data[i].details,
+          value: 3,
+        });
+        links.push({
+          source: data[i].details,
+          target: data[i].platform,
+          value: 3,
+        });
+      } else if (
+        // @ts-ignore
+        data[i].action_type ===
+        'Apps that have been installed on your mobile device'
+      ) {
+        nodes.push({
+          id: data[i].details,
+          group: 6,
+        });
+        links.push({
+          source: 'You',
+          target: data[i].details,
+          value: 3,
+        });
+        links.push({
+          source: data[i].details,
+          target: data[i].platform,
+          value: 3,
+        });
+      } else if (
+        // @ts-ignore
+        data[i].action_type === 'Account linked to your Facebook profile'
+      ) {
+        nodes.push({
+          id: data[i].details,
+          group: 7,
+        });
+        links.push({
+          source: 'You',
+          target: data[i].details,
+          value: 3,
+        });
+        links.push({
+          source: data[i].details,
+          target: data[i].platform,
+          value: 3,
+        });
+        // @ts-ignore
+      } else if (data[i].action_type === 'Game you played on Facebook') {
+        nodes.push({
+          id: data[i].details,
+          group: 8,
+        });
+        links.push({
+          source: 'You',
+          target: data[i].details,
+          value: 3,
+        });
+        links.push({
+          source: data[i].details,
+          target: data[i].platform,
+          value: 3,
+        });
       }
     }
+    forceGraphData.push({
+      nodes: nodes,
+      links: links,
+    });
+    return forceGraphData[0];
   };
 
-  setNodes();
+  const myGraphData = setForceGraphData();
+
+  console.log(myGraphData);
+  console.log(myData);
 
   const fgRef = useRef();
   return (
     <ForceGraph2D
       ref={fgRef}
-      graphData={myData}
+      // @ts-ignore
+      graphData={myGraphData}
       cooldownTicks={100}
       // @ts-ignore
       onEngineStop={() => fgRef.current.zoomToFit(400)}
