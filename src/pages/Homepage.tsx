@@ -2,6 +2,7 @@
 import NavHeader from '../components/Home/NavHeader';
 import Header from '../components/Home/HomeHeader';
 import QuestionsResumed from '../components/Home/QuestionsYouMayAskSection';
+import TransparencyOverview from '../components/Home/TransparencyPersonalDataSection';
 import GetStarted from '../components/Home/GetStartedBanner';
 import ContentPointsList from '../components/Home/ContentPointsListSection';
 import MainBenefits from '../components/Home/MainBenefitsSection';
@@ -36,6 +37,7 @@ export default function Homepage() {
           <Header />
           <Main>
             <QuestionsResumed />
+            <TransparencyOverview/>
             <GetStarted />
             <ContentPointsList />
             <MainBenefits />
