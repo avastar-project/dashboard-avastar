@@ -64,7 +64,7 @@ export default function App() {
       <CookieConsent
         style={{ background: "#9CB1FF" }}
         buttonStyle={{ color: "#FFFFFF", fontSize: "13px", background: "#0034F5", fontWeight: 'bold' }}
-        declineButtonStyle={{ color: "#FFFFFF", fontSize: "13px", background: "#0034F5", fontWeight: 'bold'}}
+        declineButtonStyle={{ color: "#FFFFFF", fontSize: "13px", background: "#C8C8C8", fontWeight: 'bold'}}
         expires={150}
         enableDeclineButton
         onDecline={handleDeclineCookie}
