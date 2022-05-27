@@ -7,6 +7,7 @@ import Google from './pages/Google';
 import MainNav from './layouts/MainNav';
 import Header from './layouts/Header';
 import { Routes, Route } from 'react-router-dom';
+import { useLocation } from 'react-router';
 // Utils
 import styled from 'styled-components';
 
@@ -29,9 +30,11 @@ const Main = styled.main`
 `;
 
 export default function App() {
+  const location = useLocation();
   const handleAcceptCookie = () => {
     if (process.env.REACT_APP_GOOGLE_ANALYTICS_ID) {
-      initGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
+      initGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID, location);
+
     }
   };
 
