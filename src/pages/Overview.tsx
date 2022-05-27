@@ -10,12 +10,15 @@ import OverviewEducLink from '../components/Overview/OverviewEducLink';
 import MoreDataContainer from '../components/Overview/MoreDataContainer';
 import ForceGraph from '../components/Overview/PlotlyCharts/ForceDirectedGraph';
 // MUI components
-import { Box, Grid } from '@mui/material';
+import { Box, Grid,Typography } from '@mui/material';
 import { useSelector, shallowEqual } from 'react-redux';
 import {
   AvastarParsedDataPoint,
   AvastarParsedDataPointState,
 } from '../types/dataTypes';
+import Filter from '../components/Overview/Filter';
+import { useState } from 'react';
+import {platformList, data_type, data_origin} from '../types/dataTypes'
 
 // Styled-components
 const Container = styled(Grid)`
@@ -24,7 +27,13 @@ const Container = styled(Grid)`
 `;
 
 const Header = styled.header`
-  border: solid 1px red;
+width:75%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:2rem;
+`;
+const Title = styled(Typography)`
 `;
 
 const Main = styled.main``;
@@ -35,42 +44,76 @@ const Aside = styled.aside`
 `;
 
 export default function Overview() {
+  const [platform, setPlatform] = useState('');
+  const [origin, setOrigin] = useState('');
+  const [type, setType] = useState('');
   const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
     (state: AvastarParsedDataPointState) => state.avastarParsedData,
     shallowEqual
   );
+
   console.log('avastarParsedData from redux', avastarParsedData);
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Container container spacing={2}>
         <Grid item xs={12}>
-          {/* Will contain form's select input fields */}
-          <Header>Header</Header>
+          <Header >
+          <Title variant="h4">My identity</Title>
+          <Box display="flex" justifyContent='flex-end'>
+          <Filter
+            onChange={setPlatform}
+            optionsList={platformList}
+            name="Platform"
+          ></Filter>
+          <Filter
+            onChange={setType}
+            optionsList={data_type}
+            name="Type"
+          ></Filter>
+          <Filter
+            onChange={setOrigin}
+            optionsList={data_origin}
+            name="Origin"
+          ></Filter>
+          </Box>
+          </Header>
         </Grid>
         <Grid item xs={12} md={9}>
           <Main>
-            <OverviewProfile />
+            <OverviewProfile platform={platform} origin={origin} type={type}/>
             {/* Contains each stat view */}
             <PlotlyContainer
               title="What is being tracked ?"
+              color="#d1c5fd"
               tooltip="about"
-              plotlyComponent={<TrackedChart />}
+              plotlyComponent={
+                <TrackedChart platform={platform} origin={origin} type={type} />
+              }
               isSearch={false}
             />
             <PlotlyContainer
               title="How my data is collected ?"
+              color="#BDE8D1"
               tooltip="about"
-              plotlyComponent={<DataCollectedChart />}
+              plotlyComponent={
+                <DataCollectedChart
+                  platform={platform}
+                  origin={origin}
+                  type={type}
+                />
+              }
               isSearch={false}
             />
             <PlotlyContainer
               title="Who has my data ?"
+              color="#BAE9FC"
               tooltip="about"
               plotlyComponent={<ForceGraph />}
               isSearch={false}
             />
             <PlotlyContainer
               title="Search my data"
+              color="#d1c5fd"
               tooltip="about"
               plotlyComponent={<DataTable />}
               isSearch={false}
