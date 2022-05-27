@@ -2,12 +2,25 @@ import React from 'react';
 import { ForceGraph2D } from 'react-force-graph';
 import myData from '../../../fake-data/force-directed-graph-fake-data.json'; // To be replaced by function transforming AvastarParsedDaat Object in another object with the required shape
 import fakeData from '../../../fake-data/fake-data-agg.json'; // Temporary import while the details information is not automatically fetched from "Who has my data" files
+import { useSelector, shallowEqual } from 'react-redux';
+import {
+  AvastarParsedDataPoint,
+  AvastarParsedDataPointState,
+} from '../../../types/dataTypes';
 
 const { useRef } = React;
 
 export default function ForceGraph() {
+  // Fetch data from State
+  const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
+    (state: AvastarParsedDataPointState) => state.avastarParsedData,
+    shallowEqual
+  );
+
   // Read local fake data file
-  const data = fakeData.data_classification;
+  // Add an interaction onClick to set the volume of data in the slice (to be applicated randomly to Facebook and Google files)
+  // Check how it's done in the Filter PR
+  const data = avastarParsedData.slice(0, 20);
 
   // Transform data from State into the right shape for the force graph
   const setForceGraphData = () => {
@@ -21,22 +34,22 @@ export default function ForceGraph() {
       group: 1,
     });
     nodes.push({
-      id: 'Facebook',
+      id: 'facebook',
       group: 2,
     });
     nodes.push({
-      id: 'Google',
+      id: 'google',
       group: 3,
     });
     // Set the initial links (You, Facebook, Google)
     links.push({
       source: 'You',
-      target: 'Facebook',
+      target: 'facebook',
       value: 10,
     });
     links.push({
       source: 'You',
-      target: 'Google',
+      target: 'google',
       value: 10,
     });
 
