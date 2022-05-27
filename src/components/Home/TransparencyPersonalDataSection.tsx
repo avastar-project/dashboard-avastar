@@ -81,7 +81,7 @@ export default function TransparencyOverview() {
       >
         <Box
           sx={{
-            width: '34.438rem',
+            width: '31.438rem',
             height: '21.938rem',
           }}
         >

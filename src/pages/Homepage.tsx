@@ -18,6 +18,7 @@ import styled from '@emotion/styled';
 
 // MUI components
 import { Box, Grid } from '@mui/material';
+import MainBenefitsCard from '../components/Home/MainBenefitsCardsSection';
 
 const Container = styled(Grid)`
   position: absolute;
@@ -38,6 +39,7 @@ export default function Homepage() {
           <Main>
             <QuestionsResumed />
             <TransparencyOverview/>
+            <MainBenefitsCard/>
             <GetStarted />
             <ContentPointsList />
             <MainBenefits />
