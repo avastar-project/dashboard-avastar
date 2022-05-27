@@ -139,7 +139,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": "events"
+      "nested_data_point_selector": "events",
+      "fetch_details": true
     },
     "off_facebook_activity_v2": {
       "entries": [
@@ -172,7 +173,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": true
     },
     "custom_audiences_all_types_v2": {
       "entries": [
@@ -205,7 +207,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": true
     },
     "history_v2": {
       "entries": [
@@ -880,7 +883,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": true
     },
     "accounts_center_v2": {
       "entries": [
@@ -1345,7 +1349,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": true
     },
     "installed_apps_v2": {
       "entries": [
@@ -1365,7 +1370,7 @@
           "timestamp": ""
         },
         {
-          "details": ""
+          "details": "name"
         }
       ]
     }
@@ -1477,7 +1482,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": true
     },
     "instant_games_played_v2": {
       "entries": [
@@ -1497,7 +1503,7 @@
           "timestamp": ""
         },
         {
-          "details": ""
+          "details": "name"
         }
       ]
     }
