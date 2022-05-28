@@ -1,7 +1,5 @@
 import React from 'react';
 import { ForceGraph2D } from 'react-force-graph';
-import myData from '../../../fake-data/force-directed-graph-fake-data.json'; // To be replaced by function transforming AvastarParsedDaat Object in another object with the required shape
-import fakeData from '../../../fake-data/fake-data-agg.json'; // Temporary import while the details information is not automatically fetched from "Who has my data" files
 import { useSelector, shallowEqual } from 'react-redux';
 import {
   AvastarParsedDataPoint,
@@ -17,10 +15,23 @@ export default function ForceGraph() {
     shallowEqual
   );
 
-  // Read local fake data file
-  // Add an interaction onClick to set the volume of data in the slice (to be applicated randomly to Facebook and Google files)
-  // Check how it's done in the Filter PR
-  const data = avastarParsedData.slice(0, 20);
+  // Read data stored in Redux
+  var data = avastarParsedData;
+
+  // TO DO: Store the values inputted by the user in the filters
+  // countFacebookObjects = []
+  // countGoogleObjects = []
+
+  // TO DO: Filter the data object that will be used in the force graph
+
+  // Shuffle randomly the data coming from Facebook in the data object
+  // @ts-ignore
+  const shuffledDataFacebook = data.sort(() => 0.5 - Math.random());
+
+  // TO DO: Shuffle randomly the data coming from Google in the data object
+
+  // TO DO: Join both objects in a single object that will be the input of the force graph
+  var data = shuffledDataFacebook.slice(0, 50);
 
   // Transform data from State into the right shape for the force graph
   const setForceGraphData = () => {
@@ -93,26 +104,28 @@ export default function ForceGraph() {
           target: data[i].platform,
           value: 3,
         });
-      } else if (
-        // @ts-ignore
-        data[i].action_type ===
-        'Company that shared information with facebook about your activity on their website/application'
-      ) {
-        nodes.push({
-          id: data[i].details,
-          group: 5,
-        });
-        links.push({
-          source: 'You',
-          target: data[i].details,
-          value: 3,
-        });
-        links.push({
-          source: data[i].details,
-          target: data[i].platform,
-          value: 3,
-        });
-      } else if (
+      }
+      // else if (
+      //   // @ts-ignore
+      //   data[i].action_type ===
+      //   'Company that shared information with facebook about your activity on their website/application'
+      // ) {
+      //   nodes.push({
+      //     id: data[i].details,
+      //     group: 5,
+      //   });
+      //   links.push({
+      //     source: 'You',
+      //     target: data[i].details,
+      //     value: 3,
+      //   });
+      //   links.push({
+      //     source: data[i].details,
+      //     target: data[i].platform,
+      //     value: 3,
+      //   });
+      // }
+      else if (
         // @ts-ignore
         data[i].action_type ===
         'Apps that have been installed on your mobile device'
