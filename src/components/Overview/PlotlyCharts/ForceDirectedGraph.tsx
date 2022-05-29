@@ -15,68 +15,57 @@ export default function ForceGraph() {
     shallowEqual
   );
 
-  // Read data stored in Redux
-  var data = avastarParsedData;
+  // Filter avastarParsedData by selecting only the objects that are relevant for the force graph
 
-  // TO DO: Filter the data object that will be used in the force graph
+  // Define list of action_type to filter the data object stored in state
+  const actions = [
+    'Advertisers whose ads you have recently seen or clicked on',
+    'Advertiser who has added your name to an audience based on your information or your activity outside of Facebook',
+    'Company that shared information with facebook about your activity on their website/application',
+    'Apps that have been installed on your mobile device',
+    'Account linked to your Facebook profile',
+    'Game you played on Facebook',
+  ];
 
-  // Remove duplicates from data object
-  // var a = avastarParsedData.reduce((accumulator, current) => {
-  //   if (checkIfAlreadyExist(current)) {
-  //     return accumulator;
-  //   } else {
-  //     return [...accumulator, current];
-  //   }
+  // Filter data object based on the list defined above
+  let filteredData = [];
+  for (let i = 0; i < avastarParsedData.length; i++) {
+    if (actions.includes(avastarParsedData[i].action_type)) {
+      filteredData.push(avastarParsedData[i]);
+    }
+  }
 
-  //   function checkIfAlreadyExist(currentVal) {
-  //     return accumulator.some((item) => {
-  //       return (
-  //         item.action_type === currentVal.action_type &&
-  //         item.details === currentVal.details
-  //       );
-  //     });
-  //   }
-  // }, []);
-
-  // console.log(a);
-
-  // TO DO: Store the values inputted by the user in the filters
-  // countFacebookObjects = []
-  // countGoogleObjects = []
-
-  // Shuffle randomly the data coming from Facebook in the data object
+  // Pick randomly 150 data points coming from the filtered data object
   // @ts-ignore
-  const shuffledDataFacebook = data.sort(() => 0.5 - Math.random());
+  var data = filteredData.sort(() => 0.5 - Math.random()).slice(0, 150);
 
-  // TO DO: Shuffle randomly the data coming from Google in the data object
-
-  // TO DO: Join both objects in a single object that will be the input of the force graph
-  var data = shuffledDataFacebook.slice(0, 100);
-
-  // Transform data from State into the right shape for the force graph
+  // Transform filtered data object into the right shape for the force graph (nodes and links)
   const setForceGraphData = () => {
-    // Set empty dictionnaries
-    var forceGraphData = [];
-    var nodes = [];
-    var links = [];
+    // Set empty arrays
+    var forceGraphData = [] as any;
+    var nodes = [] as any;
+    var links = [] as any;
     // Set the initial nodes (You, Facebook, Google)
     nodes.push({
       id: 'You',
       group: 1,
+      color: '#ff6961',
     });
     nodes.push({
       id: 'facebook',
       group: 2,
+      color: '#59adf6',
     });
     nodes.push({
       id: 'google',
       group: 3,
+      color: '#42d6a4',
     });
-    // Set the initial links (You, Facebook, Google)
+    // Set the initial links (You - Facebook, You - Google)
     links.push({
       source: 'You',
       target: 'facebook',
-      value: 10,
+      value: 10, // intensity of the moving particles defined relatively by the volume of data transferred
     });
     links.push({
       source: 'You',
@@ -84,154 +73,92 @@ export default function ForceGraph() {
       value: 10,
     });
 
-    // Build nodes and links based on each type of relationships with companies identified in files
-    for (let i = 0; i < data.length; i++) {
-      if (
-        // @ts-ignore
-        data[i].action_type ===
-        'Advertisers whose ads you have recently seen or clicked on'
-      ) {
-        nodes.push({
-          id: data[i].details,
-          group: 4,
-        });
-        links.push({
-          source: 'You',
-          target: data[i].details,
-          value: 3,
-        });
-        links.push({
-          source: data[i].details,
-          target: data[i].platform,
-          value: 3,
-        });
-      } else if (
-        // @ts-ignore
-        data[i].action_type ===
-        'Advertiser who has added your name to an audience based on your information or your activity outside of Facebook'
-      ) {
-        nodes.push({
-          id: data[i].details,
-          group: 4,
-        });
-        links.push({
-          source: 'You',
-          target: data[i].details,
-          value: 3,
-        });
-        links.push({
-          source: data[i].details,
-          target: data[i].platform,
-          value: 3,
-        });
-      } else if (
-        // @ts-ignore
-        data[i].action_type ===
-        'Company that shared information with facebook about your activity on their website/application'
-      ) {
-        nodes.push({
-          id: data[i].details,
-          group: 5,
-        });
-        links.push({
-          source: 'You',
-          target: data[i].details,
-          value: 3,
-        });
-        links.push({
-          source: data[i].details,
-          target: data[i].platform,
-          value: 3,
-        });
-      } else if (
-        // @ts-ignore
-        data[i].action_type ===
-        'Apps that have been installed on your mobile device'
-      ) {
-        nodes.push({
-          id: data[i].details,
-          group: 6,
-        });
-        links.push({
-          source: 'You',
-          target: data[i].details,
-          value: 3,
-        });
-        links.push({
-          source: data[i].details,
-          target: data[i].platform,
-          value: 3,
-        });
-      } else if (
-        // @ts-ignore
-        data[i].action_type === 'Account linked to your Facebook profile'
-      ) {
-        nodes.push({
-          id: data[i].details,
-          group: 7,
-        });
-        links.push({
-          source: 'You',
-          target: data[i].details,
-          value: 3,
-        });
-        links.push({
-          source: data[i].details,
-          target: data[i].platform,
-          value: 3,
-        });
-        // @ts-ignore
-      } else if (data[i].action_type === 'Game you played on Facebook') {
-        nodes.push({
-          id: data[i].details,
-          group: 6,
-        });
-        links.push({
-          source: 'You',
-          target: data[i].details,
-          value: 3,
-        });
-        links.push({
-          source: data[i].details,
-          target: data[i].platform,
-          value: 3,
-        });
+    // Define function to transform every object that have been filtered
+    const transformData = (
+      initialObject: AvastarParsedDataPoint[],
+      nodesObject: object[],
+      linksObject: object[],
+      forceGraphInput: object[],
+      actionType: string,
+      groupId: number,
+      colorCode: string
+    ) => {
+      for (let i = 0; i < initialObject.length; i++) {
+        if (initialObject[i].action_type === actionType) {
+          nodesObject.push({
+            id: data[i].details,
+            group: groupId,
+            color: colorCode,
+          });
+          linksObject.push({
+            source: 'You',
+            target: data[i].details,
+            value: 3,
+          });
+          linksObject.push({
+            source: data[i].details,
+            target: data[i].platform,
+            value: 3,
+          });
+        }
       }
-    }
-    forceGraphData.push({
-      nodes: nodes,
-      links: links,
-    });
-    // Remove duplicates in nodes and links appearing in forceGraphData
-    var forceGraphDataFiltered = [];
-    // Nodes (keys = id, group)
-    const listOfNodes = forceGraphData[0].nodes;
-    const keysNodes = ['id'],
-      filteredNodes = listOfNodes.filter(
-        (
-          (s) => (o) =>
-            // @ts-ignore
-            ((k) => !s.has(k) && s.add(k))(keysNodes.map((k) => o[k]).join('|'))
-        )(new Set())
-      );
-    console.log(filteredNodes);
+      forceGraphInput.push({
+        nodes: nodesObject,
+        links: linksObject,
+      });
+      return forceGraphInput;
+    };
 
-    // Links (keys = source, target)
-    const listOfLinks = forceGraphData[0].links;
-    const keysLinks = ['source', 'target'],
-      filteredLinks = listOfLinks.filter(
-        (
-          (s) => (o) =>
-            // @ts-ignore
-            ((k) => !s.has(k) && s.add(k))(keysLinks.map((k) => o[k]).join('|'))
-        )(new Set())
+    // Define group numbers to identify unique categories of companies
+    // 4 = Companies who paid to display you advertising content
+    // 5 = Companies that collected data about you outside the apps you installed
+    // 6 = Apps and games you installed/played
+    // 7 = Companies connected to Facebook and Google
+    const groups = [4, 4, 5, 6, 7, 6];
+
+    const colors = [
+      '#473188',
+      '#DC488A',
+      '#F8A523',
+      '#ECD707',
+      '#129D00',
+      '#1B6DA9',
+    ];
+
+    for (let i = 0; i < actions.length; i++) {
+      transformData(
+        data,
+        nodes,
+        links,
+        forceGraphData,
+        actions[i],
+        groups[i],
+        colors[i]
       );
-    console.log(filteredLinks);
+    }
+
+    // Remove duplicates in nodes and links appearing in forceGraphData
+    const removeObjectDuplicates = (data: any, uniqueKeys: String[]) => {
+      const listOfObjects = data;
+      const keys = uniqueKeys,
+        filteredObject = listOfObjects.filter(
+          (
+            (s) => (o: { [x: string]: any }) =>
+              // @ts-ignore
+              ((k) => !s.has(k) && s.add(k))(keys.map((k) => o[k]).join('|'))
+          )(new Set())
+        );
+      return filteredObject;
+    };
 
     // Push the filtered nodes/links objects in a new one
+    var forceGraphDataFiltered = [];
     forceGraphDataFiltered.push({
-      nodes: filteredNodes,
-      links: filteredLinks,
+      nodes: removeObjectDuplicates(forceGraphData[0].nodes, ['id']),
+      links: removeObjectDuplicates(forceGraphData[0].links, [
+        'source',
+        'target',
+      ]),
     });
 
     return forceGraphDataFiltered[0];
@@ -248,7 +175,7 @@ export default function ForceGraph() {
       cooldownTicks={100}
       // @ts-ignore
       onEngineStop={() => fgRef.current.zoomToFit(400)}
-      width={1060}
+      width={1160}
       height={500}
       nodeAutoColorBy="group"
       linkDirectionalParticles="value"
