@@ -257,7 +257,6 @@ export const smartParserJson = (
               if ((parsingModel as any)[filePathModel]['file_structure_properties']['fetch_details'] === true) {
                 const detailsSelector = (parsingModel as any)[filePathModel][nestedArrayName]['entries'][5]["details"]
                 for (let j = 0; j < fileContent[nestedArrayName].length; j++) {
-                  console.log(fileContent[nestedArrayName][j][detailsSelector])
                   for (
                     let k = 0;
                     k <
