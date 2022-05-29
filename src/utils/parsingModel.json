@@ -7,7 +7,8 @@
       "has_single_data_point": true,
       "has_multiple_nested_objects": false,
       "single_data_point_selector": "city_region_pairs",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "primary_location_v2": {
       "entries": [
@@ -40,7 +41,8 @@
       "has_single_data_point": true,
       "has_multiple_nested_objects": false,
       "data_point_selector": "city",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "primary_public_location_v2": {
       "entries": [
@@ -73,7 +75,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "group_interactions_v2": {
       "entries": [
@@ -106,7 +109,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "people_interactions_v2": {
       "entries": [
@@ -241,7 +245,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "friend_peer_group_v2": {
       "entries": [
@@ -274,7 +279,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "topics_v2": {
       "entries": [
@@ -307,7 +313,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "inferred_topics_v2": {
       "entries": [
@@ -340,7 +347,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "None": {
       "entries": [
@@ -373,7 +381,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "comments_v2": {
       "entries": [
@@ -406,7 +415,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "recently_viewed": {
       "Vid\u00c3\u00a9os et programmes de Facebook Watch": [
@@ -598,7 +608,8 @@
       "depth": 1,
       "has_single_data_point": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "None": {
       "entries": [
@@ -631,7 +642,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "Home App Data": {
       "entries": [
@@ -664,7 +676,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "None": {
       "entries": [
@@ -697,7 +710,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "visited_things_v2": {
       "Visites de profil": [
@@ -810,7 +824,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": true,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "event_responses_v2": {
       "events_joined": [
@@ -917,7 +932,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "group_posts_v2": {
       "entries": [
@@ -950,7 +966,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": "photos"
+      "nested_data_point_selector": "photos",
+      "fetch_details": false
     },
     "photos": {
       "entries": [
@@ -983,7 +1000,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": true,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "profile_v2": {
       "name": [
@@ -1316,7 +1334,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "events_interactions_v2": {
       "entries": [
@@ -1383,7 +1402,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "admined_apps_v2": {
       "entries": [
@@ -1416,7 +1436,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "reactions_v2": {
       "entries": [
@@ -1449,7 +1470,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "events_invited_v2": {
       "entries": [
@@ -1516,7 +1538,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "payments_v2": {
       "entries": [
@@ -1549,7 +1572,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "received_requests_v2": {
       "entries": [
@@ -1582,7 +1606,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "sent_requests_v2": {
       "entries": [
@@ -1615,7 +1640,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "rejected_requests_v2": {
       "entries": [
@@ -1648,7 +1674,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "following_v2": {
       "entries": [
@@ -1681,7 +1708,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "group_badges_v2": {
       "entries": [
@@ -1714,7 +1742,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "group_comments_v2": {
       "entries": [
@@ -1747,7 +1776,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "groups_joined_v2": {
       "entries": [
@@ -1780,7 +1810,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "groups_admined_v2": {
       "entries": [
@@ -1813,7 +1844,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "phone_number_location_v2": {
       "entries": [
@@ -1846,7 +1878,8 @@
       "has_single_data_point": true,
       "has_multiple_nested_objects": false,
       "data_point_selector": "timezone_v2",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "timezone_v2": {
       "entries": [
@@ -1879,7 +1912,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "address_book_v2": {
       "address_book": [
@@ -1912,7 +1946,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "pages_followed_v2": {
       "entries": [
@@ -1945,7 +1980,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "page_likes_v2": {
       "entries": [
@@ -1978,7 +2014,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "pages_unfollowed_v2": {
       "entries": [
@@ -2011,7 +2048,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "recommended_pages_v2": {
       "entries": [
@@ -2044,7 +2082,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "pages_v2": {
       "entries": [
@@ -2077,7 +2116,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": "photos"
+      "nested_data_point_selector": "photos",
+      "fetch_details": false
     },
     "photos": {
       "entries": [
@@ -2110,7 +2150,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": "photos"
+      "nested_data_point_selector": "photos",
+      "fetch_details": false
     },
     "photos": {
       "entries": [
@@ -2143,7 +2184,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "videos_v2": {
       "entries": [
@@ -2176,7 +2218,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": true,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "privacy_checkup_interactions_v2": {
       "privacy_checkup_topic": [
@@ -2209,7 +2252,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "saves_and_collections_v2": {
       "entries": [
@@ -2242,7 +2286,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "searches_v2": {
       "entries": [
@@ -2275,7 +2320,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "account_activity_v2": {
       "entries": [
@@ -2308,7 +2354,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "recognized_devices_v2": {
       "entries": [
@@ -2341,7 +2388,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "used_ip_address_v2": {
       "entries": [
@@ -2374,7 +2422,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "login_protection_data_v2": {
       "entries": [
@@ -2407,7 +2456,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "account_accesses_v2": {
       "entries": [
@@ -2440,7 +2490,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "devices_v2": {
       "entries": [
@@ -2473,7 +2524,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "active_sessions_v2": {
       "entries": [
@@ -2506,7 +2558,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "devices_v2": {
       "entries": [
@@ -2539,7 +2592,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": true,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "Autofill Profile": {
       "address_home_city": [
@@ -2632,7 +2686,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "Browser History": {
       "entries": [
@@ -2665,7 +2720,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": "Extensions"
+      "nested_data_point_selector": "Extensions",
+      "fetch_details": false
     },
     "Extensions": {
       "entries": [
@@ -2698,7 +2754,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "None": {
       "entries": [
@@ -2731,7 +2788,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": "features"
+      "nested_data_point_selector": "features",
+      "fetch_details": false
     },
     "features": {
       "entries": [
@@ -2764,7 +2822,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": false,
       "data_point_selector": "",
-      "nested_data_point_selector": "features"
+      "nested_data_point_selector": "features",
+      "fetch_details": false
     },
     "features": {
       "entries": [
@@ -2797,7 +2856,8 @@
       "has_single_data_point": false,
       "has_multiple_nested_objects": true,
       "data_point_selector": "",
-      "nested_data_point_selector": ""
+      "nested_data_point_selector": "",
+      "fetch_details": false
     },
     "None": {
       "name": [
