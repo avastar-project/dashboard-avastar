@@ -18,11 +18,31 @@ export default function ForceGraph() {
   // Read data stored in Redux
   var data = avastarParsedData;
 
+  // TO DO: Filter the data object that will be used in the force graph
+
+  // Remove duplicates from data object
+  // var a = avastarParsedData.reduce((accumulator, current) => {
+  //   if (checkIfAlreadyExist(current)) {
+  //     return accumulator;
+  //   } else {
+  //     return [...accumulator, current];
+  //   }
+
+  //   function checkIfAlreadyExist(currentVal) {
+  //     return accumulator.some((item) => {
+  //       return (
+  //         item.action_type === currentVal.action_type &&
+  //         item.details === currentVal.details
+  //       );
+  //     });
+  //   }
+  // }, []);
+
+  // console.log(a);
+
   // TO DO: Store the values inputted by the user in the filters
   // countFacebookObjects = []
   // countGoogleObjects = []
-
-  // TO DO: Filter the data object that will be used in the force graph
 
   // Shuffle randomly the data coming from Facebook in the data object
   // @ts-ignore
@@ -31,7 +51,7 @@ export default function ForceGraph() {
   // TO DO: Shuffle randomly the data coming from Google in the data object
 
   // TO DO: Join both objects in a single object that will be the input of the force graph
-  var data = shuffledDataFacebook.slice(0, 50);
+  var data = shuffledDataFacebook.slice(0, 100);
 
   // Transform data from State into the right shape for the force graph
   const setForceGraphData = () => {
@@ -104,28 +124,26 @@ export default function ForceGraph() {
           target: data[i].platform,
           value: 3,
         });
-      }
-      // else if (
-      //   // @ts-ignore
-      //   data[i].action_type ===
-      //   'Company that shared information with facebook about your activity on their website/application'
-      // ) {
-      //   nodes.push({
-      //     id: data[i].details,
-      //     group: 5,
-      //   });
-      //   links.push({
-      //     source: 'You',
-      //     target: data[i].details,
-      //     value: 3,
-      //   });
-      //   links.push({
-      //     source: data[i].details,
-      //     target: data[i].platform,
-      //     value: 3,
-      //   });
-      // }
-      else if (
+      } else if (
+        // @ts-ignore
+        data[i].action_type ===
+        'Company that shared information with facebook about your activity on their website/application'
+      ) {
+        nodes.push({
+          id: data[i].details,
+          group: 5,
+        });
+        links.push({
+          source: 'You',
+          target: data[i].details,
+          value: 3,
+        });
+        links.push({
+          source: data[i].details,
+          target: data[i].platform,
+          value: 3,
+        });
+      } else if (
         // @ts-ignore
         data[i].action_type ===
         'Apps that have been installed on your mobile device'
@@ -184,7 +202,39 @@ export default function ForceGraph() {
       nodes: nodes,
       links: links,
     });
-    return forceGraphData[0];
+    // Remove duplicates in nodes and links appearing in forceGraphData
+    var forceGraphDataFiltered = [];
+    // Nodes (keys = id, group)
+    const listOfNodes = forceGraphData[0].nodes;
+    const keysNodes = ['id'],
+      filteredNodes = listOfNodes.filter(
+        (
+          (s) => (o) =>
+            // @ts-ignore
+            ((k) => !s.has(k) && s.add(k))(keysNodes.map((k) => o[k]).join('|'))
+        )(new Set())
+      );
+    console.log(filteredNodes);
+
+    // Links (keys = source, target)
+    const listOfLinks = forceGraphData[0].links;
+    const keysLinks = ['source', 'target'],
+      filteredLinks = listOfLinks.filter(
+        (
+          (s) => (o) =>
+            // @ts-ignore
+            ((k) => !s.has(k) && s.add(k))(keysLinks.map((k) => o[k]).join('|'))
+        )(new Set())
+      );
+    console.log(filteredLinks);
+
+    // Push the filtered nodes/links objects in a new one
+    forceGraphDataFiltered.push({
+      nodes: filteredNodes,
+      links: filteredLinks,
+    });
+
+    return forceGraphDataFiltered[0];
   };
 
   const myGraphData = setForceGraphData();
