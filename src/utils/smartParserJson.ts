@@ -254,18 +254,38 @@ export const smartParserJson = (
                 'file_structure_properties'
               ]['nested_data_point_selector']; // Select the right nested array name with nestedDataSelector property to parse the object.
 
-              for (let j = 0; j < fileContent[nestedArrayName].length; j++) {
-                for (
-                  let k = 0;
-                  k <
-                  fileContent[nestedArrayName][j][nestedDataSelector].length;
-                  k++
-                ) {
-                  const parsedDataPoint = getParsedDataPoint(
-                    filePathModel,
-                    nestedArrayName
-                  );
-                  smartData.push(parsedDataPoint);
+              if ((parsingModel as any)[filePathModel]['file_structure_properties']['fetch_details'] === true) {
+                const detailsSelector = (parsingModel as any)[filePathModel][nestedArrayName]['entries'][5]["details"]
+                for (let j = 0; j < fileContent[nestedArrayName].length; j++) {
+                  console.log(fileContent[nestedArrayName][j][detailsSelector])
+                  for (
+                    let k = 0;
+                    k <
+                    fileContent[nestedArrayName][j][nestedDataSelector].length;
+                    k++
+                  ) {
+                    const parsedDataPoint = getParsedDataPoint(
+                      filePathModel,
+                      nestedArrayName
+                    );
+                    parsedDataPoint['details'] = fileContent[nestedArrayName][j][detailsSelector]
+                    smartData.push(parsedDataPoint);
+                  }
+                }
+              } else {
+                for (let j = 0; j < fileContent[nestedArrayName].length; j++) {
+                  for (
+                    let k = 0;
+                    k <
+                    fileContent[nestedArrayName][j][nestedDataSelector].length;
+                    k++
+                  ) {
+                    const parsedDataPoint = getParsedDataPoint(
+                      filePathModel,
+                      nestedArrayName
+                    );
+                    smartData.push(parsedDataPoint);
+                  }
                 }
               }
             } else {
