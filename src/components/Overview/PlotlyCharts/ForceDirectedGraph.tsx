@@ -27,7 +27,33 @@ export default function ForceGraph() {
     'Game you played on Facebook',
   ];
 
-  // Filter data object based on the list defined above
+  // Define group numbers to identify unique categories of companies
+  // 4 = Companies who paid to display you advertising content
+  // 5 = Companies that collected data about you outside the apps you installed
+  // 6 = Apps and games you installed/played
+  // 7 = Companies connected to Facebook and Google
+  const groups = [4, 4, 5, 6, 7, 6];
+
+  const colors = [
+    '#473188',
+    '#DC488A',
+    '#F8A523',
+    '#ECD707',
+    '#129D00',
+    '#1B6DA9',
+  ];
+
+  // Describe the type of relationship between the user and the advertiser
+  const relationshipType = [
+    'indirect',
+    'indirect',
+    'direct',
+    'direct',
+    'direct',
+    'indirect',
+  ];
+
+  // Filter data object based on the action list
   let filteredData = [];
   for (let i = 0; i < avastarParsedData.length; i++) {
     if (actions.includes(avastarParsedData[i].action_type)) {
@@ -36,7 +62,7 @@ export default function ForceGraph() {
   }
 
   // Pick randomly 150 data points coming from the filtered data object
-  var data = filteredData.sort(() => 0.5 - Math.random()).slice(0, 180);
+  var data = filteredData.sort(() => 0.5 - Math.random()).slice(0, 150);
 
   // Transform filtered data object into the right shape for the force graph (nodes and links)
   const setForceGraphData = () => {
@@ -110,32 +136,6 @@ export default function ForceGraph() {
       });
       return forceGraphInput;
     };
-
-    // Define group numbers to identify unique categories of companies
-    // 4 = Companies who paid to display you advertising content
-    // 5 = Companies that collected data about you outside the apps you installed
-    // 6 = Apps and games you installed/played
-    // 7 = Companies connected to Facebook and Google
-    const groups = [4, 4, 5, 6, 7, 6];
-
-    const colors = [
-      '#473188',
-      '#DC488A',
-      '#F8A523',
-      '#ECD707',
-      '#129D00',
-      '#1B6DA9',
-    ];
-
-    // Describe the type of relationship between the user and the advertiser
-    const relationshipType = [
-      'indirect',
-      'indirect',
-      'direct',
-      'direct',
-      'direct',
-      'indirect',
-    ];
 
     for (let i = 0; i < actions.length; i++) {
       console.log(actions[i]);
