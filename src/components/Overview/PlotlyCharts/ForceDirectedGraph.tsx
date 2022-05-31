@@ -36,7 +36,7 @@ export default function ForceGraph() {
   }
 
   // Pick randomly 150 data points coming from the filtered data object
-  var data = filteredData.sort(() => 0.5 - Math.random()).slice(0, 150);
+  var data = filteredData.sort(() => 0.5 - Math.random()).slice(0, 180);
 
   // Transform filtered data object into the right shape for the force graph (nodes and links)
   const setForceGraphData = () => {
@@ -80,7 +80,8 @@ export default function ForceGraph() {
       forceGraphInput: object[],
       actionType: string,
       groupId: number,
-      colorCode: string
+      colorCode: string,
+      relationship: string
     ) => {
       for (let i = 0; i < initialObject.length; i++) {
         if (initialObject[i].action_type === actionType) {
@@ -90,15 +91,17 @@ export default function ForceGraph() {
             color: colorCode,
           });
           linksObject.push({
-            source: 'You',
-            target: data[i].details,
-            value: 3,
-          });
-          linksObject.push({
             source: data[i].details,
             target: data[i].platform,
             value: 3,
           });
+          if (relationship === 'direct') {
+            linksObject.push({
+              source: 'You',
+              target: data[i].details,
+              value: 3,
+            });
+          }
         }
       }
       forceGraphInput.push({
@@ -124,7 +127,19 @@ export default function ForceGraph() {
       '#1B6DA9',
     ];
 
+    // Describe the type of relationship between the user and the advertiser
+    const relationshipType = [
+      'indirect',
+      'indirect',
+      'direct',
+      'direct',
+      'direct',
+      'indirect',
+    ];
+
     for (let i = 0; i < actions.length; i++) {
+      console.log(actions[i]);
+      console.log(relationshipType[i]);
       transformData(
         data,
         nodes,
@@ -132,7 +147,8 @@ export default function ForceGraph() {
         forceGraphData,
         actions[i],
         groups[i],
-        colors[i]
+        colors[i],
+        relationshipType[i]
       );
     }
 
