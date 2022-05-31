@@ -170,7 +170,6 @@ export default function ForceGraph() {
   return (
     <ForceGraph2D
       ref={fgRef}
-      // @ts-ignore
       graphData={myGraphData}
       cooldownTicks={100}
       // @ts-ignore
