@@ -66,7 +66,7 @@ export default function ForceGraph(props: PropsFilter) {
   // An "input" filter component will be created later to allow the user select the upper bound of the slice
   console.log(props.nodes);
   if (props.nodes === "") {
-    var data = filteredData.sort(() => 0.5 - Math.random()).slice(0, 4);
+    var data = filteredData.sort(() => 0.5 - Math.random()).slice(0, 50);
   } else {
     data = filteredData.sort(() => 0.5 - Math.random()).slice(0, parseInt(props.nodes));
   }
