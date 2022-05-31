@@ -189,7 +189,7 @@ export default function ForceGraph() {
       // @ts-ignore
       onEngineStop={() => fgRef.current.zoomToFit(400)}
       width={1160}
-      height={500}
+      height={650}
       nodeAutoColorBy="group"
       linkDirectionalParticles="value"
       linkDirectionalParticleSpeed={(d: any) => d.value * 0.001}
