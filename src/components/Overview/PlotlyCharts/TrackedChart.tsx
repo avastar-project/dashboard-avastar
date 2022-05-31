@@ -5,7 +5,7 @@ import {
   AvastarParsedDataPoint,
   AvastarParsedDataPointState,
   PropsFilter,
-  DataPointCounterType
+  DataPointCounterType,
 } from '../../../types/dataTypes';
 const Plot = createPlotlyComponent(Plotly);
 
@@ -15,8 +15,8 @@ export default function TrackedChart(props: PropsFilter) {
   const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
     (state: AvastarParsedDataPointState) => state.avastarParsedData,
     shallowEqual
-  )
-    let filterData = (data: readonly AvastarParsedDataPoint[]) => {
+  );
+  let filterData = (data: readonly AvastarParsedDataPoint[]) => {
     if (props.platform) {
       data = data.filter((object) => {
         return object.platform === props.platform;
@@ -35,7 +35,8 @@ export default function TrackedChart(props: PropsFilter) {
     }
 
     data.forEach((object) => {
-      dataPointCounter[object.data_type] = (dataPointCounter[object.data_type] || 0) + 1;
+      dataPointCounter[object.data_type] =
+        (dataPointCounter[object.data_type] || 0) + 1;
     });
     return dataPointCounter;
   };
@@ -64,13 +65,8 @@ export default function TrackedChart(props: PropsFilter) {
   ];
   var layout = {
     autosize: true,
-    yaxis: { title: 'Volume of data points' },
+    yaxis: { title: 'Volume of data points', showgrid: false },
   };
 
-  return (
-    <Plot
-      data={dataPlot}
-      layout={layout}
-    />
-  );
+  return <Plot data={dataPlot} layout={layout} />;
 }
