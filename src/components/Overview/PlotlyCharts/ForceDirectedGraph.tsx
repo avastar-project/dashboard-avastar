@@ -1,9 +1,11 @@
 import React from 'react';
 import { ForceGraph2D } from 'react-force-graph';
+import {PropsFilter} from '../../../types/dataTypes';
+
 import myData from '../../../fake-data/force-directed-graph-fake-data.json'; // To be replaced by function transforming AvastarParsedDaat Object in another object with the required shape
 const { useRef } = React;
 
-export default function ForceGraph() {
+export default function ForceGraph(props: PropsFilter) {
   const fgRef = useRef();
   return (
     <ForceGraph2D
@@ -13,7 +15,7 @@ export default function ForceGraph() {
       // @ts-ignore
       onEngineStop={() => fgRef.current.zoomToFit(400)}
       width={1060}
-      height={500}
+      height={parseInt(props.nodes)}
       nodeAutoColorBy="group"
       linkDirectionalParticles="value"
       linkDirectionalParticleSpeed={(d: any) => d.value * 0.001}
