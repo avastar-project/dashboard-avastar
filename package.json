@@ -31,10 +31,12 @@
     "plotly.js-basic-dist": "^2.9.0",
     "react": "^17.0.2",
     "react-capsule": "^1.0.3",
+    "react-cookie-consent": "^7.4.1",
     "react-dom": "^17.0.2",
     "react-draggable": "^4.4.4",
     "react-dropzone": "^11.4.2",
     "react-force-graph": "^1.41.12",
+    "react-ga": "^3.3.0",
     "react-hook-form": "^7.29.0",
     "react-plotly.js": "^2.5.1",
     "react-redux": "^8.0.0",
@@ -47,7 +49,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "node server/server.ts",
+    "start": "node server/server.js",
     "dev": "react-scripts start",
     "start-local-prod": "react-scripts build && nodemon server/server.js",
     "build": "react-scripts build",

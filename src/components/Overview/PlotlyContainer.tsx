@@ -10,6 +10,7 @@ import styled from '@emotion/styled';
 // Typescript Props
 type PlotlyContainerProps = {
   title: string;
+  color: string;
   tooltip: string;
   plotlyComponent: React.ReactNode;
   isSearch: boolean;
@@ -21,7 +22,7 @@ const Article = styled.article`
   border-radius: 0.5rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
-  overflow:auto;
+  overflow: auto;
 `;
 
 const Header = styled.div`
@@ -33,14 +34,20 @@ const Header = styled.div`
 
 export default function PlotlyContainer({
   title,
+  color,
   tooltip,
   plotlyComponent,
   isSearch,
 }: PlotlyContainerProps) {
+  const stylesTitle = {
+    borderLeft: '15px solid' + color,
+    padding: '10px',
+    margin: '10px',
+  };
   return (
     <Article>
       <Header>
-        <h2>{title}</h2>
+        <h2 style={stylesTitle}>{title}</h2>
         <div>
           {isSearch && (
             <TextField id="search-bar" label="Search" variant="outlined" />
