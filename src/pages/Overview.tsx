@@ -2,13 +2,13 @@ import PlotlyContainer from '../components/Overview/PlotlyContainer';
 import styled from '@emotion/styled';
 import OverviewProfile from '../components/Overview/OverviewProfile';
 // Calling Plotly Charts for integration on Overview page
-import TrackedChart from '../components/Overview/PlotlyCharts/TrackedChart';
-import DataCollectedChart from '../components/Overview/PlotlyCharts/DataCollectedChart';
+import TrackedChart from '../components/Overview/Charts/TrackedChart';
+import DataCollectedChart from '../components/Overview/Charts/DataCollectedChart';
 // import DataTable from '../components/Overview/PlotlyCharts/DataTable';
-import DataTable from '../components/Overview/PlotlyCharts/DataTable';
+import DataTable from '../components/Overview/Charts/DataTable';
 import OverviewEducLink from '../components/Overview/OverviewEducLink';
 import MoreDataContainer from '../components/Overview/MoreDataContainer';
-import ForceGraph from '../components/Overview/PlotlyCharts/ForceDirectedGraph';
+import ForceGraph from '../components/Overview/Charts/ForceDirectedGraph';
 // MUI components
 import { Box, Grid } from '@mui/material';
 import { useSelector, shallowEqual } from 'react-redux';

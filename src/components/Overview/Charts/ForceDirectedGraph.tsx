@@ -138,8 +138,6 @@ export default function ForceGraph() {
     };
 
     for (let i = 0; i < actions.length; i++) {
-      console.log(actions[i]);
-      console.log(relationshipType[i]);
       transformData(
         data,
         nodes,
