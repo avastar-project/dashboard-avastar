@@ -62,6 +62,7 @@ export default function ForceGraph() {
   }
 
   // Pick randomly 150 data points coming from the filtered data object
+  // An "input" filter component will be created later to allow the user select the upper bound of the slice
   var data = filteredData.sort(() => 0.5 - Math.random()).slice(0, 150);
 
   // Transform filtered data object into the right shape for the force graph (nodes and links)
