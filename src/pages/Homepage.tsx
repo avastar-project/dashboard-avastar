@@ -9,6 +9,7 @@ import StepsUploadData from '../components/Home/StepsUploadDataSection';
 import LearnMoreAbout from '../components/Home/LearnMoreAboutBanner';
 import UsersReview from '../components/Home/UsersReviewSection';
 import Footer from '../components/Home/HomeFooter';
+import Alerting from '../components/Alerting';
 
 //utils
 import styled from '@emotion/styled';
@@ -43,6 +44,7 @@ export default function Homepage() {
          <LearnMoreAbout/>
          <UsersReview/>
          <Footer/>
+         <Alerting/>
          </Main>
        </Grid>
      </Container>
