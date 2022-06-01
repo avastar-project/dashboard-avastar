@@ -76,11 +76,6 @@ export default function Overview() {
             optionsList={data_origin}
             name="Origin"
           ></Filter>
-          <Filter
-            onChange={setNodes}
-            optionsList={nodesList}
-            name="Nodes"
-          ></Filter>
           </Box>
           </Header>
         </Grid>
@@ -111,6 +106,13 @@ export default function Overview() {
               }
               isSearch={false}
             />
+            <Box display="flex" justifyContent='flex-end'>
+            <Filter
+              onChange={setNodes}
+              optionsList={nodesList}
+              name="Companies"
+            ></Filter>
+            </Box>
             <PlotlyContainer
               title="Who has my data ?"
               color="#BAE9FC"
