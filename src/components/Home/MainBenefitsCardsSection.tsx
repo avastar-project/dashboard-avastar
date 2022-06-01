@@ -33,7 +33,7 @@ const benefitsCard: BenefitsCard[] = [
     icon: EqualizerIcon,
   },
   {
-    title: 'We are not interested in your data',
+    title: 'No, we are not interested in your data',
     content: `Avastar has been founded by a community of engaged developers willing to build the next generation of Internet users. One that has the power to control their digital identity and has the means to decide how their data is used.`,
     icon: IdentityProfilIcon,
   },

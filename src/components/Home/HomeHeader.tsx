@@ -33,7 +33,7 @@ const Headline2 = styled(Typography)`
   padding-top: 3.125rem;
 `;
 
-export default function Header() {
+export default function HomeHeader() {
   return (
     <Container alignItems="center">
       <Box display="flex"alignItems="center" justifyContent='space-between'>
