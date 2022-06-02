@@ -62,8 +62,7 @@ export default function DataCollectedChart(props: PropsFilter) {
   ];
 
   var layout = {
-    width: 900,
-    height: 600,
+    autosize: true,
   };
   // @ts-ignore
   return <Plot data={dataPlot} layout={layout} />;
