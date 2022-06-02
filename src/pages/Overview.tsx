@@ -2,15 +2,15 @@ import PlotlyContainer from '../components/Overview/PlotlyContainer';
 import styled from '@emotion/styled';
 import OverviewProfile from '../components/Overview/OverviewProfile';
 // Calling Plotly Charts for integration on Overview page
-import TrackedChart from '../components/Overview/PlotlyCharts/TrackedChart';
-import DataCollectedChart from '../components/Overview/PlotlyCharts/DataCollectedChart';
+import TrackedChart from '../components/Overview/Charts/TrackedChart';
+import DataCollectedChart from '../components/Overview/Charts/DataCollectedChart';
 // import DataTable from '../components/Overview/PlotlyCharts/DataTable';
-import DataTable from '../components/Overview/PlotlyCharts/DataTable';
+import DataTable from '../components/Overview/Charts/DataTable';
 import OverviewEducLink from '../components/Overview/OverviewEducLink';
 import MoreDataContainer from '../components/Overview/MoreDataContainer';
-import ForceGraph from '../components/Overview/PlotlyCharts/ForceDirectedGraph';
+import ForceGraph from '../components/Overview/Charts/ForceDirectedGraph';
 // MUI components
-import { Box, Grid,Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import { useSelector, shallowEqual } from 'react-redux';
 import {
   AvastarParsedDataPoint,
@@ -18,7 +18,7 @@ import {
 } from '../types/dataTypes';
 import Filter from '../components/Overview/Filter';
 import { useState } from 'react';
-import {platformList, data_type, data_origin} from '../types/dataTypes'
+import { platformList, data_type, data_origin } from '../types/dataTypes';
 
 // Styled-components
 const Container = styled(Grid)`
@@ -27,14 +27,13 @@ const Container = styled(Grid)`
 `;
 
 const Header = styled.header`
-width:75%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:2rem;
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
 `;
-const Title = styled(Typography)`
-`;
+const Title = styled(Typography)``;
 
 const Main = styled.main``;
 
@@ -57,30 +56,30 @@ export default function Overview() {
     <Box sx={{ flexGrow: 1 }}>
       <Container container spacing={2}>
         <Grid item xs={12}>
-          <Header >
-          <Title variant="h4">My identity</Title>
-          <Box display="flex" justifyContent='flex-end'>
-          <Filter
-            onChange={setPlatform}
-            optionsList={platformList}
-            name="Platform"
-          ></Filter>
-          <Filter
-            onChange={setType}
-            optionsList={data_type}
-            name="Type"
-          ></Filter>
-          <Filter
-            onChange={setOrigin}
-            optionsList={data_origin}
-            name="Origin"
-          ></Filter>
-          </Box>
+          <Header>
+            <Title variant="h4">My identity</Title>
+            <Box display="flex" justifyContent="flex-end">
+              <Filter
+                onChange={setPlatform}
+                optionsList={platformList}
+                name="Platform"
+              ></Filter>
+              <Filter
+                onChange={setType}
+                optionsList={data_type}
+                name="Type"
+              ></Filter>
+              <Filter
+                onChange={setOrigin}
+                optionsList={data_origin}
+                name="Origin"
+              ></Filter>
+            </Box>
           </Header>
         </Grid>
         <Grid item xs={12} md={9}>
           <Main>
-            <OverviewProfile platform={platform} origin={origin} type={type}/>
+            <OverviewProfile platform={platform} origin={origin} type={type} />
             {/* Contains each stat view */}
             <PlotlyContainer
               title="What is being tracked ?"
