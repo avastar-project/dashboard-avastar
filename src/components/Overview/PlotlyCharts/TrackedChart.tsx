@@ -65,8 +65,15 @@ export default function TrackedChart(props: PropsFilter) {
   ];
   var layout = {
     autosize: true,
-    yaxis: { title: 'Volume of data points', showgrid: false },
+    xaxis: {
+      categoryorder: 'total descending',
+    },
+    yaxis: {
+      title: 'Volume of data points',
+      showgrid: false,
+    },
   };
 
+  // @ts-ignore
   return <Plot data={dataPlot} layout={layout} />;
 }
