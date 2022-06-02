@@ -5,9 +5,8 @@ import {
   AvastarParsedDataPoint,
   AvastarParsedDataPointState,
   PropsFilter,
-  DataPointCounterType
+  DataPointCounterType,
 } from '../../../types/dataTypes';
-
 
 const Plot = createPlotlyComponent(Plotly);
 
@@ -17,7 +16,7 @@ export default function DataCollectedChart(props: PropsFilter) {
   const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
     (state: AvastarParsedDataPointState) => state.avastarParsedData,
     shallowEqual
-  )
+  );
   let getData = (data: readonly AvastarParsedDataPoint[]) => {
     if (props.platform) {
       data = data.filter((object) => {
@@ -36,7 +35,8 @@ export default function DataCollectedChart(props: PropsFilter) {
       });
     }
     data.forEach((object) => {
-      dataPointCounter[object.data_origin] = (dataPointCounter[object.data_origin] || 0) + 1;
+      dataPointCounter[object.data_origin] =
+        (dataPointCounter[object.data_origin] || 0) + 1;
     });
     return dataPointCounter;
   };
@@ -45,32 +45,25 @@ export default function DataCollectedChart(props: PropsFilter) {
 
   const dataPlot = [
     {
-      x: Object.keys(data),
-      y: Object.values(data),
-      type: plotType,
+      type: 'pie',
+      hole: 0.5,
+      labels: Object.keys(data),
+      values: Object.values(data),
+      textposition: 'inside',
+      insidetextorientation: 'tangential',
       marker: {
-        cmin: 0,
-        cmax: 255,
-        color: [
-          '#636EFA',
-          '#EF553B',
-          '#00CC96',
-          '#AB63FA',
-          '#FFA15A',
-          '#19D3F3',
-          '#FF6692',
-        ],
+        colors: ['pink', 'lightgreen', 'skyblue', 'orange'],
+        line: {
+          width: 3,
+          color: ['red', 'green', 'blue', 'grey'],
+        },
       },
     },
   ];
+
   var layout = {
     autosize: true,
-    yaxis: { title: 'Volume of data points' },
   };
-  return (
-    <Plot
-      data={dataPlot}
-      layout={layout}
-    />
-  );
+  // @ts-ignore
+  return <Plot data={dataPlot} layout={layout} />;
 }

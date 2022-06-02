@@ -188,7 +188,7 @@ export default function ForceGraph() {
       cooldownTicks={100}
       // @ts-ignore
       onEngineStop={() => fgRef.current.zoomToFit(400)}
-      width={1160}
+      width={950}
       height={650}
       nodeAutoColorBy="group"
       linkDirectionalParticles="value"
