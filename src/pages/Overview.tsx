@@ -10,7 +10,7 @@ import OverviewEducLink from '../components/Overview/OverviewEducLink';
 import MoreDataContainer from '../components/Overview/MoreDataContainer';
 import ForceGraph from '../components/Overview/Charts/ForceDirectedGraph';
 // MUI components
-import { Box, Grid,Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import { useSelector, shallowEqual } from 'react-redux';
 import {
   AvastarParsedDataPoint,
@@ -18,7 +18,7 @@ import {
 } from '../types/dataTypes';
 import Filter from '../components/Overview/Filter';
 import { useState } from 'react';
-import {platformList, data_type, data_origin, nodesList} from '../types/dataTypes'
+import {platformList, data_type, data_origin, nodesList} from '../types/dataTypes';
 
 // Styled-components
 const Container = styled(Grid)`
@@ -27,14 +27,13 @@ const Container = styled(Grid)`
 `;
 
 const Header = styled.header`
-width:75%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:2rem;
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
 `;
-const Title = styled(Typography)`
-`;
+const Title = styled(Typography)``;
 
 const Main = styled.main``;
 
@@ -58,30 +57,30 @@ export default function Overview() {
     <Box sx={{ flexGrow: 1 }}>
       <Container container spacing={2}>
         <Grid item xs={12}>
-          <Header >
-          <Title variant="h4">My identity</Title>
-          <Box display="flex" justifyContent='flex-end'>
-          <Filter
-            onChange={setPlatform}
-            optionsList={platformList}
-            name="Platform"
-          ></Filter>
-          <Filter
-            onChange={setType}
-            optionsList={data_type}
-            name="Type"
-          ></Filter>
-          <Filter
-            onChange={setOrigin}
-            optionsList={data_origin}
-            name="Origin"
-          ></Filter>
-          </Box>
+          <Header>
+            <Title variant="h4">My identity</Title>
+            <Box display="flex" justifyContent="flex-end">
+              <Filter
+                onChange={setPlatform}
+                optionsList={platformList}
+                name="Platform"
+              ></Filter>
+              <Filter
+                onChange={setType}
+                optionsList={data_type}
+                name="Type"
+              ></Filter>
+              <Filter
+                onChange={setOrigin}
+                optionsList={data_origin}
+                name="Origin"
+              ></Filter>
+            </Box>
           </Header>
         </Grid>
         <Grid item xs={12} md={9}>
           <Main>
-            <OverviewProfile platform={platform} origin={origin} type={type} nodes={nodes}/>
+            <OverviewProfile platform={platform} origin={origin} type={type} nodes={nodes} />
             {/* Contains each stat view */}
             <PlotlyContainer
               title="What is being tracked ?"
@@ -142,4 +141,3 @@ export default function Overview() {
     </Box>
   );
 }
-
