@@ -72,8 +72,7 @@ function getSteps() {
       sx={{
         lineHeight: '2.5rem',
         fontWeight: 600,
-        fontSize: '1.728rem',
-        color: '#0034F5',
+        fontSize: '1.728rem',      
       }}
       component="b"
     >
@@ -85,7 +84,7 @@ function getSteps() {
         lineHeight: '2.5rem',
         fontWeight: 600,
         fontSize: '1.728rem',
-        color: '#0034F5',
+   
       }}
       component="b"
     >
@@ -96,7 +95,7 @@ function getSteps() {
         lineHeight: '2.5rem',
         fontWeight: 600,
         fontSize: '1.728rem',
-        color: '#0034F5',
+     
       }}
       component="b"
     >
