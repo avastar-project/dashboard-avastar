@@ -19,7 +19,7 @@ export default function FilterData(props: PropsFilter) {
     props.onChange(event.target.value);
   };
   return (
-    <FormControl sx={{ m: 1, minWidth: 120 }}>
+    <FormControl sx={{ m: 1, minWidth: 140 }}>
       <InputLabel id="platform">{props.name}</InputLabel>
       <Selector
         labelId="select-option"

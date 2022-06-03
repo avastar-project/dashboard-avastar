@@ -4,11 +4,12 @@ import { useSelector, shallowEqual } from 'react-redux';
 import {
   AvastarParsedDataPoint,
   AvastarParsedDataPointState,
+  PropsFilter,
 } from '../../../types/dataTypes';
 
 const { useRef } = React;
 
-export default function ForceGraph() {
+export default function ForceGraph(props: PropsFilter) {
   // Fetch data from State
   const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
     (state: AvastarParsedDataPointState) => state.avastarParsedData,
@@ -63,7 +64,11 @@ export default function ForceGraph() {
 
   // Pick randomly 150 data points coming from the filtered data object
   // An "input" filter component will be created later to allow the user select the upper bound of the slice
-  var data = filteredData.sort(() => 0.5 - Math.random()).slice(0, 150);
+  if (props.nodes === "") {
+    var data = filteredData.sort(() => 0.5 - Math.random()).slice(0, 50);
+  } else {
+    data = filteredData.sort(() => 0.5 - Math.random()).slice(0, parseInt(props.nodes));
+  }
 
   // Transform filtered data object into the right shape for the force graph (nodes and links)
   const setForceGraphData = () => {

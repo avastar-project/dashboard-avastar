@@ -22,6 +22,7 @@ export interface PropsFilter {
   platform: string;
   origin: string;
   type: string;
+  nodes: string;
 }
 
 export type AvastarParsedDataPointState = {
@@ -51,3 +52,4 @@ export const getEmptyDataPoint = (): AvastarParsedDataPoint => ({
 export const platformList: String[] = ['facebook', 'google'];
 export const data_type: String[] = ['location', 'behavioural', 'communications','technical','social relationships','contact','transactional','financial','socio-demographic','contractual'];
 export const data_origin: String[] = ['volunteered', 'observed', 'inferred'];
+export const nodesList: String[] = ['100', '200', '300', '400', '500', '1000', '1500', '2000', '5000'];

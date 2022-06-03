@@ -18,7 +18,7 @@ import {
 } from '../types/dataTypes';
 import Filter from '../components/Overview/Filter';
 import { useState } from 'react';
-import { platformList, data_type, data_origin } from '../types/dataTypes';
+import {platformList, data_type, data_origin, nodesList} from '../types/dataTypes';
 
 // Styled-components
 const Container = styled(Grid)`
@@ -46,6 +46,7 @@ export default function Overview() {
   const [platform, setPlatform] = useState('');
   const [origin, setOrigin] = useState('');
   const [type, setType] = useState('');
+  const [nodes, setNodes] = useState('');
   const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
     (state: AvastarParsedDataPointState) => state.avastarParsedData,
     shallowEqual
@@ -79,14 +80,14 @@ export default function Overview() {
         </Grid>
         <Grid item xs={12} md={9}>
           <Main>
-            <OverviewProfile platform={platform} origin={origin} type={type} />
+            <OverviewProfile platform={platform} origin={origin} type={type} nodes={nodes} />
             {/* Contains each stat view */}
             <PlotlyContainer
               title="What is being tracked ?"
               color="#d1c5fd"
               tooltip="about"
               plotlyComponent={
-                <TrackedChart platform={platform} origin={origin} type={type} />
+                <TrackedChart platform={platform} origin={origin} type={type} nodes={nodes} />
               }
               isSearch={false}
             />
@@ -99,15 +100,26 @@ export default function Overview() {
                   platform={platform}
                   origin={origin}
                   type={type}
+                  nodes={nodes}
                 />
               }
               isSearch={false}
             />
+            <Box display="flex" justifyContent='flex-end'>
+            <Filter
+              onChange={setNodes}
+              optionsList={nodesList}
+              name="Companies"
+            ></Filter>
+            </Box>
             <PlotlyContainer
               title="Who has my data ?"
               color="#BAE9FC"
               tooltip="about"
-              plotlyComponent={<ForceGraph />}
+              plotlyComponent={
+                <ForceGraph platform={platform} origin={origin} type={type} nodes={nodes}
+                />
+              }
               isSearch={false}
             />
             <PlotlyContainer

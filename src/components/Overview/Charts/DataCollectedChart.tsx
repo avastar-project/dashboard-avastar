@@ -11,7 +11,6 @@ import {
 const Plot = createPlotlyComponent(Plotly);
 
 export default function DataCollectedChart(props: PropsFilter) {
-  var plotType: Plotly.PlotType = 'bar';
   var dataPointCounter: DataPointCounterType = {};
   const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
     (state: AvastarParsedDataPointState) => state.avastarParsedData,
