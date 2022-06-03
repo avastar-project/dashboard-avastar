@@ -24,7 +24,7 @@ const navLinks: NavLinksHeader[] = [
   },
   {
     name: 'How does it work',
-    link: '#how-it-works',
+    link: '#how-does-it-work',
   },
   {
     name: 'Upload your data',
@@ -67,8 +67,6 @@ const NavList = styled.ul`
 const NavItem = styled.li``;
 const NavLink = styled(Link)``;
 
-const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
-
 // Component
 export default function HeaderNavLink() {
   return (
@@ -84,13 +82,17 @@ export default function HeaderNavLink() {
         <ImgContainer>
           <BrandLogo src={AvastarLogo} alt="Avastar logo" />
         </ImgContainer>
-        <Box onClick={preventDefault}>
+        <Box>
           <NavList>
             {/* Mapping navLinks array to display each element */}
             {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
             {navLinks.map((navLinks: NavLinksHeader, index: number) => (
               <NavItem key={index}>
-                <NavLink href={navLinks.link} underline="hover">
+                <NavLink
+                  onClick={() => {}}
+                  href={navLinks.link}
+                  underline="hover"
+                >
                   <Typography
                     sx={{
                       lineHeight: '4.75rem',

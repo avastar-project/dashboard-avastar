@@ -60,7 +60,7 @@ const BenefitItem = styled.li`
   gap: 1.25rem;
   width: 19rem;
   height: 25.563rem;
-  background-color:var(--clr-lightest);
+  background-color: var(--clr-lightest);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0.625rem;
   padding: 2.313rem 1.75rem;
@@ -83,6 +83,7 @@ export default function MainBenefitsCard() {
   return (
     <StyledBenefits>
       <Title
+        id="about"
         sx={{
           lineHeight: '2.5rem',
           fontWeight: 700,

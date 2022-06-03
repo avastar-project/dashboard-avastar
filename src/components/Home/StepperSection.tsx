@@ -80,6 +80,7 @@ function getSteps() {
       Let's get started by requesting your data
     </Typography>,
     <Typography
+      id="dropzone"
       sx={{
         lineHeight: '2.5rem',
         fontWeight: 600,
@@ -88,7 +89,7 @@ function getSteps() {
       }}
       component="b"
     >
-      Now, you just have to pass the data files
+      Now, you just have to upload the data files
     </Typography>,
     <Typography
       sx={{
@@ -282,6 +283,7 @@ export default function MultiStepper() {
   return (
     <StyledContainer>
       <Title
+        id="how-does-it-work"
         sx={{
           lineHeight: '2.5rem',
           fontWeight: 700,
@@ -317,7 +319,6 @@ export default function MultiStepper() {
       {activeStep === steps.length && (
         <Paper square elevation={0}>
           <Button onClick={handleReset}>See again</Button>
-      
         </Paper>
       )}
     </StyledContainer>

@@ -46,7 +46,7 @@ const navLinks: NavFooterLink[] = [
 ];
 
 const StyledFooter = styled.footer`
-  padding:  1.563rem 0  2.063rem 0;
+  padding: 1.563rem 0 2.063rem 0;
   background-color: var(--clr-lightest);
 `;
 
@@ -86,7 +86,6 @@ export default function Footer() {
           display: 'flex',
           justifyContent: 'space-evenly',
           alignItems: 'flex-start',
-          // padding: '1.563rem 0 2.063rem',
           gap: '8.063rem',
         }}
       >
@@ -123,7 +122,7 @@ export default function Footer() {
             </Typography>
           </Box>
         </Box>
-   
+
         <NavList>
           {navLinks.map((navLink: NavFooterLink, index: number) => (
             <NavItem key={index}>
@@ -132,7 +131,7 @@ export default function Footer() {
                   lineHeight: '1.5rem',
                   fontWeight: 600,
                   fontSize: '1.44rem',
-                  paddingBottom:'1rem',
+                  paddingBottom: '1rem',
                 }}
               >
                 {navLink.title}
@@ -164,13 +163,23 @@ export default function Footer() {
             </NavItem>
           ))}
         </NavList>
-     
-        <Box display='flex' flexDirection='column' justifyContent='center' alignItems='flex-start' gap={2}>
-          <Typography sx={{
-                lineHeight: '1.5rem',
-                fontWeight: 400,
-                fontSize: '1rem',
-              }}>Supported by</Typography>
+
+        <Box
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="flex-start"
+          gap={2}
+        >
+          <Typography
+            sx={{
+              lineHeight: '1.5rem',
+              fontWeight: 400,
+              fontSize: '1rem',
+            }}
+          >
+            Supported by
+          </Typography>
           <ImgContainer>
             <BrandDfGLogo src={DataForGoodLogo} alt="data for good logo" />
           </ImgContainer>
