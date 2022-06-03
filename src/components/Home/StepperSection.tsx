@@ -49,7 +49,7 @@ const DropZoneSection = styled.section`
   gap: 2.125rem;
 
   width: 70.25rem;
-  height: 48.688rem;
+  height:auto;
 `;
 
 const IconContainer = styled(Box)`
@@ -322,6 +322,12 @@ export default function MultiStepper() {
                   <Button
                     sx={{
                       backgroundColor: '#0034F5',
+                      "&:hover": {
+                        backgroundColor: "rgba(0, 52, 245, 0.8)",
+                        boxShadow: "none",
+                        textShadow: "none",
+                        margin: "0px",
+                      },
                     }}
                     variant="contained"
                     onClick={handleNext}
