@@ -294,18 +294,36 @@ export default function MultiStepper() {
       </Title>
       <Stepper activeStep={activeStep} orientation="vertical">
         {steps.map((label, index) => (
-          <Step key={index}>
+          <Step
+            key={index}
+            sx={{
+              '& .MuiStepLabel-root .Mui-completed': {
+                color: '#0034F5', // circle color (COMPLETED)
+              },
+              '& .MuiStepLabel-root .Mui-active': {
+                color: '#0034F5', // circle color (ACTIVE)
+              },
+            }}
+          >
             <StepLabel>{label}</StepLabel>
             <StepContent>
               <Typography component="span">{getStepContent(index)}</Typography>
               <Box>
-                <Box>
-                  <Button disabled={activeStep === 0} onClick={handleBack}>
+                <Box display="flex" justifyContent="flex-end">
+                  <Button
+                    disabled={activeStep === 0}
+                    onClick={handleBack}
+                    sx={{
+                      color: '#0034F5',
+                    }}
+                  >
                     Back
                   </Button>
                   <Button
+                    sx={{
+                      backgroundColor: '#0034F5',
+                    }}
                     variant="contained"
-                    color="primary"
                     onClick={handleNext}
                   >
                     {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
@@ -318,7 +336,14 @@ export default function MultiStepper() {
       </Stepper>
       {activeStep === steps.length && (
         <Paper square elevation={0}>
-          <Button onClick={handleReset}>See again</Button>
+          <Button
+            onClick={handleReset}
+            sx={{
+              color: '#0034F5',
+            }}
+          >
+            See again
+          </Button>
         </Paper>
       )}
     </StyledContainer>
