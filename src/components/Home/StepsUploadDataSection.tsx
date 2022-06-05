@@ -36,13 +36,13 @@ const steps: Steps[] = [
     icon: RequestDataIcon,
   },
   {
-    name: 'Upload your data',
+    name: 'Visualise your data',
     content: {
       p1: `Once you have received your personal data files, you can initialise your Avastar digital identity card by clicking here.
         `,
       p2: `Then, you can drag and drop the files from each platform in the dedicated drop zones.
         `,
-      pItalic: `After you uploaded your data, the charts will immediately appear in the overview page.
+      pItalic: `After you imported your data, the charts will immediately appear in the overview page.
         `,
     },
     icon: UploadDataIcon,

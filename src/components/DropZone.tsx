@@ -1,4 +1,4 @@
-import { Dispatch } from 'react';
+import { Dispatch, useEffect } from 'react';
 import * as jszip from 'jszip';
 import parsingModel from '../utils/parsingModel.json';
 import { smartParserJson } from '../utils/smartParserJson';
@@ -15,7 +15,6 @@ import CloudUploadIcon from '../assets/icons/feather_upload-cloud.png';
 import { addDataBlock } from '../store/actionCreators';
 import { useDispatch } from 'react-redux';
 import { AvastarParsedDataPoint } from '../types/dataTypes';
-import { useNavigate } from 'react-router-dom';
 
 const StyledForm = styled.form``;
 
@@ -35,10 +34,10 @@ const DashedArea = styled(Box)`
 
 const Drop = styled.div`
   padding: 2rem;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
 `;
 
 const IconContainer = styled(Box)``;
@@ -94,19 +93,25 @@ const asyncParseData = async (data: FormType) => {
 
 export default function DropZone() {
   const dispatch: Dispatch<any> = useDispatch();
-  let navigate = useNavigate();
 
-  const { register, handleSubmit } = useForm<FormType>(); // initialize the hook
+  const { register, watch } = useForm<FormType>(); // initialize the hook
 
-  const onSubmit = async (data: FormType) => {
-    const parsedData = await asyncParseData(data);
-    dispatch(addDataBlock(parsedData));
-    navigate('/overview');
-  };
+  const form = watch();
+
+  useEffect(() => {
+    const handleChange = async (data: FormType) => {
+      const parsedData = await asyncParseData(data);
+      dispatch(addDataBlock(parsedData));
+    };
+
+    if (form?.file?.length > 0) {
+      handleChange(form);
+    }
+  }, [form, dispatch]);
 
   return (
     <>
-      <StyledForm onSubmit={handleSubmit(onSubmit)}>
+      <StyledForm>
         <Container
           display="flex"
           flexDirection="column"
@@ -129,7 +134,6 @@ export default function DropZone() {
               >
                 Select a file or drag and drop here
               </Typography>{' '}
-
               <Typography
                 sx={{
                   lineHeight: '1.5rem',
@@ -151,10 +155,6 @@ export default function DropZone() {
               />
             </Button>
           </DashedArea>
-
-          <Button variant="contained" type="submit">
-            Visualize my data
-          </Button>
         </Container>
       </StyledForm>
     </>

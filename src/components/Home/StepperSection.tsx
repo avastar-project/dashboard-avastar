@@ -18,6 +18,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 //components
 import DropZone from '../DropZone';
+import { useNavigate } from 'react-router-dom';
 
 const StyledContainer = styled(Box)`
   padding: 0 9.438rem 5.688rem 10.063rem;
@@ -49,7 +50,7 @@ const DropZoneSection = styled.section`
   gap: 2.125rem;
 
   width: 70.25rem;
-  height:auto;
+  height: auto;
 `;
 
 const IconContainer = styled(Box)`
@@ -72,7 +73,7 @@ function getSteps() {
       sx={{
         lineHeight: '2.5rem',
         fontWeight: 600,
-        fontSize: '1.728rem',      
+        fontSize: '1.728rem',
       }}
       component="b"
     >
@@ -84,18 +85,16 @@ function getSteps() {
         lineHeight: '2.5rem',
         fontWeight: 600,
         fontSize: '1.728rem',
-   
       }}
       component="b"
     >
-      Now, you just have to upload the data files
+      Now, you just have to import the data files
     </Typography>,
     <Typography
       sx={{
         lineHeight: '2.5rem',
         fontWeight: 600,
         fontSize: '1.728rem',
-     
       }}
       component="b"
     >
@@ -174,9 +173,9 @@ function getStepContent(step: number) {
               }}
             >
               Once you’ve received your data, you can initialize your Avastar
-              digital identity card. Upload your data files right here and
-              finally access what you always wanted to know about your personal
-              data !
+              digital identity card. Read your data files right here and finally
+              visualise what you always wanted to know about your personal data
+              !
             </Typography>
             <Typography
               sx={{
@@ -185,8 +184,8 @@ function getStepContent(step: number) {
                 fontSize: '1.2rem',
               }}
             >
-              The data you upload will not reach any server. The files you
-              upload never leave your computer, all your data is stored locally
+              The data you import and visualise will not reach any server. These
+              files never leave your computer, all your data is stored locally
               on your browser. It will also be deleted every time your session
               is refreshed
             </Typography>
@@ -266,9 +265,14 @@ function getStepContent(step: number) {
 export default function MultiStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
+  const navigate = useNavigate();
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    if (activeStep < 2) {
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    } else {
+      navigate('/overview');
+    }
   };
 
   const handleBack = () => {
@@ -321,11 +325,11 @@ export default function MultiStepper() {
                   <Button
                     sx={{
                       backgroundColor: '#0034F5',
-                      "&:hover": {
-                        backgroundColor: "rgba(0, 52, 245, 0.8)",
-                        boxShadow: "none",
-                        textShadow: "none",
-                        margin: "0px",
+                      '&:hover': {
+                        backgroundColor: 'rgba(0, 52, 245, 0.8)',
+                        boxShadow: 'none',
+                        textShadow: 'none',
+                        margin: '0px',
                       },
                     }}
                     variant="contained"

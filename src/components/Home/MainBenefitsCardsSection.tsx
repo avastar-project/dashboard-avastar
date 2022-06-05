@@ -24,7 +24,7 @@ interface BenefitsCard {
 const benefitsCard: BenefitsCard[] = [
   {
     title: 'Yes, your data is safe',
-    content: `Your data is safe with us as we can’t and don’t want to see your data. The files you upload never leave your computer, all your data is stored locally on your browser. It will also be deleted every time your session is refreshed.`,
+    content: `Your data is safe with us as we can’t and don’t want to see your data. The files you will use never leave your computer, all your data is stored locally on your browser. It will also be deleted every time your session is refreshed.`,
     icon: PadlockIcon,
   },
   {

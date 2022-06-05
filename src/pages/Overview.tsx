@@ -15,6 +15,8 @@ import {
   AvastarParsedDataPoint,
   AvastarParsedDataPointState,
 } from '../types/dataTypes';
+import { useEffect } from 'react';
+import { scrollToTop } from '../utils/scrollToTop';
 
 // Styled-components
 const Container = styled(Grid)`
@@ -34,6 +36,10 @@ const Aside = styled.aside`
 `;
 
 export default function Overview() {
+  useEffect(() => {
+    scrollToTop(); // https://v5.reactrouter.com/web/guides/scroll-restoration
+  }, []);
+
   const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
     (state: AvastarParsedDataPointState) => state.avastarParsedData,
     shallowEqual
@@ -71,7 +77,7 @@ export default function Overview() {
             <PlotlyContainer
               title="Search my data"
               tooltip="about"
-              plotlyComponent={ <DataTable />}
+              plotlyComponent={<DataTable />}
               isSearch={false}
             />
             <MoreDataContainer />

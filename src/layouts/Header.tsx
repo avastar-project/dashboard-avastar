@@ -32,7 +32,7 @@ export default function Header() {
     <StyledHeader>
       {/* Calling MUI Button component */}
       <Button variant="contained" href="/">
-        Upload data
+        Import data
       </Button>
       <img src={UserIcon} alt="" />
     </StyledHeader>
