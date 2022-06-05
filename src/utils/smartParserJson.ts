@@ -183,8 +183,9 @@ export const smartParserJson = (
                   Object.entries(fileContent[nestedArrayName]).forEach(
                     function (item, index) {
                       let categorySelector = item[0]; // Get the name of the arrays that are parsed to know which properties from the data model must be applied to it.
-
+                      
                       const parsedDataPoint = getEmptyDataPoint();
+
                       for (
                         let k = 0;
                         k < avastarParsedDataPointProperties.length;
@@ -196,6 +197,14 @@ export const smartParserJson = (
                           avastarParsedDataPointProperties[k]
                         ];
                       }
+
+                      // Fetch facebook account creation date timestamp for years of data exchange kpis
+                      if (categorySelector == 'registration_timestamp'){
+                        const registrationDate = new Date(fileContent[nestedArrayName][categorySelector] * 1000)
+                        parsedDataPoint['timestamp'] = registrationDate
+                        console.log(categorySelector)
+                      }
+
                       smartData.push(parsedDataPoint);
                     }
                   );
@@ -210,6 +219,7 @@ export const smartParserJson = (
                         j++
                       ) {
                         const parsedDataPoint = getEmptyDataPoint();
+
                         for (
                           let k = 0;
                           k < avastarParsedDataPointProperties.length;

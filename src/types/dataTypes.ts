@@ -14,7 +14,7 @@ export interface AvastarParsedDataPoint {
     | 'contractual'
     | 'other';
   platform: 'facebook' | 'google' | 'other'; // suggesting by github copilot not sure if accurate
-  timestamp?: string;
+  timestamp?: Date;
   details?: string[];
 }
 
@@ -45,7 +45,7 @@ export const getEmptyDataPoint = (): AvastarParsedDataPoint => ({
   data_origin: 'other',
   data_type: 'other',
   platform: 'other',
-  timestamp: '',
+  timestamp: undefined,
   details: []
 });
 
