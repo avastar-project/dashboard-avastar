@@ -202,7 +202,6 @@ export const smartParserJson = (
                       if (categorySelector == 'registration_timestamp'){
                         const registrationDate = new Date(fileContent[nestedArrayName][categorySelector] * 1000)
                         parsedDataPoint['timestamp'] = registrationDate
-                        console.log(categorySelector)
                       }
 
                       smartData.push(parsedDataPoint);
