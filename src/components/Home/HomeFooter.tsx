@@ -20,7 +20,7 @@ interface NavFooterLink {
   linkSubCat1: string;
   linkSubCat2: string;
 }
-// Contains each page link's footer infomations
+// Contains each link's footer infomations
 const navLinks: NavFooterLink[] = [
   {
     title: 'Contact us',
@@ -32,8 +32,8 @@ const navLinks: NavFooterLink[] = [
   {
     title: 'Connect with us',
     subCat1: 'Linkedin',
-    subCat2: 'YouTube',
-    linkSubCat1: '#',
+    subCat2: 'Blog',
+    linkSubCat1: 'https://www.linkedin.com/company/avastarfrance/',
     linkSubCat2: '#',
   },
   {
@@ -137,7 +137,11 @@ export default function Footer() {
                 {navLink.title}
               </Typography>
               <Box display="flex" flexDirection="column">
-                <NavLink href={navLink.linkSubCat1}>
+                <NavLink
+                  href={navLink.linkSubCat1}
+                  rel="noreferrer"
+                  target="_blank"
+                >
                   <Typography
                     sx={{
                       lineHeight: '1.5rem',
@@ -148,7 +152,11 @@ export default function Footer() {
                     {navLink.subCat1}
                   </Typography>
                 </NavLink>
-                <NavLink href={navLink.linkSubCat2}>
+                <NavLink
+                  href={navLink.linkSubCat2}
+                  rel="noreferrer"
+                  target="_blank"
+                >
                   <Typography
                     sx={{
                       lineHeight: '1.5rem',
@@ -181,7 +189,9 @@ export default function Footer() {
             Supported by
           </Typography>
           <ImgContainer>
-            <BrandDfGLogo src={DataForGoodLogo} alt="data for good logo" />
+            <a href="https://dataforgood.fr/" rel="noreferrer" target="_blank">
+              <BrandDfGLogo src={DataForGoodLogo} alt="data for good logo" />
+            </a>
           </ImgContainer>
         </Box>
       </Box>

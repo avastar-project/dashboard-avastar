@@ -24,12 +24,12 @@ interface BenefitsCard {
 const benefitsCard: BenefitsCard[] = [
   {
     title: 'Yes, your data is safe',
-    content: `Your data is safe with us as we can’t and don’t want to see your data. The files you upload never leave your computer, all your data is stored locally on your browser. It will also be deleted every time your session is refreshed.`,
+    content: `Your data is safe with us as we can’t and don’t want to see your data. The files you collected from platforms never leave your computer, all your data is stored locally on your browser. It will also be deleted every time your session is refreshed.`,
     icon: PadlockIcon,
   },
   {
     title: 'No, you don’t need any technical skills',
-    content: `We remove the pain of manually analyzing the personal data you shared, so you can focus on managing your privacy. We provide you with all the information you need in order to understand the overview and act upon it.`,
+    content: `We remove the pain of manually analyzing the personal data you shared, so you can focus on managing your privacy. We provide you with all the information you need in order to understand your data and act upon it.`,
     icon: EqualizerIcon,
   },
   {

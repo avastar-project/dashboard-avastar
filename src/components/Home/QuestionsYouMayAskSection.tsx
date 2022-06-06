@@ -63,7 +63,7 @@ export default function QuestionsResumed() {
             fontSize: '1.2rem',
           }}
         >
-          Have you ever asked yourself if your phone was listening your
+          Have you ever asked yourself if your phone was listening to your
           conversations ? How the heck is it proposing ads about subjects you’re
           sure you only talked about with friends ? Do you really know which
           sensitive information they get access to ?

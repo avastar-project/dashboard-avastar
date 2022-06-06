@@ -35,10 +35,10 @@ const explanationList: ExplanationList[] = [
 // Styled-components
 const StyledExplanation = styled.section`
   padding: 0 9.438rem 5.688rem 10.063rem;
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 const ImgContainer = styled(Box)`
   width: 100%;
@@ -64,20 +64,21 @@ const ParagraphItem = styled.li``;
 export default function TransparencyOverview() {
   return (
     <StyledExplanation>
-        <Title id="services"
-          sx={{
-            lineHeight: '2.5rem',
-            fontWeight: 700,
-            fontSize: '2.074rem',
-          }}
-        >
-          Get back the transparency you deserve on your personal data !
-        </Title>
+      <Title
+        id="services"
+        sx={{
+          lineHeight: '2.5rem',
+          fontWeight: 700,
+          fontSize: '2.074rem',
+        }}
+      >
+        Get the transparency you deserve on your personal data !
+      </Title>
       <Box
         display="flex"
         justifyContent="center"
         alignItems="flex-start"
-        gap="3.375rem" 
+        gap="3.375rem"
       >
         <Box
           sx={{

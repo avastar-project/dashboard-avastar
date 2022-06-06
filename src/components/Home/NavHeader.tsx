@@ -27,7 +27,7 @@ const navLinks: NavLinksHeader[] = [
     link: '#how-does-it-work',
   },
   {
-    name: 'Upload your data',
+    name: 'Visualise your data',
     link: '#dropzone',
   },
 ];

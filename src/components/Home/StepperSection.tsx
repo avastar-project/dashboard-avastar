@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 //utils
 import styled from 'styled-components';
 
@@ -49,7 +49,7 @@ const DropZoneSection = styled.section`
   gap: 2.125rem;
 
   width: 70.25rem;
-  height:auto;
+  height: auto;
 `;
 
 const IconContainer = styled(Box)`
@@ -72,7 +72,7 @@ function getSteps() {
       sx={{
         lineHeight: '2.5rem',
         fontWeight: 600,
-        fontSize: '1.728rem',      
+        fontSize: '1.728rem',
       }}
       component="b"
     >
@@ -84,18 +84,16 @@ function getSteps() {
         lineHeight: '2.5rem',
         fontWeight: 600,
         fontSize: '1.728rem',
-   
       }}
       component="b"
     >
-      Now, you just have to upload the data files
+      Now, you just have to convert your data files
     </Typography>,
     <Typography
       sx={{
         lineHeight: '2.5rem',
         fontWeight: 600,
         fontSize: '1.728rem',
-     
       }}
       component="b"
     >
@@ -174,9 +172,8 @@ function getStepContent(step: number) {
               }}
             >
               Once you’ve received your data, you can initialize your Avastar
-              digital identity card. Upload your data files right here and
-              finally access what you always wanted to know about your personal
-              data !
+              digital identity card. Drop your data files right here and finally
+              access what you always wanted to know about your personal data !
             </Typography>
             <Typography
               sx={{
@@ -185,10 +182,9 @@ function getStepContent(step: number) {
                 fontSize: '1.2rem',
               }}
             >
-              The data you upload will not reach any server. The files you
-              upload never leave your computer, all your data is stored locally
-              on your browser. It will also be deleted every time your session
-              is refreshed
+              We can’t see the data you collected from platforms as it’s stored
+              and processed on your browser, so you are sure that your data
+              never leaves your computer and doesn’t reach our servers.
             </Typography>
           </Box>
           <Box display="flex" alignItems="flex-start" gap="3.875rem">
@@ -266,9 +262,14 @@ function getStepContent(step: number) {
 export default function MultiStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
+  let navigate = useNavigate();
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    if (activeStep === steps.length - 1) {
+      navigate('/overview');
+    } else {
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    }
   };
 
   const handleBack = () => {
@@ -321,17 +322,19 @@ export default function MultiStepper() {
                   <Button
                     sx={{
                       backgroundColor: '#0034F5',
-                      "&:hover": {
-                        backgroundColor: "rgba(0, 52, 245, 0.8)",
-                        boxShadow: "none",
-                        textShadow: "none",
-                        margin: "0px",
+                      '&:hover': {
+                        backgroundColor: 'rgba(0, 52, 245, 0.8)',
+                        boxShadow: 'none',
+                        textShadow: 'none',
+                        margin: '0px',
                       },
                     }}
                     variant="contained"
                     onClick={handleNext}
                   >
-                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                    {activeStep === steps.length - 1
+                      ? 'Access Dashboard'
+                      : 'Next'}
                   </Button>
                 </Box>
               </Box>
