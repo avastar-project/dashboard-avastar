@@ -64,10 +64,12 @@ export default function ForceGraph(props: PropsFilter) {
 
   // Pick randomly 150 data points coming from the filtered data object
   // An "input" filter component will be created later to allow the user select the upper bound of the slice
-  if (props.nodes === "") {
-    var data = filteredData.sort(() => 0.5 - Math.random()).slice(0, 50);
+  if (props.nodes === '') {
+    var data = filteredData.sort(() => 0.5 - Math.random()).slice(0, 100);
   } else {
-    data = filteredData.sort(() => 0.5 - Math.random()).slice(0, parseInt(props.nodes));
+    data = filteredData
+      .sort(() => 0.5 - Math.random())
+      .slice(0, parseInt(props.nodes));
   }
 
   // Transform filtered data object into the right shape for the force graph (nodes and links)

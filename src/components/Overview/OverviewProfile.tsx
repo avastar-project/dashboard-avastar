@@ -15,7 +15,7 @@ import { useSelector, shallowEqual } from 'react-redux';
 import {
   AvastarParsedDataPoint,
   AvastarParsedDataPointState,
-  PropsFilter
+  PropsFilter,
 } from '../../types/dataTypes';
 
 // Styled-components
@@ -115,6 +115,23 @@ export default function OverviewProfile(props: PropsFilter) {
     }
   }
 
+  var yearsDataExchange = undefined;
+  for (let i = 0; i < avastarParsedDataFiltered.length; i++) {
+    if (
+      avastarParsedDataFiltered[i].action_type ===
+        'Facebook account creation date' &&
+      avastarParsedDataFiltered[i].timestamp !== null
+    ) {
+      const registrationDate = new Date(
+        // @ts-ignore
+        avastarParsedDataFiltered[i]['timestamp']
+      );
+      const currentDate = new Date();
+      yearsDataExchange =
+        currentDate.getFullYear() - registrationDate.getFullYear();
+    }
+  }
+
   // Contains basic informations for each overview profile's block
   const overviewBlocks = [
     {
@@ -138,7 +155,7 @@ export default function OverviewProfile(props: PropsFilter) {
     {
       title: 'Years of data exchange',
       icon: HourglassIcon,
-      number: 11, // To be done once we have implemented timestamp and details in the smartParserJson and smartparserCsv
+      number: yearsDataExchange, // To be done once we have implemented timestamp and details in the smartParserJson and smartparserCsv
       tooltip: 'About years of data exchange',
     },
   ];
@@ -152,6 +169,7 @@ export default function OverviewProfile(props: PropsFilter) {
             <OverviewKeyNumber
               title={block.title}
               icon={block.icon}
+              // @ts-ignore
               number={block.number}
               tooltip={block.tooltip}
             />
