@@ -1,9 +1,8 @@
-import { Dispatch, useEffect } from 'react';
+import { ChangeEvent, Dispatch, useCallback } from 'react';
 import * as jszip from 'jszip';
 import parsingModel from '../utils/parsingModel.json';
 import { smartParserJson } from '../utils/smartParserJson';
 import { smartParserCsv } from '../utils/smartParserCsv';
-import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import { Box, Button, Typography } from '@mui/material';
 import { readFileAsync } from '../utils/readFileAsync';
@@ -49,13 +48,14 @@ interface FormType {
 
 const parsingModelFilepaths = Object.keys(parsingModel);
 
-const prepareData = async (data: FormType) => {
-  const readFile = await readFileAsync(data.file[0]);
+const prepareData = async (data: FileList) => {
+  const readFile = await readFileAsync(data[0]);
   const zipFiles = await jszip.loadAsync(readFile);
   return zipFiles;
 };
 
-const asyncParseData = async (data: FormType) => {
+const asyncParseData = async (data: FileList) => {
+  console.log('EEE', data);
   const preparedData = await prepareData(data);
   const res: AvastarParsedDataPoint[] = [];
 
@@ -94,20 +94,16 @@ const asyncParseData = async (data: FormType) => {
 export default function DropZone() {
   const dispatch: Dispatch<any> = useDispatch();
 
-  const { register, watch } = useForm<FormType>(); // initialize the hook
-
-  const form = watch();
-
-  useEffect(() => {
-    const handleChange = async (data: FormType) => {
-      const parsedData = await asyncParseData(data);
-      dispatch(addDataBlock(parsedData));
-    };
-
-    if (form?.file?.length > 0) {
-      handleChange(form);
-    }
-  }, [form, dispatch]);
+  const handleChange = useCallback(
+    async (e: ChangeEvent<HTMLInputElement>) => {
+      const input = e.target as HTMLInputElement;
+      if (input?.files) {
+        const parsedData = await asyncParseData(input.files);
+        dispatch(addDataBlock(parsedData));
+      }
+    },
+    [dispatch]
+  );
 
   return (
     <>
@@ -151,7 +147,7 @@ export default function DropZone() {
                 multiple
                 type="file"
                 accept=".zip"
-                {...register('file')}
+                onChange={handleChange}
               />
             </Button>
           </DashedArea>
