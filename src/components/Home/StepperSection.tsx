@@ -219,8 +219,7 @@ function getStepContent(step: number) {
                 fontSize: '1.2rem',
               }}
             >
-              You can start by requesting your personal data from Google and
-              Facebook.{' '}
+              Visualise what kind of information have been collected by apps and websites about you since you got started on the internet.{' '}
             </Typography>
             <Typography
               sx={{
@@ -229,9 +228,7 @@ function getStepContent(step: number) {
                 fontSize: '1.2rem',
               }}
             >
-              It can take up to 48h to receive your data files : Facebook will
-              send you a notification and Google an e-mail when your files are
-              ready to be downloaded.{' '}
+              For each visualisation, we've included explanations to help you decide with whom and what data you should share on the internet.{' '}
             </Typography>
             <Typography
               sx={{
@@ -240,8 +237,7 @@ function getStepContent(step: number) {
                 fontSize: '1.2rem',
               }}
             >
-              At the end of this step, you should have received multiple files
-              in Zip format. Download them locally on your device.
+              You will have the keys to remove access to entities from which you want to protect your data and identify sensitive information that may harm your online reputation.
             </Typography>
           </Box>
           <Box width={'100%'}>
