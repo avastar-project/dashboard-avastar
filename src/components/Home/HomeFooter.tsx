@@ -26,8 +26,8 @@ const navLinks: NavFooterLink[] = [
     title: 'Contact us',
     subCat1: 'Submit feedback',
     subCat2: 'Report an issue',
-    linkSubCat1: '#',
-    linkSubCat2: '#',
+    linkSubCat1: 'mailto:contact@avastar.fr',
+    linkSubCat2: 'mailto:contact@avastar.fr',
   },
   {
     title: 'Connect with us',
@@ -40,7 +40,7 @@ const navLinks: NavFooterLink[] = [
     title: 'Community',
     subCat1: 'Join the project',
     subCat2: 'Github - Open Source code',
-    linkSubCat1: '#',
+    linkSubCat1: 'https://github.com/avastar-project/dashboard-avastar',
     linkSubCat2: 'https://github.com/avastar-project/dashboard-avastar',
   },
 ];
