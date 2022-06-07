@@ -35,7 +35,7 @@ const Headline2 = styled(Typography)`
 
 export default function HomeHeader() {
   return (
-    <Container alignItems="center">
+    <Container position='relative' alignItems="center">
       <Box display="flex" alignItems="center" justifyContent="space-between">
         <Box sx={{ width: '48rem', height: 'auto' }}>
           <Headline1

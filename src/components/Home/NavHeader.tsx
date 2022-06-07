@@ -35,19 +35,17 @@ const navLinks: NavLinksHeader[] = [
 // Styled-components
 const StyledNavLink = styled.div`
   position: absolute;
-  left: 0px;
+  left: 0;
   top: 5.625rem;
+  z-index:1;
   width: 100%;
   height: 6.688rem;
-  display: flex;
   padding: 1.875rem 9.75rem;
   & a {
     color: white;
   }
 `;
-const ImgContainer = styled(Box)`
-  width: 100%;
-`;
+const ImgContainer = styled(Box)``;
 
 const BrandLogo = styled.img`
   width: 13.063rem;
@@ -57,9 +55,9 @@ const BrandLogo = styled.img`
 const NavList = styled.ul`
   list-style-type: none;
   display: flex;
-  gap: 4.625rem;
+  gap: 2.625rem;
   justify-content: space-evenly;
-  width: 55.75rem;
+  width:auto;
   height: auto;
   text-transform: uppercase;
 `;
@@ -82,7 +80,7 @@ export default function HeaderNavLink() {
         <ImgContainer>
           <BrandLogo src={AvastarLogo} alt="Avastar logo" />
         </ImgContainer>
-        <Box>
+        <Box >
           <NavList>
             {/* Mapping navLinks array to display each element */}
             {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
