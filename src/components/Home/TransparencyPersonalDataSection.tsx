@@ -20,7 +20,7 @@ interface ExplanationList {
 // Contains each content explanation paragraph
 const explanationList: ExplanationList[] = [
   {
-    content: `Avastar provides you with a dashboard to visualize which companies are tracking you, which types of personal data are collected and informs you on how they can be used. `,
+    content: `Avastar provides you with a dashboard to visualize which companies are tracking you, which types of personal data are collected, and informs you on how they can be used. `,
   },
   {
     content: `We automated the whole process to visualize the raw personal data you requested to platforms so you can focus on making decisions about how you manage your online privacy.
