@@ -172,7 +172,7 @@ function getStepContent(step: number) {
               }}
             >
               Once you’ve received your data, you can initialize your Avastar
-              digital identity card. Drop your data files right here and finally
+              digital identity card. Read your data files right here and finally
               access what you always wanted to know about your personal data !
             </Typography>
             <Typography
@@ -182,9 +182,10 @@ function getStepContent(step: number) {
                 fontSize: '1.2rem',
               }}
             >
-              We can’t see the data you collected from platforms as it’s stored
-              and processed on your browser, so you are sure that your data
-              never leaves your computer and doesn’t reach our servers.
+              The data you import and visualise will not reach any server. These
+              files never leave your computer, all your data is stored locally
+              on your browser. It will also be deleted every time your session
+              is refreshed.
             </Typography>
           </Box>
           <Box display="flex" alignItems="flex-start" gap="3.875rem">
@@ -219,7 +220,8 @@ function getStepContent(step: number) {
                 fontSize: '1.2rem',
               }}
             >
-              Visualise what kind of information have been collected by apps and websites about you since you got started on the internet.{' '}
+              Visualise what kind of information have been collected by apps and
+              websites about you since you got started on the internet.{' '}
             </Typography>
             <Typography
               sx={{
@@ -228,7 +230,8 @@ function getStepContent(step: number) {
                 fontSize: '1.2rem',
               }}
             >
-              For each visualisation, we've included explanations to help you decide with whom and what data you should share on the internet.{' '}
+              For each visualisation, we've included explanations to help you
+              decide with whom and what data you should share on the internet.{' '}
             </Typography>
             <Typography
               sx={{
@@ -237,7 +240,9 @@ function getStepContent(step: number) {
                 fontSize: '1.2rem',
               }}
             >
-              You will have the keys to remove access to entities from which you want to protect your data and identify sensitive information that may harm your online reputation.
+              You will have the keys to remove access to entities from which you
+              want to protect your data and identify sensitive information that
+              may harm your online reputation.
             </Typography>
           </Box>
           <Box width={'100%'}>
