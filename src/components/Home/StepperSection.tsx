@@ -88,7 +88,7 @@ function getSteps() {
       }}
       component="b"
     >
-      Now, you just have to import the data files
+      Now, you just have to convert the data files
     </Typography>,
     <Typography
       sx={{
