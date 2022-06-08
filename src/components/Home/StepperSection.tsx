@@ -120,8 +120,7 @@ function getStepContent(step: number) {
                 fontSize: '1.2rem',
               }}
             >
-              You can start by requesting your personal data from Google and
-              Facebook.{' '}
+              You can start by requesting your data from Google and Facebook.{' '}
             </Typography>
             <Typography
               sx={{
@@ -130,7 +129,7 @@ function getStepContent(step: number) {
                 fontSize: '1.2rem',
               }}
             >
-              It can take up to 48h to receive your data files : Facebook will
+              It can take up to 48h to receive your data files: Facebook will
               send you a notification and Google an e-mail when your files are
               ready to be downloaded.{' '}
             </Typography>
@@ -173,8 +172,7 @@ function getStepContent(step: number) {
             >
               Once you’ve received your data, you can initialize your Avastar
               digital identity card. Read your data files right here and finally
-              visualise what you always wanted to know about your personal data
-              !
+              visualize what you always wanted to know about your data!
             </Typography>
             <Typography
               sx={{
@@ -183,7 +181,7 @@ function getStepContent(step: number) {
                 fontSize: '1.2rem',
               }}
             >
-              The data you import and visualise will not reach any server. These
+              The data you import and visualize will not reach any server. These
               files never leave your computer, all your data is stored locally
               on your browser. It will also be deleted every time your session
               is refreshed.
@@ -221,7 +219,7 @@ function getStepContent(step: number) {
                 fontSize: '1.2rem',
               }}
             >
-              Visualise what kind of information have been collected by apps and
+              Visualize what kind of information has been collected by apps and
               websites about you since you got started on the internet.{' '}
             </Typography>
             <Typography
@@ -231,7 +229,7 @@ function getStepContent(step: number) {
                 fontSize: '1.2rem',
               }}
             >
-              For each visualisation, we've included explanations to help you
+              For each visualization, we've included explanations to help you
               decide with whom and what data to share on the internet.{' '}
             </Typography>
             <Typography

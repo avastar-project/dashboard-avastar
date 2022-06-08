@@ -85,14 +85,13 @@ const StepsList = styled.ul`
 `;
 
 const StepItem = styled.li`
-display:flex;
-justify-content:center;
-align-items:center;
-gap:4rem;
-list-style-type:none;
-width:100%;
-padding:1rem 2rem;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  list-style-type: none;
+  width: 100%;
+  padding: 1rem 2rem;
 `;
 const ImgContainer = styled(Box)`
   width: 50%;

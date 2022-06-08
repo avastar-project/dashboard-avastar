@@ -20,14 +20,14 @@ interface ExplanationList {
 // Contains each content explanation paragraph
 const explanationList: ExplanationList[] = [
   {
-    content: `Avastar provides you with a dashboard to visualise which companies are tracking you, which types of personal data are collected and informs you on how they can be used. `,
+    content: `Avastar provides you with a dashboard to visualize which companies are tracking you, which types of personal data are collected and informs you on how they can be used. `,
   },
   {
-    content: `We automated the whole process to visualise the raw personal data you requested to platforms so you can focus on making decisions about how you manage your online privacy.
+    content: `We automated the whole process to visualize the raw personal data you requested to platforms so you can focus on making decisions about how you manage your online privacy.
     `,
   },
   {
-    content: `With Avastar, you are only a few clicks away from having a full glance of your digital identity!
+    content: `With Avastar, you are only a few clicks away from having a full glance at your digital identity!
     `,
   },
 ];
@@ -72,7 +72,7 @@ export default function TransparencyOverview() {
           fontSize: '2.074rem',
         }}
       >
-        Get the transparency you deserve on your personal data !
+        Get the transparency you deserve on your personal data!
       </Title>
       <Box
         display="flex"

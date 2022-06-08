@@ -35,7 +35,7 @@ const Headline2 = styled(Typography)`
 
 export default function HomeHeader() {
   return (
-    <Container position='relative' alignItems="center">
+    <Container position="relative" alignItems="center">
       <Box display="flex" alignItems="center" justifyContent="space-between">
         <Box sx={{ width: '48rem', height: 'auto' }}>
           <Headline1
@@ -46,13 +46,13 @@ export default function HomeHeader() {
             }}
           >
             {' '}
-            Visualise what the internet knows about you in minutes
+            Visualize what the internet knows about you in minutes
           </Headline1>
           <Headline2
             sx={{ lineHeight: '2.5rem', fontWeight: 500, fontSize: '1.728rem' }}
           >
             {' '}
-            Undersand what your favorite apps know about you and learn how to
+            Understand what your favorite apps know about you and learn how to
             manage your online privacy
           </Headline2>
         </Box>

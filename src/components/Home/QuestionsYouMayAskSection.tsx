@@ -53,7 +53,7 @@ export default function QuestionsResumed() {
             fontSize: '2.074rem',
           }}
         >
-          Whenever you're using an app or visiting a website, companies are
+          Whenever you are using an app or visiting a website, companies are
           collecting information about you
         </Title>
         <Typography
@@ -64,9 +64,9 @@ export default function QuestionsResumed() {
           }}
         >
           Have you ever asked yourself if your phone was listening to your
-          conversations ? How the heck is it proposing ads about subjects you’re
-          sure you only talked about with friends ? Do you really know which
-          sensitive information they get access to ?
+          conversations? How the heck is it proposing ads about subjects you are
+          sure you only talked about with friends? Do you know which sensitive
+          information they get access to?
         </Typography>
       </Box>
     </StyledResume>
