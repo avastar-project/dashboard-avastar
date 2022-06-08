@@ -18,7 +18,6 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 //components
 import DropZone from '../DropZone';
-import { useNavigate } from 'react-router-dom';
 
 const StyledContainer = styled(Box)`
   padding: 0 9.438rem 5.688rem 10.063rem;
@@ -233,7 +232,7 @@ function getStepContent(step: number) {
               }}
             >
               For each visualisation, we've included explanations to help you
-              decide with whom and what data you should share on the internet.{' '}
+              decide with whom and what data to share on the internet.{' '}
             </Typography>
             <Typography
               sx={{
@@ -242,9 +241,9 @@ function getStepContent(step: number) {
                 fontSize: '1.2rem',
               }}
             >
-              You will have the keys to remove access to entities from which you
-              want to protect your data and identify sensitive information that
-              may harm your online reputation.
+              We developed resources to help you manage the information you
+              shared with companies and identify sensitive information that may
+              harm your online reputation in the future.
             </Typography>
           </Box>
           <Box width={'100%'}>
@@ -265,7 +264,6 @@ function getStepContent(step: number) {
 export default function MultiStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
-  let navigate = useNavigate();
 
   let navigate = useNavigate();
 
