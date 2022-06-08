@@ -182,15 +182,11 @@ export default function Footer() {
           >
             Supported by
           </Typography>
-          <Button
-            variant="text"
-            color="inherit"
-            onClick={() => navigate('https://dataforgood.fr/')}
-          >
-            <ImgContainer>
+          <ImgContainer>
+            <a href="https://dataforgood.fr/" rel="noreferrer" target="_blank">
               <BrandDfGLogo src={DataForGoodLogo} alt="data for good logo" />
-            </ImgContainer>
-          </Button>
+            </a>
+          </ImgContainer>
         </Box>
       </Box>
     </StyledFooter>
