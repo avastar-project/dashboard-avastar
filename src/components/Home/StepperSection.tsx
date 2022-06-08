@@ -265,15 +265,6 @@ function getStepContent(step: number) {
 export default function MultiStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
-  // const navigate = useNavigate();
-
-  // const handleNext = () => {
-  //   if (activeStep < 2) {
-  //     setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  //   } else {
-  //     navigate('/overview');
-  //   }
-  // };
 
   let navigate = useNavigate();
 
