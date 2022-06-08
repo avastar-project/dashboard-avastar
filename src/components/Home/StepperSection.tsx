@@ -173,7 +173,8 @@ function getStepContent(step: number) {
             >
               Once you’ve received your data, you can initialize your Avastar
               digital identity card. Read your data files right here and finally
-              access what you always wanted to know about your personal data !
+              visualise what you always wanted to know about your personal data
+              !
             </Typography>
             <Typography
               sx={{
