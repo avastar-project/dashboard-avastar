@@ -22,12 +22,12 @@ const processTimeLaps: ProcessTimeLaps[] = [
     box: 'Request your data',
   },
   {
-    content: `The upload process on Avastar will take a few seconds.
+    content: `The crunching process on Avastar will only take a few seconds.
       `,
-    box: 'Upload your data',
+    box: 'Visualise your data',
   },
   {
-    content: `Immediatly after, you uploaded your files.
+    content: `Immediatly after, you imported your files.
       `,
     box: `View your footprint`,
   },

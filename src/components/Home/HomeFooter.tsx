@@ -10,7 +10,8 @@ import DataForGoodLogo from '../../assets/dFg-logo.png';
 import styled from 'styled-components';
 
 // MUI components
-import { Box, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 // Typescript types
 interface NavFooterLink {
@@ -79,6 +80,7 @@ const NavLink = styled.a`
 `;
 
 export default function Footer() {
+  const navigate = useNavigate();
   return (
     <StyledFooter>
       <Box

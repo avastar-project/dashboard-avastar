@@ -18,6 +18,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 //components
 import DropZone from '../DropZone';
+import { useNavigate } from 'react-router-dom';
 
 const StyledContainer = styled(Box)`
   padding: 0 9.438rem 5.688rem 10.063rem;
@@ -264,6 +265,8 @@ function getStepContent(step: number) {
 export default function MultiStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
+  let navigate = useNavigate();
+
   let navigate = useNavigate();
 
   const handleNext = () => {
