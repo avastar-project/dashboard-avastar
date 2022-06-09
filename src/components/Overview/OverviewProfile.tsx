@@ -15,6 +15,7 @@ import { useSelector, shallowEqual } from 'react-redux';
 import {
   AvastarParsedDataPoint,
   AvastarParsedDataPointState,
+  PropsFilter,
 } from '../../types/dataTypes';
 
 // Styled-components
@@ -25,72 +26,109 @@ const Article = styled.article`
   padding: 0.5rem;
 `;
 
-export default function OverviewProfile() {
+export default function OverviewProfile(props: PropsFilter) {
   // Fetch data from State
   const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
     (state: AvastarParsedDataPointState) => state.avastarParsedData,
     shallowEqual
   );
+  let filterData = (data: readonly AvastarParsedDataPoint[]) => {
+    if (props.platform) {
+      data = data.filter((object) => {
+        return object.platform === props.platform;
+      });
+    }
+    if (props.type) {
+      data = data.filter((object) => {
+        return object.data_type === props.type;
+      });
+    }
+    if (props.origin) {
+      data = data.filter((object) => {
+        return object.data_origin === props.origin;
+      });
+    }
+    return data;
+  };
+
+  let avastarParsedDataFiltered = filterData(avastarParsedData);
 
   // Compute Overview KPIs
-  const dataPointsShared = avastarParsedData.length;
+  const dataPointsShared = avastarParsedDataFiltered.length;
 
   let entitiesAccessedDataProfile = 0;
-  for (let i = 0; i < avastarParsedData.length; i++) {
+  for (let i = 0; i < avastarParsedDataFiltered.length; i++) {
     if (
-      avastarParsedData[i].action_type ===
+      avastarParsedDataFiltered[i].action_type ===
       'Advertiser who has added your name to an audience based on your information or your activity outside of Facebook'
     ) {
       entitiesAccessedDataProfile++;
     } else if (
-      avastarParsedData[i].action_type ===
+      avastarParsedDataFiltered[i].action_type ===
       'Advertiser who has added your name to an audience based on your information or your activity outside of Facebook'
     ) {
       entitiesAccessedDataProfile++;
     } else if (
-      avastarParsedData[i].action_type ===
+      avastarParsedDataFiltered[i].action_type ===
       'Advertisers whose ads you have recently seen or clicked on'
     ) {
       entitiesAccessedDataProfile++;
     } else if (
-      avastarParsedData[i].action_type ===
+      avastarParsedDataFiltered[i].action_type ===
       'Company that shared information with facebook about your activity on their website/application'
     ) {
       entitiesAccessedDataProfile++;
     } else if (
-      avastarParsedData[i].action_type ===
+      avastarParsedDataFiltered[i].action_type ===
       'Apps that have been installed on your mobile device'
     ) {
       entitiesAccessedDataProfile++;
     } else if (
-      avastarParsedData[i].action_type ===
+      avastarParsedDataFiltered[i].action_type ===
       'Account linked to your Facebook profile'
     ) {
       entitiesAccessedDataProfile++;
     } else if (
-      avastarParsedData[i].action_type === 'Game you played on Facebook'
+      avastarParsedDataFiltered[i].action_type === 'Game you played on Facebook'
     ) {
       entitiesAccessedDataProfile++;
     }
   }
 
   let devicesSharingdata = 0;
-  for (let i = 0; i < avastarParsedData.length; i++) {
+  for (let i = 0; i < avastarParsedDataFiltered.length; i++) {
     if (
-      avastarParsedData[i].action_type ===
+      avastarParsedDataFiltered[i].action_type ===
       'Device linked to your Facebook account'
     ) {
       devicesSharingdata++;
     } else if (
-      avastarParsedData[i].action_type ===
+      avastarParsedDataFiltered[i].action_type ===
       'Mobile device associated to your Facebook account'
     ) {
       devicesSharingdata++;
     } else if (
-      avastarParsedData[i].action_type ===
+      avastarParsedDataFiltered[i].action_type ===
       'Use new device to access a Google service'
     ) {
       devicesSharingdata++;
+    }
+  }
+
+  var yearsDataExchange = undefined;
+  for (let i = 0; i < avastarParsedDataFiltered.length; i++) {
+    if (
+      avastarParsedDataFiltered[i].action_type ===
+        'Facebook account creation date' &&
+      avastarParsedDataFiltered[i].timestamp !== null
+    ) {
+      const registrationDate = new Date(
+        // @ts-ignore
+        avastarParsedDataFiltered[i]['timestamp']
+      );
+      const currentDate = new Date();
+      yearsDataExchange =
+        currentDate.getFullYear() - registrationDate.getFullYear();
     }
   }
 
@@ -117,7 +155,7 @@ export default function OverviewProfile() {
     {
       title: 'Years of data exchange',
       icon: HourglassIcon,
-      number: 11, // To be done once we have implemented timestamp and details in the smartParserJson and smartparserCsv
+      number: yearsDataExchange, // To be done once we have implemented timestamp and details in the smartParserJson and smartparserCsv
       tooltip: 'About years of data exchange',
     },
   ];
@@ -131,6 +169,7 @@ export default function OverviewProfile() {
             <OverviewKeyNumber
               title={block.title}
               icon={block.icon}
+              // @ts-ignore
               number={block.number}
               tooltip={block.tooltip}
             />

@@ -127,16 +127,33 @@ export const smartParserJson = (
                     smartData.push(parsedDataPoint);
                   });
                 } else {
-                  for (
-                    let j = 0;
-                    j < fileContent[nestedArrayName].length;
-                    j++
-                  ) {
-                    const parsedDataPoint = getParsedDataPoint(
-                      filePathModel,
-                      nestedArrayName
-                    );
-                    smartData.push(parsedDataPoint);
+                  // Fetch details property for the files specified in the parsing model
+                  if ((parsingModel as any)[filePathModel]['file_structure_properties']['fetch_details'] === true) {
+                    const detailsSelector = (parsingModel as any)[filePathModel][nestedArrayName]['entries'][5]["details"]
+                    for (
+                      let j = 0;
+                      j < fileContent[nestedArrayName].length;
+                      j++
+                    ) {
+                      const parsedDataPoint = getParsedDataPoint(
+                        filePathModel,
+                        nestedArrayName
+                      );
+                      parsedDataPoint['details'] = fileContent[nestedArrayName][j][detailsSelector]
+                      smartData.push(parsedDataPoint);
+                    }
+                  } else {
+                    for (
+                      let j = 0;
+                      j < fileContent[nestedArrayName].length;
+                      j++
+                    ) {
+                      const parsedDataPoint = getParsedDataPoint(
+                        filePathModel,
+                        nestedArrayName
+                      );
+                      smartData.push(parsedDataPoint);
+                    }
                   }
                 }
               }
@@ -166,8 +183,9 @@ export const smartParserJson = (
                   Object.entries(fileContent[nestedArrayName]).forEach(
                     function (item, index) {
                       let categorySelector = item[0]; // Get the name of the arrays that are parsed to know which properties from the data model must be applied to it.
-
+                      
                       const parsedDataPoint = getEmptyDataPoint();
+
                       for (
                         let k = 0;
                         k < avastarParsedDataPointProperties.length;
@@ -179,6 +197,13 @@ export const smartParserJson = (
                           avastarParsedDataPointProperties[k]
                         ];
                       }
+
+                      // Fetch facebook account creation date timestamp for years of data exchange kpis
+                      if (categorySelector == 'registration_timestamp'){
+                        const registrationDate = new Date(fileContent[nestedArrayName][categorySelector] * 1000)
+                        parsedDataPoint['timestamp'] = registrationDate
+                      }
+
                       smartData.push(parsedDataPoint);
                     }
                   );
@@ -193,6 +218,7 @@ export const smartParserJson = (
                         j++
                       ) {
                         const parsedDataPoint = getEmptyDataPoint();
+
                         for (
                           let k = 0;
                           k < avastarParsedDataPointProperties.length;
@@ -237,18 +263,37 @@ export const smartParserJson = (
                 'file_structure_properties'
               ]['nested_data_point_selector']; // Select the right nested array name with nestedDataSelector property to parse the object.
 
-              for (let j = 0; j < fileContent[nestedArrayName].length; j++) {
-                for (
-                  let k = 0;
-                  k <
-                  fileContent[nestedArrayName][j][nestedDataSelector].length;
-                  k++
-                ) {
-                  const parsedDataPoint = getParsedDataPoint(
-                    filePathModel,
-                    nestedArrayName
-                  );
-                  smartData.push(parsedDataPoint);
+              if ((parsingModel as any)[filePathModel]['file_structure_properties']['fetch_details'] === true) {
+                const detailsSelector = (parsingModel as any)[filePathModel][nestedArrayName]['entries'][5]["details"]
+                for (let j = 0; j < fileContent[nestedArrayName].length; j++) {
+                  for (
+                    let k = 0;
+                    k <
+                    fileContent[nestedArrayName][j][nestedDataSelector].length;
+                    k++
+                  ) {
+                    const parsedDataPoint = getParsedDataPoint(
+                      filePathModel,
+                      nestedArrayName
+                    );
+                    parsedDataPoint['details'] = fileContent[nestedArrayName][j][detailsSelector]
+                    smartData.push(parsedDataPoint);
+                  }
+                }
+              } else {
+                for (let j = 0; j < fileContent[nestedArrayName].length; j++) {
+                  for (
+                    let k = 0;
+                    k <
+                    fileContent[nestedArrayName][j][nestedDataSelector].length;
+                    k++
+                  ) {
+                    const parsedDataPoint = getParsedDataPoint(
+                      filePathModel,
+                      nestedArrayName
+                    );
+                    smartData.push(parsedDataPoint);
+                  }
                 }
               }
             } else {
