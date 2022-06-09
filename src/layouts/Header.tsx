@@ -18,11 +18,9 @@ const StyledHeader = styled.header`
   padding: 0 1rem;
   background-color: var(--clr-lightest);
   border: var(--bor-light);
-
   & > img {
     margin-left: 1rem;
   }
-
   & a {
     color: white;
   }
@@ -34,7 +32,7 @@ export default function Header() {
     <StyledHeader>
       {/* Calling MUI Button component */}
       <Button variant="contained" href="/">
-        Upload data
+        Import data
       </Button>
       <img src={UserIcon} alt="" />
     </StyledHeader>

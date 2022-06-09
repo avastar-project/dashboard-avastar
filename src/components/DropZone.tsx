@@ -1,56 +1,61 @@
-import { Dispatch } from 'react';
+import { ChangeEvent, Dispatch, useCallback } from 'react';
 import * as jszip from 'jszip';
 import parsingModel from '../utils/parsingModel.json';
 import { smartParserJson } from '../utils/smartParserJson';
 import { smartParserCsv } from '../utils/smartParserCsv';
-import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
-import { Box, Button } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import { readFileAsync } from '../utils/readFileAsync';
 import { isJSONFile } from '../utils/isJsonFile';
 import { isCSVFile } from '../utils/isCsvFile';
 
 // Icons
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import CloudUploadIcon from '../assets/icons/feather_upload-cloud.png';
 import { addDataBlock } from '../store/actionCreators';
 import { useDispatch } from 'react-redux';
 import { AvastarParsedDataPoint } from '../types/dataTypes';
-import { useNavigate } from 'react-router-dom';
 
-const StyledForm = styled.form`
-  background-color: var(--clr-lightest);
-  border-radius: 1rem;
-`;
+const StyledForm = styled.form``;
 
 const Container = styled(Box)``;
 
 const DashedArea = styled(Box)`
+  background-color: var(--clr-lightest);
+  border-radius: 0.625rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px dashed black;
+  border: 1px dashed rgba(0, 0, 0, 0.25);
   padding: 3rem 2rem;
   text-transform: none;
 `;
 
 const Drop = styled.div`
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
 `;
 
+const IconContainer = styled(Box)``;
+
+const Icon = styled.img``;
 interface FormType {
   file: File[];
 }
 
 const parsingModelFilepaths = Object.keys(parsingModel);
 
-const prepareData = async (data: FormType) => {
-  const readFile = await readFileAsync(data.file[0]);
+const prepareData = async (data: FileList) => {
+  const readFile = await readFileAsync(data[0]);
   const zipFiles = await jszip.loadAsync(readFile);
   return zipFiles;
 };
 
-const asyncParseData = async (data: FormType) => {
+const asyncParseData = async (data: FileList) => {
+  console.log('EEE', data);
   const preparedData = await prepareData(data);
   const res: AvastarParsedDataPoint[] = [];
 
@@ -70,14 +75,15 @@ const asyncParseData = async (data: FormType) => {
           }
         }
       }
-    } if (isCSVFile(filename)) {
-          for (let i = 0; i < parsingModelFilepaths.length; i++) {
-            if (filename.endsWith(parsingModelFilepaths[i])) {
-              const fileData: string = await fileproperties.async('string');
-              const newElement = smartParserCsv(filename, fileData); // execute parsing function
-              newElement && res.push(...newElement);
-            }
-          }
+    }
+    if (isCSVFile(filename)) {
+      for (let i = 0; i < parsingModelFilepaths.length; i++) {
+        if (filename.endsWith(parsingModelFilepaths[i])) {
+          const fileData: string = await fileproperties.async('string');
+          const newElement = smartParserCsv(filename, fileData); // execute parsing function
+          newElement && res.push(...newElement);
+        }
+      }
     } else if (filename.split('.').length > 1) {
       console.log('unknown file type');
     }
@@ -87,19 +93,21 @@ const asyncParseData = async (data: FormType) => {
 
 export default function DropZone() {
   const dispatch: Dispatch<any> = useDispatch();
-  let navigate = useNavigate();
 
-  const { register, handleSubmit } = useForm<FormType>(); // initialize the hook
-
-  const onSubmit = async (data: FormType) => {
-    const parsedData = await asyncParseData(data);
-    dispatch(addDataBlock(parsedData));
-    navigate('/overview');
-  };
+  const handleChange = useCallback(
+    async (e: ChangeEvent<HTMLInputElement>) => {
+      const input = e.target as HTMLInputElement;
+      if (input?.files) {
+        const parsedData = await asyncParseData(input.files);
+        dispatch(addDataBlock(parsedData));
+      }
+    },
+    [dispatch]
+  );
 
   return (
     <>
-      <StyledForm onSubmit={handleSubmit(onSubmit)}>
+      <StyledForm>
         <Container
           display="flex"
           flexDirection="column"
@@ -107,22 +115,42 @@ export default function DropZone() {
           p={5}
           gap={2}
         >
-          <Button component="label">
-            <DashedArea>
-              <CloudUploadIcon />
+          <DashedArea>
+            <IconContainer>
+              <Icon src={CloudUploadIcon} alt={CloudUploadIcon} />
+            </IconContainer>
+
+            <Drop>
+              <Typography
+                sx={{
+                  lineHeight: '1.5rem',
+                  fontWeight: 400,
+                  fontSize: '1rem',
+                }}
+              >
+                Select a file or drag and drop here
+              </Typography>{' '}
+              <Typography
+                sx={{
+                  lineHeight: '1.5rem',
+                  fontWeight: 400,
+                  fontSize: '0.833rem',
+                  color: 'rgba(0, 0, 0, 0.4)',
+                }}
+              >
+                Only ZIP files are accepted.
+              </Typography>
+            </Drop>
+            <Button component="label">
               <input
-                hidden
+                // hidden
                 multiple
                 type="file"
                 accept=".zip"
-                {...register('file')}
+                onChange={handleChange}
               />
-              <Drop>Drag and drop your .zip file here or click</Drop>
-            </DashedArea>
-          </Button>
-          <Button variant="contained" type="submit">
-            Visualize my data
-          </Button>
+            </Button>
+          </DashedArea>
         </Container>
       </StyledForm>
     </>

@@ -16,6 +16,8 @@ import {
   AvastarParsedDataPoint,
   AvastarParsedDataPointState,
 } from '../types/dataTypes';
+import { useEffect } from 'react';
+import { scrollToTop } from '../utils/scrollToTop';
 import Filter from '../components/Overview/Filter';
 import { useState } from 'react';
 import {platformList, data_type, data_origin, nodesList} from '../types/dataTypes';
@@ -43,6 +45,10 @@ const Aside = styled.aside`
 `;
 
 export default function Overview() {
+  useEffect(() => {
+    scrollToTop(); // https://v5.reactrouter.com/web/guides/scroll-restoration
+  }, []);
+
   const [platform, setPlatform] = useState('');
   const [origin, setOrigin] = useState('');
   const [type, setType] = useState('');

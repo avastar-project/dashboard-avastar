@@ -74,11 +74,12 @@ export default function UploadData() {
     <StyledUpload>
       <Title variant="h4">Ready to get started ?</Title>
       <P1 variant="body1">
-        Upload the personal data files you collected from platforms on Avastar.
+        Visualise the personal data files you collected from platforms on
+        Avastar.
       </P1>
       <P2 variant="body1">
         Your data is safe with us as we can't and don't want to see your data.
-        The files you upload never leave your computer, all your data is stored
+        The files you import never leave your computer, all your data is stored
         locally on your browser. It will also be deleted every time your session
         is refreshed.
       </P2>
@@ -88,7 +89,7 @@ export default function UploadData() {
           variant="contained"
           startIcon={<img src={UploadFileIcon} alt="#" />}
         >
-          Upload my data
+          Visualise my data
         </Button>
       </ButtonWrapper>
       <Box>

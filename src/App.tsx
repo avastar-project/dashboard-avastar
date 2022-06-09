@@ -53,9 +53,9 @@ export default function App() {
 
   return (
     <Container className="container">
-      <MainNav />
-      <Main>
-        <Header />
+      <MainNav/>
+      <Main  >
+      <Header />
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/overview" element={<Overview />} />
