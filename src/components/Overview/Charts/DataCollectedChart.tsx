@@ -42,6 +42,13 @@ export default function DataCollectedChart(props: PropsFilter) {
 
   let data = getData(avastarParsedData);
 
+  // Definitions for each data points
+  const tooltips = {
+    'volunteered': 'Information you created and explicitly shared (email address, array of demographic information, etc.)',
+    'observed': 'Information you generated and supplied passively, captured by platforms recording your actions.',
+    'inferred': 'Information created about you based on analysis of observed or volunteered information (prediction of pregnancy, health issues, political opinions, sexual orientation, etc.)'
+  }
+
   const dataPlot = [
     {
       type: 'pie',
@@ -50,6 +57,8 @@ export default function DataCollectedChart(props: PropsFilter) {
       values: Object.values(data),
       textposition: 'inside',
       insidetextorientation: 'tangential',
+      // @ts-ignore
+      hovertext: [tooltips[Object.keys(data)[0]], tooltips[Object.keys(data)[1]], tooltips[Object.keys(data)[2]]],
       marker: {
         colors: ['pink', 'lightgreen', 'skyblue', 'orange'],
         line: {
@@ -62,6 +71,9 @@ export default function DataCollectedChart(props: PropsFilter) {
 
   var layout = {
     autosize: true,
+    hovermode: "closest",
+    hoverlabel: { bgcolor: "#FFF" },
+    config: { responsive: true },
   };
   // @ts-ignore
   return <Plot data={dataPlot} layout={layout} />;
