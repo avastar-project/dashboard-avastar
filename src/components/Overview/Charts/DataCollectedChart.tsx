@@ -57,6 +57,8 @@ export default function DataCollectedChart(props: PropsFilter) {
       values: Object.values(data),
       textposition: 'inside',
       insidetextorientation: 'tangential',
+      mode: 'markers',
+      hovertemplate: '%{text}',
       // @ts-ignore
       hovertext: [tooltips[Object.keys(data)[0]], tooltips[Object.keys(data)[1]], tooltips[Object.keys(data)[2]]],
       marker: {
