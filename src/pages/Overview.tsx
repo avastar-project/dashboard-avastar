@@ -97,20 +97,6 @@ export default function Overview() {
               }
               isSearch={false}
             />
-            <PlotlyContainer
-              title="How my data is collected ?"
-              color="#BDE8D1"
-              tooltip="about"
-              plotlyComponent={
-                <DataCollectedChart
-                  platform={platform}
-                  origin={origin}
-                  type={type}
-                  nodes={nodes}
-                />
-              }
-              isSearch={false}
-            />
             <Box display="flex" justifyContent='flex-end'>
             <Filter
               onChange={setNodes}
@@ -124,6 +110,20 @@ export default function Overview() {
               tooltip="about"
               plotlyComponent={
                 <ForceGraph platform={platform} origin={origin} type={type} nodes={nodes}
+                />
+              }
+              isSearch={false}
+            />
+            <PlotlyContainer
+              title="How my data is collected ?"
+              color="#BDE8D1"
+              tooltip="about"
+              plotlyComponent={
+                <DataCollectedChart
+                  platform={platform}
+                  origin={origin}
+                  type={type}
+                  nodes={nodes}
                 />
               }
               isSearch={false}
