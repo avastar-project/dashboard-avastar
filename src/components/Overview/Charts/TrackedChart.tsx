@@ -56,6 +56,18 @@ export default function TrackedChart(props: PropsFilter) {
     'transactional': 'Purchase made with loyalty cards, transactions completed online'
   }
 
+  // Define color palette
+  const colorPalette = [
+    '#D1C5FF',
+    '#FCC5A5',
+    '#ADF7B6',
+    '#BAE9FC',
+    '#FFA69E',
+    '#ADEDE1',
+    '#ADEDE1',
+    '#FA8080'
+  ]
+
   const dataPlot = [
     {
       x: Object.keys(data),
@@ -72,15 +84,7 @@ export default function TrackedChart(props: PropsFilter) {
       marker: {
         cmin: 0,
         cmax: 255,
-        color: [
-          '#636EFA',
-          '#EF553B',
-          '#00CC96',
-          '#AB63FA',
-          '#FFA15A',
-          '#19D3F3',
-          '#FF6692',
-        ],
+        color: colorPalette,
       },
     },
   ];

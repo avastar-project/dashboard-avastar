@@ -36,12 +36,12 @@ export default function ForceGraph(props: PropsFilter) {
   const groups = [4, 4, 5, 6, 7, 6];
 
   const colors = [
-    '#473188',
-    '#DC488A',
-    '#F8A523',
-    '#ECD707',
-    '#129D00',
-    '#1B6DA9',
+    '#FFA69E',
+    '#ADEDE1',
+    '#D1C5FF',
+    '#FCC5A5',
+    '#BAE9FC',
+    '#FFEE93'
   ];
 
   // Describe the type of relationship between the user and the advertiser
@@ -72,6 +72,14 @@ export default function ForceGraph(props: PropsFilter) {
       .slice(0, parseInt(props.nodes));
   }
 
+  const colorPalette = [
+    '#D1C5FF',
+    '#FCC5A5',
+    '#ADF7B6',
+    '#ADEDE1',
+    '#FFEE93'
+  ]
+
   // Transform filtered data object into the right shape for the force graph (nodes and links)
   const setForceGraphData = () => {
     // Set empty arrays
@@ -82,17 +90,17 @@ export default function ForceGraph(props: PropsFilter) {
     nodes.push({
       id: 'You',
       group: 1,
-      color: '#ff6961',
+      color: '#FE88B1'
     });
     nodes.push({
       id: 'facebook',
       group: 2,
-      color: '#59adf6',
+      color: '#89D5FF',
     });
     nodes.push({
       id: 'google',
       group: 3,
-      color: '#42d6a4',
+      color: '#ADF7B6'
     });
     // Set the initial links (You - Facebook, You - Google)
     links.push({

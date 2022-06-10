@@ -58,14 +58,18 @@ export default function DataCollectedChart(props: PropsFilter) {
       textposition: 'inside',
       insidetextorientation: 'tangential',
       mode: 'markers',
-      hovertemplate: '%{text}',
+      hovertemplate: 
+      "<b>%{label}</b><br><br>" +
+      "Data Points: %{value:,}<br>" +
+      "Definition: %{text}<br>" +
+      "<extra></extra>",
       // @ts-ignore
       hovertext: [tooltips[Object.keys(data)[0]], tooltips[Object.keys(data)[1]], tooltips[Object.keys(data)[2]]],
       marker: {
-        colors: ['pink', 'lightgreen', 'skyblue', 'orange'],
+        colors: ['#FFEAEA', '#FFF9EA', '#EAFAFF'], // intérieur
         line: {
           width: 3,
-          color: ['red', 'green', 'blue', 'grey'],
+          color: ['#FA8080', '#FAC980', '#89D5FF'], // contours
         },
       },
     },
