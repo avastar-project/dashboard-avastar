@@ -66,11 +66,7 @@ export default function DataCollectedChart(props: PropsFilter) {
       // @ts-ignore
       hovertext: [tooltips[Object.keys(data)[0]], tooltips[Object.keys(data)[1]], tooltips[Object.keys(data)[2]]],
       marker: {
-        colors: ['#FFEAEA', '#FFF9EA', '#EAFAFF'], // intérieur
-        line: {
-          width: 3,
-          color: ['#FA8080', '#FAC980', '#89D5FF'], // contours
-        },
+        colors: ['#450AA3', '#B27DDC', '#03C1C7']
       },
     },
   ];

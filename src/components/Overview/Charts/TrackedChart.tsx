@@ -58,14 +58,14 @@ export default function TrackedChart(props: PropsFilter) {
 
   // Define color palette
   const colorPalette = [
-    '#D1C5FF',
-    '#FCC5A5',
-    '#ADF7B6',
-    '#BAE9FC',
-    '#FFA69E',
-    '#ADEDE1',
-    '#ADEDE1',
-    '#FA8080'
+    '#FFB749',
+    '#FB9603',
+    '#FE4F6A',
+    '#B27DDC',
+    '#8F17BB',
+    '#450AA3',
+    '#178DD5',
+    '#03C1C7'
   ]
 
   const dataPlot = [

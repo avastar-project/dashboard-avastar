@@ -36,12 +36,14 @@ export default function ForceGraph(props: PropsFilter) {
   const groups = [4, 4, 5, 6, 7, 6];
 
   const colors = [
-    '#FFA69E',
-    '#ADEDE1',
-    '#D1C5FF',
-    '#FCC5A5',
-    '#BAE9FC',
-    '#FFEE93'
+    '#FFB749',
+    '#FB9603',
+    '#FE4F6A',
+    '#B27DDC',
+    '#8F17BB',
+    '#450AA3',
+    '#178DD5',
+    '#03C1C7'
   ];
 
   // Describe the type of relationship between the user and the advertiser
@@ -71,14 +73,6 @@ export default function ForceGraph(props: PropsFilter) {
       .sort(() => 0.5 - Math.random())
       .slice(0, parseInt(props.nodes));
   }
-
-  const colorPalette = [
-    '#D1C5FF',
-    '#FCC5A5',
-    '#ADF7B6',
-    '#ADEDE1',
-    '#FFEE93'
-  ]
 
   // Transform filtered data object into the right shape for the force graph (nodes and links)
   const setForceGraphData = () => {
