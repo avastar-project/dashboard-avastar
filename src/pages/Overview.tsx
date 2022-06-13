@@ -165,7 +165,6 @@ export default function Overview() {
               plotlyComponent={<DataTable />}
               isSearch={false}
             />
-            <MoreDataContainer />
           </Box>
         </Grid>
       </Grid>

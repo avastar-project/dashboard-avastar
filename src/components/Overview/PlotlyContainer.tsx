@@ -3,7 +3,13 @@
  * who receives a Plotly Chart on Overview Page.
  */
 
-import { Tooltip, IconButton, TextField } from '@mui/material';
+import {
+  Tooltip,
+  IconButton,
+  TextField,
+  Typography,
+  Grid,
+} from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
 import styled from '@emotion/styled';
 
@@ -15,15 +21,6 @@ type PlotlyContainerProps = {
   plotlyComponent: React.ReactNode;
   isSearch: boolean;
 };
-
-// Styled-components
-const Article = styled.article`
-  background-color: var(--clr-lightest);
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  overflow: auto;
-`;
 
 const Header = styled.div`
   display: flex;
@@ -45,14 +42,28 @@ export default function PlotlyContainer({
     margin: '10px',
   };
   return (
-    <Article>
+    <Grid
+      bgcolor="white"
+      sx={{
+        borderRadius: 3,
+        p: 1,
+        overflow: 'auto',
+        mb: 5,
+      }}
+      item
+      xs={12}
+      xl={6}
+    >
       <Header>
         <h2 style={stylesTitle}>{title}</h2>
         <div>
           {isSearch && (
             <TextField id="search-bar" label="Search" variant="outlined" />
           )}
-          <Tooltip title={tooltip}>
+          <Tooltip
+            arrow
+            title={<Typography color="inherit">{tooltip}</Typography>}
+          >
             <IconButton>
               <InfoIcon sx={{ color }} />
             </IconButton>
@@ -61,6 +72,6 @@ export default function PlotlyContainer({
       </Header>
       {/* Receive an unknown Plotly component */}
       {plotlyComponent}
-    </Article>
+    </Grid>
   );
 }

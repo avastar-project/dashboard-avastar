@@ -5,7 +5,8 @@
  */
 
 import styled from '@emotion/styled';
-import { Box, Grid, Tooltip, Typography } from '@mui/material';
+import { Box, Grid, IconButton, Tooltip, Typography } from '@mui/material';
+import InfoIcon from '@mui/icons-material/Info';
 
 import DataPointsExchanged from '../../assets/data_points_exchanged.png';
 import YearsExchanged from '../../assets/years_exchanged.png';
@@ -138,7 +139,7 @@ export default function OverviewProfile(props: PropsFilter) {
       icon: YearsExchanged,
       number: yearsDataExchange, // To be done once we have implemented timestamp and details in the smartParserJson and smartparserCsv
       tooltip:
-        'number of years since you started sharing information with platforms (directly impacts the volume of data the platform is storing about you).',
+        'Number of years since you started sharing information with platforms (directly impacts the volume of data the platform is storing about you).',
     },
     {
       title: 'Devices',
@@ -146,7 +147,7 @@ export default function OverviewProfile(props: PropsFilter) {
       icon: DevicesSharing,
       number: devicesSharingdata,
       tooltip:
-        'number of distinct devices from which you shared information with platforms (current and former laptop, mobile phone(s), tablets, browsers, etc.)',
+        'Number of distinct devices from which you shared information with platforms (current and former laptop, mobile phone(s), tablets, browsers, etc.)',
     },
     {
       title: 'Data',
@@ -162,7 +163,7 @@ export default function OverviewProfile(props: PropsFilter) {
       icon: EntitiesSharing,
       number: entitiesAccessedDataProfile,
       tooltip:
-        'number of companies that have collected information about you for marketing and monetization purposes (display ads, tracking of your activity on other apps and websites, apps and games you installed, etc.)',
+        'Number of companies that have collected information about you for marketing and monetization purposes (display ads, tracking of your activity on other apps and websites, apps and games you installed, etc.)',
     },
   ];
   const stylesTitle = {
@@ -190,8 +191,8 @@ export default function OverviewProfile(props: PropsFilter) {
               width: 250,
               backgroundColor: 'white',
               borderRadius: 3,
-              pt: 1,
-              pr: 1,
+              pt: 0,
+              pr: 0,
               pb: 2,
               pl: 2,
               display: 'flex',
@@ -207,27 +208,13 @@ export default function OverviewProfile(props: PropsFilter) {
                 justifyContent: 'flex-end',
               }}
             >
-              <Tooltip title={block.tooltip}>
-                <Box
-                  sx={{
-                    width: 20,
-                    height: 20,
-                    borderRadius: '50%',
-                    backgroundColor: 'orange',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    color: 'white',
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontSize: 12,
-                    }}
-                  >
-                    i
-                  </Typography>
-                </Box>
+              <Tooltip
+                arrow
+                title={<Typography color="inherit">{block.tooltip}</Typography>}
+              >
+                <IconButton>
+                  <InfoIcon sx={{ color: 'orange' }} />
+                </IconButton>
               </Tooltip>
             </Box>
             <Box
@@ -241,8 +228,8 @@ export default function OverviewProfile(props: PropsFilter) {
               <Box
                 component="img"
                 sx={{
-                  width: 60,
-                  height: 50,
+                  width: 90,
+                  height: 80,
                   objectFit: 'contain',
                 }}
                 alt={block.title}
@@ -251,8 +238,9 @@ export default function OverviewProfile(props: PropsFilter) {
               <Box>
                 <Typography
                   sx={{
-                    fontSize: '20px',
+                    fontSize: '24px',
                     fontWeight: '600',
+                    lineHeight: '1.5rem',
                   }}
                 >
                   {block.number} {block.title}
@@ -260,7 +248,7 @@ export default function OverviewProfile(props: PropsFilter) {
                 <Typography
                   sx={{
                     fontSize: '15px',
-                    fontWeight: '600',
+                    fontWeight: '500',
                   }}
                 >
                   {block?.subtitle}

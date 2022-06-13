@@ -79,7 +79,7 @@ export default function MainNav() {
           <Box
             component="img"
             sx={{
-              width: 120,
+              width: 150,
               paddingTop: 3,
               paddingBottom: 5,
             }}
