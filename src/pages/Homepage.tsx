@@ -4,14 +4,6 @@ import Header from '../components/Home/HomeHeader';
 import QuestionsResumed from '../components/Home/QuestionsYouMayAskSection';
 import TransparencyOverview from '../components/Home/TransparencyPersonalDataSection';
 import StepperSection from '../components/Home/StepperSection';
-// import GetStarted from '../components/Home/GetStartedBanner';
-// import ContentPointsList from '../components/Home/ContentPointsListSection';
-// import MainBenefits from '../components/Home/MainBenefitsSection';
-// import UploadData from '../components/Home/UploadDataSection';
-// import UploadTimeLaps from '../components/Home/UploadTimeLapsSection';
-// import StepsUploadData from '../components/Home/StepsUploadDataSection';
-// import LearnMoreAbout from '../components/Home/LearnMoreAboutBanner';
-// import UsersReview from '../components/Home/UsersReviewSection';
 import Footer from '../components/Home/HomeFooter';
 
 //utils
@@ -43,14 +35,6 @@ export default function Homepage() {
             <TransparencyOverview/>
             <MainBenefitsCard/>
             <StepperSection/>
-            {/* <GetStarted />
-            <ContentPointsList />
-            <MainBenefits />
-            <UploadData />
-            <UploadTimeLaps />
-            <StepsUploadData />
-            <LearnMoreAbout />
-            <UsersReview /> */}
             <Footer />
           </Main>
         </Grid>
