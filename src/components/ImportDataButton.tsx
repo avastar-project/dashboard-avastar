@@ -3,42 +3,15 @@ import * as jszip from 'jszip';
 import parsingModel from '../utils/parsingModel.json';
 import { smartParserJson } from '../utils/smartParserJson';
 import { smartParserCsv } from '../utils/smartParserCsv';
-import styled from 'styled-components';
-import { Box, Button, Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { readFileAsync } from '../utils/readFileAsync';
 import { isJSONFile } from '../utils/isJsonFile';
 import { isCSVFile } from '../utils/isCsvFile';
+import AddIcon from '@mui/icons-material/Add';
 
-// Icons
-import CloudUploadIcon from '../assets/icons/feather_upload-cloud.png';
 import { addDataBlock } from '../store/actionCreators';
 import { useDispatch } from 'react-redux';
 import { AvastarParsedDataPoint } from '../types/dataTypes';
-
-const DashedArea = styled(Box)`
-  background-color: var(--clr-lightest);
-  border-radius: 0.625rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px dashed rgba(0, 0, 0, 0.25);
-  padding: 3rem 2rem;
-  text-transform: none;
-`;
-
-const Drop = styled.div`
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-`;
-
-const Icon = styled.img``;
-interface FormType {
-  file: File[];
-}
 
 const parsingModelFilepaths = Object.keys(parsingModel);
 
@@ -84,7 +57,7 @@ const asyncParseData = async (data: FileList) => {
   return res;
 };
 
-export default function DropZone() {
+export const ImportDataButton: React.FC = ({ children }) => {
   const dispatch: Dispatch<any> = useDispatch();
 
   const handleChange = useCallback(
@@ -99,49 +72,39 @@ export default function DropZone() {
   );
 
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      p={5}
-      gap={2}
+    <Button
+      sx={{
+        m: 0,
+        width: '100%',
+        textTransform: 'none',
+        backgroundColor: '#0034F5',
+        borderRadius: 3,
+        px: 3,
+        py: 1.5,
+        '&:hover': {
+          backgroundColor: 'rgba(0, 52, 245, 0.8)',
+          boxShadow: 'none',
+          textShadow: 'none',
+        },
+      }}
+      variant="contained"
+      component="label"
     >
-      <DashedArea>
-        <Box>
-          <Icon src={CloudUploadIcon} alt={CloudUploadIcon} />
-        </Box>
+      <AddIcon
+        sx={{
+          marginRight: 1,
+        }}
+      />
+      <Typography>Import data</Typography>
 
-        <Drop>
-          <Typography
-            sx={{
-              lineHeight: '1.5rem',
-              fontWeight: 400,
-              fontSize: '1rem',
-            }}
-          >
-            Select a file or drag and drop here
-          </Typography>
-          <Typography
-            sx={{
-              lineHeight: '1.5rem',
-              fontWeight: 400,
-              fontSize: '0.833rem',
-              color: 'rgba(0, 0, 0, 0.4)',
-            }}
-          >
-            Only ZIP files are accepted.
-          </Typography>
-        </Drop>
-        <Button component="label">
-          <input
-            // hidden
-            multiple
-            type="file"
-            accept=".zip"
-            onChange={handleChange}
-          />
-        </Button>
-      </DashedArea>
-    </Box>
+      <input
+        // hidden
+        multiple
+        type="file"
+        accept=".zip"
+        onChange={handleChange}
+        hidden
+      />
+    </Button>
   );
-}
+};

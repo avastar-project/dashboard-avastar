@@ -54,7 +54,7 @@ export default function PlotlyContainer({
           )}
           <Tooltip title={tooltip}>
             <IconButton>
-              <InfoIcon />
+              <InfoIcon sx={{ color }} />
             </IconButton>
           </Tooltip>
         </div>

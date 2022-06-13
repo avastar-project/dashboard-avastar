@@ -15,6 +15,8 @@ import {
 } from './types/dataTypes';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from '@redux-devtools/extension';
+import { theme } from './utils/style/MaterialUITheme';
+import { ThemeProvider } from '@mui/material';
 
 const store: Store<AvastarParsedDataPointState, APDPAction> & {
   dispatch: DispatchType;
@@ -23,10 +25,12 @@ const store: Store<AvastarParsedDataPointState, APDPAction> & {
 ReactDOM.render(
   <BrowserRouter>
     <React.StrictMode>
-      <GlobalStyle />
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </ThemeProvider>
     </React.StrictMode>
   </BrowserRouter>,
   document.getElementById('root')

@@ -5,12 +5,13 @@
  */
 
 import styled from '@emotion/styled';
-import { Grid } from '@mui/material';
-import OverviewKeyNumber from './OverviewKeyNumber';
-import DataLakeIcon from '../../assets/data-lake.png';
-import DeviceIcon from '../../assets/device.png';
-import HourglassIcon from '../../assets/hourglass.png';
-import OrganizationIcon from '../../assets/organization.png';
+import { Box, Grid, Tooltip, Typography } from '@mui/material';
+
+import DataPointsExchanged from '../../assets/data_points_exchanged.png';
+import YearsExchanged from '../../assets/years_exchanged.png';
+import DevicesSharing from '../../assets/devices_sharing.png';
+import EntitiesSharing from '../../assets/entities.png';
+
 import { useSelector, shallowEqual } from 'react-redux';
 import {
   AvastarParsedDataPoint,
@@ -19,11 +20,8 @@ import {
 } from '../../types/dataTypes';
 
 // Styled-components
-const Article = styled.article`
-  background-color: var(--clr-lightest);
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
+const Article = styled(Box)`
+  padding: 3rem 0;
 `;
 
 export default function OverviewProfile(props: PropsFilter) {
@@ -135,44 +133,140 @@ export default function OverviewProfile(props: PropsFilter) {
   // Contains basic informations for each overview profile's block
   const overviewBlocks = [
     {
-      title: 'Data points shared',
-      icon: DataLakeIcon,
-      number: dataPointsShared,
-      tooltip: 'about data points',
-    },
-    {
-      title: 'Entities accessed your data',
-      icon: OrganizationIcon,
-      number: entitiesAccessedDataProfile,
-      tooltip: 'about entities',
-    },
-    {
-      title: 'Devices sharing data',
-      icon: DeviceIcon,
-      number: devicesSharingdata,
-      tooltip: 'about devices',
-    },
-    {
-      title: 'Years of data exchange',
-      icon: HourglassIcon,
+      title: 'Years',
+      subtitle: 'of data exchange',
+      icon: YearsExchanged,
       number: yearsDataExchange, // To be done once we have implemented timestamp and details in the smartParserJson and smartparserCsv
-      tooltip: 'About years of data exchange',
+      tooltip:
+        'number of years since you started sharing information with platforms (directly impacts the volume of data the platform is storing about you).',
+    },
+    {
+      title: 'Devices',
+      subtitle: 'sharing data',
+      icon: DevicesSharing,
+      number: devicesSharingdata,
+      tooltip:
+        'number of distinct devices from which you shared information with platforms (current and former laptop, mobile phone(s), tablets, browsers, etc.)',
+    },
+    {
+      title: 'Data',
+      subtitle: 'points shared',
+      icon: DataPointsExchanged,
+      number: dataPointsShared,
+      tooltip:
+        'Number of facts or pieces of information compiled about you by the platform you use (information about your profile, date and location of login, posts, comments, information inferred about you with algorithms, etc.)',
+    },
+    {
+      title: 'Entities',
+      subtitle: 'accessing your data',
+      icon: EntitiesSharing,
+      number: entitiesAccessedDataProfile,
+      tooltip:
+        'number of companies that have collected information about you for marketing and monetization purposes (display ads, tracking of your activity on other apps and websites, apps and games you installed, etc.)',
     },
   ];
+  const stylesTitle = {
+    borderLeft: '15px solid #FFA69E',
+    padding: '10px',
+    margin: '10px',
+  };
 
   return (
     <Article>
-      <h2>Overview</h2>
-      <Grid container spacing={2}>
-        {overviewBlocks.map((block, index) => (
-          <Grid key={index} item xs={12} md={6}>
-            <OverviewKeyNumber
-              title={block.title}
-              icon={block.icon}
-              // @ts-ignore
-              number={block.number}
-              tooltip={block.tooltip}
-            />
+      <h2 style={stylesTitle}>Overview</h2>
+
+      <Grid
+        py={2}
+        container
+        justifyContent={'space-between'}
+        direction={'row'}
+        maxWidth="1200px"
+      >
+        {overviewBlocks.map((block) => (
+          <Grid
+            key={block.title}
+            item
+            sx={{
+              width: 250,
+              backgroundColor: 'white',
+              borderRadius: 3,
+              pt: 1,
+              pr: 1,
+              pb: 2,
+              pl: 2,
+              display: 'flex',
+              flexDirection: 'column',
+              mr: 3,
+              flex: 1,
+            }}
+          >
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'flex-end',
+              }}
+            >
+              <Tooltip title={block.tooltip}>
+                <Box
+                  sx={{
+                    width: 20,
+                    height: 20,
+                    borderRadius: '50%',
+                    backgroundColor: 'orange',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    color: 'white',
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontSize: 12,
+                    }}
+                  >
+                    i
+                  </Typography>
+                </Box>
+              </Tooltip>
+            </Box>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                alignItems: 'flex-start',
+              }}
+            >
+              <Box
+                component="img"
+                sx={{
+                  width: 60,
+                  height: 50,
+                  objectFit: 'contain',
+                }}
+                alt={block.title}
+                src={block.icon}
+              />
+              <Box>
+                <Typography
+                  sx={{
+                    fontSize: '20px',
+                    fontWeight: '600',
+                  }}
+                >
+                  {block.number} {block.title}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: '15px',
+                    fontWeight: '600',
+                  }}
+                >
+                  {block?.subtitle}
+                </Typography>
+              </Box>
+            </Box>
           </Grid>
         ))}
       </Grid>

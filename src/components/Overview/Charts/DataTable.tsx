@@ -44,11 +44,10 @@ const Container = styled.div`
 
 const Styles = styled(Box)`
   overflow: auto;
-  margin: 2rem 0 2rem 0;
+  margin: 2rem 0;
   background: var(--tab-clr-bg);
   border: solid 0.2rem var(--tab-clr-bg2);
   border-radius: var(--tab-radius);
-  width: 100%;
   height: auto;
   box-shadow: 1px 0 5px 0px #888;
 `;
@@ -101,7 +100,6 @@ const Pagination = styled(Box)`
   display: flex;
   position: absolute;
   width: 85%;
-  left: 18%;
 
   @media screen and (min-width: 870px) and (max-width: 1200px) {
     width: 97%;
@@ -505,7 +503,7 @@ export default function DataTable() {
             accessor: 'source',
             Filter: SelectColumnFilter,
             filter: 'includes',
-            minWidth: '19rem',
+            minWidth: '17rem',
           },
           {
             Header: 'Data type',
@@ -519,24 +517,24 @@ export default function DataTable() {
             accessor: 'data_origin',
             Filter: SelectColumnFilter,
             filter: 'includes',
-            minWidth: '5.4rem',
+            minWidth: '5rem',
           },
           {
             Header: 'Action',
             accessor: 'action_type',
             Filter: SelectColumnFilter,
             filter: 'includes',
-            minWidth: '11.4rem',
+            minWidth: '10rem',
           },
           {
             Header: 'Interaction date',
             accessor: 'interaction_date',
-            minWidth: '7.3rem',
+            minWidth: '7rem',
           },
           {
             Header: 'Details',
             accessor: 'details',
-            minWidth: '17.27rem',
+            minWidth: '16rem',
           },
         ],
       },

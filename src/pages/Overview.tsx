@@ -1,106 +1,128 @@
 import PlotlyContainer from '../components/Overview/PlotlyContainer';
-import styled from '@emotion/styled';
 import OverviewProfile from '../components/Overview/OverviewProfile';
 // Calling Plotly Charts for integration on Overview page
 import TrackedChart from '../components/Overview/Charts/TrackedChart';
 import DataCollectedChart from '../components/Overview/Charts/DataCollectedChart';
 // import DataTable from '../components/Overview/PlotlyCharts/DataTable';
 import DataTable from '../components/Overview/Charts/DataTable';
-import OverviewEducLink from '../components/Overview/OverviewEducLink';
 import MoreDataContainer from '../components/Overview/MoreDataContainer';
 import ForceGraph from '../components/Overview/Charts/ForceDirectedGraph';
 // MUI components
 import { Box, Grid, Typography } from '@mui/material';
-import { useSelector, shallowEqual } from 'react-redux';
-import {
-  AvastarParsedDataPoint,
-  AvastarParsedDataPointState,
-} from '../types/dataTypes';
 import { useEffect } from 'react';
 import { scrollToTop } from '../utils/scrollToTop';
 import Filter from '../components/Overview/Filter';
 import { useState } from 'react';
-import {platformList, data_type, data_origin, nodesList} from '../types/dataTypes';
-
-// Styled-components
-const Container = styled(Grid)`
-  margin: 0;
-  width: calc(100% - 1rem);
-`;
-
-const Header = styled.header`
-  width: 75%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-`;
-const Title = styled(Typography)``;
-
-const Main = styled.main``;
-
-const Aside = styled.aside`
-  border-radius: 0.5rem;
-  over-flow: hidden;
-`;
+import {
+  platformList,
+  data_type,
+  data_origin,
+  nodesList,
+} from '../types/dataTypes';
+import { Container } from '@mui/system';
 
 export default function Overview() {
-  useEffect(() => {
-    scrollToTop(); // https://v5.reactrouter.com/web/guides/scroll-restoration
-  }, []);
-
   const [platform, setPlatform] = useState('');
   const [origin, setOrigin] = useState('');
   const [type, setType] = useState('');
   const [nodes, setNodes] = useState('');
-  const avastarParsedData: readonly AvastarParsedDataPoint[] = useSelector(
-    (state: AvastarParsedDataPointState) => state.avastarParsedData,
-    shallowEqual
+
+  useEffect(() => {
+    scrollToTop(); // https://v5.reactrouter.com/web/guides/scroll-restoration
+  }, []);
+
+  const Filters = () => (
+    <>
+      <Grid item xs={12}>
+        <Typography
+          sx={{
+            fontWeight: 500,
+          }}
+        >
+          Filters
+        </Typography>
+      </Grid>
+      <Grid item container columnSpacing={4} xs={12}>
+        <Grid item>
+          <Filter
+            onChange={setPlatform}
+            optionsList={platformList}
+            name="Platform"
+          ></Filter>
+        </Grid>
+        <Grid item>
+          <Filter
+            onChange={setType}
+            optionsList={data_type}
+            name="Type"
+          ></Filter>
+        </Grid>
+        <Grid item>
+          <Filter
+            onChange={setOrigin}
+            optionsList={data_origin}
+            name="Origin"
+          ></Filter>
+        </Grid>
+      </Grid>
+    </>
   );
 
-  console.log('avastarParsedData from redux', avastarParsedData);
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Container container spacing={2}>
-        <Grid item xs={12}>
-          <Header>
-            <Title variant="h4">My identity</Title>
-            <Box display="flex" justifyContent="flex-end">
-              <Filter
-                onChange={setPlatform}
-                optionsList={platformList}
-                name="Platform"
-              ></Filter>
-              <Filter
-                onChange={setType}
-                optionsList={data_type}
-                name="Type"
-              ></Filter>
-              <Filter
-                onChange={setOrigin}
-                optionsList={data_origin}
-                name="Origin"
-              ></Filter>
-            </Box>
-          </Header>
+    <Container
+      sx={{
+        p: 4,
+      }}
+    >
+      <Grid
+        justifyContent="flex-start"
+        alignItems="flex-start"
+        sx={{ minWidth: 800 }}
+        container
+        pb={4}
+      >
+        <Grid item xs={6}>
+          <Typography
+            sx={{
+              pt: 1,
+              fontSize: '36px',
+              fontWeight: 600,
+            }}
+          >
+            My identity
+          </Typography>
         </Grid>
-        <Grid item xs={12} md={9}>
-          <Main>
-            <OverviewProfile platform={platform} origin={origin} type={type} nodes={nodes} />
-            {/* Contains each stat view */}
+
+        <Grid container item xs={6} pl={8}>
+          <Filters />
+        </Grid>
+        <Grid item xs={12}>
+          <Box>
+            <OverviewProfile
+              platform={platform}
+              origin={origin}
+              type={type}
+              nodes={nodes}
+            />
+
             <PlotlyContainer
               title="What is being tracked ?"
               color="#d1c5fd"
-              tooltip="about"
+              tooltip="Types of personal information that are directly or indirectly collected by companies"
               plotlyComponent={
-                <TrackedChart platform={platform} origin={origin} type={type} nodes={nodes} />
+                <TrackedChart
+                  platform={platform}
+                  origin={origin}
+                  type={type}
+                  nodes={nodes}
+                />
               }
               isSearch={false}
             />
             <PlotlyContainer
               title="How my data is collected ?"
               color="#BDE8D1"
-              tooltip="about"
+              tooltip="Ways in which companies obtained data about you"
               plotlyComponent={
                 <DataCollectedChart
                   platform={platform}
@@ -111,19 +133,27 @@ export default function Overview() {
               }
               isSearch={false}
             />
-            <Box display="flex" justifyContent='flex-end'>
-            <Filter
-              onChange={setNodes}
-              optionsList={nodesList}
-              name="Companies"
-            ></Filter>
+            <Box display="flex" width={'100%'} justifyContent="flex-end">
+              <Filter
+                onChange={setNodes}
+                optionsList={nodesList}
+                name="Companies"
+              ></Filter>
             </Box>
             <PlotlyContainer
               title="Who has my data ?"
               color="#BAE9FC"
-              tooltip="about"
+              tooltip="Companies that have collected your data. They are grouped by categories identifiable with colours: 
+              Red: companies that paid to display you advertising content
+              Purple: companies that collected data about you outside the apps you installed
+              Orange: apps and games you installed/played
+              Blue: companies connected to Facebook and Google (same parent organisation)"
               plotlyComponent={
-                <ForceGraph platform={platform} origin={origin} type={type} nodes={nodes}
+                <ForceGraph
+                  platform={platform}
+                  origin={origin}
+                  type={type}
+                  nodes={nodes}
                 />
               }
               isSearch={false}
@@ -131,19 +161,14 @@ export default function Overview() {
             <PlotlyContainer
               title="Search my data"
               color="#d1c5fd"
-              tooltip="about"
+              tooltip="The whole list of information you shared accessible from a filterable table."
               plotlyComponent={<DataTable />}
               isSearch={false}
             />
             <MoreDataContainer />
-          </Main>
+          </Box>
         </Grid>
-        <Grid item xs={12} md={3}>
-          <Aside>
-            <OverviewEducLink />
-          </Aside>
-        </Grid>
-      </Container>
-    </Box>
+      </Grid>
+    </Container>
   );
 }
