@@ -27,9 +27,7 @@ const StyledContainer = styled(Box)`
   gap: 2.5rem;
 `;
 
-const Title = styled(Typography)`
-  padding-bottom: 1.5rem;
-`;
+const Title = styled(Typography)``;
 
 const VideoSection = styled.section`
   padding-top: 1.125rem;
@@ -286,12 +284,21 @@ export default function MultiStepper() {
       <Title
         id="how-does-it-work"
         sx={{
+          width:'100%',
           lineHeight: '2.5rem',
           fontWeight: 700,
           fontSize: '2.074rem',
+          textAlign:'center',
+          paddingBottom: '1.5rem',
         }}
       >
         How does it work ?
+        <Typography
+        sx={{
+          lineHeight: '2.5rem',
+          fontWeight: 400,
+          fontSize: '1rem',
+        }}>We strongly suggest that you use a computer for the next steps</Typography>
       </Title>
       <Stepper activeStep={activeStep} orientation="vertical">
         {steps.map((label, index) => (
