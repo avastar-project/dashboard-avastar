@@ -45,7 +45,7 @@ export default function TrackedChart(props: PropsFilter) {
 
    // Definitions for each data points
    const tooltips = {
-    'behavioural': 'Websites visited and adverts clicked on, data on use of games app, actions performed on apps',
+    'behavioural': 'Websites visited and ads clicked on, data on your usage of games app, actions performed on other apps',
     'communications': 'Entries in social media and in email exchanges',
     'contact': 'Home and work address, email address, phone number',
     'financial': 'Information on income and credit ratings',

@@ -138,10 +138,10 @@ export default function Overview() {
             title="Who has my data ?"
             color="#BAE9FC"
             tooltip="Companies that have collected your data. They are grouped by categories identifiable with colours: 
-              Red: companies that paid to display you advertising content
-              Purple: companies that collected data about you outside the apps you installed
-              Orange: apps and games you installed/played
-              Blue: companies connected to Facebook and Google (same parent organisation)"
+              - Yellow: companies that paid to display you advertising content ; 
+              - Red : companies that collected data about you outside the apps you installed ; 
+              - Purple: apps and games you installed/played ; 
+              - Dark purple: companies connected to Facebook and Google (same parent organisation)"
             plotlyComponent={
               <ForceGraph
                 platform={platform}

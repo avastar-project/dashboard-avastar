@@ -46,7 +46,7 @@ export default function DataCollectedChart(props: PropsFilter) {
    const tooltips = {
     'volunteered': 'Information you created and explicitly shared (email address, array of demographic information, etc.)',
     'observed': 'Information you generated and supplied passively, captured by platforms recording your actions.',
-    'inferred': 'Information created about you based on analysis of observed or volunteered information (prediction of pregnancy, health issues, political opinions, sexual orientation, etc.)'
+    'inferred': 'Information created about you based on the analysis of observed and volunteered information (prediction of pregnancy, health issues, political opinions, sexual orientation, etc.)'
   }
 
   const dataPlot = [
