@@ -247,7 +247,7 @@ function getStepContent(step: number) {
           <Box width={'100%'}>
             <video width="100%" height="auto" controls>
               <source
-                src={require('../../assets/video/video-test.mp4')}
+                src={require('../../assets/video/webapp-preview.mp4')}
                 type="video/mp4"
               />
             </video>
