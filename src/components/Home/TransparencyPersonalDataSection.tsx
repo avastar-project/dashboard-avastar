@@ -45,7 +45,7 @@ const ImgContainer = styled(Box)`
 `;
 
 const Img = styled.img`
-  width: 37rem;
+  width: 37.23rem;
   height: 21.938rem;
 `;
 
