@@ -5,7 +5,6 @@ import TrackedChart from '../components/Overview/Charts/TrackedChart';
 import DataCollectedChart from '../components/Overview/Charts/DataCollectedChart';
 // import DataTable from '../components/Overview/PlotlyCharts/DataTable';
 import DataTable from '../components/Overview/Charts/DataTable';
-import MoreDataContainer from '../components/Overview/MoreDataContainer';
 import ForceGraph from '../components/Overview/Charts/ForceDirectedGraph';
 // MUI components
 import { Box, Grid, Typography } from '@mui/material';
@@ -70,17 +69,12 @@ export default function Overview() {
 
   return (
     <Container
+      maxWidth={'xl'}
       sx={{
         p: 4,
       }}
     >
-      <Grid
-        justifyContent="flex-start"
-        alignItems="flex-start"
-        sx={{ minWidth: 800 }}
-        container
-        pb={4}
-      >
+      <Grid sx={{ minWidth: 800 }} container pb={4}>
         <Grid item xs={6}>
           <Typography
             sx={{
@@ -96,76 +90,74 @@ export default function Overview() {
         <Grid container item xs={6} pl={8}>
           <Filters />
         </Grid>
-        <Grid item xs={12}>
-          <Box>
-            <OverviewProfile
-              platform={platform}
-              origin={origin}
-              type={type}
-              nodes={nodes}
-            />
 
-            <PlotlyContainer
-              title="What is being tracked ?"
-              color="#d1c5fd"
-              tooltip="Types of personal information that are directly or indirectly collected by companies"
-              plotlyComponent={
-                <TrackedChart
-                  platform={platform}
-                  origin={origin}
-                  type={type}
-                  nodes={nodes}
-                />
-              }
-              isSearch={false}
-            />
-            <PlotlyContainer
-              title="How my data is collected ?"
-              color="#BDE8D1"
-              tooltip="Ways in which companies obtained data about you"
-              plotlyComponent={
-                <DataCollectedChart
-                  platform={platform}
-                  origin={origin}
-                  type={type}
-                  nodes={nodes}
-                />
-              }
-              isSearch={false}
-            />
-            <Box display="flex" width={'100%'} justifyContent="flex-end">
-              <Filter
-                onChange={setNodes}
-                optionsList={nodesList}
-                name="Companies"
-              ></Filter>
-            </Box>
-            <PlotlyContainer
-              title="Who has my data ?"
-              color="#BAE9FC"
-              tooltip="Companies that have collected your data. They are grouped by categories identifiable with colours: 
+        <OverviewProfile
+          platform={platform}
+          origin={origin}
+          type={type}
+          nodes={nodes}
+        />
+        <Grid item xs={12} container columnSpacing={3}>
+          <PlotlyContainer
+            title="What is being tracked ?"
+            color="#d1c5fd"
+            tooltip="Types of personal information that are directly or indirectly collected by companies"
+            plotlyComponent={
+              <TrackedChart
+                platform={platform}
+                origin={origin}
+                type={type}
+                nodes={nodes}
+              />
+            }
+            isSearch={false}
+          />
+          <PlotlyContainer
+            title="How my data is collected ?"
+            color="#BDE8D1"
+            tooltip="Ways in which companies obtained data about you"
+            plotlyComponent={
+              <DataCollectedChart
+                platform={platform}
+                origin={origin}
+                type={type}
+                nodes={nodes}
+              />
+            }
+            isSearch={false}
+          />
+          <Box display="flex" width={'100%'} justifyContent="flex-end">
+            <Filter
+              onChange={setNodes}
+              optionsList={nodesList}
+              name="Companies"
+            ></Filter>
+          </Box>
+          <PlotlyContainer
+            title="Who has my data ?"
+            color="#BAE9FC"
+            tooltip="Companies that have collected your data. They are grouped by categories identifiable with colours: 
               Red: companies that paid to display you advertising content
               Purple: companies that collected data about you outside the apps you installed
               Orange: apps and games you installed/played
               Blue: companies connected to Facebook and Google (same parent organisation)"
-              plotlyComponent={
-                <ForceGraph
-                  platform={platform}
-                  origin={origin}
-                  type={type}
-                  nodes={nodes}
-                />
-              }
-              isSearch={false}
-            />
-            <PlotlyContainer
-              title="Search my data"
-              color="#d1c5fd"
-              tooltip="The whole list of information you shared accessible from a filterable table."
-              plotlyComponent={<DataTable />}
-              isSearch={false}
-            />
-          </Box>
+            plotlyComponent={
+              <ForceGraph
+                platform={platform}
+                origin={origin}
+                type={type}
+                nodes={nodes}
+              />
+            }
+            isSearch={false}
+          />
+          <PlotlyContainer
+            title="Search my data"
+            color="#d1c5fd"
+            tooltip="The whole list of information you shared accessible from a filterable table."
+            plotlyComponent={<DataTable />}
+            isSearch={false}
+          />
         </Grid>
       </Grid>
     </Container>

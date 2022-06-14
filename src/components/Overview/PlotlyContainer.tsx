@@ -9,6 +9,8 @@ import {
   TextField,
   Typography,
   Grid,
+  Box,
+  Paper,
 } from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
 import styled from '@emotion/styled';
@@ -43,7 +45,7 @@ export default function PlotlyContainer({
   };
   return (
     <Grid
-      bgcolor="white"
+      key={title}
       sx={{
         borderRadius: 3,
         p: 1,
@@ -54,24 +56,30 @@ export default function PlotlyContainer({
       xs={12}
       xl={6}
     >
-      <Header>
-        <h2 style={stylesTitle}>{title}</h2>
-        <div>
-          {isSearch && (
-            <TextField id="search-bar" label="Search" variant="outlined" />
-          )}
-          <Tooltip
-            arrow
-            title={<Typography color="inherit">{tooltip}</Typography>}
-          >
-            <IconButton>
-              <InfoIcon sx={{ color }} />
-            </IconButton>
-          </Tooltip>
-        </div>
-      </Header>
-      {/* Receive an unknown Plotly component */}
-      {plotlyComponent}
+      <Paper
+        sx={{
+          borderRadius: 3,
+        }}
+      >
+        <Header>
+          <h2 style={stylesTitle}>{title}</h2>
+          <div>
+            {isSearch && (
+              <TextField id="search-bar" label="Search" variant="outlined" />
+            )}
+            <Tooltip
+              arrow
+              title={<Typography color="inherit">{tooltip}</Typography>}
+            >
+              <IconButton>
+                <InfoIcon sx={{ color }} />
+              </IconButton>
+            </Tooltip>
+          </div>
+        </Header>
+        {/* Receive an unknown Plotly component */}
+        {plotlyComponent}
+      </Paper>
     </Grid>
   );
 }

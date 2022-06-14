@@ -4,8 +4,14 @@
  * OverviewKeyNumber components to be fullfilled
  */
 
-import styled from '@emotion/styled';
-import { Box, Grid, IconButton, Tooltip, Typography } from '@mui/material';
+import {
+  Box,
+  Grid,
+  IconButton,
+  Paper,
+  Tooltip,
+  Typography,
+} from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
 
 import DataPointsExchanged from '../../assets/data_points_exchanged.png';
@@ -19,11 +25,6 @@ import {
   AvastarParsedDataPointState,
   PropsFilter,
 } from '../../types/dataTypes';
-
-// Styled-components
-const Article = styled(Box)`
-  padding: 3rem 0;
-`;
 
 export default function OverviewProfile(props: PropsFilter) {
   // Fetch data from State
@@ -173,91 +174,82 @@ export default function OverviewProfile(props: PropsFilter) {
   };
 
   return (
-    <Article>
+    <Box pb={2} pt={5} sx={{ flex: 1 }}>
       <h2 style={stylesTitle}>Overview</h2>
 
-      <Grid
-        py={2}
-        container
-        justifyContent={'space-between'}
-        direction={'row'}
-        maxWidth="1200px"
-      >
+      <Grid py={2} container columnSpacing={3}>
         {overviewBlocks.map((block) => (
-          <Grid
-            key={block.title}
-            item
-            sx={{
-              width: 250,
-              backgroundColor: 'white',
-              borderRadius: 3,
-              pt: 0,
-              pr: 0,
-              pb: 2,
-              pl: 2,
-              display: 'flex',
-              flexDirection: 'column',
-              mr: 3,
-              flex: 1,
-            }}
-          >
-            <Box
+          <Grid key={block.title} item xs={6} md={3}>
+            <Paper
               sx={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'flex-end',
-              }}
-            >
-              <Tooltip
-                arrow
-                title={<Typography color="inherit">{block.tooltip}</Typography>}
-              >
-                <IconButton>
-                  <InfoIcon sx={{ color: 'orange' }} />
-                </IconButton>
-              </Tooltip>
-            </Box>
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                alignItems: 'flex-start',
+                backgroundColor: 'white',
+                borderRadius: 3,
+                pt: 0,
+                pr: 0,
+                pb: 2,
+                pl: 2,
+                height: '100%',
               }}
             >
               <Box
-                component="img"
                 sx={{
-                  width: 90,
-                  height: 80,
-                  objectFit: 'contain',
+                  display: 'flex',
+                  flexDirection: 'row',
+                  justifyContent: 'flex-end',
                 }}
-                alt={block.title}
-                src={block.icon}
-              />
-              <Box>
-                <Typography
-                  sx={{
-                    fontSize: '24px',
-                    fontWeight: '600',
-                    lineHeight: '1.5rem',
-                  }}
+              >
+                <Tooltip
+                  arrow
+                  title={
+                    <Typography color="inherit">{block.tooltip}</Typography>
+                  }
                 >
-                  {block.number} {block.title}
-                </Typography>
-                <Typography
-                  sx={{
-                    fontSize: '15px',
-                    fontWeight: '500',
-                  }}
-                >
-                  {block?.subtitle}
-                </Typography>
+                  <IconButton>
+                    <InfoIcon sx={{ color: 'orange' }} />
+                  </IconButton>
+                </Tooltip>
               </Box>
-            </Box>
+              <Box
+                sx={{
+                  height: '100%',
+                  overflow: 'hidden',
+                }}
+              >
+                <Box
+                  component="img"
+                  sx={{
+                    // width: 90,
+                    // height: 80,
+                    height: '40%',
+                    objectFit: 'contain',
+                  }}
+                  alt={block.title}
+                  src={block.icon}
+                />
+                <Box>
+                  <Typography
+                    sx={{
+                      fontSize: '24px',
+                      fontWeight: '600',
+                      lineHeight: '1.5rem',
+                    }}
+                  >
+                    {block.number} {block.title}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: '15px',
+                      fontWeight: '500',
+                    }}
+                  >
+                    {block?.subtitle}
+                  </Typography>
+                </Box>
+              </Box>
+            </Paper>
           </Grid>
         ))}
       </Grid>
-    </Article>
+    </Box>
   );
 }
