@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 // Components
 import Homepage from './pages/Homepage';
-import Google from './pages/Google';
 import { Routes, Route } from 'react-router-dom';
 import { useLocation } from 'react-router';
 // Utils
@@ -15,6 +14,8 @@ import CookieConsent, {
 import { initGA } from './utils/ga-utils';
 import Overview from './pages/Overview';
 import MainNav from './layouts/MainNav';
+import { ProtectPrivacy } from './pages/ProtectPrivacy';
+import { UpcomingPlatforms } from './pages/UpcomingPlatforms';
 
 // Styled-components
 const Container = styled.div`
@@ -50,8 +51,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/overview" element={<Overview />} />
-          <Route path="/education" element={<Google />} />
-          <Route path="/upcoming-platforms" element={<Google />} />
+          <Route path="/protect-privacy" element={<ProtectPrivacy />} />
+          <Route path="/upcoming-platforms" element={<UpcomingPlatforms />} />
         </Routes>
       </Main>
       <CookieConsent

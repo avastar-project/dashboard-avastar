@@ -28,7 +28,7 @@ const topLinks = [
   },
   {
     name: 'Upcoming platforms',
-    link: 'https://forms.gle/wMd1fSZWAYmTCLts8',
+    link: '/upcoming-platforms',
     icon: <ContactSupportIcon sx={{ color: '#0034F5' }} />,
   },
 ];
@@ -36,7 +36,7 @@ const topLinks = [
 const bottomLinks = [
   {
     name: 'Protect my privacy',
-    link: 'https://www.notion.so/avastar/Avastar-Open-Source-Project-730dbef6c24040d69b4f3a17960979ae',
+    link: '/protect-privacy',
     icon: <SecurityIcon sx={{ color: '#0034F5' }} />,
   },
 ];

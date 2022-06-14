@@ -22,6 +22,7 @@ type PlotlyContainerProps = {
   tooltip: string;
   plotlyComponent: React.ReactNode;
   isSearch: boolean;
+  big?: boolean;
 };
 
 const Header = styled.div`
@@ -37,6 +38,7 @@ export default function PlotlyContainer({
   tooltip,
   plotlyComponent,
   isSearch,
+  big = false,
 }: PlotlyContainerProps) {
   const stylesTitle = {
     borderLeft: '15px solid' + color,
@@ -54,7 +56,7 @@ export default function PlotlyContainer({
       }}
       item
       xs={12}
-      xl={6}
+      xl={big ? 12 : 6}
     >
       <Paper
         sx={{

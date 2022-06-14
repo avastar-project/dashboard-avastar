@@ -134,6 +134,7 @@ export default function Overview() {
             ></Filter>
           </Box>
           <PlotlyContainer
+            big
             title="Who has my data ?"
             color="#BAE9FC"
             tooltip="Companies that have collected your data. They are grouped by categories identifiable with colours: 
@@ -152,6 +153,7 @@ export default function Overview() {
             isSearch={false}
           />
           <PlotlyContainer
+            big
             title="Search my data"
             color="#d1c5fd"
             tooltip="The whole list of information you shared accessible from a filterable table."
