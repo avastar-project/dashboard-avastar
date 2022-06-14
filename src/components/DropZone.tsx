@@ -15,10 +15,6 @@ import { addDataBlock } from '../store/actionCreators';
 import { useDispatch } from 'react-redux';
 import { AvastarParsedDataPoint } from '../types/dataTypes';
 
-const StyledForm = styled.form``;
-
-const Container = styled(Box)``;
-
 const DashedArea = styled(Box)`
   background-color: var(--clr-lightest);
   border-radius: 0.625rem;
@@ -39,8 +35,6 @@ const Drop = styled.div`
   gap: 0.75rem;
 `;
 
-const IconContainer = styled(Box)``;
-
 const Icon = styled.img``;
 interface FormType {
   file: File[];
@@ -55,7 +49,6 @@ const prepareData = async (data: FileList) => {
 };
 
 const asyncParseData = async (data: FileList) => {
-  console.log('EEE', data);
   const preparedData = await prepareData(data);
   const res: AvastarParsedDataPoint[] = [];
 
@@ -106,53 +99,49 @@ export default function DropZone() {
   );
 
   return (
-    <>
-      <StyledForm>
-        <Container
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          p={5}
-          gap={2}
-        >
-          <DashedArea>
-            <IconContainer>
-              <Icon src={CloudUploadIcon} alt={CloudUploadIcon} />
-            </IconContainer>
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      p={5}
+      gap={2}
+    >
+      <DashedArea>
+        <Box>
+          <Icon src={CloudUploadIcon} alt={CloudUploadIcon} />
+        </Box>
 
-            <Drop>
-              <Typography
-                sx={{
-                  lineHeight: '1.5rem',
-                  fontWeight: 400,
-                  fontSize: '1rem',
-                }}
-              >
-                Select a file or drag and drop here
-              </Typography>{' '}
-              <Typography
-                sx={{
-                  lineHeight: '1.5rem',
-                  fontWeight: 400,
-                  fontSize: '0.833rem',
-                  color: 'rgba(0, 0, 0, 0.4)',
-                }}
-              >
-                Only ZIP files are accepted.
-              </Typography>
-            </Drop>
-            <Button component="label">
-              <input
-                // hidden
-                multiple
-                type="file"
-                accept=".zip"
-                onChange={handleChange}
-              />
-            </Button>
-          </DashedArea>
-        </Container>
-      </StyledForm>
-    </>
+        <Drop>
+          <Typography
+            sx={{
+              lineHeight: '1.5rem',
+              fontWeight: 400,
+              fontSize: '1rem',
+            }}
+          >
+            Select a file or drag and drop here
+          </Typography>
+          <Typography
+            sx={{
+              lineHeight: '1.5rem',
+              fontWeight: 400,
+              fontSize: '0.833rem',
+              color: 'rgba(0, 0, 0, 0.4)',
+            }}
+          >
+            Only ZIP files are accepted.
+          </Typography>
+        </Drop>
+        <Button component="label">
+          <input
+            // hidden
+            multiple
+            type="file"
+            accept=".zip"
+            onChange={handleChange}
+          />
+        </Button>
+      </DashedArea>
+    </Box>
   );
 }

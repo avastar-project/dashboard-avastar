@@ -36,12 +36,14 @@ export default function ForceGraph(props: PropsFilter) {
   const groups = [4, 4, 5, 6, 7, 6];
 
   const colors = [
-    '#473188',
-    '#DC488A',
-    '#F8A523',
-    '#ECD707',
-    '#129D00',
-    '#1B6DA9',
+    '#FFB749',
+    '#FB9603',
+    '#FE4F6A',
+    '#B27DDC',
+    '#8F17BB',
+    '#450AA3',
+    '#178DD5',
+    '#03C1C7'
   ];
 
   // Describe the type of relationship between the user and the advertiser
@@ -82,17 +84,17 @@ export default function ForceGraph(props: PropsFilter) {
     nodes.push({
       id: 'You',
       group: 1,
-      color: '#ff6961',
+      color: '#FE88B1',
     });
     nodes.push({
       id: 'facebook',
       group: 2,
-      color: '#59adf6',
+      color: '#89D5FF',
     });
     nodes.push({
       id: 'google',
       group: 3,
-      color: '#42d6a4',
+      color: '#ADF7B6',
     });
     // Set the initial links (You - Facebook, You - Google)
     links.push({
@@ -195,7 +197,7 @@ export default function ForceGraph(props: PropsFilter) {
       cooldownTicks={100}
       // @ts-ignore
       onEngineStop={() => fgRef.current.zoomToFit(400)}
-      width={950}
+      width={1250}
       height={650}
       nodeAutoColorBy="group"
       linkDirectionalParticles="value"

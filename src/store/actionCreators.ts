@@ -9,7 +9,7 @@ export function addDataBlock(avastarParsedDataBloc: AvastarParsedDataPoint[]) {
   return action;
 }
 
-export function removeDataBlock() {
+export function clearData() {
   const action = {
     type: actionTypes.CLEAR_DATA,
   };

@@ -19,7 +19,7 @@ export default function FilterData(props: PropsFilter) {
     props.onChange(event.target.value);
   };
   return (
-    <FormControl sx={{ m: 1, minWidth: 140 }}>
+    <FormControl size="small" sx={{ minWidth: 120 }}>
       <InputLabel id="platform">{props.name}</InputLabel>
       <Selector
         labelId="select-option"
@@ -30,7 +30,7 @@ export default function FilterData(props: PropsFilter) {
         // @ts-ignore
         onChange={selectChange}
       >
-        <MenuItem value="">
+        <MenuItem value="" sx={{ height: 3 }}>
           <em>All</em>
         </MenuItem>
         {props.optionsList.map((element, index) => (

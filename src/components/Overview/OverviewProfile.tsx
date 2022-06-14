@@ -4,27 +4,27 @@
  * OverviewKeyNumber components to be fullfilled
  */
 
-import styled from '@emotion/styled';
-import { Grid } from '@mui/material';
-import OverviewKeyNumber from './OverviewKeyNumber';
-import DataLakeIcon from '../../assets/data-lake.png';
-import DeviceIcon from '../../assets/device.png';
-import HourglassIcon from '../../assets/hourglass.png';
-import OrganizationIcon from '../../assets/organization.png';
+import {
+  Box,
+  Grid,
+  IconButton,
+  Paper,
+  Tooltip,
+  Typography,
+} from '@mui/material';
+import InfoIcon from '@mui/icons-material/Info';
+
+import DataPointsExchanged from '../../assets/data_points_exchanged.png';
+import YearsExchanged from '../../assets/years_exchanged.png';
+import DevicesSharing from '../../assets/devices_sharing.png';
+import EntitiesSharing from '../../assets/entities.png';
+
 import { useSelector, shallowEqual } from 'react-redux';
 import {
   AvastarParsedDataPoint,
   AvastarParsedDataPointState,
   PropsFilter,
 } from '../../types/dataTypes';
-
-// Styled-components
-const Article = styled.article`
-  background-color: var(--clr-lightest);
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-`;
 
 export default function OverviewProfile(props: PropsFilter) {
   // Fetch data from State
@@ -135,47 +135,121 @@ export default function OverviewProfile(props: PropsFilter) {
   // Contains basic informations for each overview profile's block
   const overviewBlocks = [
     {
-      title: 'Data points shared',
-      icon: DataLakeIcon,
-      number: dataPointsShared,
-      tooltip: 'about data points',
-    },
-    {
-      title: 'Entities accessed your data',
-      icon: OrganizationIcon,
-      number: entitiesAccessedDataProfile,
-      tooltip: 'about entities',
-    },
-    {
-      title: 'Devices sharing data',
-      icon: DeviceIcon,
-      number: devicesSharingdata,
-      tooltip: 'about devices',
-    },
-    {
-      title: 'Years of data exchange',
-      icon: HourglassIcon,
+      title: 'Years',
+      subtitle: 'of data exchange',
+      icon: YearsExchanged,
       number: yearsDataExchange, // To be done once we have implemented timestamp and details in the smartParserJson and smartparserCsv
-      tooltip: 'About years of data exchange',
+      tooltip:
+        'Number of years since you started sharing information with platforms (directly impacts the volume of data the platform is storing about you).',
+    },
+    {
+      title: 'Devices',
+      subtitle: 'sharing data',
+      icon: DevicesSharing,
+      number: devicesSharingdata,
+      tooltip:
+        'Number of distinct devices from which you shared information with platforms (current and former laptop, mobile phone(s), tablets, browsers, etc.)',
+    },
+    {
+      title: 'Data',
+      subtitle: 'points shared',
+      icon: DataPointsExchanged,
+      number: dataPointsShared,
+      tooltip:
+        'Number of facts or pieces of information compiled about you by the platform you use (information about your profile, date and location of login, posts, comments, information inferred about you with algorithms, etc.)',
+    },
+    {
+      title: 'Entities',
+      subtitle: 'accessing your data',
+      icon: EntitiesSharing,
+      number: entitiesAccessedDataProfile,
+      tooltip:
+        'Number of companies that have collected information about you for marketing and monetization purposes (display ads, tracking of your activity on other apps and websites, apps and games you installed, etc.)',
     },
   ];
+  const stylesTitle = {
+    borderLeft: '15px solid #FFA69E',
+    padding: '10px',
+    margin: '10px',
+  };
 
   return (
-    <Article>
-      <h2>Overview</h2>
-      <Grid container spacing={2}>
-        {overviewBlocks.map((block, index) => (
-          <Grid key={index} item xs={12} md={6}>
-            <OverviewKeyNumber
-              title={block.title}
-              icon={block.icon}
-              // @ts-ignore
-              number={block.number}
-              tooltip={block.tooltip}
-            />
+    <Box pb={2} pt={5} sx={{ flex: 1 }}>
+      <h2 style={stylesTitle}>Overview</h2>
+
+      <Grid py={2} container columnSpacing={3}>
+        {overviewBlocks.map((block) => (
+          <Grid key={block.title} item xs={6} md={3}>
+            <Paper
+              sx={{
+                backgroundColor: 'white',
+                borderRadius: 3,
+                pt: 0,
+                pr: 0,
+                pb: 2,
+                pl: 2,
+                height: '100%',
+              }}
+            >
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  justifyContent: 'flex-end',
+                }}
+              >
+                <Tooltip
+                  arrow
+                  title={
+                    <Typography color="inherit">{block.tooltip}</Typography>
+                  }
+                >
+                  <IconButton>
+                    <InfoIcon sx={{ color: 'orange' }} />
+                  </IconButton>
+                </Tooltip>
+              </Box>
+              <Box
+                sx={{
+                  height: '100%',
+                  overflow: 'hidden',
+                }}
+              >
+                <Box
+                  component="img"
+                  sx={{
+                    // width: 90,
+                    // height: 80,
+                    height: '40%',
+                    objectFit: 'contain',
+                  }}
+                  alt={block.title}
+                  src={block.icon}
+                />
+                <Box>
+                  <Typography
+                    sx={{
+                      fontSize: '24px',
+                      fontWeight: '600',
+                      lineHeight: '1.5rem',
+                    }}
+                  >
+                    {block.number} {block.title}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: '15px',
+                      fontWeight: '500',
+                    }}
+                  >
+                    {block?.subtitle}
+                  </Typography>
+                </Box>
+              </Box>
+            </Paper>
           </Grid>
         ))}
       </Grid>
-    </Article>
+    </Box>
   );
 }
