@@ -4,7 +4,7 @@
  */
 
 // img
-import OverviewPic from '../../assets/overview-page.png';
+import OverviewPic from '../../assets/overview-page-preview.png';
 
 //utils
 import styled from 'styled-components';
@@ -45,7 +45,7 @@ const ImgContainer = styled(Box)`
 `;
 
 const Img = styled.img`
-  width: 31.438rem;
+  width: 37rem;
   height: 21.938rem;
 `;
 
