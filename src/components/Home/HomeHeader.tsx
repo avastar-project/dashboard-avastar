@@ -14,11 +14,6 @@ import { Box, Typography } from '@mui/material';
 
 const Headline1 = styled(Typography)``;
 
-// const Img = styled.img`
-//   width: 23.893rem;
-//   height: 23.936rem;
-// `;
-
 const Headline2 = styled(Typography)``;
 
 export default function HomeHeader() {
@@ -144,6 +139,7 @@ export default function HomeHeader() {
         <Box sx={{ order: { xs: 1, sm: 1, md: 2, lg: 2, xl: 2 } }}>
           <Box
           sx={{
+            
             width: {
               lg: '100%',
               md: '90%',
