@@ -33,28 +33,15 @@ const explanationList: ExplanationList[] = [
 ];
 
 // Styled-components
-const StyledExplanation = styled(Box)``;
 
-// const Img = styled.img`
-//   width: 31.438rem;
-//   height: 21.938rem;
-// `;
-
-const Title = styled(Typography)`
-  // padding-bottom: 2.75rem;
-`;
-const ParagraphList = styled(Box)`
-  // list-style-type: none;
-  // display: flex;
-  // flex-direction: column;
-  // gap: 1.25rem;
-`;
+const Title = styled(Typography)``;
+const ParagraphList = styled(Box)``;
 
 const ParagraphItem = styled.li``;
 
 export default function TransparencyOverview() {
   return (
-    <StyledExplanation
+    <Box
       sx={{
         width: '100%',
         padding: {
@@ -98,9 +85,27 @@ export default function TransparencyOverview() {
             sm: '1.225rem',
             xs: '0.8rem',
           },
-          lineHeight: '2.5rem',
-          fontWeight: 700,
-          fontSize: '2.074rem',
+            lineHeight: {
+              xl: '2.5rem',
+              lg: '2.5rem',
+              md: '2.5rem',
+              sm: '2.5rem',
+              xs: '2.5rem',
+            },
+            fontWeight: {
+              xl: 700,
+              lg: 700,
+              md: 700,
+              sm: 700,
+              xs: 700,
+            },
+            fontSize: {
+              xl: '2.074rem',
+              lg: '2.074rem',
+              md: '2.074rem',
+              sm: '2.074rem',
+              xs: '2.074rem',
+            },
         }}
       >
         Get the transparency you deserve on your personal data!
@@ -133,11 +138,7 @@ export default function TransparencyOverview() {
       }}
       >
         <Box
-         sx={{ order: {sm:2, md: 1, lg: 1, xl: 1 } }} 
-        // sx={{
-        //   width: '31.438rem',
-        //   height: '21.938rem',
-        // }}
+         sx={{ order: {sm:2, md: 1, lg: 1, xl: 1 } }}
         >
           <ParagraphList
             component="ul"
@@ -160,11 +161,30 @@ export default function TransparencyOverview() {
               (explanationList: ExplanationList, index: number) => (
                 <ParagraphItem key={index}>
                   <Typography
-                    sx={{
-                      lineHeight: '2rem',
-                      fontWeight: 400,
-                      fontSize: '1.2rem',
-                    }}
+                   sx={{
+                    paddingBottom: '1.5rem',
+                    lineHeight: {
+                      xl: '2rem',
+                      lg: '2rem',
+                      md: '2rem',
+                      sm: '2rem',
+                      xs: '2rem',
+                    },
+                    fontWeight: {
+                      xl: 400,
+                      lg: 400,
+                      md: 400,
+                      sm: 400,
+                      xs: 400,
+                    },
+                    fontSize: {
+                      xl: '1.2rem',
+                      lg: '1.2rem',
+                      md: '1.2rem',
+                      sm: '1.2rem',
+                      xs: '1.2rem',
+                    },
+                  }}
                   >
                     {explanationList.content}
                   </Typography>
@@ -217,6 +237,6 @@ export default function TransparencyOverview() {
           </Box>
         </Box>
       </Box>
-    </StyledExplanation>
+    </Box>
   );
 }

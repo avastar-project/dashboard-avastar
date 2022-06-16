@@ -39,85 +39,217 @@ const benefitsCard: BenefitsCard[] = [
   },
 ];
 
-const StyledBenefits = styled(Box)`
-  padding: 0 9.438rem 5.375rem 10.063rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+const BenefitsList = styled(Box)``;
+const BenefitItem = styled(Box)``;
 
-const BenefitsList = styled.ul`
-  list-style-type: none;
-  display: flex;
-  gap: 6.75rem;
-`;
-
-const BenefitItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.25rem;
-  width: 19rem;
-  height: 25.563rem;
-  background-color: var(--clr-lightest);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 0.625rem;
-  padding: 2.313rem 1.75rem;
-`;
-
-const Title = styled(Typography)`
-  padding-bottom: 2.75rem;
-`;
-
-const ImgContainer = styled(Box)`
-  width: 100%;
-`;
-
-const Img = styled.img`
-  width: 3.438rem;
-  height: 3.438rem;
-`;
+const Title = styled(Typography)``;
 
 export default function MainBenefitsCard() {
   return (
-    <StyledBenefits>
+    <Box
+      sx={{
+        padding: {
+          xl: ' 0 9.438rem 5.375rem 10.063rem;', // xl: 1536
+          lg: ' 0 0.438rem 5.375rem 1.063rem;', // lg: 1200
+          md: ' 0 0.438rem 5.375rem 1.063rem;', // md: 900
+          sm: ' 0 0.438rem 5.375rem 1.063rem;', // sm: 600
+          xs: ' 0 0.438rem 5.375rem 1.063rem;', // xs: 300
+        },
+        width: '100%',
+        display: 'flex',
+        flexDirection: {
+          xl: 'column',
+          lg: 'column',
+          md: 'column',
+          sm: 'column',
+          xs: 'column',
+        },
+        alignItems: {
+          xl: 'center',
+          lg: 'center',
+          md: 'center',
+          sm: 'center',
+          xs: 'center',
+        },
+      }}
+    >
       <Title
         id="about"
         sx={{
-          lineHeight: '2.5rem',
-          fontWeight: 700,
-          fontSize: '2.074rem',
+          paddingBottom: {
+            xl: '2.75rem',
+            lg: '2.75rem',
+            md: '2.75rem',
+            sm: '2.75rem',
+            xs: '2.75rem',
+          },
+          lineHeight: {
+            xl: '2.5rem',
+            lg: '2.5rem',
+            md: '2.5rem',
+            sm: '2.5rem',
+            xs: '2.5rem',
+          },
+          fontWeight: {
+            xl: 700,
+            lg: 700,
+            md: 700,
+            sm: 700,
+            xs: 700,
+          },
+          fontSize: {
+            xl: '2.074rem',
+            lg: '2.074rem',
+            md: '2.074rem',
+            sm: '2.074rem',
+            xs: '2.074rem',
+          },
         }}
       >
         A few things you may ask yourself right now
       </Title>
       <Box>
-        <BenefitsList>
+        <BenefitsList
+          component="ul"
+          sx={{
+            listStyle: 'none',
+            display: 'flex',
+            padding: '2.313rem 1.75rem',
+            flexDirection: {
+              xl: 'row',
+              lg: 'row',
+              md: 'row',
+              sm: 'column',
+              xs: 'column',
+            },
+            gap: {
+              xl: '6.75rem',
+              lg: '6.75rem',
+              md: '2.75rem',
+              sm: '6.75rem',
+              xs: '6.75rem',
+            },
+          }}
+        >
           {/* Mapping array to display each element */}
           {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
           {benefitsCard.map((benefitsCard: BenefitsCard, index: number) => (
-            <BenefitItem key={index}>
-              <Box display="flex" alignItems="center" gap={2}>
-                <ImgContainer>
-                  <Img src={benefitsCard.icon} alt={`${benefitsCard.icon}`} />
-                </ImgContainer>
+            <BenefitItem
+              key={index}
+              component="li"
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                backgroundColor: 'var(--clr-lightest)',
+                boxShadow: 3,
+                borderRadius: '0.625rem',
+                gap: {
+                  xl: '1.25rem',
+                  lg: '1.25rem',
+                  md: '1.25rem',
+                  sm: '1.25rem',
+                  xs: '1.25rem',
+                },
+                width: '19rem',
+                height: '25.563rem',
+                padding: '2.313rem 1.75rem',
+              }}
+            >
+              <Box 
+               sx={{
+                display: 'flex',
+                justifyContent:'center',
+                alignItems: {
+                  xl: 'center',
+                  lg: 'center',
+                  md: 'center',
+                  sm: 'center',
+                  xs: 'center',
+                },
+                gap: {
+                  xl: '3.375rem',
+                  lg: '1.25rem',
+                  md: '1.25rem',
+                  sm: '1.25rem',
+                  xs: '1.25rem',
+                },
+              }}
+             >
+                <Box
+                  sx={{
+                    width: 37.06,
+                    height: 45,
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src={benefitsCard.icon}
+                    alt={`${benefitsCard.icon}`}
+                    sx={{
+                      width: {
+                        xl: '100%',
+                        lg: '100%',
+                        md: '100%',
+                        sm: '100%',
+                        xs:'100%'
+                      },
+                      height: 'auto',
+                    }}
+                  />
+                </Box>
               </Box>
               <Typography
-                sx={{
-                  lineHeight: '1.5rem',
-                  fontWeight: 600,
-                  fontSize: '1.44rem',
-                }}
+               sx={{
+                lineHeight: {
+                  xl: '1.5rem',
+                  lg: '1.5rem',
+                  md: '1.5rem',
+                  sm: '1.5rem',
+                  xs: '1.5rem',
+                },
+                fontWeight: {
+                  xl: 600,
+                  lg: 600,
+                  md: 600,
+                  sm: 600,
+                  xs: 600,
+                },
+                fontSize: {
+                  xl: '1.44rem',
+                  lg: '1.44rem',
+                  md: '1.44rem',
+                  sm: '1.44rem',
+                  xs: '1.44rem',
+                },
+              }}
               >
                 {benefitsCard.title}
               </Typography>
               <Typography
-                sx={{
-                  lineHeight: '1.5rem',
-                  fontWeight: 400,
-                  fontSize: '1rem',
-                }}
+               sx={{
+                lineHeight: {
+                  xl: '1.5rem',
+                  lg: '1.5rem',
+                  md: '1.5rem',
+                  sm: '1.5rem',
+                  xs: '1.5rem',
+                },
+                fontWeight: {
+                  xl: 400,
+                  lg: 400,
+                  md: 400,
+                  sm: 400,
+                  xs: 400,
+                },
+                fontSize: {
+                  xl: '1rem',
+                  lg: '1rem',
+                  md: '1rem',
+                  sm: '1rem',
+                  xs: '1rem',
+                },
+              }}
               >
                 {benefitsCard.content}
               </Typography>
@@ -125,6 +257,6 @@ export default function MainBenefitsCard() {
           ))}
         </BenefitsList>
       </Box>
-    </StyledBenefits>
+    </Box>
   );
 }
