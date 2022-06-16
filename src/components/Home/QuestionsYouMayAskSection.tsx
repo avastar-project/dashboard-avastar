@@ -13,28 +13,11 @@ import styled from 'styled-components';
 import { Box, Typography } from '@mui/material';
 
 // Styled-components
-const StyledResume = styled(Box)`
-  // padding: 2.75rem 9.438rem 5.688rem 10.063rem;
-  // display: flex;
-  // align-items: center;
-  // gap: 2.75rem;
-`;
-const ImgContainer = styled(Box)`
-  // width: 100%;
-`;
-
-// const Img = styled.img`
-//   width: 24.625rem;
-//   height: 18.75rem;
-// `;
-
-const Title = styled(Typography)`
-  // padding-bottom: 1.5rem;
-`;
+const Title = styled(Typography)``;
 
 export default function QuestionsResumed() {
   return (
-    <StyledResume
+    <Box
       sx={{
         padding: {
           xl: '3.833rem 9.75rem 3.833rem 9.875rem;', // xl: 1536
@@ -76,7 +59,7 @@ export default function QuestionsResumed() {
     >
       <Box
       sx={{ order: { xs: 2, sm: 1, md: 1, lg: 1, xl: 1 } }} >
-        <ImgContainer
+        <Box
           sx={{
             margin:{
              sm: '0 auto',
@@ -96,7 +79,6 @@ export default function QuestionsResumed() {
             src={PhoneApp}
             alt="animated phone app"
             sx={{
-              
               display: {
                 xl: 'block',
                 lg: 'block',
@@ -113,7 +95,7 @@ export default function QuestionsResumed() {
               height: 'auto',
             }}
           />
-        </ImgContainer>
+        </Box>
       </Box>
       <Box
       sx={{ order: { xs: 1, sm: 2, md: 2, lg: 2, xl: 2 } }}
@@ -178,6 +160,6 @@ export default function QuestionsResumed() {
           information they get access to?
         </Typography>
       </Box>
-    </StyledResume>
+    </Box>
   );
 }
