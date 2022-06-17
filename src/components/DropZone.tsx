@@ -112,7 +112,6 @@ export default function DropZone() {
           display="flex"
           flexDirection="column"
           alignItems="center"
-          p={5}
           gap={2}
         >
           <DashedArea>
@@ -123,6 +122,7 @@ export default function DropZone() {
             <Drop>
               <Typography
                 sx={{
+                  textAlign:'center',
                   lineHeight: '1.5rem',
                   fontWeight: 400,
                   fontSize: '1rem',

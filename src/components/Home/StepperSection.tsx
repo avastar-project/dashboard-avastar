@@ -19,81 +19,98 @@ import Box from '@mui/material/Box';
 //components
 import DropZone from '../DropZone';
 
-const StyledContainer = styled(Box)`
-  padding: 0 9.438rem 5.688rem 10.063rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.5rem;
-`;
-
 const Title = styled(Typography)``;
 
-const VideoSection = styled.section`
-  padding-top: 1.125rem;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 3.875rem;
-  width: 70.5rem;
-  height: 21.063rem;
-`;
+const VideoSection = styled(Box)``;
 
-const DropZoneSection = styled.section`
-  padding-top: 2.125rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2.125rem;
+const DropZoneSection = styled(Box)``;
 
-  width: 70.25rem;
-  height: auto;
-`;
-
-const IconContainer = styled(Box)`
-  position: relative;
-  width: 100%;
-`;
-
-const Icon = styled.img`
-  position: absolute;
-  top: 1.05rem;
-  left: 12.55rem;
-  z-index: 1;
-  width: 3.125rem;
-  height: 3.125rem;
-`;
+const IconContainer = styled(Box)``;
 
 function getSteps() {
   return [
     <Typography
-      sx={{
-        lineHeight: '2.5rem',
-        fontWeight: 600,
-        fontSize: '1.728rem',
-      }}
       component="b"
+      sx={{
+        lineHeight: {
+          xl: '2.5rem',
+          lg: '2.5rem',
+          md: '2.5rem',
+          sm: '2.5rem',
+          xs: '2.5rem',
+        },
+        fontWeight: {
+          xl: 600,
+          lg: 600,
+          md: 600,
+          sm: 600,
+          xs: 600,
+        },
+        fontSize: {
+          xl: '1.728rem',
+          lg: '1.728rem',
+          md: '1.728rem',
+          sm: '1.728rem',
+          xs: '1.728rem',
+        },
+      }}
     >
       Let's get started by requesting your data
     </Typography>,
     <Typography
       id="dropzone"
-      sx={{
-        lineHeight: '2.5rem',
-        fontWeight: 600,
-        fontSize: '1.728rem',
-      }}
       component="b"
+      sx={{
+        lineHeight: {
+          xl: '2.5rem',
+          lg: '2.5rem',
+          md: '2.5rem',
+          sm: '2.5rem',
+          xs: '2.5rem',
+        },
+        fontWeight: {
+          xl: 600,
+          lg: 600,
+          md: 600,
+          sm: 600,
+          xs: 600,
+        },
+        fontSize: {
+          xl: '1.728rem',
+          lg: '1.728rem',
+          md: '1.728rem',
+          sm: '1.728rem',
+          xs: '1.728rem',
+        },
+      }}
     >
       Now, you just have to convert your data files
     </Typography>,
     <Typography
-      sx={{
-        lineHeight: '2.5rem',
-        fontWeight: 600,
-        fontSize: '1.728rem',
-      }}
       component="b"
+      sx={{
+        lineHeight: {
+          xl: '2.5rem',
+          lg: '2.5rem',
+          md: '2.5rem',
+          sm: '2.5rem',
+          xs: '2.5rem',
+        },
+        fontWeight: {
+          xl: 600,
+          lg: 600,
+          md: 600,
+          sm: 600,
+          xs: 600,
+        },
+        fontSize: {
+          xl: '1.728rem',
+          lg: '1.728rem',
+          md: '1.728rem',
+          sm: '1.728rem',
+          xs: '1.728rem',
+        },
+      }}
     >
       Let's discover what the internet knows about you
     </Typography>,
@@ -104,7 +121,33 @@ function getStepContent(step: number) {
   switch (step) {
     case 0:
       return (
-        <VideoSection>
+        <VideoSection
+          sx={{
+            paddingTop: '1.125rem',
+            display: 'flex',
+            flexDirection: {
+              xl: 'row',
+              lg: 'row',
+              md: 'row',
+              sm: 'column',
+              xs: 'column',
+            },
+            alignItems: {
+              xl: 'flex-start',
+              lg: 'flex-start',
+              md: 'center',
+              sm: 'center',
+              xs: 'center',
+            },
+            gap: {
+              xl: '3.875rem',
+              lg: '3.875rem',
+              md: '3.875rem',
+              sm: '3.875rem',
+              xs: '1.875rem',
+            },
+          }}
+        >
           <Box
             display="flex"
             flexDirection="column"
@@ -113,18 +156,54 @@ function getStepContent(step: number) {
           >
             <Typography
               sx={{
-                lineHeight: '2rem',
-                fontWeight: 400,
-                fontSize: '1.2rem',
+                lineHeight: {
+                  xl: '2rem',
+                  lg: '2rem',
+                  md: '2rem',
+                  sm: '2rem',
+                  xs: '2rem',
+                },
+                fontWeight: {
+                  xl: 400,
+                  lg: 400,
+                  md: 400,
+                  sm: 400,
+                  xs: 400,
+                },
+                fontSize: {
+                  xl: '1.2rem',
+                  lg: '1.2rem',
+                  md: '1.2rem',
+                  sm: '1.2rem',
+                  xs: '1.2rem',
+                },
               }}
             >
               You can start by requesting your data from Google and Facebook.{' '}
             </Typography>
             <Typography
               sx={{
-                lineHeight: '2rem',
-                fontWeight: 400,
-                fontSize: '1.2rem',
+                lineHeight: {
+                  xl: '2rem',
+                  lg: '2rem',
+                  md: '2rem',
+                  sm: '2rem',
+                  xs: '2rem',
+                },
+                fontWeight: {
+                  xl: 400,
+                  lg: 400,
+                  md: 400,
+                  sm: 400,
+                  xs: 400,
+                },
+                fontSize: {
+                  xl: '1.2rem',
+                  lg: '1.2rem',
+                  md: '1.2rem',
+                  sm: '1.2rem',
+                  xs: '1.2rem',
+                },
               }}
             >
               It can take up to 48h to receive your data files: Facebook will
@@ -133,9 +212,27 @@ function getStepContent(step: number) {
             </Typography>
             <Typography
               sx={{
-                lineHeight: '2rem',
-                fontWeight: 400,
-                fontSize: '1.2rem',
+                lineHeight: {
+                  xl: '2rem',
+                  lg: '2rem',
+                  md: '2rem',
+                  sm: '2rem',
+                  xs: '2rem',
+                },
+                fontWeight: {
+                  xl: 400,
+                  lg: 400,
+                  md: 400,
+                  sm: 400,
+                  xs: 400,
+                },
+                fontSize: {
+                  xl: '1.2rem',
+                  lg: '1.2rem',
+                  md: '1.2rem',
+                  sm: '1.2rem',
+                  xs: '1.2rem',
+                },
               }}
             >
               At the end of this step, you should have received multiple files
@@ -154,7 +251,28 @@ function getStepContent(step: number) {
       );
     case 1:
       return (
-        <DropZoneSection>
+        <DropZoneSection
+          sx={{
+            // paddingTop: '2.125rem',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: {
+              xl: 'flex-start',
+              lg: 'flex-start',
+              md: 'center',
+              sm: 'center',
+              xs: 'center',
+            },
+            gap: {
+              xl: '2.125rem',
+              lg: '2.125rem',
+              md: '2.125rem',
+              sm: '2.125rem',
+              xs: '2.125rem',
+            },
+            
+          }}
+        >
           <Box
             display="flex"
             flexDirection="column"
@@ -185,16 +303,68 @@ function getStepContent(step: number) {
               is refreshed.
             </Typography>
           </Box>
-          <Box display="flex" alignItems="flex-start" gap="3.875rem">
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: {
+                xl: 'row',
+                lg: 'row',
+                md: 'row',
+                sm: 'column',
+                xs: 'column',
+              },
+              alignItems: {
+                xl: 'flex-start',
+                lg: 'flex-start',
+                md: 'center',
+                sm: 'center',
+                xs: 'center',
+              },
+              gap: {
+                xl: '3.875rem',
+                lg: '3.875rem',
+                md: '3.875rem',
+                sm: '2.5rem',
+                xs: '2.5rem',
+              },
+            }}
+          >
             <Box>
-              <IconContainer>
-                <Icon src={GoogleIcon} alt={GoogleIcon} />
+              <IconContainer position='relative'>
+                <Box component='img' src={GoogleIcon} alt={GoogleIcon}   sx={{
+                    position: 'absolute',
+                    top: '-1.5rem',
+                    left: {
+                      xl: '10.3rem',
+                      lg: '10.3rem',
+                      md: '10rem',
+                      sm: '10.3rem',
+                      xs: '9.9rem',
+                    },
+                    zIndex: 1,
+                  }}/>
               </IconContainer>
               <DropZone />
             </Box>
-            <Box>
-              <IconContainer>
-                <Icon src={FacebookIcon} alt={FacebookIcon} />
+            <Box >
+              <IconContainer position='relative'>
+                <Box
+                  component="img"
+                  src={FacebookIcon}
+                  alt={FacebookIcon}
+                  sx={{
+                    position: 'absolute',
+                    top: '-1.5rem',
+                    left: {
+                      xl: '10.3rem',
+                      lg: '10.3rem',
+                      md: '10rem',
+                      sm: '10rem',
+                      xs: '9.9rem',
+                    },
+                    zIndex: 1,
+                  }}
+                />
               </IconContainer>
               <DropZone />
             </Box>
@@ -203,7 +373,33 @@ function getStepContent(step: number) {
       );
     case 2:
       return (
-        <VideoSection>
+        <VideoSection
+        sx={{
+          paddingTop: '1.125rem',
+          display: 'flex',
+          flexDirection: {
+            xl: 'row',
+            lg: 'row',
+            md: 'row',
+            sm: 'column',
+            xs: 'column',
+          },
+          alignItems: {
+            xl: 'flex-start',
+            lg: 'flex-start',
+            md: 'center',
+            sm: 'center',
+            xs: 'center',
+          },
+          gap: {
+            xl: '3.875rem',
+            lg: '3.875rem',
+            md: '3.875rem',
+            sm: '3.875rem',
+            xs: '1.875rem',
+          },
+        }}
+        >
           <Box
             display="flex"
             flexDirection="column"
@@ -242,7 +438,7 @@ function getStepContent(step: number) {
               harm your online reputation in the future.
             </Typography>
           </Box>
-          <Box width={'100%'}>
+          <Box width={'100%'} pt={2}>
             <video width="100%" height="auto" controls>
               <source
                 src={require('../../assets/video/video-test.mp4')}
@@ -280,25 +476,61 @@ export default function MultiStepper() {
   };
 
   return (
-    <StyledContainer>
+    <Box
+      sx={{
+        width: '100%',
+        padding: {
+          xl: ' 0 9.438rem 5.688rem 10.063rem;', // xl: 1536
+          lg: ' 0 9.438rem 5.688rem 10.063rem;', // lg: 1200
+          md: ' 0 0.438rem 5.688rem 1.063rem;', // md: 900
+          sm: ' 0 0.438rem 5.688rem 1.063rem;', // sm: 600
+          xs: ' 0 0.438rem 5.688rem 1.063rem;', // xs: 300
+        },
+        display: 'flex',
+        flexDirection: {
+          xl: 'column',
+          lg: 'column',
+          md: 'column',
+          sm: 'column',
+          xs: 'column',
+        },
+        alignItems: {
+          xl: 'center',
+          lg: 'center',
+          md: 'center',
+          sm: 'center',
+          xs: 'center',
+        },
+        gap: {
+          xl: '2.50rem',
+          lg: '2.50rem',
+          md: '2.50rem',
+          sm: '2.50rem',
+          xs: '2.50rem',
+        },
+      }}
+    >
       <Title
         id="how-does-it-work"
         sx={{
-          width:'100%',
+          width: '100%',
           lineHeight: '2.5rem',
           fontWeight: 700,
           fontSize: '2.074rem',
-          textAlign:'center',
+          textAlign: 'center',
           paddingBottom: '1.5rem',
         }}
       >
         How does it work ?
         <Typography
-        sx={{
-          lineHeight: '2.5rem',
-          fontWeight: 400,
-          fontSize: '1rem',
-        }}>We strongly suggest that you use a computer for the next steps</Typography>
+          sx={{
+            lineHeight: '2.5rem',
+            fontWeight: 400,
+            fontSize: '1rem',
+          }}
+        >
+          We strongly suggest that you use a computer for the next steps
+        </Typography>
       </Title>
       <Stepper activeStep={activeStep} orientation="vertical">
         {steps.map((label, index) => (
@@ -316,11 +548,12 @@ export default function MultiStepper() {
             <StepLabel>{label}</StepLabel>
             <StepContent>
               <Typography component="span">{getStepContent(index)}</Typography>
-              <Box>
+              <Box pt={2}>
                 <Box display="flex" justifyContent="flex-end">
                   <Button
                     disabled={activeStep === 0}
                     onClick={handleBack}
+                    size="small"
                     sx={{
                       color: '#0034F5',
                     }}
@@ -339,6 +572,7 @@ export default function MultiStepper() {
                     }}
                     variant="contained"
                     onClick={handleNext}
+                    size="small"
                   >
                     {activeStep === steps.length - 1
                       ? 'Access Dashboard'
@@ -362,6 +596,6 @@ export default function MultiStepper() {
           </Button>
         </Paper>
       )}
-    </StyledContainer>
+    </Box>
   );
 }
