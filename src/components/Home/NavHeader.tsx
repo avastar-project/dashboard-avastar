@@ -64,7 +64,7 @@ export default function HeaderNavLink() {
           xs: '0.875rem 1rem',
         },
         top: {
-          xl: ' 5.625rem',
+          xl: '5.625rem',
           lg: '5.625rem',
           md: '2.5rem',
           sm: '2.5rem',

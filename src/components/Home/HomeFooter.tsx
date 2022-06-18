@@ -5,12 +5,13 @@
 
 //img
 import AvastarLogo from '../../assets/avastarColorLogo.png';
+import AvastarSmallClrLogo from '../../assets/avastarLogoClrSmall.png';
 import DataForGoodLogo from '../../assets/dFg-logo.png';
 //utils
 import styled from 'styled-components';
 
 // MUI components
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 // Typescript types
@@ -46,49 +47,63 @@ const navLinks: NavFooterLink[] = [
   },
 ];
 
-const StyledFooter = styled.footer`
-  padding: 1.563rem 0 2.063rem 0;
-  background-color: var(--clr-lightest);
-`;
+const StyledFooter = styled(Box)``;
 
-const ImgContainer = styled(Box)`
-  width: 100%;
-`;
+const ImgContainer = styled(Box)``;
 
-const BrandClrLogo = styled.img`
-  width: 12.25rem;
-  height: 2.625rem;
-`;
-const BrandDfGLogo = styled.img`
-  width: 5.25rem;
-  height: 2.813rem;
-`;
-const NavList = styled.ul`
-  display: flex;
-  gap: 10rem;
-`;
+const NavList = styled(Box)``;
 
-const NavItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-decoration-line: none;
-`;
+const NavItem = styled(Box)``;
 
-const NavLink = styled.a`
-  color: var(--clr-darkest);
-`;
+const NavLink = styled.a``;
 
 export default function Footer() {
   const navigate = useNavigate();
   return (
-    <StyledFooter>
+    <StyledFooter
+      sx={{
+        padding: {
+          xl: ' 1rem 1.438rem 1.688rem 2.063rem;', // xl: 1536
+          lg: ' 1rem 1.438rem 1.688rem 2.063rem;', // lg: 1200
+          md: ' 1rem 1.438rem 1.688rem 2.063rem;', // md: 900
+          sm: ' 1rem 0.438rem 0.688rem 1.063rem;', // sm: 600
+          xs: ' 1rem 0.438rem 0.688rem 1.063rem;', // xs: 300
+        },
+        backgroundColor: 'var(--clr-lightest)',
+        color: 'var(--clr-darkest)',
+      }}
+    >
       <Box
         sx={{
           display: 'flex',
-          justifyContent: 'space-evenly',
-          alignItems: 'flex-start',
-          gap: '8.063rem',
+          flexDirection: {
+            xl: 'row',
+            lg: 'row',
+            md: 'row',
+            sm: 'row',
+            xs: 'row',
+          },
+          alignItems: {
+            xl: 'center',
+            lg: 'center',
+            md: 'center',
+            sm: 'flex-start',
+            xs: 'flex-start',
+          },
+          justifyContent: {
+            xl: 'space-between',
+            lg: 'space-between',
+            md: 'space-between',
+            sm: 'space-between',
+            xs: 'space-between',
+          },
+          gap: {
+            xl: '1.625rem',
+            lg: '1.625rem',
+            md: '0.625rem',
+            sm: '0.525rem',
+            xs: '0.525rem',
+          },
         }}
       >
         <Box
@@ -99,20 +114,117 @@ export default function Footer() {
             gap: '1.688rem',
           }}
         >
-          <ImgContainer>
-            <BrandClrLogo src={AvastarLogo} alt="Avastar logo" />
-          </ImgContainer>
-          <Box display="flex" justifyContent="space-between">
-            <Typography
+          <ImgContainer
+            sx={{
+              width: {
+                xl: 209,
+                lg: 209,
+                md: 209,
+                sm: 53,
+                xs: 53,
+              },
+              height: {
+                xl: 44.39,
+                lg: 44.39,
+                md: 44.39,
+                sm: 67,
+                xs: 67,
+              },
+            }}
+          >
+            <Box
+              component="img"
+              src={AvastarLogo}
+              alt="Avastar logo"
               sx={{
-                lineHeight: '1rem',
-                fontWeight: 400,
-                fontSize: '0.694rem',
+                display: {
+                  xl: 'block',
+                  lg: 'block',
+                  md: 'block',
+                  sm: 'none',
+                  xs: 'none',
+                },
               }}
+            />
+            <Box
+              component="img"
+              src={AvastarSmallClrLogo}
+              alt="Avastar logo"
+              sx={{
+                margin: '0 auto',
+                height: 'auto',
+                width: {
+                  xl: '100%',
+                  lg: '100%',
+                  md: '100%',
+                  sm: '100%',
+                  xs: '65%',
+                },
+                display: {
+                  xl: 'none',
+                  lg: 'none',
+                  md: 'none',
+                  sm: 'block',
+                  xs: 'block',
+                },
+              }}
+            />
+          </ImgContainer>
+          <Box
+            sx={{
+              display: {
+                xl: 'flex',
+                lg: 'flex',
+                md: 'flex',
+                sm: 'none',
+                xs: 'none',
+              },
+              flexDirection: {
+                xl: 'row',
+                lg: 'row',
+                md: 'row',
+                sm: 'row',
+                xs: 'column',
+              },
+              alignItems: {
+                xl: 'center',
+                lg: 'center',
+                md: 'center',
+                sm: 'space-between',
+                xs: 'space-between',
+              },
+              justifyContent: {
+                xl: 'space-between',
+                lg: 'space-between',
+                md: 'space-between',
+                sm: 'center',
+                xs: 'center',
+              },
+              gap: {
+                xl: '1.625rem',
+                lg: '1.625rem',
+                md: '0.625rem',
+                sm: '0.225rem',
+                xs: '0.225rem',
+              },
+            }}
+          >
+            <a
+              style={{ color: 'var(--clr-darkest)' }}
+              href="https://avastar.notion.site/avastar/Avastar-Open-Source-Project-730dbef6c24040d69b4f3a17960979ae"
+              rel="noreferrer"
+              target="_blank"
             >
-              Privacy Policy
-            </Typography>
-
+              <Typography
+                sx={{
+                  lineHeight: '1rem',
+                  fontWeight: 400,
+                  fontSize: '0.694rem',
+                }}
+              >
+                Privacy Policy
+              </Typography>
+            </a>
             <Typography
               sx={{
                 lineHeight: '1rem',
@@ -125,45 +237,152 @@ export default function Footer() {
           </Box>
         </Box>
 
-        <NavList>
+        <NavList
+          component="ul"
+          width={'100%'}
+          sx={{
+            display: 'flex',
+            alignItems: {
+              xl: 'center',
+              lg: 'center',
+              md: 'center',
+              sm: 'flex-start',
+              xs: 'flex-start',
+            },
+            justifyContent: 'space-around',
+
+            gap: {
+              xl: '1.625rem',
+              lg: '1.625rem',
+              md: '0.625rem',
+              sm: '0.5rem',
+              xs: '0.5rem',
+            },
+          }}
+        >
           {navLinks.map((navLink: NavFooterLink, index: number) => (
-            <NavItem key={index}>
+            <NavItem
+              component="li"
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                // listStyle: 'none',
+                gap: {
+                  xl: '1.625rem',
+                  lg: '1.625rem',
+                  md: '0.625rem',
+                  sm: '0.225rem',
+                  xs: '0.5rem',
+                },
+              }}
+              key={index}
+            >
               <Typography
                 sx={{
-                  lineHeight: '1.5rem',
-                  fontWeight: 600,
-                  fontSize: '1.44rem',
-                  paddingBottom: '1rem',
+                  lineHeight: {
+                    xl: '1.5rem',
+                    lg: '1.5rem',
+                    md: '1.5rem',
+                    sm: '1.5rem',
+                    xs: '0.5rem',
+                  },
+                  fontWeight: {
+                    xl: 600,
+                    lg: 600,
+                    md: 600,
+                    sm: 600,
+                    xs: 600,
+                  },
+                  fontSize: {
+                    xl: '1.5rem',
+                    lg: '1rem',
+                    md: '1rem',
+                    sm: '0.70rem',
+                    xs: '0.60rem',
+                  },
                 }}
               >
                 {navLink.title}
               </Typography>
-              <Box display="flex" flexDirection="column">
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  listStyle: 'none',
+                  gap: {
+                    xl: '0.625rem',
+                    lg: '0.625rem',
+                    md: '0.625rem',
+                    sm: '0.225rem',
+                    xs: '0.5rem',
+                  },
+                }}
+              >
                 <NavLink
+                  style={{ color: 'var(--clr-darkest)' }}
                   href={navLink.linkSubCat1}
                   rel="noreferrer"
                   target="_blank"
                 >
                   <Typography
                     sx={{
-                      lineHeight: '1.5rem',
-                      fontWeight: 400,
-                      fontSize: '0.833rem',
+                      lineHeight: {
+                        xl: '1.5rem',
+                        lg: '1.5rem',
+                        md: '1.5rem',
+                        sm: '1.5rem',
+                        xs: '0.5rem',
+                      },
+                      fontWeight: {
+                        xl: 400,
+                        lg: 400,
+                        md: 400,
+                        sm: 400,
+                        xs: 400,
+                      },
+                      fontSize: {
+                        xl: '0.833rem',
+                        lg: '0.833rem',
+                        md: '0.80rem',
+                        sm: '0.70rem',
+                        xs: '0.50rem',
+                      },
                     }}
                   >
                     {navLink.subCat1}
                   </Typography>
                 </NavLink>
                 <NavLink
+                  style={{ color: 'var(--clr-darkest)' }}
                   href={navLink.linkSubCat2}
                   rel="noreferrer"
                   target="_blank"
                 >
                   <Typography
                     sx={{
-                      lineHeight: '1.5rem',
-                      fontWeight: 400,
-                      fontSize: '0.833rem',
+                      lineHeight: {
+                        xl: '1.5rem',
+                        lg: '1.5rem',
+                        md: '0.5rem',
+                        sm: '0.5rem',
+                        xs: '0.5rem',
+                      },
+                      fontWeight: {
+                        xl: 400,
+                        lg: 400,
+                        md: 400,
+                        sm: 400,
+                        xs: 400,
+                      },
+                      fontSize: {
+                        xl: '0.833rem',
+                        lg: '0.833rem',
+                        md: '0.80rem',
+                        sm: '0.70rem',
+                        xs: '0.50rem',
+                      },
                     }}
                   >
                     {navLink.subCat2}
@@ -175,27 +394,141 @@ export default function Footer() {
         </NavList>
 
         <Box
-          display="flex"
-          flexDirection="column"
-          justifyContent="center"
-          alignItems="flex-start"
-          gap={2}
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            gap: {
+              xl: '0.625rem',
+              lg: '0.625rem',
+              md: '0.625rem',
+              sm: '0.225rem',
+              xs: '0.2rem',
+            },
+          }}
         >
           <Typography
             sx={{
-              lineHeight: '1.5rem',
-              fontWeight: 400,
-              fontSize: '1rem',
+              lineHeight: {
+                xl: '1.5rem',
+                lg: '1.5rem',
+                md: '1.5rem',
+                sm: '1.5rem',
+                xs: '0.5rem',
+              },
+              fontWeight: {
+                xl: 400,
+                lg: 400,
+                md: 400,
+                sm: 400,
+                xs: 400,
+              },
+              fontSize: {
+                xl: '0.85rem',
+                lg: '0.85rem',
+                md: '0.85rem',
+                sm: '0.8rem',
+                xs: '0.60rem',
+              },
             }}
           >
             Supported by
           </Typography>
-          <ImgContainer>
+          <ImgContainer
+            sx={{
+              width: {
+                xl: 84,
+                lg: 84,
+                md: 84,
+                sm: 84,
+                xs: 84,
+              },
+              height: {
+                xl: 45,
+                lg: 45,
+                md: 45,
+                sm: 45,
+                xs: 45,
+              },
+            }}
+          >
             <a href="https://dataforgood.fr/" rel="noreferrer" target="_blank">
-              <BrandDfGLogo src={DataForGoodLogo} alt="data for good logo" />
+              <Box
+                component="img"
+                src={DataForGoodLogo}
+                alt="data for good logo"
+                sx={{
+                  height: 'auto',
+                  width: {
+                    xl: '100%',
+                    lg: '100%',
+                    md: '100%',
+                    sm: '100%',
+                    xs: '65%',
+                  },
+                }}
+              />
             </a>
           </ImgContainer>
         </Box>
+      </Box>
+      <Box
+        pt={1}
+        sx={{
+          display: {
+            xl: 'none',
+            lg: 'none',
+            md: 'none',
+            sm: 'flex',
+            xs: 'flex',
+          },
+          alignItems: {
+            xl: 'center',
+            lg: 'center',
+            md: 'center',
+            sm: 'space-between',
+            xs: 'space-between',
+          },
+          justifyContent: {
+            xl: 'space-between',
+            lg: 'space-between',
+            md: 'space-between',
+            sm: 'center',
+            xs: 'center',
+          },
+          gap: {
+            xl: '2.625rem',
+            lg: '1.625rem',
+            md: '0.625rem',
+            sm: '0.225rem',
+            xs: '0.225rem',
+          },
+          
+        }}
+      >
+        <a
+          style={{ color: 'var(--clr-darkest)' }}
+          href="https://avastar.notion.site/avastar/Avastar-Open-Source-Project-730dbef6c24040d69b4f3a17960979ae"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <Typography
+            sx={{
+              fontWeight: 400,
+              fontSize: '0.694rem',
+            }}
+          >
+            Privacy Policy
+          </Typography>
+        </a>
+        <Typography
+          sx={{
+            fontWeight: 400,
+            fontSize: '0.694rem',
+          }}
+        >
+          | Copyright @2022
+        </Typography>
       </Box>
     </StyledFooter>
   );
