@@ -4,8 +4,8 @@ import Homepage from './pages/Homepage';
 import Overview from './pages/Overview';
 import Facebook from './pages/Facebook';
 import Google from './pages/Google';
-import MainNav from './layouts/MainNav';
-import Header from './layouts/Header';
+// import MainNav from './layouts/MainNav';
+// import Header from './layouts/Header';
 import { Routes, Route } from 'react-router-dom';
 import { useLocation } from 'react-router';
 // Utils

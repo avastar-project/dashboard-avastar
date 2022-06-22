@@ -102,7 +102,7 @@ export default function MainBenefitsCard() {
             lg: '2.074rem',
             md: '2.074rem',
             sm: '2.074rem',
-            xs: '2.074rem',
+            xs: '1.721rem',
           },
         }}
       >
@@ -114,7 +114,7 @@ export default function MainBenefitsCard() {
           sx={{
             listStyle: 'none',
             display: 'flex',
-            padding: '2.313rem 1.75rem',
+            // padding: '2.313rem 1.75rem',
             flexDirection: {
               xl: 'row',
               lg: 'row',
@@ -127,7 +127,7 @@ export default function MainBenefitsCard() {
               lg: '6.75rem',
               md: '2.75rem',
               sm: '6.75rem',
-              xs: '6.75rem',
+              xs: '3.75rem',
             },
           }}
         >
@@ -151,9 +151,21 @@ export default function MainBenefitsCard() {
                   sm: '1.25rem',
                   xs: '1.25rem',
                 },
-                width: '19rem',
-                height: '25.563rem',
-                padding: '2.313rem 1.75rem',
+                width:{
+                  xl: '19rem',
+                  lg: '19rem',
+                  md: '19rem',
+                  sm: '19rem',
+                  xs: '15rem',
+                },
+                height: {
+                  xl: '25.563rem',
+                  lg: '25.563rem',
+                  md: '25.563rem',
+                  sm: '25.563rem',
+                  xs: '23rem',
+                },
+                padding: '1.313rem 0.75rem',
               }}
             >
               <Box 
@@ -220,7 +232,7 @@ export default function MainBenefitsCard() {
                   lg: '1.44rem',
                   md: '1.44rem',
                   sm: '1.44rem',
-                  xs: '1.44rem',
+                  xs: '1.195rem',
                 },
               }}
               >
@@ -247,7 +259,7 @@ export default function MainBenefitsCard() {
                   lg: '1rem',
                   md: '1rem',
                   sm: '1rem',
-                  xs: '1rem',
+                  xs: '0.875rem',
                 },
               }}
               >

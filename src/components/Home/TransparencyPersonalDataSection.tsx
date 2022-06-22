@@ -49,7 +49,7 @@ export default function TransparencyOverview() {
           lg: ' 0 9.438rem 5.688rem 10.063rem;', // lg: 1200
           md: ' 0 0.438rem 5.688rem 1.063rem;', // md: 900
           sm: ' 0 0.438rem 5.688rem 1.063rem;', // sm: 600
-          xs: ' 0 0.438rem 5.688rem 1.063rem;', // xs: 300
+          xs: ' 0 0.438rem 2.938rem 1.063rem;', // xs: 300
         },
         display: 'flex',
         flexDirection: {
@@ -104,7 +104,7 @@ export default function TransparencyOverview() {
               lg: '2.074rem',
               md: '2.074rem',
               sm: '2.074rem',
-              xs: '2.074rem',
+              xs: '1.721rem',
             },
         }}
       >
@@ -151,7 +151,7 @@ export default function TransparencyOverview() {
                 lg: '1.625rem',
                 md: '1.225rem',
                 sm: '1.225rem',
-                xs: '0.8rem',
+                xs: '1.5rem',
               },
             }}
           >
@@ -162,7 +162,7 @@ export default function TransparencyOverview() {
                 <ParagraphItem key={index}>
                   <Typography
                    sx={{
-                    paddingBottom: '1.5rem',
+                    // paddingBottom: '1.5rem',
                     lineHeight: {
                       xl: '2rem',
                       lg: '2rem',
@@ -182,7 +182,7 @@ export default function TransparencyOverview() {
                       lg: '1.2rem',
                       md: '1.2rem',
                       sm: '1.2rem',
-                      xs: '1.2rem',
+                      xs: '0.996rem',
                     },
                   }}
                   >

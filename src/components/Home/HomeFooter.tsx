@@ -67,7 +67,7 @@ export default function Footer() {
           lg: ' 1rem 1.438rem 1.688rem 2.063rem;', // lg: 1200
           md: ' 1rem 1.438rem 1.688rem 2.063rem;', // md: 900
           sm: ' 1rem 0.438rem 0.688rem 1.063rem;', // sm: 600
-          xs: ' 1rem 0.438rem 0.688rem 1.063rem;', // xs: 300
+          xs: ' 1rem 0.138rem 0.688rem 0.063rem;', // xs: 300
         },
         backgroundColor: 'var(--clr-lightest)',
         color: 'var(--clr-darkest)',
@@ -102,7 +102,7 @@ export default function Footer() {
             lg: '1.625rem',
             md: '0.625rem',
             sm: '0.525rem',
-            xs: '0.525rem',
+            xs: '0.25rem',
           },
         }}
       >
@@ -441,14 +441,14 @@ export default function Footer() {
                 lg: 84,
                 md: 84,
                 sm: 84,
-                xs: 84,
+                xs: 58,
               },
               height: {
                 xl: 45,
                 lg: 45,
                 md: 45,
                 sm: 45,
-                xs: 45,
+                xs: 'auto',
               },
             }}
           >
@@ -464,7 +464,7 @@ export default function Footer() {
                     lg: '100%',
                     md: '100%',
                     sm: '100%',
-                    xs: '65%',
+                    xs: '100%',
                   },
                 }}
               />

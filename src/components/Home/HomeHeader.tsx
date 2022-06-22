@@ -27,7 +27,7 @@ export default function HomeHeader() {
           lg: '12.625rem 6.25rem 13.125rem 7.313rem;', // lg: 1200
           md: '12.813rem 5.75rem 7.313rem 5.625rem;', // md: 900
           sm: '12.813rem 5.75rem 7.313rem 5.625rem;', // sm: 600
-          xs: '10.063rem 2.063rem 2.938rem 1rem;', // xs: 300
+          xs: '11.719rem 2.063rem 4.594rem 1rem;', // xs: 300
         },
         background: 'var(--bck-clr)',
         color: 'var(--clr-lightest)',
@@ -92,7 +92,7 @@ export default function HomeHeader() {
                 lg: '2.986rem',
                 md: '2.488rem',
                 sm: '2.488rem',
-                xs: '2.488rem',
+                xs: 39.81,
               },
             }}
           >
@@ -127,7 +127,7 @@ export default function HomeHeader() {
                 lg: '1.728rem',
                 md: '1.44rem',
                 sm: '1.44rem',
-                xs: '1.44rem',
+                xs: 23.04,
               },
             }}
           >

@@ -19,29 +19,15 @@ const StyledForm = styled.form``;
 
 const Container = styled(Box)``;
 
-const DashedArea = styled(Box)`
-  background-color: var(--clr-lightest);
-  border-radius: 0.625rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px dashed rgba(0, 0, 0, 0.25);
-  padding: 3rem 2rem;
-  text-transform: none;
-`;
+const DashedArea = styled(Box)``;
 
-const Drop = styled.div`
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-`;
+const Drop = styled(Box)``;
 
 const IconContainer = styled(Box)``;
 
 const Icon = styled.img``;
+
+
 interface FormType {
   file: File[];
 }
@@ -109,40 +95,86 @@ export default function DropZone() {
     <>
       <StyledForm>
         <Container
+          sx={{
+            width: {
+              xl: '24rem',
+              lg: '24rem',
+              md: '20rem',
+              sm: '18rem',
+              xs: '12rem',
+            },
+          }}
           display="flex"
           flexDirection="column"
           alignItems="center"
           gap={2}
         >
-          <DashedArea>
+          <DashedArea
+            sx={{
+              width: {
+                xl: '100%',
+                lg: '100%',
+                md: '100%',
+                sm: '100%',
+                xs: '100%',
+              },
+              backgroundColor: 'var(--clr-lightest)',
+              borderRadius: '0.625rem',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              border: '1px dashed rgba(0, 0, 0, 0.25)',
+              padding: '3rem 2rem',
+              // textTransform: 'none',
+            }}
+          >
             <IconContainer>
               <Icon src={CloudUploadIcon} alt={CloudUploadIcon} />
             </IconContainer>
 
-            <Drop>
+            <Drop
+              sx={{
+                padding: {
+                  xl: '2rem',
+                  lg: '2rem',
+                  md: '2rem',
+                  sm: '2rem',
+                  xs: '0rem',
+                },
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '0.75rem',
+              }}
+            >
               <Typography
                 sx={{
-                  textAlign:'center',
+                  textAlign: 'center',
                   lineHeight: '1.5rem',
                   fontWeight: 400,
                   fontSize: '1rem',
+                  paddingBottom:'1rem'
                 }}
               >
                 Select a file or drag and drop here
               </Typography>{' '}
               <Typography
                 sx={{
+                  textAlign: 'center',
                   lineHeight: '1.5rem',
                   fontWeight: 400,
                   fontSize: '0.833rem',
                   color: 'rgba(0, 0, 0, 0.4)',
+                  paddingBottom:'1rem'
                 }}
               >
                 Only ZIP files are accepted.
               </Typography>
             </Drop>
+
             <Button component="label">
-              <input
+              <input style={{width:'10rem'}}
                 // hidden
                 multiple
                 type="file"

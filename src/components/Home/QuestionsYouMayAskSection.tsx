@@ -122,7 +122,7 @@ export default function QuestionsResumed() {
               lg: '2.074rem',
               md: '2.074rem',
               sm: '2.074rem',
-              xs: '2.074rem',
+              xs: '1.721rem',
             },
           }}
         >
@@ -150,7 +150,7 @@ export default function QuestionsResumed() {
               lg: '1.2rem',
               md: '1.2rem',
               sm: '1.2rem',
-              xs: '1.2rem',
+              xs: '0.996rem',
             },
           }}
         >

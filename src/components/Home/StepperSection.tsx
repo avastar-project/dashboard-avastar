@@ -37,7 +37,7 @@ function getSteps() {
           lg: '2.5rem',
           md: '2.5rem',
           sm: '2.5rem',
-          xs: '2.5rem',
+          xs: '2rem',
         },
         fontWeight: {
           xl: 600,
@@ -51,7 +51,7 @@ function getSteps() {
           lg: '1.728rem',
           md: '1.728rem',
           sm: '1.728rem',
-          xs: '1.728rem',
+          xs: '1.434rem',
         },
       }}
     >
@@ -66,7 +66,7 @@ function getSteps() {
           lg: '2.5rem',
           md: '2.5rem',
           sm: '2.5rem',
-          xs: '2.5rem',
+          xs: '2rem',
         },
         fontWeight: {
           xl: 600,
@@ -80,7 +80,7 @@ function getSteps() {
           lg: '1.728rem',
           md: '1.728rem',
           sm: '1.728rem',
-          xs: '1.728rem',
+          xs: '1.434rem',
         },
       }}
     >
@@ -94,7 +94,7 @@ function getSteps() {
           lg: '2.5rem',
           md: '2.5rem',
           sm: '2.5rem',
-          xs: '2.5rem',
+          xs: '2rem',
         },
         fontWeight: {
           xl: 600,
@@ -108,7 +108,7 @@ function getSteps() {
           lg: '1.728rem',
           md: '1.728rem',
           sm: '1.728rem',
-          xs: '1.728rem',
+          xs: '1.434rem',
         },
       }}
     >
@@ -175,7 +175,7 @@ function getStepContent(step: number) {
                   lg: '1.2rem',
                   md: '1.2rem',
                   sm: '1.2rem',
-                  xs: '1.2rem',
+                  xs: '0.996rem',
                 },
               }}
             >
@@ -202,7 +202,7 @@ function getStepContent(step: number) {
                   lg: '1.2rem',
                   md: '1.2rem',
                   sm: '1.2rem',
-                  xs: '1.2rem',
+                  xs: '0.996rem',
                 },
               }}
             >
@@ -231,7 +231,7 @@ function getStepContent(step: number) {
                   lg: '1.2rem',
                   md: '1.2rem',
                   sm: '1.2rem',
-                  xs: '1.2rem',
+                  xs: '0.996rem',
                 },
               }}
             >
@@ -259,7 +259,7 @@ function getStepContent(step: number) {
             alignItems: {
               xl: 'flex-start',
               lg: 'flex-start',
-              md: 'center',
+              md: 'flex-start',
               sm: 'center',
               xs: 'center',
             },
@@ -270,7 +270,6 @@ function getStepContent(step: number) {
               sm: '2.125rem',
               xs: '2.125rem',
             },
-            
           }}
         >
           <Box
@@ -280,21 +279,57 @@ function getStepContent(step: number) {
             gap="0.813rem"
           >
             <Typography
-              sx={{
-                lineHeight: '2rem',
-                fontWeight: 400,
-                fontSize: '1.2rem',
-              }}
+             sx={{
+              lineHeight: {
+                xl: '2rem',
+                lg: '2rem',
+                md: '2rem',
+                sm: '2rem',
+                xs: '2rem',
+              },
+              fontWeight: {
+                xl: 400,
+                lg: 400,
+                md: 400,
+                sm: 400,
+                xs: 400,
+              },
+              fontSize: {
+                xl: '1.2rem',
+                lg: '1.2rem',
+                md: '1.2rem',
+                sm: '1.2rem',
+                xs: '0.996rem',
+              },
+            }}
             >
               Once you’ve received your data, you can initialize your Avastar
               digital identity card. Read your data files right here and finally
               visualize what you always wanted to know about your data!
             </Typography>
             <Typography
-              sx={{
-                lineHeight: '2rem',
-                fontWeight: 400,
-                fontSize: '1.2rem',
+               sx={{
+                lineHeight: {
+                  xl: '2rem',
+                  lg: '2rem',
+                  md: '2rem',
+                  sm: '2rem',
+                  xs: '2rem',
+                },
+                fontWeight: {
+                  xl: 400,
+                  lg: 400,
+                  md: 400,
+                  sm: 400,
+                  xs: 400,
+                },
+                fontSize: {
+                  xl: '1.2rem',
+                  lg: '1.2rem',
+                  md: '1.2rem',
+                  sm: '1.2rem',
+                  xs: '0.996rem',
+                },
               }}
             >
               The data you import and visualize will not reach any server. These
@@ -330,24 +365,29 @@ function getStepContent(step: number) {
             }}
           >
             <Box>
-              <IconContainer position='relative'>
-                <Box component='img' src={GoogleIcon} alt={GoogleIcon}   sx={{
+              <IconContainer position="relative">
+                <Box
+                  component="img"
+                  src={GoogleIcon}
+                  alt={GoogleIcon}
+                  sx={{
                     position: 'absolute',
                     top: '-1.5rem',
                     left: {
                       xl: '10.3rem',
                       lg: '10.3rem',
-                      md: '10rem',
-                      sm: '10.3rem',
-                      xs: '9.9rem',
+                      md: '8.4rem',
+                      sm: '7.4rem',
+                      xs: '4.7rem',
                     },
                     zIndex: 1,
-                  }}/>
+                  }}
+                />
               </IconContainer>
               <DropZone />
             </Box>
-            <Box >
-              <IconContainer position='relative'>
+            <Box>
+              <IconContainer position="relative">
                 <Box
                   component="img"
                   src={FacebookIcon}
@@ -358,9 +398,9 @@ function getStepContent(step: number) {
                     left: {
                       xl: '10.3rem',
                       lg: '10.3rem',
-                      md: '10rem',
-                      sm: '10rem',
-                      xs: '9.9rem',
+                      md: '8.4rem',
+                      sm: '7.4rem',
+                      xs: '4.7rem',
                     },
                     zIndex: 1,
                   }}
@@ -374,31 +414,31 @@ function getStepContent(step: number) {
     case 2:
       return (
         <VideoSection
-        sx={{
-          paddingTop: '1.125rem',
-          display: 'flex',
-          flexDirection: {
-            xl: 'row',
-            lg: 'row',
-            md: 'row',
-            sm: 'column',
-            xs: 'column',
-          },
-          alignItems: {
-            xl: 'flex-start',
-            lg: 'flex-start',
-            md: 'center',
-            sm: 'center',
-            xs: 'center',
-          },
-          gap: {
-            xl: '3.875rem',
-            lg: '3.875rem',
-            md: '3.875rem',
-            sm: '3.875rem',
-            xs: '1.875rem',
-          },
-        }}
+          sx={{
+            paddingTop: '1.125rem',
+            display: 'flex',
+            flexDirection: {
+              xl: 'row',
+              lg: 'row',
+              md: 'row',
+              sm: 'column',
+              xs: 'column',
+            },
+            alignItems: {
+              xl: 'flex-start',
+              lg: 'flex-start',
+              md: 'center',
+              sm: 'center',
+              xs: 'center',
+            },
+            gap: {
+              xl: '3.875rem',
+              lg: '3.875rem',
+              md: '3.875rem',
+              sm: '3.875rem',
+              xs: '1.875rem',
+            },
+          }}
         >
           <Box
             display="flex"
@@ -408,19 +448,55 @@ function getStepContent(step: number) {
           >
             <Typography
               sx={{
-                lineHeight: '2rem',
-                fontWeight: 400,
-                fontSize: '1.2rem',
+                lineHeight: {
+                  xl: '2rem',
+                  lg: '2rem',
+                  md: '2rem',
+                  sm: '2rem',
+                  xs: '2rem',
+                },
+                fontWeight: {
+                  xl: 400,
+                  lg: 400,
+                  md: 400,
+                  sm: 400,
+                  xs: 400,
+                },
+                fontSize: {
+                  xl: '1.2rem',
+                  lg: '1.2rem',
+                  md: '1.2rem',
+                  sm: '1.2rem',
+                  xs: '0.996rem',
+                },
               }}
             >
               Visualize what kind of information has been collected by apps and
               websites about you since you got started on the internet.{' '}
             </Typography>
             <Typography
-              sx={{
-                lineHeight: '2rem',
-                fontWeight: 400,
-                fontSize: '1.2rem',
+               sx={{
+                lineHeight: {
+                  xl: '2rem',
+                  lg: '2rem',
+                  md: '2rem',
+                  sm: '2rem',
+                  xs: '2rem',
+                },
+                fontWeight: {
+                  xl: 400,
+                  lg: 400,
+                  md: 400,
+                  sm: 400,
+                  xs: 400,
+                },
+                fontSize: {
+                  xl: '1.2rem',
+                  lg: '1.2rem',
+                  md: '1.2rem',
+                  sm: '1.2rem',
+                  xs: '0.996rem',
+                },
               }}
             >
               For each visualization, we've included explanations to help you
@@ -428,9 +504,27 @@ function getStepContent(step: number) {
             </Typography>
             <Typography
               sx={{
-                lineHeight: '2rem',
-                fontWeight: 400,
-                fontSize: '1.2rem',
+                lineHeight: {
+                  xl: '2rem',
+                  lg: '2rem',
+                  md: '2rem',
+                  sm: '2rem',
+                  xs: '2rem',
+                },
+                fontWeight: {
+                  xl: 400,
+                  lg: 400,
+                  md: 400,
+                  sm: 400,
+                  xs: 400,
+                },
+                fontSize: {
+                  xl: '1.2rem',
+                  lg: '1.2rem',
+                  md: '1.2rem',
+                  sm: '1.2rem',
+                  xs: '0.996rem',
+                },
               }}
             >
               We developed resources to help you manage the information you
@@ -516,17 +610,26 @@ export default function MultiStepper() {
           width: '100%',
           lineHeight: '2.5rem',
           fontWeight: 700,
-          fontSize: '2.074rem',
+          fontSize: {
+            xl: '2.074rem',
+            lg: '2.074rem',
+            md: '2.074rem',
+            sm: '2.074rem',
+            xs: '1.721rem',
+          },
           textAlign: 'center',
           paddingBottom: '1.5rem',
         }}
       >
-        How does it work ?
+        How does it work?
         <Typography
+          component="b"
           sx={{
-            lineHeight: '2.5rem',
+            paddingTop:'1rem',
+            display: 'block',
+            lineHeight: '1.5rem',
             fontWeight: 400,
-            fontSize: '1rem',
+            fontSize: '0.996rem',
           }}
         >
           We strongly suggest that you use a computer for the next steps
@@ -573,10 +676,20 @@ export default function MultiStepper() {
                     variant="contained"
                     onClick={handleNext}
                     size="small"
+                  ><Typography
+                  sx={{fontSize: {
+                    xl: '0.8125rem;',
+                    lg: '0.8125rem;',
+                    md: '0.8125rem;',
+                    sm: '0.8125rem;',
+                    xs: '0.6125rem;',
+                  },
+                }}
                   >
-                    {activeStep === steps.length - 1
+                     {activeStep === steps.length - 1
                       ? 'Access Dashboard'
                       : 'Next'}
+                  </Typography>
                   </Button>
                 </Box>
               </Box>
